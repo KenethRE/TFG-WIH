@@ -38,5 +38,5 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          source: ../build
+          source: ./nginx_test
           target: /home/opc/nginx_test 
