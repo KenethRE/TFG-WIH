@@ -38,5 +38,5 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          source: ./nginx_files/app.conf
-          target: /etc/nginx/conf.d/
+          source: ./conf.d/app.conf
+          target: /etc/nginx/
