@@ -31,12 +31,7 @@ jobs:
           echo Hello, world!
           echo The time is ${{ steps.time.outputs.time }}
 
-      - name: Copy files via ssh key
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          source: ./conf.d/app.conf
-          target: /etc/nginx/
+      # Make server pull the latest changes
+      - name: Make server pull the latest changes
+        run: |
+          ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_KEY }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'cd /root/TFG-WIH && git pull'
