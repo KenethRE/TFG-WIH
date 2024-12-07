@@ -15,8 +15,6 @@ socket.on("connect", () => {
         document.getElementById("header").innerHTML = "<h3>" + "Websocket Connected" + "</h3";
 });
 
-
-
 	function setCursorPosition(x,y){
 		if(x>$(window).width()+$(window).scrollLeft()){
 			x=$(window).width()+$(window).scrollLeft();
