@@ -29,7 +29,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           mkdir ../build
-          cp -TR ./nginx_test ../build
+          cp -TR ./nginx_files/app.conf ../build
 
       - name: Copy files via ssh key
         uses: appleboy/scp-action@v0.1.7
@@ -39,4 +39,4 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           source: ./nginx_files/app.conf
-          target: /etc/nginx/conf.d/app.conf
+          target: /etc/nginx/conf.d/
