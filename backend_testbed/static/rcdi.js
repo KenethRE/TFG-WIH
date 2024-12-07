@@ -2,16 +2,19 @@ var DEVICE_TYPE='computer';
 var MY_WS_ID=null;
 var REGISTERED_MOUSE=null;
 var WEB_CURSOR_ID=null;
-
 var REPLACED_ELEMENT=null;
 
-
 //var server_url="<?php echo $_SERVER['SERVER_ADDR'];?>";
-var server_url=location.hostname;
+//var server_url=location.hostname;
 //var server_url="localhost";
-var conn = new WebSocket('ws:'+server_url+':5000');
+//var conn = new WebSocket('ws:'+server_url+':5000');
 
-if (conn == null) { console.log("Connection failed"); }
+const socket = io(); //socketio connection to server//
+socket.on("connect", () => {
+ console.log("connected");
+        document.getElementById("header").innerHTML = "<h3>" + "Websocket Connected" + "</h3";
+});
+
 
 
 	function setCursorPosition(x,y){
