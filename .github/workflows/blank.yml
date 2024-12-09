@@ -39,4 +39,4 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: cd /root/TFG-WIH/ && git pull && systemctl restart gunicorn
+          script: cd /var/www/TFG-WIH/ && git pull && systemctl restart gunicorn
