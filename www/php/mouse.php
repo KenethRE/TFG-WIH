@@ -6,8 +6,8 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
 	<title>Mouse Control</title>
 	<link rel="stylesheet" href="">
-	<script src="/local/js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/local/js/rcdi.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/static/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/static/rcdi.js" type="text/javascript" charset="utf-8"></script>
 	<style type="text/css">
 		body{
 			background-color:lightgray;
