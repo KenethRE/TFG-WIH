@@ -10,10 +10,25 @@ var REPLACED_ELEMENT=null;
 //var conn = new WebSocket('ws:'+server_url+':5000');
 
 const socket = io(); //socketio connection to server//
-socket.on("connect", () => {
- console.log("connected");
-        document.getElementById("header").innerHTML = "<h3>" + "Websocket Connected" + "</h3";
-});
+
+function connect() {
+	socket.on("connect", () => {
+		console.log("connected");
+			   document.getElementById("header").innerHTML = "<h3>" + "Websocket Connected" + "</h3";
+	   });
+	
+	document.getElementById("checkbutton").disabled = true;
+}
+
+function disconnect() {
+	socket.on("disconnect", () => {
+		console.log("disconnected");
+			   document.getElementById("header").innerHTML = "<h3>" + "Websocket Disconnected" + "</h3>";
+	   });
+
+	document.getElementById("checkbutton").disabled = false;
+}
+
 
 	function setCursorPosition(x,y){
 		if(x>$(window).width()+$(window).scrollLeft()){
@@ -194,13 +209,13 @@ function testClick(elem){
 			REPLACED_ELEMENT=$(this);
 			var html=$(this).wrap('<p/>').parent().html();
 			var msg={
-					id:MY_WS_ID,
+				id:MY_WS_ID,
 				source:'computer',
 				action:'select',
 				html:html,
 				value:$(this).val()
 				};
-			conn.send(JSON.stringify(msg));
+			conn.send(msg);
 		}
 		// Open anchors with event
 		// open url winth window.open

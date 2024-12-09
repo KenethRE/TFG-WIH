@@ -28,6 +28,11 @@ def main():
         write_log(request.headers.get('X-Real-IP'))
         return render_template('base.html')
 
+# Print contents of message received on the websocket
+@socketio.on("message")
+def handle_message(message):
+    print("received message: " + message)
+
 @socketio.on("my_event")
 def checkping():
     for x in range(5):
