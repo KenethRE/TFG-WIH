@@ -9,8 +9,8 @@ var REPLACED_ELEMENT=null;
 //var server_url="localhost";
 //var conn = new WebSocket('ws:'+server_url+':5000');
 
-const socket = io(); //socketio connection to server//
-socket.on("connect", () => {
+const conn = io(); //socketio connection to server//
+conn.on("connect", () => {
  console.log("connected");
         document.getElementById("header").innerHTML = "<h3>" + "Websocket Connected" + "</h3";
 });
