@@ -1,8 +1,8 @@
 var DEVICE_TYPE='computer';
-var MY_WS_ID=null;
-var REGISTERED_MOUSE=null;
-var WEB_CURSOR_ID=null;
-var REPLACED_ELEMENT=null;
+//var MY_WS_ID=null;
+//var REGISTERED_MOUSE=null;
+//var WEB_CURSOR_ID=null;
+//var REPLACED_ELEMENT=null;
 
 //var server_url="<?php echo $_SERVER['SERVER_ADDR'];?>";
 //var server_url=location.hostname;
@@ -43,6 +43,7 @@ const conn = io(); //socketio connection to server//
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		DEVICE_TYPE='mobile';
 		$('#device_type').val(DEVICE_TYPE).trigger('change');
+		console.log(DEVICE_TYPE);
 	}
 	});
 
