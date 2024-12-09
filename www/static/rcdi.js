@@ -72,7 +72,7 @@ const conn = io(); //socketio connection to server//
 								action:'select',
 								val:$(this).val()
 								};
-							conn.send(JSON.stringify(msg));
+							conn.emit("my_event", msg);
 						});
 						$("#elementParent").children().change(function(e){ // same as focusout
 							var msg={
@@ -80,7 +80,7 @@ const conn = io(); //socketio connection to server//
 								action:'select',
 								val:$(this).val()
 								};
-							conn.send(JSON.stringify(msg));
+							conn.emit("my_event", msg);
 							$("#elementParent").children().remove();
 							$("#elementParent").append(`<span id="elementPlaceHolder"></span>`);
 						});
@@ -91,7 +91,7 @@ const conn = io(); //socketio connection to server//
 								action:'select',
 								val:$(this).val()
 								};
-							conn.send(JSON.stringify(msg));
+							conn.emit("my_event", msg);
 							$("#elementParent").children().remove();
 							$("#elementParent").append(`<span id="elementPlaceHolder"></span>`);
 						});
@@ -253,7 +253,7 @@ $(document).ready(function() {
 				source:'mouse',
 				action:'click',
 				};
-				conn.send(JSON.stringify(msg));
+				conn.emit("my_event", msg);
 			}
 			touchN1=touchN2=false;
 		});
@@ -299,7 +299,7 @@ $(document).ready(function() {
 				cx:c.x,
 				cy:c.y
 			};
-			conn.send(JSON.stringify(msg));
+			conn.emit("my_event", msg);
 		});		
 	}
 
@@ -310,7 +310,7 @@ $(document).ready(function() {
 				source:this.value,
 				action:'connected'
 				};
-				conn.send(JSON.stringify(msg));
+				conn.emit("my_event", msg);
 	});
 
 }); // end document ready
@@ -322,7 +322,7 @@ function startUsingWebCursor(){
 				action:'useCursor',
 				targetID: REGISTERED_MOUSE
 			};
-	conn.send(JSON.stringify(msg));
+	conn.emit("my_event", msg);
 	hideMyModal();
 }
 
@@ -336,7 +336,7 @@ function stopUsingWebCursor(){
 				action:'stopCursor',
 				targetID: WEB_CURSOR_ID
 			};
-	conn.send(JSON.stringify(msg));
+	conn.emit("my_event", msg);
 	hideMyModal();
 	WEB_CURSOR_ID=null;
 }
