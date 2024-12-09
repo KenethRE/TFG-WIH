@@ -52,7 +52,7 @@ const conn = io(); //socketio connection to server//
 			switch(msg.source){
 				case 'computer':
 					if(msg.action=='useCursor' && MY_WS_ID==msg.targetID){
-						window.open('/local/php/mouse.php','_self');
+						window.open('/php/mouse.php','_self');
 					}
 					if(msg.action=='stopCursor' && MY_WS_ID==msg.targetID){
 						window.open('/','_self');
