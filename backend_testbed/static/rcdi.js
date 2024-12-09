@@ -327,7 +327,7 @@ function startUsingWebCursor(){
 }
 
 function startUsingThisWebCursor(){
-	window.open('/local/php/mouse.php','_self');
+	window.open('/php/mouse.php','_self');
 }
 
 function stopUsingWebCursor(){
