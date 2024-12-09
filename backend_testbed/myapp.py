@@ -25,19 +25,15 @@ def write_log(data):
 
 @app.route('/home')
 def main():
-        write_log(request.headers.get('X-Real-IP'))
         return render_template('base.html')
 
 # Print contents of message received on the websocket
 @socketio.on('connect')
-def handle_my_custom_event(json):
+def register_connection(json):
     write_log('received json: ' + str(json) + ' from ' + request.sid + '\n')
 
+
+
 @socketio.on("my_event")
-def checkping():
-    for x in range(5):
-        cmd = 'ping -c 1 8.8.8.8|head -2|tail -1'
-        listing1 = subprocess.run(cmd,stdout=subprocess.PIPE,text=True,shell=True)
-        sid = request.sid
-        emit('server', {"data1":x, "data":listing1.stdout}, room=sid)
-        socketio.sleep(1)
+def handle_custom_event(json):
+    write_log('received json: ' + str(json) + ' from ' + request.sid + '\n')

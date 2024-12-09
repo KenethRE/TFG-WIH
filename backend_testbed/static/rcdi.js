@@ -10,10 +10,6 @@ var REPLACED_ELEMENT=null;
 //var conn = new WebSocket('ws:'+server_url+':5000');
 
 const conn = io(); //socketio connection to server//
-conn.on("connect", () => {
- console.log("connected");
-        document.getElementById("header").innerHTML = "<h3>" + "Websocket Connected" + "</h3";
-});
 
 	function setCursorPosition(x,y){
 		if(x>$(window).width()+$(window).scrollLeft()){
@@ -41,13 +37,14 @@ conn.on("connect", () => {
 		setCursorPosition(newX,newY);
 	}
 
-	conn.on = function(e) {
+	conn.on("connect", () => {
 		console.log("Connection established!");
+		document.getElementById("header").innerHTML = "<h3>" + "Websocket Connected" + "</h3";
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		DEVICE_TYPE='mobile';
 		$('#device_type').val(DEVICE_TYPE).trigger('change');
 	}
-	};
+	});
 
 	conn.onmessage = function(e) {
 		var msg=JSON.parse(e.data)
@@ -187,7 +184,7 @@ function testClick(elem){
 	
 	var hit_list = $("#cursor").collision(elem);
 	hit_list.each(function(){
-		if(elem=="select" || elem=="textarea" || $(this).is( "[type=text]" )){
+		if(elem=="select" || elem=="textarea" || $(this).is( "[type=text]" )) {
 			console.log(elem);
 			REPLACED_ELEMENT=$(this);
 			var html=$(this).wrap('<p/>').parent().html();
@@ -198,7 +195,7 @@ function testClick(elem){
 				html:html,
 				value:$(this).val()
 				};
-			conn.send(JSON.stringify(msg));
+			conn.emit("my_event", msg);
 		}
 		// Open anchors with event
 		// open url winth window.open
