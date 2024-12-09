@@ -29,7 +29,7 @@ def main():
         return render_template('base.html')
 
 # Print contents of message received on the websocket
-@socketio.on('my event')
+@socketio.on('connect')
 def handle_my_custom_event(json):
     write_log('received json: ' + str(json) + ' from ' + request.sid + '\n')
 
