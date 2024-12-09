@@ -1,8 +1,8 @@
 var DEVICE_TYPE='computer';
-//var MY_WS_ID=null;
-//var REGISTERED_MOUSE=null;
-//var WEB_CURSOR_ID=null;
-//var REPLACED_ELEMENT=null;
+var MY_WS_ID=null;
+var REGISTERED_MOUSE=null;
+var WEB_CURSOR_ID=null;
+var REPLACED_ELEMENT=null;
 
 //var server_url="<?php echo $_SERVER['SERVER_ADDR'];?>";
 //var server_url=location.hostname;
