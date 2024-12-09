@@ -72,7 +72,8 @@ const conn = io(); //socketio connection to server//
 								action:'select',
 								val:$(this).val()
 								};
-							conn.emit("my_event", msg);
+							 socket.emit("my_event", function() {
+ });
 						});
 						$("#elementParent").children().change(function(e){ // same as focusout
 							var msg={
@@ -80,7 +81,8 @@ const conn = io(); //socketio connection to server//
 								action:'select',
 								val:$(this).val()
 								};
-							conn.emit("my_event", msg);
+							 socket.emit("my_event", function() {
+ });
 							$("#elementParent").children().remove();
 							$("#elementParent").append(`<span id="elementPlaceHolder"></span>`);
 						});
@@ -91,7 +93,8 @@ const conn = io(); //socketio connection to server//
 								action:'select',
 								val:$(this).val()
 								};
-							conn.emit("my_event", msg);
+							 socket.emit("my_event", function() {
+ });
 							$("#elementParent").children().remove();
 							$("#elementParent").append(`<span id="elementPlaceHolder"></span>`);
 						});
@@ -196,7 +199,8 @@ function testClick(elem){
 				html:html,
 				value:$(this).val()
 				};
-			conn.emit("my_event", msg);
+			 socket.emit("my_event", function() {
+ });
 		}
 		// Open anchors with event
 		// open url winth window.open
@@ -253,7 +257,8 @@ $(document).ready(function() {
 				source:'mouse',
 				action:'click',
 				};
-				conn.emit("my_event", msg);
+				 socket.emit("my_event", function() {
+ });
 			}
 			touchN1=touchN2=false;
 		});
@@ -299,7 +304,8 @@ $(document).ready(function() {
 				cx:c.x,
 				cy:c.y
 			};
-			conn.emit("my_event", msg);
+			 socket.emit("my_event", function() {
+ });
 		});		
 	}
 
@@ -310,7 +316,8 @@ $(document).ready(function() {
 				source:this.value,
 				action:'connected'
 				};
-				conn.emit("my_event", msg);
+				 socket.emit("my_event", function() {
+ });
 	});
 
 }); // end document ready
@@ -322,7 +329,8 @@ function startUsingWebCursor(){
 				action:'useCursor',
 				targetID: REGISTERED_MOUSE
 			};
-	conn.emit("my_event", msg);
+	 socket.emit("my_event", function() {
+ });
 	hideMyModal();
 }
 
@@ -336,7 +344,8 @@ function stopUsingWebCursor(){
 				action:'stopCursor',
 				targetID: WEB_CURSOR_ID
 			};
-	conn.emit("my_event", msg);
+	 socket.emit("my_event", function() {
+ });
 	hideMyModal();
 	WEB_CURSOR_ID=null;
 }
