@@ -33,7 +33,6 @@ def register_connection(json):
     write_log('received json: ' + str(json) + ' from ' + request.sid + '\n')
 
 
-
-@socketio.on("my_event")
+@socketio.on('my_event')
 def handle_custom_event(json):
-    write_log('received json: ' + str(json) + ' from ' + request.sid + '\n')
+    write_log('received json my_event: ' + str(json) + ' from ' + request.sid + '\n')
