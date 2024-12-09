@@ -29,9 +29,9 @@ def main():
         return render_template('base.html')
 
 # Print contents of message received on the websocket
-@socketio.on("message")
-def handle_message(message):
-    print("received message: " + message)
+@socketio.on('my event')
+def handle_my_custom_event(json):
+    write_log('received json: ' + str(json) + ' from ' + request.sid + '\n')
 
 @socketio.on("my_event")
 def checkping():

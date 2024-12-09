@@ -41,7 +41,7 @@ conn.on("connect", () => {
 		setCursorPosition(newX,newY);
 	}
 
-	conn.onopen = function(e) {
+	conn.on = function(e) {
 		console.log("Connection established!");
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		DEVICE_TYPE='mobile';
@@ -51,8 +51,6 @@ conn.on("connect", () => {
 
 	conn.onmessage = function(e) {
 		var msg=JSON.parse(e.data)
-			
-
 			switch(msg.source){
 				case 'computer':
 					if(msg.action=='useCursor' && MY_WS_ID==msg.targetID){
