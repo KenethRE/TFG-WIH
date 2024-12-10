@@ -22,7 +22,7 @@ def socketio(sock):
         data=sock.receive()
         if id is None:
             id=random.randint(1,10000)
-            msg = '{"id":"id", "source":"ws_server", "action": "connected"}'
+            msg = '{"id":"{}", "source":"ws_server", "action": "connected"}'.join(id)
             sock.send(
                 json.dumps(msg)
             )
