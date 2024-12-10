@@ -18,12 +18,19 @@ def write_log(data):
 def socketio(sock):
     global id
     id=None
+    msg = {
+        "id": id,
+        "source": "ws_server",
+        "action": "connection"
+    }
     while True:
         data=sock.receive()
         if id is None:
-            id=random.randint(1,10000)
-            msg = '{{"id":"{0}", "source":"ws_server", "action": "connected"}}'.format(id)
-            sock.send(msg)
+            id=1717
+            msg["id"]=id
+            sock.send(json.dumps(msg))
+            msg.action="connection"
+            sock.send(json.dumps(msg))
         else:
             msg = '{"id": id, "source": "ws_server", "action": "message", "data": "data"}'
             sock.send(

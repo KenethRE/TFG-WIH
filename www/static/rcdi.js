@@ -120,7 +120,6 @@ var conn = new WebSocket('https:'+'/socket.io');
 					}
 					break;
 				case 'ws_server':
-					console.log(msg);
 					if(msg.action=='connected'){
 						MY_WS_ID=msg.id;
 						console.log("Mi id es: "+msg.id);
