@@ -14,23 +14,28 @@ def write_log(data):
     with open('log.txt','a') as f:
         f.write(data+'\n')
 
+class msg():
+    def __init__(self, id, source, action, data):
+        self.id=id
+        self.source=source
+        self.action=action
+        self.data=data
+    
+    def __str__(self):
+        return json.dumps(self.__dict__)
+
 @sock.route('/socket.io')
 def socketio(sock):
     global id
     id=None
-    msg = {
-        "id": id,
-        "source": "ws_server",
-        "action": "connection"
-    }
+
     while True:
         data=sock.receive()
         if id is None:
             id=1717
-            msg["id"]=id
-            sock.send(json.dumps(msg))
-            msg.action="connection"
-            sock.send(json.dumps(msg))
+            sock.send(msg(id, 'ws_server', 'connection', 0))
+            sock.send(msg(id, 'ws_server', 'connected', 0))
+
         else:
             msg = '{"id": id, "source": "ws_server", "action": "message", "data": "data"}'
             sock.send(
