@@ -17,6 +17,7 @@ def write_log(data):
 @sock.route('/socket.io')
 def socketio(sock):
     global id
+    id=None
     while True:
         data=sock.receive()
         if id is None:
