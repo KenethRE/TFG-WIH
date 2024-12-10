@@ -23,6 +23,6 @@ def write_log(data):
         f.write(data+'\n')
 
 @sock.route('/socket.io')
-def socketio(data):
+def socketio(sock):
     data=sock.receive()
     write_log(data)
