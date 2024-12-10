@@ -9,7 +9,7 @@ var REPLACED_ELEMENT=null;
 //var server_url="<?php echo $_SERVER['SERVER_ADDR'];?>";
 var server_url=location.hostname;
 //var server_url="localhost";
-var conn = new WebSocket('https:'+'tfg.zenken.es'+'/socket.io');
+var conn = new WebSocket('https:'+'/socket.io');
 
 
 	function setCursorPosition(x,y){
