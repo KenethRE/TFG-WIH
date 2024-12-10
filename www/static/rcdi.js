@@ -47,6 +47,7 @@ var conn = new WebSocket('https:'+'/socket.io');
 	};
 
 	conn.onmessage = function(e) {
+		console.log(e.data);
 		var msg=JSON.parse(e.data)
 			
 
