@@ -3,20 +3,12 @@ from flask_sock import Sock
 import subprocess
 from werkzeug.middleware.proxy_fix import ProxyFix
 from enum import Enum
+import random, json
 
+id=0
 app = Flask(__name__)
 sock=Sock(app)
 app.wsgi_app = ProxyFix(app.wsgi_app,x_for=1, x_proto=1, x_host=1, x_prefix=1)
-
-class Events(Enum):
-    PING = 1
-    TRACEROUTE = 2
-    DNSLOOKUP = 3
-    WHOIS = 4
-    PORTSCAN = 5
-    NMAP = 6
-    NETCAT = 7
-    NETSTAT = 8
 
 def write_log(data):
     with open('log.txt','a') as f:
@@ -25,7 +17,16 @@ def write_log(data):
 @sock.route('/socket.io')
 def socketio(sock):
     while True:
+        sock
         data=sock.receive()
-        sock.send(data)
-        write_log(data)
-        write_log('\n')
+        if id is 0:
+            id=random.randint(1,10000)
+            msg = {'id':id, 'source': 'ws_server', 'action': 'connected'}
+            sock.send(
+                json.dumps(msg)
+            )
+        else:
+            msg = {'id':id, 'source': 'ws_server', 'action': 'message', 'data': data}
+            sock.send(
+                json.dumps(msg)
+            )
