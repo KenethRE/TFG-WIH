@@ -26,4 +26,5 @@ def write_log(data):
 def socketio(sock):
     while True:
         data=sock.receive()
-        sock.send(data)
+        write_log(data)
+        write_log('\n')
