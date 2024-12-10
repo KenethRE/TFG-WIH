@@ -24,5 +24,6 @@ def write_log(data):
 
 @sock.route('/socket.io')
 def socketio(sock):
-    data=sock.receive()
-    print(data)
+    while True:
+        data=sock.receive()
+        print(data)
