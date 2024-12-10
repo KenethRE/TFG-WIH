@@ -25,4 +25,4 @@ def write_log(data):
 @sock.route('/socket.io')
 def socketio(sock):
     data=sock.receive()
-    write_log(data)
+    print(data)

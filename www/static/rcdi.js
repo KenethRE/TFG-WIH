@@ -53,7 +53,7 @@ var conn = new WebSocket('https:'+'/socket.io');
 			switch(msg.source){
 				case 'computer':
 					if(msg.action=='useCursor' && MY_WS_ID==msg.targetID){
-						window.open('/php/mouse.php','_self');
+						window.open('/php/mouse.html','_self');
 					}
 					if(msg.action=='stopCursor' && MY_WS_ID==msg.targetID){
 						window.open('/','_self');
@@ -328,7 +328,7 @@ function startUsingWebCursor(){
 }
 
 function startUsingThisWebCursor(){
-	window.open('/php/mouse.php','_self');
+	window.open('/php/mouse.html','_self');
 }
 
 function stopUsingWebCursor(){
