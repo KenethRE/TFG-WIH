@@ -17,7 +17,6 @@ def write_log(data):
 @sock.route('/socket.io')
 def socketio(sock):
     while True:
-        sock
         data=sock.receive()
         if id is 0:
             id=random.randint(1,10000)
