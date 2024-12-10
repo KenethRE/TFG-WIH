@@ -2,14 +2,15 @@ var DEVICE_TYPE='computer';
 var MY_WS_ID=null;
 var REGISTERED_MOUSE=null;
 var WEB_CURSOR_ID=null;
+
 var REPLACED_ELEMENT=null;
 
-//var server_url="<?php echo $_SERVER['SERVER_ADDR'];?>";
-//var server_url=location.hostname;
-//var server_url="localhost";
-//var conn = new WebSocket('ws:'+server_url+':5000');
 
-const conn = io(); //socketio connection to server//
+//var server_url="<?php echo $_SERVER['SERVER_ADDR'];?>";
+var server_url=location.hostname;
+//var server_url="localhost";
+var conn = new WebSocket('https:'+server_url+'/socket.io');
+
 
 	function setCursorPosition(x,y){
 		if(x>$(window).width()+$(window).scrollLeft()){
@@ -37,22 +38,22 @@ const conn = io(); //socketio connection to server//
 		setCursorPosition(newX,newY);
 	}
 
-	conn.on("connect", () => {
+	conn.onopen = function(e) {
 		console.log("Connection established!");
-		document.getElementById("header").innerHTML = "<h3>" + "Websocket Connected" + "</h3";
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		DEVICE_TYPE='mobile';
 		$('#device_type').val(DEVICE_TYPE).trigger('change');
-		console.log(DEVICE_TYPE);
 	}
-	});
+	};
 
 	conn.onmessage = function(e) {
 		var msg=JSON.parse(e.data)
+			
+
 			switch(msg.source){
 				case 'computer':
 					if(msg.action=='useCursor' && MY_WS_ID==msg.targetID){
-						window.open('/php/mouse.html','_self');
+						window.open('/php/mouse.php','_self');
 					}
 					if(msg.action=='stopCursor' && MY_WS_ID==msg.targetID){
 						window.open('/','_self');
@@ -72,8 +73,7 @@ const conn = io(); //socketio connection to server//
 								action:'select',
 								val:$(this).val()
 								};
-							 socket.emit("my_event", function() {
- });
+							conn.send(JSON.stringify(msg));
 						});
 						$("#elementParent").children().change(function(e){ // same as focusout
 							var msg={
@@ -81,8 +81,7 @@ const conn = io(); //socketio connection to server//
 								action:'select',
 								val:$(this).val()
 								};
-							 socket.emit("my_event", function() {
- });
+							conn.send(JSON.stringify(msg));
 							$("#elementParent").children().remove();
 							$("#elementParent").append(`<span id="elementPlaceHolder"></span>`);
 						});
@@ -93,8 +92,7 @@ const conn = io(); //socketio connection to server//
 								action:'select',
 								val:$(this).val()
 								};
-							 socket.emit("my_event", function() {
- });
+							conn.send(JSON.stringify(msg));
 							$("#elementParent").children().remove();
 							$("#elementParent").append(`<span id="elementPlaceHolder"></span>`);
 						});
@@ -188,7 +186,7 @@ function testClick(elem){
 	
 	var hit_list = $("#cursor").collision(elem);
 	hit_list.each(function(){
-		if(elem=="select" || elem=="textarea" || $(this).is( "[type=text]" )) {
+		if(elem=="select" || elem=="textarea" || $(this).is( "[type=text]" )){
 			console.log(elem);
 			REPLACED_ELEMENT=$(this);
 			var html=$(this).wrap('<p/>').parent().html();
@@ -199,8 +197,7 @@ function testClick(elem){
 				html:html,
 				value:$(this).val()
 				};
-			 socket.emit("my_event", function() {
- });
+			conn.send(JSON.stringify(msg));
 		}
 		// Open anchors with event
 		// open url winth window.open
@@ -257,8 +254,7 @@ $(document).ready(function() {
 				source:'mouse',
 				action:'click',
 				};
-				 socket.emit("my_event", function() {
- });
+				conn.send(JSON.stringify(msg));
 			}
 			touchN1=touchN2=false;
 		});
@@ -304,8 +300,7 @@ $(document).ready(function() {
 				cx:c.x,
 				cy:c.y
 			};
-			 socket.emit("my_event", function() {
- });
+			conn.send(JSON.stringify(msg));
 		});		
 	}
 
@@ -316,8 +311,7 @@ $(document).ready(function() {
 				source:this.value,
 				action:'connected'
 				};
-				 socket.emit("my_event", function() {
- });
+				conn.send(JSON.stringify(msg));
 	});
 
 }); // end document ready
@@ -329,13 +323,12 @@ function startUsingWebCursor(){
 				action:'useCursor',
 				targetID: REGISTERED_MOUSE
 			};
-	 socket.emit("my_event", function() {
- });
+	conn.send(JSON.stringify(msg));
 	hideMyModal();
 }
 
 function startUsingThisWebCursor(){
-	window.open('/php/mouse.html','_self');
+	window.open('/php/mouse.php','_self');
 }
 
 function stopUsingWebCursor(){
@@ -344,8 +337,7 @@ function stopUsingWebCursor(){
 				action:'stopCursor',
 				targetID: WEB_CURSOR_ID
 			};
-	 socket.emit("my_event", function() {
- });
+	conn.send(JSON.stringify(msg));
 	hideMyModal();
 	WEB_CURSOR_ID=null;
 }
