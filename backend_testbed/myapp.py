@@ -35,9 +35,5 @@ def socketio(sock):
             id=1717
             sock.send(str(Msg(id, 'ws_server', 'connection', 0)))
             sock.send(str(Msg(id, 'ws_server', 'connected', 0)))
-
         else:
-            msg = '{"id": id, "source": "ws_server", "action": "message", "data": "data"}'
-            sock.send(
-                json.dumps(msg)
-            )
+            sock.send(data)
