@@ -5,7 +5,7 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 from enum import Enum
 import random, json
 
-global id
+
 app = Flask(__name__)
 sock=Sock(app)
 app.wsgi_app = ProxyFix(app.wsgi_app,x_for=1, x_proto=1, x_host=1, x_prefix=1)
@@ -16,6 +16,7 @@ def write_log(data):
 
 @sock.route('/socket.io')
 def socketio(sock):
+    global id
     while True:
         data=sock.receive()
         if id is None:
