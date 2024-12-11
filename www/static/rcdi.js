@@ -9,11 +9,11 @@ var REPLACED_ELEMENT=null;
 //var server_url="<?php echo $_SERVER['SERVER_ADDR'];?>";
 var server_url=location.hostname;
 //var server_url="localhost";
-//var conn = new WebSocket('https:'+'/socket.io');
+//var socket = new WebSocket('https:'+'/socket.io');
 
 const socket = io();
-socket.on('connect', () => {
-	console.log("Connection established!");
+socket.on('socketect', () => {
+	console.log("socketection established!");
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	DEVICE_TYPE='mobile';
 	$('#device_type').val(DEVICE_TYPE).trigger('change');
@@ -50,7 +50,7 @@ socket.on('connect', () => {
 		setCursorPosition(newX,newY);
 	}
 
-	conn.onmessage = function(e) {
+	socket.onmessage = function(e) {
 		console.log(e.data);
 		var msg=JSON.parse(e.data)
 			switch(msg.source){
@@ -76,7 +76,7 @@ socket.on('connect', () => {
 								action:'select',
 								val:$(this).val()
 								};
-							conn.send(JSON.stringify(msg));
+							socket.send(JSON.stringify(msg));
 						});
 						$("#elementParent").children().change(function(e){ // same as focusout
 							var msg={
@@ -84,7 +84,7 @@ socket.on('connect', () => {
 								action:'select',
 								val:$(this).val()
 								};
-							conn.send(JSON.stringify(msg));
+							socket.send(JSON.stringify(msg));
 							$("#elementParent").children().remove();
 							$("#elementParent").append(`<span id="elementPlaceHolder"></span>`);
 						});
@@ -95,7 +95,7 @@ socket.on('connect', () => {
 								action:'select',
 								val:$(this).val()
 								};
-							conn.send(JSON.stringify(msg));
+							socket.send(JSON.stringify(msg));
 							$("#elementParent").children().remove();
 							$("#elementParent").append(`<span id="elementPlaceHolder"></span>`);
 						});
@@ -122,11 +122,11 @@ socket.on('connect', () => {
 					}
 					break;
 				case 'ws_server':
-					if(msg.action=='connected'){
+					if(msg.action=='socketected'){
 						MY_WS_ID=msg.id;
 						console.log("Mi id es: "+msg.id);
 					}
-					if(msg.action=='connection'){
+					if(msg.action=='socketection'){
 						register_mouse(msg.id);
 					}
 					if(msg.action=='close'){
@@ -160,7 +160,7 @@ function add_cursor(id){
 	        <div id="cursor" class="cursor"></div>
 	`);
 
-	console.log("Mouse "+id+" connected");
+	console.log("Mouse "+id+" socketected");
 	WEB_CURSOR_ID=id;
 	$('body').css('cursor', 'none');
 	restoreCursorPosition();
@@ -168,7 +168,7 @@ function add_cursor(id){
 }
 
 function remove_cursor(id){
-	console.log("Mouse "+id+" disconnected");
+	console.log("Mouse "+id+" dissocketected");
 	$("#cursor").remove();
 	$('body').css('cursor', 'default');
 
@@ -201,7 +201,7 @@ function testClick(elem){
 				html:html,
 				value:$(this).val()
 				};
-			conn.send(JSON.stringify(msg));
+			socket.send(JSON.stringify(msg));
 		}
 		// Open anchors with event
 		// open url winth window.open
@@ -257,7 +257,7 @@ $(document).ready(function() {
 				source:'mouse',
 				action:'click',
 				};
-				conn.send(JSON.stringify(msg));
+				socket.send(JSON.stringify(msg));
 			}
 			touchN1=touchN2=false;
 		});
@@ -303,7 +303,7 @@ $(document).ready(function() {
 				cx:c.x,
 				cy:c.y
 			};
-			conn.send(JSON.stringify(msg));
+			socket.send(JSON.stringify(msg));
 		});		
 	}
 
@@ -312,9 +312,9 @@ $(document).ready(function() {
 		DEVICE_TYPE=this.value;
 			var msg={
 				source:this.value,
-				action:'connected'
+				action:'socketected'
 				};
-				conn.send(JSON.stringify(msg));
+				socket.send(JSON.stringify(msg));
 	});
 
 }); // end document ready
@@ -326,7 +326,7 @@ function startUsingWebCursor(){
 				action:'useCursor',
 				targetID: REGISTERED_MOUSE
 			};
-	conn.send(JSON.stringify(msg));
+	socket.send(JSON.stringify(msg));
 	hideMyModal();
 }
 
@@ -340,7 +340,7 @@ function stopUsingWebCursor(){
 				action:'stopCursor',
 				targetID: WEB_CURSOR_ID
 			};
-	conn.send(JSON.stringify(msg));
+	socket.send(JSON.stringify(msg));
 	hideMyModal();
 	WEB_CURSOR_ID=null;
 }
