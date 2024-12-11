@@ -43,11 +43,12 @@ def connection(data):
 
 @socketio.on('message')
 def message(data):
-    write_log(str(data))
+    
     #if data['source']=='mouse':
     #    write_log(str(data))
     global id
     data['id']=id
+    write_log(str(data))
     emit('message',data)
 
 def socketio(sock):

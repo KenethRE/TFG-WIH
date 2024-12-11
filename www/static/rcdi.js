@@ -202,7 +202,7 @@ function testClick(elem){
 				html:html,
 				value:$(this).val()
 				};
-			socket.send(JSON.stringify(msg));
+			socket.emit('message',msg);
 		}
 		// Open anchors with event
 		// open url winth window.open
@@ -258,7 +258,7 @@ $(document).ready(function() {
 				source:'mouse',
 				action:'click',
 				};
-				socket.send(JSON.stringify(msg));
+				socket.emit('message',msg);
 			}
 			touchN1=touchN2=false;
 		});
@@ -304,7 +304,7 @@ $(document).ready(function() {
 				cx:c.x,
 				cy:c.y
 			};
-			socket.send(JSON.stringify(msg));
+			socket.emit('message',msg);
 		});		
 	}
 
@@ -327,7 +327,7 @@ function startUsingWebCursor(){
 				action:'useCursor',
 				targetID: REGISTERED_MOUSE
 			};
-	socket.send(JSON.stringify(msg));
+	socket.emit('message',msg);
 	hideMyModal();
 }
 
@@ -341,7 +341,7 @@ function stopUsingWebCursor(){
 				action:'stopCursor',
 				targetID: WEB_CURSOR_ID
 			};
-	socket.send(JSON.stringify(msg));
+	socket.emit('message',msg);
 	hideMyModal();
 	WEB_CURSOR_ID=null;
 }
