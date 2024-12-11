@@ -1,4 +1,4 @@
-var DEVICE_TYPE='computer';
+var DEVICE_TYPE=null;
 var MY_WS_ID=null;
 var REGISTERED_MOUSE=null;
 var WEB_CURSOR_ID=null;
@@ -219,6 +219,9 @@ $(document).ready(function() {
 		console.log("Connection established!");
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		DEVICE_TYPE='mobile';
+		$('#device_type').val(DEVICE_TYPE).trigger('change');
+	} else {
+		DEVICE_TYPE='computer';
 		$('#device_type').val(DEVICE_TYPE).trigger('change');
 	}
 	};
