@@ -35,14 +35,13 @@ def connect():
 @socketio.on('connection')
 def connection(data):
     global id
+    global device
     write_log('connection')
     write_log(str(data))
     if data['source']=='computer' and id is not None:
-        global device
         device = 'computer'
         emit('connection',{'id':id})
     elif data['source']=='mobile': 
-        global device
         device = 'mobile'
         id = 1717   
         emit('connected',{'id':id})
