@@ -1,5 +1,5 @@
 from flask import Flask,render_template,request
-from flask_sock import Sock
+from flask_socketio import SocketIO, emit
 import subprocess
 from werkzeug.middleware.proxy_fix import ProxyFix
 from enum import Enum
@@ -7,7 +7,7 @@ import random, json
 
 
 app = Flask(__name__)
-sock=Sock(app)
+socketio = SocketIO(app,debug=True,cors_allowed_origins='*',async_mode='eventlet')
 app.wsgi_app = ProxyFix(app.wsgi_app,x_for=1, x_proto=1, x_host=1, x_prefix=1)
 
 def write_log(data):
@@ -24,7 +24,14 @@ class Msg():
     def __str__(self):
         return json.dumps(self.__dict__)
 
-@sock.route('/socket.io')
+@socketio.on('connect')
+def connect():
+    #generate a global id and store it
+    global id
+    id=random.randint(1000,9999)
+    emit('message',json.dumps(Msg(id,'ws_server','connected','')))
+
+
 def socketio(sock):
     global id
     id=None

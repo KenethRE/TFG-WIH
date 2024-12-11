@@ -9,7 +9,19 @@ var REPLACED_ELEMENT=null;
 //var server_url="<?php echo $_SERVER['SERVER_ADDR'];?>";
 var server_url=location.hostname;
 //var server_url="localhost";
-var conn = new WebSocket('https:'+'/socket.io');
+//var conn = new WebSocket('https:'+'/socket.io');
+
+const socket = io();
+socket.on('connect', () => {
+	console.log("Connection established!");
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	DEVICE_TYPE='mobile';
+	$('#device_type').val(DEVICE_TYPE).trigger('change');
+} else {
+	DEVICE_TYPE='computer';
+	$('#device_type').val(DEVICE_TYPE).trigger('change');
+}
+});
 
 
 	function setCursorPosition(x,y){
@@ -215,17 +227,6 @@ $(document).ready(function() {
 	        	
 	$('#WebMousePlugin').replaceWith('<button  type="button" class="btn btn-info pull-right" onclick="webMouseManagement()">Manage WebMouse Plugin</button>');
 
-
-	conn.onopen = function(e) {
-		console.log("Connection established!");
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		DEVICE_TYPE='mobile';
-		$('#device_type').val(DEVICE_TYPE).trigger('change');
-	} else {
-		DEVICE_TYPE='computer';
-		$('#device_type').val(DEVICE_TYPE).trigger('change');
-	}
-	};
 
 	if(isThisMouse()){
 		$(document).on("click", "a:not(.page-scroll)", function(){
