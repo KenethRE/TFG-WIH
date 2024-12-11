@@ -12,7 +12,7 @@ var server_url=location.hostname;
 //var socket = new WebSocket('https:'+'/socket.io');
 
 const socket = io();
-socket.on('socketect', () => {
+socket.on('connect', () => {
 	console.log("socketection established!");
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	DEVICE_TYPE='mobile';
