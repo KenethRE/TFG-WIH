@@ -39,6 +39,11 @@ def connection(data):
     else:    
         emit('message',{'id':id,'source':'ws_server','action':'connected','data':''})
 
+@socketio.on('message')
+def message(data):
+    if data['source']=='mouse':
+        write_log(str(data))
+    emit('message',data)
 
 def socketio(sock):
     global id
