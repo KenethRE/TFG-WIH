@@ -53,8 +53,8 @@ socket.on('connect', () => {
 
 	socket.on("message", function(e) {
 		console.log(e);
-		var msg=JSON.parse(e)
-			switch(msg.source){
+		//var msg=JSON.parse(e)
+			switch(e.source){
 				case 'computer':
 					if(msg.action=='useCursor' && MY_WS_ID==msg.targetID){
 						window.open('/php/mouse.html','_self');
