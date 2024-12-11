@@ -36,7 +36,7 @@ def socketio(sock):
         else:
             id=1717
             data['id']=str(id)
-            if data['source']=='mobile':
+            if data['source']=='mobile' or data['source']=='computer':
                 data['action']='connection'
                 data['source']='ws_server'
             elif data['source']=='mouse':
