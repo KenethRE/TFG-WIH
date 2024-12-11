@@ -34,6 +34,7 @@ def connect():
 @socketio.on('connection')
 def connection(data):
     global id
+    write_log('connection')
     write_log(str(data))
     if data['source']=='computer' and id is not None:
         emit('connection',{'id':id})
