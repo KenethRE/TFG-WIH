@@ -42,6 +42,7 @@ var conn = new WebSocket('https:'+'/socket.io');
 		console.log("Connection established!");
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		DEVICE_TYPE='mobile';
+		console.log(DEVICE_TYPE);
 		$('#device_type').val(DEVICE_TYPE).trigger('change');
 	}
 	};
