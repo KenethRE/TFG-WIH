@@ -45,7 +45,7 @@ def connection(data):
 def message(data):
     #if data['source']=='mouse':
     #    write_log(str(data))
-    write_log(data)
+    print(data)
     global id
     data['id']=id
     write_log(str(data))
