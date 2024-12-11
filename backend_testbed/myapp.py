@@ -38,6 +38,8 @@ def connection(data):
     write_log('connection')
     write_log(str(data))
     if data['source']=='computer' and id is not None:
+        global device
+        device = 'computer'
         emit('connection',{'id':id})
     elif data['source']=='mobile': 
         global device
@@ -48,7 +50,7 @@ def connection(data):
 @socketio.on('disconnect')
 def disconnect():
     global device
-    write_log('disconnected' + device)
+    write_log('disconnected ' + device)
     if device == 'mobile':
         global id
         id = None
