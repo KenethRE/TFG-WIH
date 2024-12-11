@@ -9,7 +9,6 @@ import random, json
 app = Flask(__name__)
 socketio = SocketIO(app,debug=True,cors_allowed_origins='*',async_mode='eventlet')
 app.wsgi_app = ProxyFix(app.wsgi_app,x_for=1, x_proto=1, x_host=1, x_prefix=1)
-global id
 id = None
 
 def write_log(data):
@@ -34,11 +33,11 @@ def connect():
 
 @socketio.on('connection')
 def connection(data):
+    global id
     write_log(str(data))
     if data['source']=='computer' and id is not None:
         emit('message',{'id':id,'source':'ws_server','action':'connected','data':''})
     else: 
-        global id
         id = 1717   
         emit('message',{'id':id,'source':'ws_server','action':'connected','data':''})
 
