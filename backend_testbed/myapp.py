@@ -30,12 +30,14 @@ def socketio(sock):
     id=None
     while True:
         data=sock.receive()
+        id=1717
         data=json.loads(data)
         if 'id' in data:
+            if id is None:
+                data['id']=id
             write_log(str(data))
             sock.send(json.dumps(data))
         else:
-            id=1717
             data['id']=str(id)
             if data['source']=='mobile':
                 data['action']='connected'
