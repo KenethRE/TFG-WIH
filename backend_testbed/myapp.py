@@ -28,12 +28,12 @@ class Msg():
 def socketio(sock):
     global id
     id=None
-
     while True:
         data=sock.receive()
-        if id is None:
+        data=json.loads(data)
+        if data.id is None:
             id=1717
-            sock.send(str(Msg(id, 'ws_server', 'connection', 0)))
-            sock.send(str(Msg(id, 'ws_server', 'connected', 0)))
+            data.id=id
+            sock.send(data)
         else:
             sock.send(data)
