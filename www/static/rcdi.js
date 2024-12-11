@@ -13,7 +13,7 @@ var server_url=location.hostname;
 
 const socket = io();
 socket.on('connect', () => {
-	console.log("socketection established!");
+	console.log("Connection established!");
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	DEVICE_TYPE='mobile';
 	$('#device_type').val(DEVICE_TYPE).trigger('change');
@@ -50,7 +50,8 @@ socket.on('connect', () => {
 		setCursorPosition(newX,newY);
 	}
 
-	socket.onmessage = function(e) {
+
+	socket.on("message", function(e) {
 		console.log(e.data);
 		var msg=JSON.parse(e.data)
 			switch(msg.source){
@@ -137,7 +138,7 @@ socket.on('connect', () => {
 					break;
 			} 
 
-	};
+	});
 
 
 var touchClick=false;
