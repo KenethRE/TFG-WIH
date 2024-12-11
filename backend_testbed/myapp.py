@@ -34,8 +34,6 @@ def connect():
 @socketio.on('connection')
 def connection(data):
     write_log(str(data))
-    data=json.loads(data)
-    write_log(str(data))
     if data['source']=='mobile':
         emit('message',{'id':id,'source':'ws_server','action':'connection','data':''}, room=id)
     else:    
