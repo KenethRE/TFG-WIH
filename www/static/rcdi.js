@@ -77,7 +77,7 @@ socket.on('connect', () => {
 								action:'select',
 								val:$(this).val()
 								};
-							socket.send(JSON.stringify(msg));
+							socket.emit('message', msg);
 						});
 						$("#elementParent").children().change(function(e){ // same as focusout
 							var msg={
@@ -85,7 +85,7 @@ socket.on('connect', () => {
 								action:'select',
 								val:$(this).val()
 								};
-							socket.send(JSON.stringify(msg));
+							socket.emit('message', msg);
 							$("#elementParent").children().remove();
 							$("#elementParent").append(`<span id="elementPlaceHolder"></span>`);
 						});
@@ -96,7 +96,7 @@ socket.on('connect', () => {
 								action:'select',
 								val:$(this).val()
 								};
-							socket.send(JSON.stringify(msg));
+							socket.emit('message', msg);
 							$("#elementParent").children().remove();
 							$("#elementParent").append(`<span id="elementPlaceHolder"></span>`);
 						});
