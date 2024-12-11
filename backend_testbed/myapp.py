@@ -33,7 +33,7 @@ def socketio(sock):
         data=json.loads(data)
         if data['id'] is None:
             id=1717
-            data['id']=id
+            data['id']=str(id)
             sock.send(data)
         else:
             sock.send(data)
