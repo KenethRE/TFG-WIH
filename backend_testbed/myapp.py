@@ -51,8 +51,6 @@ def disconnect():
     global device
     write_log('disconnected ' + device)
     if device == 'mobile':
-        global id
-        id = None
         emit('close', {'id':id})
 
 @socketio.on('message')
