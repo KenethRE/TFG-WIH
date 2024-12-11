@@ -52,8 +52,8 @@ socket.on('connect', () => {
 
 
 	socket.on("message", function(e) {
-		console.log(e.data);
-		var msg=JSON.parse(e.data)
+		console.log(e);
+		var msg=JSON.parse(e)
 			switch(msg.source){
 				case 'computer':
 					if(msg.action=='useCursor' && MY_WS_ID==msg.targetID){
