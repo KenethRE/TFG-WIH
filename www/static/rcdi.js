@@ -21,6 +21,13 @@ socket.on('connect', () => {
 	DEVICE_TYPE='computer';
 	$('#device_type').val(DEVICE_TYPE).trigger('change');
 }
+	console.log(this.value);
+	DEVICE_TYPE=this.value;
+	var msg={
+	source:this.value,
+	action:'connected'
+	};
+	socket.send(JSON.stringify(msg));
 });
 
 
@@ -307,16 +314,6 @@ $(document).ready(function() {
 			socket.send(JSON.stringify(msg));
 		});		
 	}
-
-	$('#device_type').on('change', function(e){
-		console.log(this.value);
-		DEVICE_TYPE=this.value;
-			var msg={
-				source:this.value,
-				action:'socketected'
-				};
-				socket.send(JSON.stringify(msg));
-	});
 
 }); // end document ready
 
