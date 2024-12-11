@@ -36,10 +36,13 @@ def socketio(sock):
         else:
             id=1717
             data['id']=str(id)
-            if data['source']=='mobile' or data['source']=='computer':
+            if data['source']=='mobile':
                 data['action']='connection'
                 data['source']='ws_server'
             elif data['source']=='mouse':
                 write_log(str(data))
-                sock.send(json.dumps(data))
+            elif data['source']=='computer':
+                write_log(str(data))
+                data['action']='connected'
+                data['source']='ws_server'
             sock.send(json.dumps(data))
