@@ -37,7 +37,7 @@ def connection(data):
     write_log(str(data))
     if data['source']=='computer' and id is not None:
         emit('message',{'id':id,'source':'ws_server','action':'connection','data':''})
-    else: 
+    elif data['source']=='mobile': 
         id = 1717   
         emit('message',{'id':id,'source':'ws_server','action':'connected','data':''})
 
