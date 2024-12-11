@@ -38,15 +38,6 @@ var conn = new WebSocket('https:'+'/socket.io');
 		setCursorPosition(newX,newY);
 	}
 
-	conn.onopen = function(e) {
-		console.log("Connection established!");
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		DEVICE_TYPE='mobile';
-		console.log(DEVICE_TYPE);
-		$('#device_type').val(DEVICE_TYPE).trigger('change');
-	}
-	};
-
 	conn.onmessage = function(e) {
 		console.log(e.data);
 		var msg=JSON.parse(e.data)
@@ -224,7 +215,15 @@ $(document).ready(function() {
 	$('#WebMousePlugin').replaceWith('<button  type="button" class="btn btn-info pull-right" onclick="webMouseManagement()">Manage WebMouse Plugin</button>');
 
 
-
+	conn.onopen = function(e) {
+		console.log("Connection established!");
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		DEVICE_TYPE='mobile';
+		console.log(DEVICE_TYPE);
+		$('#device_type').val(DEVICE_TYPE).trigger('change');
+	}
+	};
+	
 	if(isThisMouse()){
 		$(document).on("click", "a:not(.page-scroll)", function(){
 	    	window.open($(this).attr('href'), '_self');
