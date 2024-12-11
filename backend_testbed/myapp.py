@@ -35,9 +35,9 @@ def connect():
 def connection(data):
     write_log(str(data))
     if data['source']=='mobile':
-        emit('message',{'id':id,'source':'ws_server','action':'connection','data':''}, room=id)
+        emit('message',{'id':id,'source':'ws_server','action':'connection','data':''})
     else:    
-        emit('message',{'id':id,'source':'ws_server','action':'connected','data':''}, room=id)
+        emit('message',{'id':id,'source':'ws_server','action':'connected','data':''})
 
 
 def socketio(sock):
