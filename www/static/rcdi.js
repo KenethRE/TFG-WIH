@@ -91,6 +91,7 @@ var conn = new WebSocket('https:'+'/socket.io');
 
 					break;
 				case 'mouse':
+					console.log(msg);
 					if(!existsMouse()){
 						add_cursor(msg.id);
 					}
