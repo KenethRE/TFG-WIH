@@ -123,11 +123,11 @@ socket.on('connect', () => {
 					}
 					break;
 				case 'ws_server':
-					if(msg.action=='socketected'){
+					if(msg.action=='connected'){
 						MY_WS_ID=msg.id;
 						console.log("Mi id es: "+msg.id);
 					}
-					if(msg.action=='socketection'){
+					if(msg.action=='connection'){
 						register_mouse(msg.id);
 					}
 					if(msg.action=='close'){
