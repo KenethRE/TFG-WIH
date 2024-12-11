@@ -38,7 +38,7 @@ def connection(data):
     global device
     write_log('connection')
     write_log(str(data))
-    if data['source']=='computer' and id is not None:
+    if data['source']=='computer':
         device = 'computer'
         emit('connection',{'id':id})
     elif data['source']=='mobile': 
