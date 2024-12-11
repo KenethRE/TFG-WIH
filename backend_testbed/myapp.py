@@ -36,4 +36,6 @@ def socketio(sock):
         else:
             id=1717
             data['id']=str(id)
+            if data['source']=='mobile':
+                data['action']='connection'
             sock.send(json.dumps(data))
