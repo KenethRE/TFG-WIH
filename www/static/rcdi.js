@@ -161,7 +161,7 @@ function add_cursor(id){
 	        <div id="cursor" class="cursor"></div>
 	`);
 
-	console.log("Mouse "+id+" socketected");
+	console.log("Mouse "+id+" connected");
 	WEB_CURSOR_ID=id;
 	$('body').css('cursor', 'none');
 	restoreCursorPosition();
@@ -169,7 +169,7 @@ function add_cursor(id){
 }
 
 function remove_cursor(id){
-	console.log("Mouse "+id+" dissocketected");
+	console.log("Mouse "+id+" disconnected");
 	$("#cursor").remove();
 	$('body').css('cursor', 'default');
 

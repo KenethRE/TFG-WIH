@@ -43,33 +43,10 @@ def connection(data):
 
 @socketio.on('message')
 def message(data):
-    
     #if data['source']=='mouse':
     #    write_log(str(data))
+    write_log(data)
     global id
     data['id']=id
     write_log(str(data))
     emit('message',data)
-
-def socketio(sock):
-    global id
-    id=None
-    while True:
-        data=sock.receive()
-        id=1717
-        data=json.loads(data)
-        if 'id' in data:
-            data['id']=id
-            write_log(str(data))
-            sock.send(json.dumps(data))
-        else:
-            data['id']=str(id)
-            if data['source']=='mobile':
-                data['action']='connected'
-                data['source']='ws_server'
-            elif data['source']=='mouse':
-                write_log(str(data))
-            elif data['source']=='computer':
-                data['action']='connection'
-                data['source']='ws_server'
-            sock.send(json.dumps(data))
