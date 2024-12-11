@@ -40,5 +40,6 @@ def socketio(sock):
                 data['action']='connection'
                 data['source']='ws_server'
             elif data['source']=='computer':
+                write_log(str(data))
                 sock.send(json.dumps(data))
             sock.send(json.dumps(data))
