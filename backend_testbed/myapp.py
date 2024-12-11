@@ -36,10 +36,10 @@ def connection(data):
     global id
     write_log(str(data))
     if data['source']=='computer' and id is not None:
-        emit('connected',{'id':id})
+        emit('connection',{'id':id})
     elif data['source']=='mobile': 
         id = 1717   
-        emit('connection',{'id':id})
+        emit('connected',{'id':id})
 
 @socketio.on('message')
 def message(data):
