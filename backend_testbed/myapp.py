@@ -41,6 +41,13 @@ def connection(data):
         id = 1717   
         emit('connected',{'id':id})
 
+@socketio.on('disconnect')
+def disconnect():
+    write_log('disconnected')
+    global id
+    id = None
+    emit('close', {'id':id})
+
 @socketio.on('message')
 def message(data):
     #if data['source']=='mouse':
