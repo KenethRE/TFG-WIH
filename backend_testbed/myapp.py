@@ -38,4 +38,5 @@ def socketio(sock):
             data['id']=str(id)
             if data['source']=='mobile':
                 data['action']='connection'
+                data['source']='ws_server'
             sock.send(json.dumps(data))
