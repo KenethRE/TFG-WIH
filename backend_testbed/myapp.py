@@ -25,11 +25,14 @@ class Msg():
         return json.dumps(self.__dict__)
 
 @socketio.on('connect')
-def connect(data):
+def connect():
     #generate a global id and store it
     global id
     #id=random.randint(1000,9999)
     id=1717
+
+@socketio.on('connection')
+def connection(data):
     if data['source']=='mobile':
         emit('message',{'id':id,'source':'ws_server','action':'connection','data':''}, room=id)
     else:    
