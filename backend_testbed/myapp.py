@@ -10,6 +10,7 @@ app = Flask(__name__)
 socketio = SocketIO(app,debug=True,cors_allowed_origins='*',async_mode='eventlet')
 app.wsgi_app = ProxyFix(app.wsgi_app,x_for=1, x_proto=1, x_host=1, x_prefix=1)
 id = None
+device = None
 
 def write_log(data):
     with open('log.txt','a') as f:
@@ -39,15 +40,19 @@ def connection(data):
     if data['source']=='computer' and id is not None:
         emit('connection',{'id':id})
     elif data['source']=='mobile': 
+        global device
+        device = 'mobile'
         id = 1717   
         emit('connected',{'id':id})
 
 @socketio.on('disconnect')
 def disconnect():
-    write_log('disconnected')
-    global id
-    id = None
-    emit('close', {'id':id})
+    global device
+    write_log('disconnected' + device)
+    if device == 'mobile':
+        global id
+        id = None
+        emit('close', {'id':id})
 
 @socketio.on('message')
 def message(data):
