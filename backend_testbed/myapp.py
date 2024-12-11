@@ -43,8 +43,9 @@ def connection(data):
 
 @socketio.on('message')
 def message(data):
-    if data['source']=='mouse':
-        write_log(str(data))
+    write_log(str(data))
+    #if data['source']=='mouse':
+    #    write_log(str(data))
     emit('message',data)
 
 def socketio(sock):
