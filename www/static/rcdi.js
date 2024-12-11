@@ -122,24 +122,25 @@ socket.on('connect', () => {
 						REPLACED_ELEMENT.val(msg.val);
 					}
 					break;
-				case 'ws_server':
-					if(msg.action=='connected'){
-						MY_WS_ID=msg.id;
-						console.log("Mi id es: "+msg.id);
-					}
-					if(msg.action=='connection'){
-						register_mouse(msg.id);
-					}
-					if(msg.action=='close'){
-						console.log("Closed: "+msg.id)
-						unregister_mouse();
-						remove_cursor(msg.id);
-					}
-					break;
 			} 
 
 	});
 
+socket.on('connected', function(msg){
+	MY_WS_ID=msg.id;
+	console.log("Mi id es: "+msg.id);
+});
+
+socket.on('connection', function(msg){
+	console.log("Connected: "+msg.id);
+	register_mouse(msg.id);
+});
+
+socket.on('close', function(msg){
+	console.log("Closed: "+msg.id);
+	unregister_mouse();
+	remove_cursor(msg.id);
+});
 
 var touchClick=false;
 

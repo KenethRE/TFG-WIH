@@ -36,16 +36,15 @@ def connection(data):
     global id
     write_log(str(data))
     if data['source']=='computer' and id is not None:
-        emit('message',{'id':id,'source':'ws_server','action':'connection','data':''})
+        emit('connected',{'id':id})
     elif data['source']=='mobile': 
         id = 1717   
-        emit('message',{'id':id,'source':'ws_server','action':'connected','data':''})
+        emit('connection',{'id':id})
 
 @socketio.on('message')
 def message(data):
     #if data['source']=='mouse':
     #    write_log(str(data))
-    print(data)
     global id
     data['id']=id
     write_log(str(data))
