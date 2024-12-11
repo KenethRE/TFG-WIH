@@ -31,9 +31,9 @@ def socketio(sock):
     while True:
         data=sock.receive()
         data=json.loads(data)
-        if data.id is None:
+        if data['id'] is None:
             id=1717
-            data.id=id
+            data['id']=id
             sock.send(data)
         else:
             sock.send(data)
