@@ -29,9 +29,7 @@ def connect():
     #generate a global id and store it
     global id
     id=random.randint(1000,9999)
-    message = str(Msg(id,'ws_server','connected',''))
-    write_log(message)
-    emit('message',str(Msg(id,'ws_server','connected','')))
+    emit('message',{'id':id,'source':'ws_server','action':'connected','data':''})
 
 
 def socketio(sock):
