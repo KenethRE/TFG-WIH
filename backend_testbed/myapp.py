@@ -39,7 +39,7 @@ def socketio(sock):
             if data['source']=='mobile':
                 data['action']='connection'
                 data['source']='ws_server'
-            elif data['source']=='computer':
+            elif data['source']=='mouse':
                 write_log(str(data))
                 sock.send(json.dumps(data))
             sock.send(json.dumps(data))
