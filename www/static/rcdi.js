@@ -27,7 +27,7 @@ socket.on('connect', () => {
 	source:this.value,
 	action:'connected'
 	};
-	socket.send(JSON.stringify(msg));
+	return msg;
 });
 
 
