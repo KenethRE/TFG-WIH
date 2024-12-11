@@ -417,6 +417,7 @@ function isThisMouse(){
 }
 
 function existsMouse(){
+	console.log($('#cursor').length);
 	return $('#cursor').length;
 }
 
