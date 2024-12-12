@@ -5,7 +5,6 @@ var WEB_CURSOR_ID=null;
 
 var REPLACED_ELEMENT=null;
 
-
 //var server_url="<?php echo $_SERVER['SERVER_ADDR'];?>";
 var server_url=location.hostname;
 //var server_url="localhost";
@@ -23,21 +22,27 @@ function checkDeviceType(){
 
 const socket = io('', {
     query: {
-        source: checkDeviceType() // or 'mobile'
+        source: checkDeviceType(), // or 'mobile'
     }
 });
 
-// socket.on('connect', () => {
-// 	console.log("Connection established!");
-// 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-// 	DEVICE_TYPE='mobile';
-// 	$('#device_type').val(DEVICE_TYPE).trigger('change');
-// } else {
-// 	DEVICE_TYPE='computer';
-// 	$('#device_type').val(DEVICE_TYPE).trigger('change');
-// }
-// });
 
+socket.on('connected', function(msg){
+	MY_WS_ID=msg.id;
+	document.getElementById("header").innerHTML = "<h3>" + DEVICE_TYPE + " Connected with ID"+ MY_WS_ID + "</h3>";
+	console.log("Mi id es: "+msg.id);
+});
+
+socket.on('connection', function(msg){
+	console.log("Connected: "+msg.id);
+	register_mouse(msg.id);
+});
+
+socket.on('close', function(msg){
+	console.log("Closed: "+msg.id);
+	unregister_mouse();
+	remove_cursor(msg.id);
+});
 
 	function setCursorPosition(x,y){
 		if(x>$(window).width()+$(window).scrollLeft()){
@@ -67,7 +72,6 @@ const socket = io('', {
 
 
 	socket.on("message", function(msg) {
-		console.log(msg);
 		//var msg=JSON.parse(e)
 			switch(msg.source){
 				case 'computer':
@@ -140,22 +144,6 @@ const socket = io('', {
 			} 
 
 	});
-
-socket.on('connected', function(msg){
-	MY_WS_ID=msg.id;
-	console.log("Mi id es: "+msg.id);
-});
-
-socket.on('connection', function(msg){
-	console.log("Connected: "+msg.id);
-	register_mouse(msg.id);
-});
-
-socket.on('close', function(msg){
-	console.log("Closed: "+msg.id);
-	unregister_mouse();
-	remove_cursor(msg.id);
-});
 
 var touchClick=false;
 
