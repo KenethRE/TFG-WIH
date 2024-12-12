@@ -26,6 +26,18 @@ const socket = io('', {
     }
 });
 
+const deviceId = 'device1'; // This should be unique for each device
+const room = 'room1'; // This should be unique for each pair of devices
+
+socket.on('connect', () => {
+    console.log('Connected to server');
+    // Send a message to the server to register and join a room
+    socket.emit('register', { deviceId: deviceId, room: room });
+});
+
+socket.on('registered', (msg) => {
+    console.log('Registered:', msg);
+});
 
 socket.on('connected', function(msg){
 	MY_WS_ID=msg.id;
