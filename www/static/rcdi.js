@@ -28,12 +28,10 @@ const socket = io('', {
 
 socket.on('connected', function(msg){
 	MY_WS_ID=msg.id;
-	document.getElementById("header").innerHTML = "<h3>" + DEVICE_TYPE + " Connected with ID"+ MY_WS_ID + "</h3>";
 	console.log("Mi id es: "+msg.id);
 });
 
 socket.on('connection', function(msg){
-	document.getElementById("header").innerHTML = "<h3>" + DEVICE_TYPE + " Connected with ID"+ MY_WS_ID + "</h3>";
 	console.log("Connected: "+msg.id);
 	register_mouse(msg.id);
 });
