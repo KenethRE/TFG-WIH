@@ -33,6 +33,7 @@ socket.on('connected', function(msg){
 });
 
 socket.on('connection', function(msg){
+	document.getElementById("header").innerHTML = "<h3>" + DEVICE_TYPE + " Connected with ID"+ MY_WS_ID + "</h3>";
 	console.log("Connected: "+msg.id);
 	register_mouse(msg.id);
 });
