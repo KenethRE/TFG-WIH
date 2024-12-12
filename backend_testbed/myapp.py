@@ -54,7 +54,7 @@ def disconnect():
 def handle_message(msg):
     room = msg.get('room')
     print('Received message:', msg)
-    emit('message', msg, room=room)
+    emit('message', msg, broadcast=True)
 
 if __name__ == '__main__':
     socketio.run(app, debug=True)
