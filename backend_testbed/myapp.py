@@ -74,4 +74,4 @@ def message(data):
     global id
     data['id']=id
     write_log(str(data))
-    emit('message',data)
+    emit('message',data, broadcast=True)
