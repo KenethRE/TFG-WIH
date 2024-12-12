@@ -9,7 +9,7 @@ app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins='*')
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1)
 id = None
-
+device = None
 def write_log(data):
     with open('log.txt', 'a') as f:
         f.write(data + '\n')
@@ -21,6 +21,7 @@ def index():
 @socketio.on('connect')
 def handle_connect():
     global id
+    global device
     id = random.randint(1000, 9999)
     write_log('connected')
 
@@ -31,8 +32,10 @@ def handle_connect():
     write_log(f'source: {source}')
 
     if source == 'computer':
+        device = 'computer'
         emit('connected', {'id': id})
     elif source == 'mobile':
+        device = 'mobile'
         socketio.emit('connection', {'id': id})
 
 @socketio.on('register')
@@ -54,7 +57,7 @@ def disconnect():
 def handle_message(msg):
     room = msg.get('room')
     print('Received message:', msg)
-    emit('message', msg, broadcast=True)
+    emit('message', msg, room=room)
 
 if __name__ == '__main__':
     socketio.run(app, debug=True)
