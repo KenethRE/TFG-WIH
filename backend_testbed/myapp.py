@@ -54,10 +54,11 @@ def disconnect():
         emit('close', {'id': id})
 
 @socketio.on('message')
-def handle_message(msg):
-    room = msg.get('room')
-    print('Received message:', msg)
-    emit('message', msg, broadcast=True)
+def handle_message(data):
+    global id
+    data['id']=id
+    write_log(str(data))
+    emit('message',data, broadcast=True)
 
 if __name__ == '__main__':
     socketio.run(app, debug=True)
