@@ -11,17 +11,32 @@ var server_url=location.hostname;
 //var server_url="localhost";
 //var socket = new WebSocket('https:'+'/socket.io');
 
-const socket = io();
-socket.on('connect', () => {
-	console.log("Connection established!");
+function checkDeviceType(){
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	DEVICE_TYPE='mobile';
-	$('#device_type').val(DEVICE_TYPE).trigger('change');
+	return 'mobile';
 } else {
 	DEVICE_TYPE='computer';
-	$('#device_type').val(DEVICE_TYPE).trigger('change');
+	return 'computer';
 }
+}
+
+const socket = io('', {
+    query: {
+        source: checkDeviceType() // or 'mobile'
+    }
 });
+
+// socket.on('connect', () => {
+// 	console.log("Connection established!");
+// 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+// 	DEVICE_TYPE='mobile';
+// 	$('#device_type').val(DEVICE_TYPE).trigger('change');
+// } else {
+// 	DEVICE_TYPE='computer';
+// 	$('#device_type').val(DEVICE_TYPE).trigger('change');
+// }
+// });
 
 
 	function setCursorPosition(x,y){
@@ -308,16 +323,6 @@ $(document).ready(function() {
 			socket.emit('message',msg);
 		});		
 	}
-
-	$('#device_type').on('change', function(e){
-		console.log(this.value);
-		DEVICE_TYPE=this.value;
-			var msg = {
-				source: this.value,
-				action:'connected'
-				};
-				socket.emit('connection', msg);
-	});
 
 }); // end document ready
 

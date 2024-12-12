@@ -28,9 +28,23 @@ class Msg():
 
 @socketio.on('connect')
 def connect():
+    global id
+    global device
+    id = 1717
     write_log('connected')
-    #generate a global id and store it
-    #id=random.randint(1000,9999)
+    
+    # Access query parameters
+    source = request.args.get('source')
+    
+    write_log('connection')
+    write_log(f'source: {source}')
+    
+    if source == 'computer':
+        device = 'computer'
+        socketio.emit('connection', {'id': id})
+    elif source == 'mobile':
+        device = 'mobile'
+        socketio.emit('connected', {'id': id})
 
 @socketio.on('connection')
 def connection(data):
