@@ -30,7 +30,7 @@ class Msg():
 def connect():
     global id
     global device
-    id = 1717
+    id = random.randint(1000,9999)
     write_log('connected')
     
     # Access query parameters
