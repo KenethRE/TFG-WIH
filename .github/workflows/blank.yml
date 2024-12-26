@@ -32,7 +32,7 @@ jobs:
           echo The time is ${{ steps.time.outputs.time }}
 
       # Pull changes from the remote repository
-      - name: Pull cahnges from repository
+      - name: Pull changes from repository
         uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
