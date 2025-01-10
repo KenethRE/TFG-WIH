@@ -348,9 +348,16 @@ $(document).ready(function() {
 	console.log("Cookie Result" + x);
 	if (x == "") {
 		console.log("No cookie found, registering with server");
-		socket.emit('register', {source:DEVICE_TYPE});
+		var msg = {
+			source: DEVICE_TYPE
+		};
+		socket.emit('register', msg);
 	} else {
-		socket.emit('register', {userid:x, source:DEVICE_TYPE})
+		msg = {
+			userid: x,
+			source: DEVICE_TYPE
+		};
+		socket.emit('register', msg)
 		document.getElementById('userid').value=x;
 	}
 
