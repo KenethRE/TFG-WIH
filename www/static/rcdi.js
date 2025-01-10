@@ -48,7 +48,7 @@ socket.on('connect', () => {
 }
 });
 
-socket.on("registered", function(msg) {
+socket.on('registered', function(msg) {
 	console.log("Registered User: "+msg.userid);
 	document.getElementById('userid').value=msg.userid;
 	// setCookie expects Cookie Name, Value and Expiration in days

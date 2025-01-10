@@ -36,10 +36,12 @@ def register(data):
     # get current userlist
     userlist = db.select("USERS", ["UserID"])
     # check if user already exists
-    if data['userid'] in userlist:
+    if 'userid' in data:
+        userid = data['userid']
+        if userid in userlist:
         # insert device type
-        db.insert("USERS", {"UserID": userid, "deviceType": data['deviceType'], "timestamp": time.time()})
-        emit('registered', {"userid": userid})
+            db.insert("USERS", {"UserID": userid, "deviceType": data['deviceType'], "timestamp": time.time()})
+            emit('registered', {"userid": userid})
     else:
         # generate a userid
         userid = random.randint(1000,9999)
