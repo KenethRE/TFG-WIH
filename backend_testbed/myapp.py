@@ -1,64 +1,84 @@
-from flask import Flask, render_template, request
-from flask_socketio import SocketIO, join_room, leave_room, emit
+from flask import Flask,render_template,request
+from flask_socketio import SocketIO, emit
 import subprocess
 from werkzeug.middleware.proxy_fix import ProxyFix
 from enum import Enum
-import random, json
+import random, json, time
+from sqlite4 import SQLite4
 
 app = Flask(__name__)
-socketio = SocketIO(app, cors_allowed_origins='*')
-app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1)
+socketio = SocketIO(app,debug=True,cors_allowed_origins='*',async_mode='eventlet')
+app.wsgi_app = ProxyFix(app.wsgi_app,x_for=1, x_proto=1, x_host=1, x_prefix=1)
 id = None
 device = None
+db = SQLite4("app.db")
+# create users table
+db.connect()
+db.create_table("USERS", ["UserID", "deviceType","timestamp"])
+
 def write_log(data):
-    with open('log.txt', 'a') as f:
-        f.write(data + '\n')
+    with open('log.txt','a') as f:
+        f.write(data+'\n')
 
-@app.route('/')
-def index():
-    return 'SocketIO Server'
-
-@socketio.on('connect')
-def handle_connect():
-    global id
-    global device
-    id = random.randint(1000, 9999)
-    write_log('connected')
-
-    # Access query parameters
-    source = request.args.get('source')
-
-    write_log('connection')
-    write_log(f'source: {source}')
-
-    if source == 'computer':
-        device = 'computer'
-        emit('connected', {'id': id})
-    elif source == 'mobile':
-        device = 'mobile'
-        socketio.emit('connection', {'id': id})
+class Msg():
+    def __init__(self, id, source, action, data):
+        self.id=id
+        self.source=source
+        self.action=action
+        self.data=data
+    
+    def __str__(self):
+        return json.dumps(self.__dict__)
 
 @socketio.on('register')
-def handle_register(data):
-    device_id = data.get('deviceId')
-    room = data.get('room')
-    join_room(room)
-    print(f'Device {device_id} joined room {room}')
-    emit('registered', {'deviceId': device_id, 'room': room}, room=room)
+def register(data):
+    write_log('register event')
+    # get current userlist
+    userlist = db.select("USERS", ["UserID"])
+    # check if user already exists
+    if data['userid'] in userlist:
+        # insert device type
+        db.insert("USERS", {"UserID": userid, "deviceType": data['deviceType'], "timestamp": time.time()})
+        emit('registered', {"userid": userid})
+    else:
+        # generate a userid
+        userid = random.randint(1000,9999)
+        # store in sqlite
+        db.insert("USERS", {"UserID" : userid, "deviceType": data['deviceType'], "timestamp": time.time()})
+        emit('registered',{"userid":userid})
+
+@socketio.on('connect')
+def connect():
+    write_log('connected')
+    #generate a global id and store it
+    #id=random.randint(1000,9999)
+
+@socketio.on('connection')
+def connection(data):
+    global id
+    global device
+    write_log('connection')
+    write_log(str(data))
+    if data['source']=='computer':
+        device = 'computer'
+        emit('connection',{'id':id})
+    elif data['source']=='mobile': 
+        device = 'mobile'
+        id = 1717   
+        emit('connected',{'id':id})
 
 @socketio.on('disconnect')
 def disconnect():
     global device
     write_log('disconnected ' + device)
     if device == 'mobile':
-        emit('close', {'id': id})
+        emit('close', {'id':id})
 
 @socketio.on('message')
-def handle_message(data):
+def message(data):
+    #if data['source']=='mouse':
+    #    write_log(str(data))
     global id
     data['id']=id
     write_log(str(data))
-    emit('message',data, broadcast=True)
-
-if __name__ == '__main__':
-    socketio.run(app, debug=True)
+    emit('message',data)

@@ -5,25 +5,55 @@ var WEB_CURSOR_ID=null;
 
 var REPLACED_ELEMENT=null;
 
+
 //var server_url="<?php echo $_SERVER['SERVER_ADDR'];?>";
 var server_url=location.hostname;
 //var server_url="localhost";
 //var socket = new WebSocket('https:'+'/socket.io');
 
-function checkDeviceType(){
-	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-	DEVICE_TYPE='mobile';
-	return 'mobile';
-} else {
-	DEVICE_TYPE='computer';
-	return 'computer';
-}
+
+function getCookiebyName(cname){
+	let name = cname + "=";
+	let ca = document.cookie.split(';');
+	for(let i = 0; i < ca.length; i++) {
+	  let c = ca[i];
+	  while (c.charAt(0) == ' ') {
+		c = c.substring(1);
+	  }
+	  if (c.indexOf(name) == 0) {
+		return c.substring(name.length, c.length);
+	  }
+	}
+	return "";
 }
 
-const socket = io('', {
-    query: {
-        source: checkDeviceType(), // or 'mobile'
-    }
+function setCookiebyName(cname, cvalue, exdays){
+	const d = new Date();
+	d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+	let expires = "expires="+d.toUTCString();
+	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+
+
+const socket = io();
+socket.on('connect', () => {
+	console.log("Connection established!");
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	DEVICE_TYPE='mobile';
+	$('#device_type').val(DEVICE_TYPE).trigger('change');
+} else {
+	DEVICE_TYPE='computer';
+	$('#device_type').val(DEVICE_TYPE).trigger('change');
+}
+});
+
+socket.on("registered", function(msg) {
+	console.log("Registered User: "+msg.userid);
+	document.getElementById('userid').value=msg.userid;
+	// setCookie expects Cookie Name, Value and Expiration in days
+	setCookiebyName("webMousePluginUserID", msg.userid, 2)
+	register_mouse(msg.id);
 });
 
 socket.on('connected', function(msg){
@@ -70,6 +100,7 @@ socket.on('close', function(msg){
 
 
 	socket.on("message", function(msg) {
+		console.log(msg);
 		//var msg=JSON.parse(e)
 			switch(msg.source){
 				case 'computer':
@@ -142,6 +173,7 @@ socket.on('close', function(msg){
 			} 
 
 	});
+
 
 var touchClick=false;
 
@@ -223,6 +255,7 @@ function testClick(elem){
 	});
 
 }
+
 
 $(document).ready(function() {
 
@@ -309,6 +342,24 @@ $(document).ready(function() {
 			socket.emit('message',msg);
 		});		
 	}
+
+	//check if cookie is present
+	let x = getCookiebyName('webMousePluginUserID');
+	if (x == "") {
+		socket.emit('register', {source:DEVICE_TYPE});
+	} else {
+		socket.emit('register', {userid:x, source:DEVICE_TYPE})
+	}
+
+	$('#device_type').on('change', function(e){
+		console.log(this.value);
+		DEVICE_TYPE=this.value;
+			var msg = {
+				source: this.value,
+				action:'connected'
+				};
+				socket.emit('connection', msg);
+	});
 
 }); // end document ready
 
