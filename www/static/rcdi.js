@@ -345,7 +345,7 @@ $(document).ready(function() {
 
 	//check if cookie is present
 	let x = getCookiebyName('webMousePluginUserID');
-	console.log("Cookie Result" = x);
+	console.log("Cookie Result" + x);
 	if (x == "") {
 		socket.emit('register', {source:DEVICE_TYPE});
 	} else {
