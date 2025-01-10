@@ -349,6 +349,7 @@ $(document).ready(function() {
 		socket.emit('register', {source:DEVICE_TYPE});
 	} else {
 		socket.emit('register', {userid:x, source:DEVICE_TYPE})
+		document.getElementById('userid').value=x;
 	}
 
 	$('#device_type').on('change', function(e){
