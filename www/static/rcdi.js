@@ -1,15 +1,46 @@
-var DEVICE_TYPE='computer';
+var DEVICE_TYPE=null;
 var MY_WS_ID=null;
 var REGISTERED_MOUSE=null;
 var WEB_CURSOR_ID=null;
+
 var REPLACED_ELEMENT=null;
 
 //var server_url="<?php echo $_SERVER['SERVER_ADDR'];?>";
-//var server_url=location.hostname;
+var server_url=location.hostname;
 //var server_url="localhost";
-//var conn = new WebSocket('ws:'+server_url+':5000');
+//var socket = new WebSocket('https:'+'/socket.io');
 
-const conn = io(); //socketio connection to server//
+function checkDeviceType(){
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	DEVICE_TYPE='mobile';
+	return 'mobile';
+} else {
+	DEVICE_TYPE='computer';
+	return 'computer';
+}
+}
+
+const socket = io('', {
+    query: {
+        source: checkDeviceType(), // or 'mobile'
+    }
+});
+
+socket.on('connected', function(msg){
+	MY_WS_ID=msg.id;
+	console.log("Mi id es: "+msg.id);
+});
+
+socket.on('connection', function(msg){
+	console.log("Connected: "+msg.id);
+	register_mouse(msg.id);
+});
+
+socket.on('close', function(msg){
+	console.log("Closed: "+msg.id);
+	unregister_mouse();
+	remove_cursor(msg.id);
+});
 
 	function setCursorPosition(x,y){
 		if(x>$(window).width()+$(window).scrollLeft()){
@@ -37,22 +68,13 @@ const conn = io(); //socketio connection to server//
 		setCursorPosition(newX,newY);
 	}
 
-	conn.on("connect", () => {
-		console.log("Connection established!");
-		document.getElementById("header").innerHTML = "<h3>" + "Websocket Connected" + "</h3";
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		DEVICE_TYPE='mobile';
-		$('#device_type').val(DEVICE_TYPE).trigger('change');
-		console.log(DEVICE_TYPE);
-	}
-	});
 
-	conn.onmessage = function(e) {
-		var msg=JSON.parse(e.data)
+	socket.on("message", function(msg) {
+		//var msg=JSON.parse(e)
 			switch(msg.source){
 				case 'computer':
 					if(msg.action=='useCursor' && MY_WS_ID==msg.targetID){
-						window.open('/php/mouse.php','_self');
+						window.open('/php/mouse.html','_self');
 					}
 					if(msg.action=='stopCursor' && MY_WS_ID==msg.targetID){
 						window.open('/','_self');
@@ -72,7 +94,7 @@ const conn = io(); //socketio connection to server//
 								action:'select',
 								val:$(this).val()
 								};
-							conn.send(JSON.stringify(msg));
+							socket.emit('message', msg);
 						});
 						$("#elementParent").children().change(function(e){ // same as focusout
 							var msg={
@@ -80,7 +102,7 @@ const conn = io(); //socketio connection to server//
 								action:'select',
 								val:$(this).val()
 								};
-							conn.send(JSON.stringify(msg));
+							socket.emit('message', msg);
 							$("#elementParent").children().remove();
 							$("#elementParent").append(`<span id="elementPlaceHolder"></span>`);
 						});
@@ -91,7 +113,7 @@ const conn = io(); //socketio connection to server//
 								action:'select',
 								val:$(this).val()
 								};
-							conn.send(JSON.stringify(msg));
+							socket.emit('message', msg);
 							$("#elementParent").children().remove();
 							$("#elementParent").append(`<span id="elementPlaceHolder"></span>`);
 						});
@@ -99,6 +121,7 @@ const conn = io(); //socketio connection to server//
 
 					break;
 				case 'mouse':
+					console.log(msg);
 					if(!existsMouse()){
 						add_cursor(msg.id);
 					}
@@ -116,24 +139,9 @@ const conn = io(); //socketio connection to server//
 						REPLACED_ELEMENT.val(msg.val);
 					}
 					break;
-				case 'ws_server':
-					if(msg.action=='connected'){
-						MY_WS_ID=msg.id;
-						console.log("Mi id es: "+msg.id);
-					}
-					if(msg.action=='connection'){
-						register_mouse(msg.id);
-					}
-					if(msg.action=='close'){
-						console.log("Closed: "+msg.id)
-						unregister_mouse();
-						remove_cursor(msg.id);
-					}
-					break;
 			} 
 
-	};
-
+	});
 
 var touchClick=false;
 
@@ -185,7 +193,7 @@ function testClick(elem){
 	
 	var hit_list = $("#cursor").collision(elem);
 	hit_list.each(function(){
-		if(elem=="select" || elem=="textarea" || $(this).is( "[type=text]" )) {
+		if(elem=="select" || elem=="textarea" || $(this).is( "[type=text]" )){
 			console.log(elem);
 			REPLACED_ELEMENT=$(this);
 			var html=$(this).wrap('<p/>').parent().html();
@@ -196,7 +204,7 @@ function testClick(elem){
 				html:html,
 				value:$(this).val()
 				};
-			conn.emit("my_event", msg);
+			socket.emit('message',msg);
 		}
 		// Open anchors with event
 		// open url winth window.open
@@ -221,7 +229,6 @@ $(document).ready(function() {
 	//$('#WebMousePlugin').replaceWith('<p><a href="#" onclick="webMouseManagement()">Manage WebMouse Plugin</a></p>');
 	        	
 	$('#WebMousePlugin').replaceWith('<button  type="button" class="btn btn-info pull-right" onclick="webMouseManagement()">Manage WebMouse Plugin</button>');
-
 
 
 	if(isThisMouse()){
@@ -253,7 +260,7 @@ $(document).ready(function() {
 				source:'mouse',
 				action:'click',
 				};
-				conn.send(JSON.stringify(msg));
+				socket.emit('message',msg);
 			}
 			touchN1=touchN2=false;
 		});
@@ -299,19 +306,9 @@ $(document).ready(function() {
 				cx:c.x,
 				cy:c.y
 			};
-			conn.send(JSON.stringify(msg));
+			socket.emit('message',msg);
 		});		
 	}
-
-	$('#device_type').on('change', function(e){
-		console.log(this.value);
-		DEVICE_TYPE=this.value;
-			var msg={
-				source:this.value,
-				action:'connected'
-				};
-				conn.send(JSON.stringify(msg));
-	});
 
 }); // end document ready
 
@@ -322,12 +319,12 @@ function startUsingWebCursor(){
 				action:'useCursor',
 				targetID: REGISTERED_MOUSE
 			};
-	conn.send(JSON.stringify(msg));
+	socket.emit('message',msg);
 	hideMyModal();
 }
 
 function startUsingThisWebCursor(){
-	window.open('/php/mouse.php','_self');
+	window.open('/php/mouse.html','_self');
 }
 
 function stopUsingWebCursor(){
@@ -336,7 +333,7 @@ function stopUsingWebCursor(){
 				action:'stopCursor',
 				targetID: WEB_CURSOR_ID
 			};
-	conn.send(JSON.stringify(msg));
+	socket.emit('message',msg);
 	hideMyModal();
 	WEB_CURSOR_ID=null;
 }
@@ -418,6 +415,7 @@ function isThisMouse(){
 }
 
 function existsMouse(){
+	console.log($('#cursor').length);
 	return $('#cursor').length;
 }
 

@@ -1,39 +1,64 @@
-from flask import Flask,render_template,request
-from flask_socketio import SocketIO, emit
+from flask import Flask, render_template, request
+from flask_socketio import SocketIO, join_room, leave_room, emit
 import subprocess
 from werkzeug.middleware.proxy_fix import ProxyFix
 from enum import Enum
+import random, json
 
 app = Flask(__name__)
-app.wsgi_app = ProxyFix(app.wsgi_app,x_for=1, x_proto=1, x_host=1, x_prefix=1)
-socketio = SocketIO(app,debug=True,cors_allowed_origins='*',async_mode='eventlet')
-
-class Events(Enum):
-    PING = 1
-    TRACEROUTE = 2
-    DNSLOOKUP = 3
-    WHOIS = 4
-    PORTSCAN = 5
-    NMAP = 6
-    NETCAT = 7
-    NETSTAT = 8
-
+socketio = SocketIO(app, cors_allowed_origins='*')
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1)
+id = None
+device = None
 def write_log(data):
-    with open('log.txt','a') as f:
-        f.write(data+'\n')
+    with open('log.txt', 'a') as f:
+        f.write(data + '\n')
 
+@app.route('/')
+def index():
+    return 'SocketIO Server'
 
-@app.route('/home')
-def main():
-        return render_template('base.html')
-
-# Print contents of message received on the websocket
 @socketio.on('connect')
-def register_connection(json):
-    write_log('received json: ' + str(json) + ' from ' + request.sid + '\n')
+def handle_connect():
+    global id
+    global device
+    id = random.randint(1000, 9999)
+    write_log('connected')
 
+    # Access query parameters
+    source = request.args.get('source')
 
+    write_log('connection')
+    write_log(f'source: {source}')
 
-@socketio.on("my_event")
-def handle_custom_event(json):
-    write_log('received json: ' + str(json) + ' from ' + request.sid + '\n')
+    if source == 'computer':
+        device = 'computer'
+        emit('connected', {'id': id})
+    elif source == 'mobile':
+        device = 'mobile'
+        socketio.emit('connection', {'id': id})
+
+@socketio.on('register')
+def handle_register(data):
+    device_id = data.get('deviceId')
+    room = data.get('room')
+    join_room(room)
+    print(f'Device {device_id} joined room {room}')
+    emit('registered', {'deviceId': device_id, 'room': room}, room=room)
+
+@socketio.on('disconnect')
+def disconnect():
+    global device
+    write_log('disconnected ' + device)
+    if device == 'mobile':
+        emit('close', {'id': id})
+
+@socketio.on('message')
+def handle_message(data):
+    global id
+    data['id']=id
+    write_log(str(data))
+    emit('message',data, broadcast=True)
+
+if __name__ == '__main__':
+    socketio.run(app, debug=True)
