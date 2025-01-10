@@ -347,6 +347,7 @@ $(document).ready(function() {
 	let x = getCookiebyName('webMousePluginUserID');
 	console.log("Cookie Result" + x);
 	if (x == "") {
+		console.log("No cookie found, registering with server");
 		socket.emit('register', {source:DEVICE_TYPE});
 	} else {
 		socket.emit('register', {userid:x, source:DEVICE_TYPE})
