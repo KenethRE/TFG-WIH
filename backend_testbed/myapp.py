@@ -40,13 +40,13 @@ def register(data):
         userid = data['userid']
         if userid in userlist:
         # insert device type
-            db.insert("USERS", {"UserID": userid, "deviceType": data['deviceType'], "timestamp": time.time()})
+            db.insert("USERS", {"UserID": userid, "deviceType": data['source'], "timestamp": time.time()})
             emit('registered', {"userid": userid})
     else:
         # generate a userid
         userid = random.randint(1000,9999)
         # store in sqlite
-        db.insert("USERS", {"UserID" : userid, "deviceType": data['deviceType'], "timestamp": time.time()})
+        db.insert("USERS", {"UserID" : userid, "deviceType": data['source'], "timestamp": time.time()})
         emit('registered',{"userid":userid})
 
 @socketio.on('connect')
