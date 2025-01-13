@@ -50,7 +50,7 @@ socket.on('connect', () => {
 
 socket.on('registered', function(msg) {
 	console.log("Registered User: "+msg.userid);
-	document.getElementById('userid').innerHTML=msg.userid;
+	document.getElementById("userid").innerText=msg.userid;
 	// setCookie expects Cookie Name, Value and Expiration in days
 	setCookiebyName("webMousePluginUserID", msg.userid, 2)
 	register_mouse(msg.id);
@@ -358,7 +358,7 @@ $(document).ready(function() {
 			source: DEVICE_TYPE
 		};
 		socket.emit('register', msg)
-		document.getElementById('userid').value=x;
+		document.getElementById('userid').innerText=x;
 	}
 
 	$('#device_type').on('change', function(e){
