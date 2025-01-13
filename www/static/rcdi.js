@@ -50,7 +50,7 @@ socket.on('connect', () => {
 
 socket.on('registered', function(msg) {
 	console.log("Registered User: "+msg.userid);
-	document.getElementById('userid').value=msg.userid;
+	document.getElementById('userid').innerHTML=msg.userid;
 	// setCookie expects Cookie Name, Value and Expiration in days
 	setCookiebyName("webMousePluginUserID", msg.userid, 2)
 	register_mouse(msg.id);
