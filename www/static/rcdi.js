@@ -25,7 +25,7 @@ socket.on('connect', () => {
 });
 
 
-function register_user(userid, username) {
+function register_user(username, userid) {
 	var msg = {
 		userid: userid,
 		username: username,
