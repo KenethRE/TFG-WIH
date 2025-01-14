@@ -39,7 +39,18 @@ function register_user(username, userid) {
 	console.log("Joining room with id: "+userid);
 }
 
+function register_mouse(id){
+	console.log("Registered Mouse "+id);
+	REGISTERED_MOUSE=id;
+}
+
+function unregister_mouse(id){
+	REGISTERED_MOUSE=null;
+}
+
+
 socket.on('registered', function(msg){
+	register_mouse(msg.userid);
 	console.log("Succesfully registered in WSS with id: "+msg.userid);
 });
 
@@ -157,14 +168,6 @@ var touchClick=false;
 var touchN1=false;
 var touchN2=false;
 
-function register_mouse(id){
-	console.log("Registered Mouse "+id);
-	REGISTERED_MOUSE=id;
-}
-
-function unregister_mouse(id){
-	REGISTERED_MOUSE=null;
-}
 
 function add_cursor(id){
 	remove_cursor();
@@ -207,7 +210,7 @@ function testClick(elem){
 			REPLACED_ELEMENT=$(this);
 			var html=$(this).wrap('<p/>').parent().html();
 			var msg={
-					id:USER_ID,
+				id:USER_ID,
 				source:'computer',
 				action:'select',
 				html:html,
