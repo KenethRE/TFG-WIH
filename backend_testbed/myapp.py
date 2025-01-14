@@ -61,9 +61,10 @@ def connection(data):
     write_log(str(data))
     if data['source']=='computer':
         device = 'computer'
-        emit('connection',{'id':id})
-    elif data['source']=='mobile': 
-        emit('connected',{'id':id})
+        #emit('connection',{'id':id})
+    elif data['source']=='mobile':
+        None
+        #emit('connected',{'id':id})
 
 @socketio.on('disconnect')
 def disconnect():
@@ -71,6 +72,5 @@ def disconnect():
 
 @socketio.on('message')
 def message(data):
-    data['id']=id
     write_log(str(data))
     emit('message',data)
