@@ -80,7 +80,7 @@ function signOut() {
     // Choose which account to logout from by passing a username.
     const logoutRequest = {
         account: myMSALObj.getAccountByUsername(username),
-        mainWindowRedirectUri: '/signout'
+        mainWindowRedirectUri: '/'
     };
 
     myMSALObj.logoutPopup(logoutRequest);

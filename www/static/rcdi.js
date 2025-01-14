@@ -259,8 +259,6 @@ function testClick(elem){
 $(document).ready(function() {
 
 	//$('#WebMousePlugin').replaceWith('<p><a href="#" onclick="webMouseManagement()">Manage WebMouse Plugin</a></p>');
-	        	
-	$('#WebMousePlugin').replaceWith('<button  type="button" class="btn btn-info pull-right" onclick="webMouseManagement()">Manage WebMouse Plugin</button>');
 
 
 	if(isThisMouse()){
