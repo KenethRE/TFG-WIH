@@ -21,7 +21,6 @@ function selectAccount () {
     } else if (currentAccounts.length === 1) {
         username = currentAccounts[0].username
         welcomeUser(currentAccounts[0].username);
-        updateTable(currentAccounts[0]);
     }
 }
 
