@@ -9,8 +9,6 @@ from sqlite4 import SQLite4
 app = Flask(__name__)
 socketio = SocketIO(app,debug=True,cors_allowed_origins='*',async_mode='eventlet')
 app.wsgi_app = ProxyFix(app.wsgi_app,x_for=1, x_proto=1, x_host=1, x_prefix=1)
-id = None
-device = None
 db = SQLite4("app.db")
 # create users table
 db.connect()
@@ -40,7 +38,7 @@ def register(data):
     #socketList = db.select("USERS", columns=['UserID', 'SocketID'], condition='UserID = {}'.format(userid))
     db.insert("USERS", {"UserID": userid, "SocketID": data['socketid'], "deviceType": data['source'], "timestamp": time.time()})
     join_room(userid, sid=socketid)
-    emit('registered', {"userid": userid})
+    emit('registered', {"userid": userid}, to=userid)
 
 @socketio.on('unregister')
 def unregister(data):
@@ -59,30 +57,20 @@ def connect():
 
 @socketio.on('connection')
 def connection(data):
-    global id
-    global device
     write_log('connection')
     write_log(str(data))
     if data['source']=='computer':
         device = 'computer'
         emit('connection',{'id':id})
     elif data['source']=='mobile': 
-        device = 'mobile'
-        id = 1717   
         emit('connected',{'id':id})
 
 @socketio.on('disconnect')
 def disconnect():
-    global device
-    write_log('disconnected ' + device)
-    if device == 'mobile':
-        emit('close', {'id':id})
+    write_log('disconnected')
 
 @socketio.on('message')
 def message(data):
-    #if data['source']=='mouse':
-    #    write_log(str(data))
-    global id
     data['id']=id
     write_log(str(data))
     emit('message',data)

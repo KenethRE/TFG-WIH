@@ -1,5 +1,6 @@
 var DEVICE_TYPE=null;
 var MY_WS_ID=null;
+var USER_ID=null;
 var REGISTERED_MOUSE=null;
 var WEB_CURSOR_ID=null;
 
@@ -27,6 +28,7 @@ socket.on('connect', () => {
 
 
 function register_user(username, userid) {
+	USER_ID=userid;
 	var msg = {
 		userid: userid,
 		username: username,
@@ -39,16 +41,6 @@ function register_user(username, userid) {
 
 socket.on('registered', function(msg){
 	console.log("Succesfully registered in WSS with id: "+msg.userid);
-});
-
-socket.on('connected', function(msg){
-	MY_WS_ID=msg.id;
-	console.log("Mi id es: "+msg.id);
-});
-
-socket.on('connection', function(msg){
-	console.log("Connected: "+msg.id);
-	register_mouse(msg.id);
 });
 
 socket.on('close', function(msg){
@@ -215,7 +207,7 @@ function testClick(elem){
 			REPLACED_ELEMENT=$(this);
 			var html=$(this).wrap('<p/>').parent().html();
 			var msg={
-					id:MY_WS_ID,
+					id:USER_ID,
 				source:'computer',
 				action:'select',
 				html:html,
@@ -272,7 +264,7 @@ $(document).ready(function() {
 		$(document).on('touchend', function (e) {
 			if(touchClick){
 				var msg={
-					id:MY_WS_ID,
+				id:USER_ID,
 				source:'mouse',
 				action:'click',
 				};
@@ -316,7 +308,7 @@ $(document).ready(function() {
 	        }
 
 			var msg={
-				id:MY_WS_ID,
+				id:USER_ID,
 				source:'mouse',
 				action:action,
 				cx:c.x,
@@ -325,16 +317,6 @@ $(document).ready(function() {
 			socket.emit('message',msg);
 		});		
 	}
-
-	$('#device_type').on('change', function(e){
-		console.log(this.value);
-		DEVICE_TYPE=this.value;
-			var msg = {
-				source: this.value,
-				action:'connected'
-				};
-				socket.emit('connection', msg);
-	});
 
 }); // end document ready
 
