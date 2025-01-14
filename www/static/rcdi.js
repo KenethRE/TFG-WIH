@@ -14,6 +14,7 @@ var server_url=location.hostname;
 
 const socket = io();
 socket.on('connect', () => {
+	MY_WS_ID=socket.id;
 	console.log("Connection established!");
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	DEVICE_TYPE='mobile';
@@ -29,7 +30,7 @@ function register_user(username, userid) {
 	var msg = {
 		userid: userid,
 		username: username,
-		socketid: socket.id,
+		socketid: MY_WS_ID,
 		source: DEVICE_TYPE
 	};
 	socket.emit('register', msg);
