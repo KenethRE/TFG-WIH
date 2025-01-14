@@ -1,5 +1,5 @@
 from flask import Flask,render_template,request
-from flask_socketio import SocketIO, emit
+from flask_socketio import SocketIO, emit, join_room, leave_room
 import subprocess
 from werkzeug.middleware.proxy_fix import ProxyFix
 from enum import Enum
@@ -33,16 +33,23 @@ class Msg():
 @socketio.on('register')
 def register(data):
     write_log('register event')
-    # get current userlist
+    # get current userlist  
     userid = data['userid']
     socketid = data['socketid']
-
     # check if user and socket already exists
-    socketList = db.select("USERS", columns=['UserID', 'SocketID'], condition='UserID = {}'.format(userid))
-    # insert device type
+    #socketList = db.select("USERS", columns=['UserID', 'SocketID'], condition='UserID = {}'.format(userid))
     db.insert("USERS", {"UserID": userid, "SocketID": data['socketid'], "deviceType": data['source'], "timestamp": time.time()})
+    join_room(userid, sid=socketid)
     emit('registered', {"userid": userid})
 
+@socketio.on('unregister')
+def unregister(data):
+    write_log('unregister event')
+    userid = data['userid']
+    socketid = data['socketid']
+    db.delete("USERS", condition='UserID = {}'.format(userid))
+    leave_room(userid, sid=socketid)
+    emit('unregistered', {"userid": userid})
 
 @socketio.on('connect')
 def connect():

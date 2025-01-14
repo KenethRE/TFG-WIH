@@ -25,15 +25,15 @@ socket.on('connect', () => {
 });
 
 
-function register_user(userid) {
+function register_user(userid, username) {
 	var msg = {
 		userid: userid,
+		username: username,
 		socketid: socket.id,
 		source: DEVICE_TYPE
 	};
 	socket.emit('register', msg);
 	console.log("Joining room with id: "+userid);
-	socket.join(userid);
 }
 
 socket.on('registered', function(msg){

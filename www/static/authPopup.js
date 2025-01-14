@@ -22,7 +22,7 @@ function selectAccount () {
         username = currentAccounts[0].username
         homeAccountId = currentAccounts[0].homeAccountId
         welcomeUser(currentAccounts[0].username);
-        register_user(homeAccountId);
+        register_user(username, homeAccountId);
     }
 }
 
@@ -37,7 +37,7 @@ function handleResponse(response) {
         username = response.account.username
         homeAccountId = response.account.homeAccountId
         welcomeUser(username);
-        register_user(homeAccountId);
+        register_user(username, homeAccountId);
     } else {
         selectAccount();
 
