@@ -35,7 +35,6 @@ function handleResponse(response) {
     if (response !== null) {
         username = response.account.username
         welcomeUser(username);
-        updateTable(response.account);
     } else {
         selectAccount();
 
