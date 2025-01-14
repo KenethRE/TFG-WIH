@@ -14,7 +14,7 @@ device = None
 db = SQLite4("app.db")
 # create users table
 db.connect()
-db.create_table("USERS", ["UserID", "deviceType","timestamp"])
+db.create_table("USERS", ["UserID", "SocketID", "deviceType","timestamp"])
 
 def write_log(data):
     with open('log.txt','a') as f:
@@ -34,20 +34,15 @@ class Msg():
 def register(data):
     write_log('register event')
     # get current userlist
-    userlist = db.select("USERS", ["UserID"])
-    # check if user already exists
-    if 'userid' in data:
-        userid = data['userid']
-        if userid in userlist:
-        # insert device type
-            db.insert("USERS", {"UserID": userid, "deviceType": data['source'], "timestamp": time.time()})
-            emit('registered', {"userid": userid})
-    else:
-        # generate a userid
-        userid = random.randint(1000,9999)
-        # store in sqlite
-        db.insert("USERS", {"UserID" : userid, "deviceType": data['source'], "timestamp": time.time()})
-        emit('registered',{"userid":userid})
+    userid = data['userid']
+    socketid = data['socketid']
+
+    # check if user and socket already exists
+    socketList = db.select("USERS", columns=['UserID', 'SocketID'], condition='UserID = {}'.format(userid))
+    # insert device type
+    db.insert("USERS", {"UserID": userid, "SocketID": data['socketid'], "deviceType": data['source'], "timestamp": time.time()})
+    emit('registered', {"userid": userid})
+
 
 @socketio.on('connect')
 def connect():

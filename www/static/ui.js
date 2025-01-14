@@ -13,5 +13,5 @@ function welcomeUser(username) {
     WebMouseManagemenetButton.classList.remove('d-none');
     titleDiv.classList.add('d-none');
     welcomeDiv.classList.remove('d-none');
-    welcomeDiv.innerHTML = `Welcome ${username}!      ${localAccountId}`;
+    welcomeDiv.innerHTML = `Welcome ${username}!`;
 };

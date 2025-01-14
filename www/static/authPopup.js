@@ -20,7 +20,9 @@ function selectAccount () {
         console.warn("Multiple accounts detected.");
     } else if (currentAccounts.length === 1) {
         username = currentAccounts[0].username
+        homeAccountId = currentAccounts[0].homeAccountId
         welcomeUser(currentAccounts[0].username);
+        register_user(homeAccountId);
     }
 }
 
@@ -33,7 +35,9 @@ function handleResponse(response) {
     
     if (response !== null) {
         username = response.account.username
+        homeAccountId = response.account.homeAccountId
         welcomeUser(username);
+        register_user(homeAccountId);
     } else {
         selectAccount();
 

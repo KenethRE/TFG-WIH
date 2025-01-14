@@ -12,30 +12,6 @@ var server_url=location.hostname;
 //var socket = new WebSocket('https:'+'/socket.io');
 
 
-function getCookiebyName(cname){
-	let name = cname + "=";
-	let ca = document.cookie.split(';');
-	for(let i = 0; i < ca.length; i++) {
-	  let c = ca[i];
-	  while (c.charAt(0) == ' ') {
-		c = c.substring(1);
-	  }
-	  if (c.indexOf(name) == 0) {
-		return c.substring(name.length, c.length);
-	  }
-	}
-	return "";
-}
-
-function setCookiebyName(cname, cvalue, exdays){
-	const d = new Date();
-	d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-	let expires = "expires="+d.toUTCString();
-	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-
-
 const socket = io();
 socket.on('connect', () => {
 	console.log("Connection established!");
@@ -48,11 +24,20 @@ socket.on('connect', () => {
 }
 });
 
-socket.on('registered', function(msg) {
-	console.log("Registered User: "+msg.userid);
-	// setCookie expects Cookie Name, Value and Expiration in days
-	setCookiebyName("webMousePluginUserID", msg.userid, 2)
-	register_mouse(msg.id);
+
+function register_user(userid) {
+	var msg = {
+		userid: userid,
+		socketid: socket.id,
+		source: DEVICE_TYPE
+	};
+	socket.emit('register', msg);
+	console.log("Joining room with id: "+userid);
+	socket.join(userid);
+}
+
+socket.on('registered', function(msg){
+	console.log("Succesfully registered in WSS with id: "+msg.userid);
 });
 
 socket.on('connected', function(msg){
@@ -338,23 +323,6 @@ $(document).ready(function() {
 			};
 			socket.emit('message',msg);
 		});		
-	}
-
-	//check if cookie is present
-	let x = getCookiebyName('webMousePluginUserID');
-	console.log("Cookie Result" + x);
-	if (x == "") {
-		console.log("No cookie found, registering with server");
-		var msg = {
-			source: DEVICE_TYPE
-		};
-		socket.emit('register', msg);
-	} else {
-		msg = {
-			userid: x,
-			source: DEVICE_TYPE
-		};
-		socket.emit('register', msg)
 	}
 
 	$('#device_type').on('change', function(e){
