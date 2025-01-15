@@ -29,6 +29,23 @@ function getDeviceType() {
 	}
 }
 
+function sendFile() {
+	var file = document.getElementById('fileUpload').files[0];
+	var reader = new FileReader();
+	reader.onload = function(e) {
+		var data = e.target.result;
+		socket.emit('file', data);
+	};
+	reader.readAsDataURL(file);
+}
+
+socket.on('file', function(data) {
+	var img = document.createElement('img');
+	img.src = data;
+	document.body.appendChild(img);
+});
+
+
 function register_user(username, userid) {
 	USER_ID=userid;
 	var msg = {
@@ -247,6 +264,10 @@ $(document).ready(function() {
 		selectAccount();
 	}
 
+	if (getDeviceType() == 'mobile') {
+		//we want to show the option to take or upload a photo to the computer
+		document.getElementById('fileUpload').classList.remove('d-none');
+	}
 	if(isThisMouse()){
 
 		var devInfo = {
