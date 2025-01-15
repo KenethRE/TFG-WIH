@@ -242,8 +242,6 @@ function testClick(elem){
 
 $(document).ready(function() {
 
-	//$('#WebMousePlugin').replaceWith('<p><a href="#" onclick="webMouseManagement()">Manage WebMouse Plugin</a></p>');
-
 	if (USER_ID == null) {
 		selectAccount();
 	}
@@ -430,6 +428,7 @@ function addMyModal(){
 }
 
 function isThisMouse(){
+	console.log($('.webMousePluginMouse').length);
 	return $('.webMousePluginMouse').length;
 }
 
