@@ -428,7 +428,7 @@ function addMyModal(){
 }
 
 function isThisMouse(){
-	console.log($('.webMousePluginMouse').length);
+	console.log("***** TEST *******" + $('.webMousePluginMouse').length);
 	return $('.webMousePluginMouse').length;
 }
 
