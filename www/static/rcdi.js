@@ -26,6 +26,15 @@ socket.on('connect', () => {
 }
 });
 
+function getDeviceType() {
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		DEVICE_TYPE='mobile';
+		return 'mobile';
+	} else {
+		DEVICE_TYPE='computer';
+		return 'computer';
+	}
+}
 
 function register_user(username, userid) {
 	USER_ID=userid;
@@ -255,7 +264,7 @@ $(document).ready(function() {
 
 		var devInfo = {
 			userid: USER_ID,
-			source: DEVICE_TYPE
+			source: getDeviceType()
 		};
 		socket.emit('startDevice', devInfo);
 
