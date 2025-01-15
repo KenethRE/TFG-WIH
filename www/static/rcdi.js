@@ -43,9 +43,11 @@ function sendFile() {
 }
 
 socket.on('file', function(data) {
-	var img = document.createElement('img');
-	img.src = data.file;
-	document.body.appendChild(img);
+	if (getDeviceType() == 'computer') {
+		var img = document.createElement('img');
+		img.src = data.file;
+		document.body.appendChild(img);
+	}
 });
 
 
