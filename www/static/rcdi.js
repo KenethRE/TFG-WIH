@@ -49,7 +49,7 @@ function unregister_mouse(id){
 }
 
 
-socket.on('registered', function(msg){
+socket.on('registered', function(msg) {
 	console.log("Succesfully registered in WSS with id: "+msg.userid);
 });
 
@@ -110,7 +110,8 @@ socket.on('close', function(msg){
 							var msg={
 								source:'mouse',
 								action:'select',
-								val:$(this).val()
+								val:$(this).val(),
+								userid:USER_ID
 								};
 							socket.emit('message', msg);
 						});
@@ -118,7 +119,8 @@ socket.on('close', function(msg){
 							var msg={
 								source:'mouse',
 								action:'select',
-								val:$(this).val()
+								val:$(this).val(),
+								userid:USER_ID
 								};
 							socket.emit('message', msg);
 							$("#elementParent").children().remove();
@@ -129,7 +131,8 @@ socket.on('close', function(msg){
 							var msg={
 								source:'mouse',
 								action:'select',
-								val:$(this).val()
+								val:$(this).val(),
+								userid:USER_ID
 								};
 							socket.emit('message', msg);
 							$("#elementParent").children().remove();
@@ -213,7 +216,8 @@ function testClick(elem){
 				source:'computer',
 				action:'select',
 				html:html,
-				value:$(this).val()
+				value:$(this).val(),
+				userid:USER_ID
 				};
 			socket.emit('message',msg);
 		}
@@ -240,6 +244,9 @@ $(document).ready(function() {
 
 	//$('#WebMousePlugin').replaceWith('<p><a href="#" onclick="webMouseManagement()">Manage WebMouse Plugin</a></p>');
 
+	if (USER_ID == null) {
+		selectAccount();
+	}
 
 	if(isThisMouse()){
 		$(document).on("click", "a:not(.page-scroll)", function(){
@@ -268,7 +275,7 @@ $(document).ready(function() {
 				var msg={
 				id:USER_ID,
 				source:'mouse',
-				action:'click',
+				action:'click'
 				};
 				socket.emit('message',msg);
 			}
@@ -327,14 +334,14 @@ function startUsingWebCursor(){
 	var msg={
 				source:DEVICE_TYPE,
 				action:'useCursor',
-				targetID: REGISTERED_MOUSE
+				targetID: REGISTERED_MOUSE,
+				userid:USER_ID
 			};
 	socket.emit('message',msg);
 	hideMyModal();
 }
 
-function startUsingThisWebCursor(){
-	register_mouse(MY_WS_ID);
+function startUsingThisWebCursor() {
 	window.open('/php/mouse.html','_self');
 }
 
@@ -342,7 +349,8 @@ function stopUsingWebCursor(){
 	var msg={
 				source:DEVICE_TYPE,
 				action:'stopCursor',
-				targetID: WEB_CURSOR_ID
+				targetID: WEB_CURSOR_ID,
+				userid:USER_ID
 			};
 	socket.emit('message',msg);
 	hideMyModal();

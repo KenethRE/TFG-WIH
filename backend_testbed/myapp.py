@@ -38,9 +38,7 @@ def register(data):
     #socketList = db.select("USERS", columns=['UserID', 'SocketID'], condition='UserID = {}'.format(userid))
     db.insert("USERS", {"UserID": userid, "SocketID": data['socketid'], "deviceType": data['source'], "timestamp": time.time()})
     join_room(userid, sid=socketid)
-    # generate a random mouseid
-    mouseid = random.randint(1000,9999)
-    emit('registered', {"userid": userid, "mouseid": mouseid}, to=userid)
+    emit('registered', {"userid": userid}, to=userid)
 
 @socketio.on('unregister')
 def unregister(data):
@@ -51,11 +49,12 @@ def unregister(data):
     leave_room(userid, sid=socketid)
     emit('unregistered', {"userid": userid})
 
-@socketio.on('connect')
-def connect():
-    write_log('connected')
-    #generate a global id and store it
-    #id=random.randint(1000,9999)
+@socketio.on('startDevice')
+def connect(msg):
+    write_log('connected device of type: '+msg['source'])
+    #generate a random device id
+    deviceid=random.randint(1000,9999)
+    emit('deviceConnected', {'deviceid':deviceid}, to=msg['userid'])
 
 @socketio.on('connection')
 def connection(data):
@@ -75,4 +74,4 @@ def disconnect():
 @socketio.on('message')
 def message(data):
     write_log(str(data))
-    emit('message',data)
+    emit('message',data, to=data['userid'])
