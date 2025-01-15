@@ -48,9 +48,14 @@ function unregister_mouse(id){
 	REGISTERED_MOUSE=null;
 }
 
-
 socket.on('registered', function(msg) {
 	console.log("Succesfully registered in WSS with id: "+msg.userid);
+});
+
+socket.on('deviceConnected', function(msg) {
+	console.log("Device connected: "+msg.deviceid);
+	register_mouse(msg.deviceid);
+
 });
 
 socket.on('close', function(msg){
@@ -247,6 +252,13 @@ $(document).ready(function() {
 	}
 
 	if(isThisMouse()){
+
+		var devInfo = {
+			userid: USER_ID,
+			source: DEVICE_TYPE
+		};
+		socket.emit('startDevice', devInfo);
+
 		$(document).on("click", "a:not(.page-scroll)", function(){
 	    	window.open($(this).attr('href'), '_self');
 		});
