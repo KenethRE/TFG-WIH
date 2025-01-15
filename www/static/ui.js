@@ -8,6 +8,9 @@ const tableBody = document.getElementById('table-body-div');
 const WebMouseManagemenetButton = document.getElementById('WebMousePlugin');
 
 function welcomeUser(username) {
+    if (signInButton === null || signOutButton === null || titleDiv === null || welcomeDiv === null) {
+        return;
+    }
     signInButton.classList.add('d-none');
     signOutButton.classList.remove('d-none');
     WebMouseManagemenetButton.classList.remove('d-none');
