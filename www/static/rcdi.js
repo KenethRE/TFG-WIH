@@ -247,7 +247,6 @@ $(document).ready(function() {
 	}
 
 	if(isThisMouse()){
-		console.log("This is a mouse");
 		$(document).on("click", "a:not(.page-scroll)", function(){
 	    	window.open($(this).attr('href'), '_self');
 		});
@@ -429,7 +428,6 @@ function addMyModal(){
 }
 
 function isThisMouse(){
-	console.log("***** TEST *******" + $('.webMousePluginMouse').length);
 	return $('.webMousePluginMouse').length;
 }
 
