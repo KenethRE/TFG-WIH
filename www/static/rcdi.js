@@ -98,11 +98,11 @@ socket.on('close', function(msg){
 		//var msg=JSON.parse(e)
 			switch(msg.source){
 				case 'computer':
-					console.log("MY_WS_ID: "+MY_WS_ID +" - "+msg.targetID);
-					if(msg.action=='useCursor' && MY_WS_ID==msg.targetID){
+					console.log("MY_WS_ID: "+REGISTERED_MOUSE +" - "+msg.targetID);
+					if(msg.action=='useCursor' && REGISTERED_MOUSE==msg.targetID){
 						window.open('/php/mouse.html','_self');
 					}
-					if(msg.action=='stopCursor' && MY_WS_ID==msg.targetID){
+					if(msg.action=='stopCursor' && REGISTERED_MOUSE==msg.targetID){
 						window.open('/','_self');
 					}
 					if(msg.action=='select'){
