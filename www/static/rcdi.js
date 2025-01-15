@@ -17,13 +17,6 @@ const socket = io();
 socket.on('connect', () => {
 	MY_WS_ID=socket.id;
 	console.log("Connection established! My SocketID is: "+MY_WS_ID);
-	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-	DEVICE_TYPE='mobile';
-	$('#device_type').val(DEVICE_TYPE).trigger('change');
-} else {
-	DEVICE_TYPE='computer';
-	$('#device_type').val(DEVICE_TYPE).trigger('change');
-}
 });
 
 function getDeviceType() {
@@ -42,7 +35,7 @@ function register_user(username, userid) {
 		userid: userid,
 		username: username,
 		socketid: MY_WS_ID,
-		source: DEVICE_TYPE
+		source: getDeviceType()
 	};
 	socket.emit('register', msg);
 	console.log("Joining room with id: "+userid);
@@ -226,7 +219,7 @@ function testClick(elem){
 			REPLACED_ELEMENT=$(this);
 			var html=$(this).wrap('<p/>').parent().html();
 			var msg={
-				id:USER_ID,
+				userid:USER_ID,
 				source:'computer',
 				action:'select',
 				html:html,
@@ -292,7 +285,7 @@ $(document).ready(function() {
 		$(document).on('touchend', function (e) {
 			if(touchClick){
 				var msg={
-				id:USER_ID,
+				userid:USER_ID,
 				source:'mouse',
 				action:'click'
 				};
@@ -336,7 +329,7 @@ $(document).ready(function() {
 	        }
 
 			var msg={
-				id:USER_ID,
+				userid:USER_ID,
 				source:'mouse',
 				action:action,
 				cx:c.x,

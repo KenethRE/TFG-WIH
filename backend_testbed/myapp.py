@@ -56,17 +56,6 @@ def connect(msg):
     deviceid=random.randint(1000,9999)
     emit('deviceConnected', {'deviceid':deviceid}, to=msg['userid'])
 
-@socketio.on('connection')
-def connection(data):
-    write_log('connection')
-    write_log(str(data))
-    if data['source']=='computer':
-        device = 'computer'
-        #emit('connection',{'id':id})
-    elif data['source']=='mobile':
-        None
-        #emit('connected',{'id':id})
-
 @socketio.on('disconnect')
 def disconnect():
     write_log('disconnected')
