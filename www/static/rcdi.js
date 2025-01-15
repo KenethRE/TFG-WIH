@@ -16,7 +16,7 @@ var server_url=location.hostname;
 const socket = io();
 socket.on('connect', () => {
 	MY_WS_ID=socket.id;
-	console.log("Connection established!");
+	console.log("Connection established! My SocketID is: "+MY_WS_ID);
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	DEVICE_TYPE='mobile';
 	$('#device_type').val(DEVICE_TYPE).trigger('change');
