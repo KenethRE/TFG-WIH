@@ -38,7 +38,9 @@ def register(data):
     #socketList = db.select("USERS", columns=['UserID', 'SocketID'], condition='UserID = {}'.format(userid))
     db.insert("USERS", {"UserID": userid, "SocketID": data['socketid'], "deviceType": data['source'], "timestamp": time.time()})
     join_room(userid, sid=socketid)
-    emit('registered', {"userid": userid}, to=userid)
+    # generate a random mouseid
+    mouseid = random.randint(1000,9999)
+    emit('registered', {"userid": userid, "mouseid": mouseid}, to=userid)
 
 @socketio.on('unregister')
 def unregister(data):

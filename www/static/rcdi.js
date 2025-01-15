@@ -50,7 +50,6 @@ function unregister_mouse(id){
 
 
 socket.on('registered', function(msg){
-	register_mouse(msg.userid);
 	console.log("Succesfully registered in WSS with id: "+msg.userid);
 });
 
@@ -335,6 +334,7 @@ function startUsingWebCursor(){
 }
 
 function startUsingThisWebCursor(){
+	register_mouse(MY_WS_ID);
 	window.open('/php/mouse.html','_self');
 }
 
