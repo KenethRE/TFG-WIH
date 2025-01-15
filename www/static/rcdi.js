@@ -51,7 +51,7 @@ socket.on('registered', function(msg) {
 
 socket.on('deviceConnected', function(msg) {
 	console.log("Device connected: "+msg.deviceid);
-	REGISTERED_MOUSE=id;
+	REGISTERED_MOUSE=msg.deviceid;
 });
 
 socket.on('close', function(msg){
