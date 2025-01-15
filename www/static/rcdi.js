@@ -33,8 +33,10 @@ function sendFile() {
 	var file = document.getElementById('filename').files[0];
 	var reader = new FileReader();
 	reader.onload = function(e) {
-		var data = e.target.result;
-		data.userid = USER_ID;
+		var data = { 
+			file: e.target.result,
+			userid: USER_ID
+		}
 		socket.emit('file', data);
 	};
 	reader.readAsDataURL(file);
@@ -42,7 +44,7 @@ function sendFile() {
 
 socket.on('file', function(data) {
 	var img = document.createElement('img');
-	img.src = data;
+	img.src = data.file;
 	document.body.appendChild(img);
 });
 
