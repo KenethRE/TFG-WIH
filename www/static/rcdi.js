@@ -30,7 +30,7 @@ function getDeviceType() {
 }
 
 function sendFile() {
-	var file = document.getElementById('fileUpload').files[0];
+	var file = document.getElementById('filename').files[0];
 	var reader = new FileReader();
 	reader.onload = function(e) {
 		var data = e.target.result;
@@ -268,6 +268,7 @@ $(document).ready(function() {
 	if (getDeviceType() == 'mobile') {
 		//we want to show the option to take or upload a photo to the computer
 		document.getElementById('fileUpload').classList.remove('d-none');
+		document.getElementById('filename').classList.remove('d-none');
 	}
 	if(isThisMouse()){
 
