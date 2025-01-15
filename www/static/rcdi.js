@@ -34,6 +34,7 @@ function sendFile() {
 	var reader = new FileReader();
 	reader.onload = function(e) {
 		var data = e.target.result;
+		data.userid = USER_ID;
 		socket.emit('file', data);
 	};
 	reader.readAsDataURL(file);

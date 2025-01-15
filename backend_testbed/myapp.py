@@ -60,6 +60,11 @@ def connect(msg):
 def disconnect():
     write_log('disconnected')
 
+@socketio.on('file')
+def file(data):
+    write_log('file event')
+    emit('file',data, to=data['userid'])
+
 @socketio.on('message')
 def message(data):
     write_log(str(data))
