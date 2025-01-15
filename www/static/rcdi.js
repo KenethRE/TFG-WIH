@@ -41,11 +41,6 @@ function register_user(username, userid) {
 	console.log("Joining room with id: "+userid);
 }
 
-function register_mouse(id){
-	console.log("Registered Mouse "+id);
-	REGISTERED_MOUSE=id;
-}
-
 function unregister_mouse(id){
 	REGISTERED_MOUSE=null;
 }
@@ -56,8 +51,7 @@ socket.on('registered', function(msg) {
 
 socket.on('deviceConnected', function(msg) {
 	console.log("Device connected: "+msg.deviceid);
-	register_mouse(msg.deviceid);
-
+	REGISTERED_MOUSE=id;
 });
 
 socket.on('close', function(msg){
@@ -98,7 +92,6 @@ socket.on('close', function(msg){
 		//var msg=JSON.parse(e)
 			switch(msg.source){
 				case 'computer':
-					console.log("MY_WS_ID: "+REGISTERED_MOUSE +" - "+msg.targetID);
 					if(msg.action=='useCursor' && REGISTERED_MOUSE==msg.targetID){
 						window.open('/php/mouse.html','_self');
 					}
@@ -260,7 +253,6 @@ $(document).ready(function() {
 			userid: USER_ID,
 			source: getDeviceType()
 		};
-		socket.emit('startDevice', devInfo);
 
 		$(document).on("click", "a:not(.page-scroll)", function(){
 	    	window.open($(this).attr('href'), '_self');
@@ -337,7 +329,8 @@ $(document).ready(function() {
 				cy:c.y
 			};
 			socket.emit('message',msg);
-		});		
+		});
+		socket.emit('startDevice', devInfo);
 	}
 
 }); // end document ready
