@@ -54,7 +54,14 @@ def connect(msg):
     write_log('connected device of type: '+msg['source'])
     #generate a random device id
     deviceid=random.randint(1000,9999)
-    emit('deviceConnected', {'deviceid':deviceid}, to=msg['userid'])
+    msg = json.dumps({
+        'deviceid': deviceid,
+        'device': {
+            'deviceid': deviceid,
+            'deviceType': msg['source']
+        }
+    })
+    emit('deviceConnected', msg, to=msg['userid'])
 
 @socketio.on('disconnect')
 def disconnect():
@@ -69,3 +76,8 @@ def file(data):
 def message(data):
     write_log(str(data))
     emit('message',data, to=data['userid'])
+
+@socketio.on('eventCaptured')
+def eventCaptured(data):
+    write_log('new event was captured')
+    emit('eventCaptured', to=data.userid)
