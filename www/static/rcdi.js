@@ -1,39 +1,79 @@
 var DEVICE_TYPE=null;
 var MY_WS_ID=null;
+var USER_ID=null;
 var REGISTERED_MOUSE=null;
 var WEB_CURSOR_ID=null;
 
 var REPLACED_ELEMENT=null;
+
 
 //var server_url="<?php echo $_SERVER['SERVER_ADDR'];?>";
 var server_url=location.hostname;
 //var server_url="localhost";
 //var socket = new WebSocket('https:'+'/socket.io');
 
-function checkDeviceType(){
+
+const socket = io();
+socket.on('connect', () => {
+	MY_WS_ID=socket.id;
+	console.log("Connection established! My SocketID is: "+MY_WS_ID);
+});
+
+function getDeviceType() {
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-	DEVICE_TYPE='mobile';
-	return 'mobile';
-} else {
-	DEVICE_TYPE='computer';
-	return 'computer';
-}
+		DEVICE_TYPE='mobile';
+		return 'mobile';
+	} else {
+		DEVICE_TYPE='computer';
+		return 'computer';
+	}
 }
 
-const socket = io('', {
-    query: {
-        source: checkDeviceType(), // or 'mobile'
-    }
+function sendFile() {
+	var file = document.getElementById('filename').files[0];
+	var reader = new FileReader();
+	reader.onload = function(e) {
+		var data = { 
+			file: e.target.result,
+			userid: USER_ID
+		}
+		socket.emit('file', data);
+	};
+	reader.readAsDataURL(file);
+}
+
+socket.on('file', function(data) {
+	if (getDeviceType() == 'computer') {
+		var img = document.createElement('img');
+		img.src = data.file;
+		document.body.appendChild(img);
+	}
 });
 
-socket.on('connected', function(msg){
-	MY_WS_ID=msg.id;
-	console.log("Mi id es: "+msg.id);
+
+function register_user(username, userid) {
+	USER_ID=userid;
+	var msg = {
+		userid: userid,
+		username: username,
+		socketid: MY_WS_ID,
+		source: getDeviceType()
+	};
+	socket.emit('register', msg);
+	console.log("Joining room with id: "+userid);
+}
+
+function unregister_mouse(id){
+	REGISTERED_MOUSE=null;
+}
+
+socket.on('registered', function(msg) {
+	console.log("Succesfully registered in WSS with id: "+msg.userid);
 });
 
-socket.on('connection', function(msg){
-	console.log("Connected: "+msg.id);
-	register_mouse(msg.id);
+socket.on('deviceConnected', function(msg) {
+	console.log("Device connected: "+msg.deviceid);
+	REGISTERED_MOUSE=msg.deviceid;
 });
 
 socket.on('close', function(msg){
@@ -70,13 +110,14 @@ socket.on('close', function(msg){
 
 
 	socket.on("message", function(msg) {
+		console.log(msg);
 		//var msg=JSON.parse(e)
 			switch(msg.source){
 				case 'computer':
-					if(msg.action=='useCursor' && MY_WS_ID==msg.targetID){
+					if(msg.action=='useCursor' && REGISTERED_MOUSE==msg.targetID){
 						window.open('/php/mouse.html','_self');
 					}
-					if(msg.action=='stopCursor' && MY_WS_ID==msg.targetID){
+					if(msg.action=='stopCursor' && REGISTERED_MOUSE==msg.targetID){
 						window.open('/','_self');
 					}
 					if(msg.action=='select'){
@@ -92,7 +133,8 @@ socket.on('close', function(msg){
 							var msg={
 								source:'mouse',
 								action:'select',
-								val:$(this).val()
+								val:$(this).val(),
+								userid:USER_ID
 								};
 							socket.emit('message', msg);
 						});
@@ -100,7 +142,8 @@ socket.on('close', function(msg){
 							var msg={
 								source:'mouse',
 								action:'select',
-								val:$(this).val()
+								val:$(this).val(),
+								userid:USER_ID
 								};
 							socket.emit('message', msg);
 							$("#elementParent").children().remove();
@@ -111,7 +154,8 @@ socket.on('close', function(msg){
 							var msg={
 								source:'mouse',
 								action:'select',
-								val:$(this).val()
+								val:$(this).val(),
+								userid:USER_ID
 								};
 							socket.emit('message', msg);
 							$("#elementParent").children().remove();
@@ -143,19 +187,12 @@ socket.on('close', function(msg){
 
 	});
 
+
 var touchClick=false;
 
 var touchN1=false;
 var touchN2=false;
 
-function register_mouse(id){
-	console.log("Registered Mouse "+id);
-	REGISTERED_MOUSE=id;
-}
-
-function unregister_mouse(id){
-	REGISTERED_MOUSE=null;
-}
 
 function add_cursor(id){
 	remove_cursor();
@@ -198,11 +235,12 @@ function testClick(elem){
 			REPLACED_ELEMENT=$(this);
 			var html=$(this).wrap('<p/>').parent().html();
 			var msg={
-					id:MY_WS_ID,
+				userid:USER_ID,
 				source:'computer',
 				action:'select',
 				html:html,
-				value:$(this).val()
+				value:$(this).val(),
+				userid:USER_ID
 				};
 			socket.emit('message',msg);
 		}
@@ -224,14 +262,25 @@ function testClick(elem){
 
 }
 
+
 $(document).ready(function() {
 
-	//$('#WebMousePlugin').replaceWith('<p><a href="#" onclick="webMouseManagement()">Manage WebMouse Plugin</a></p>');
-	        	
-	$('#WebMousePlugin').replaceWith('<button  type="button" class="btn btn-info pull-right" onclick="webMouseManagement()">Manage WebMouse Plugin</button>');
+	if (USER_ID == null) {
+		selectAccount();
+	}
 
-
+	if (getDeviceType() == 'mobile') {
+		//we want to show the option to take or upload a photo to the computer
+		document.getElementById('fileUpload').classList.remove('d-none');
+		document.getElementById('filename').classList.remove('d-none');
+	}
 	if(isThisMouse()){
+
+		var devInfo = {
+			userid: USER_ID,
+			source: getDeviceType()
+		};
+
 		$(document).on("click", "a:not(.page-scroll)", function(){
 	    	window.open($(this).attr('href'), '_self');
 		});
@@ -256,9 +305,9 @@ $(document).ready(function() {
 		$(document).on('touchend', function (e) {
 			if(touchClick){
 				var msg={
-					id:MY_WS_ID,
+				userid:USER_ID,
 				source:'mouse',
-				action:'click',
+				action:'click'
 				};
 				socket.emit('message',msg);
 			}
@@ -300,14 +349,15 @@ $(document).ready(function() {
 	        }
 
 			var msg={
-				id:MY_WS_ID,
+				userid:USER_ID,
 				source:'mouse',
 				action:action,
 				cx:c.x,
 				cy:c.y
 			};
 			socket.emit('message',msg);
-		});		
+		});
+		socket.emit('startDevice', devInfo);
 	}
 
 }); // end document ready
@@ -317,13 +367,14 @@ function startUsingWebCursor(){
 	var msg={
 				source:DEVICE_TYPE,
 				action:'useCursor',
-				targetID: REGISTERED_MOUSE
+				targetID: REGISTERED_MOUSE,
+				userid:USER_ID
 			};
 	socket.emit('message',msg);
 	hideMyModal();
 }
 
-function startUsingThisWebCursor(){
+function startUsingThisWebCursor() {
 	window.open('/php/mouse.html','_self');
 }
 
@@ -331,7 +382,8 @@ function stopUsingWebCursor(){
 	var msg={
 				source:DEVICE_TYPE,
 				action:'stopCursor',
-				targetID: WEB_CURSOR_ID
+				targetID: WEB_CURSOR_ID,
+				userid:USER_ID
 			};
 	socket.emit('message',msg);
 	hideMyModal();
