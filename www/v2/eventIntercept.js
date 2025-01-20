@@ -7,6 +7,8 @@ const socket = io();
 socket.on('connect', () => {
     MY_WS_ID = socket.id;
     console.log('Connected to server with Socket ID ' + MY_WS_ID);
+
+
 });
 
 socket.on('disconnect', () => {
@@ -47,6 +49,8 @@ function registerDevice() {
 
 function register_user(homeAccountId) {
     USER_ID = homeAccountId;
+    signInButton.classList.add('d-none');
+    signOutButton.classList.remove('d-none');
     socket.emit('register', {
         userid: homeAccountId,
         socketid: MY_WS_ID,
@@ -54,29 +58,39 @@ function register_user(homeAccountId) {
     });
 }
 
-function interceptEvent(element, eventType) {
-    const originalHandler = element[`on${eventType}`]; // Save existing handler if any
-
-    element[`on${eventType}`] = function(event) {
-        // Send event data via Socket.IO
-        socket.emit("eventCaptured", {
-            userid: USER_ID,
-            eventType: eventType,
-            target: event.target.tagName,
-            timestamp: event.timeStamp,
-            details: {
-                clientX: event.clientX,
-                clientY: event.clientY
-            }
-        });
-
-        // Execute the original event handler if it exists
-        if (originalHandler) {
-            return originalHandler.call(this, event);
-        }
-    };
+function printText() {
+    console.log('Print Text');
 }
 
-// Example usage: intercept click events on a button
-const button = document.querySelector("#myButton");
-interceptEvent(button, "click");
+// Capture all click events on buttons
+document.addEventListener("click", (event) => {
+    if (event.target.tagName === "BUTTON") {
+        socket.emit("ui_event", {
+            type: "click",
+            element: event.target.innerText || event.target.id,
+            timestamp: Date.now()
+        });
+    }
+});
+
+// Capture all input field changes
+document.addEventListener("input", (event) => {
+    if (event.target.tagName === "INPUT" || event.target.tagName === "TEXTAREA") {
+        socket.emit("ui_event", {
+            type: "input",
+            element: event.target.name || event.target.id,
+            value: event.target.value,
+            timestamp: Date.now()
+        });
+    }
+});
+
+// Capture keypresses
+document.addEventListener("keydown", (event) => {
+    socket.emit("ui_event", {
+        type: "keydown",
+        key: event.key,
+        timestamp: Date.now()
+    });
+});
+

@@ -31,8 +31,18 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href=#>TFG WIH Front Version 2</a>
+        <div class="navbar-collapse justify-content-end">
+         <button type="button" id="signIn" class="btn btn-secondary" onclick="signIn()">Sign-in</button>
+         <button type="button" id="signOut" class="btn btn-success d-none" onclick="signOut()">Sign-out</button>
+         <a href="/">Go to Version 1</a>
+       </div>
+     </nav>
     <button id="registerDevice" class="btn btn-success d-none" onclick="registerDevice()">Register new device</button>
     <pre id="deviceStatus"></pre>
     <button id="myButton" onclick="printText()"> This is a button</button>
+    <h5 id="printText" class="card-header text-center d-none"></h5>
+
 </body>
 </html>
