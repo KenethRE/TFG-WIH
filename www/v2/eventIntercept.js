@@ -87,6 +87,7 @@ document.addEventListener("click", (event) => {
         socket.emit("ui_event", {
             type: "click",
             element: event.target.innerText || event.target.id,
+            userid: USER_ID,
             timestamp: Date.now()
         });
     }
@@ -98,6 +99,7 @@ document.addEventListener("input", (event) => {
         socket.emit("ui_event", {
             type: "input",
             element: event.target.name || event.target.id,
+            userid: USER_ID,
             value: event.target.value,
             timestamp: Date.now()
         });
@@ -108,6 +110,7 @@ document.addEventListener("input", (event) => {
 document.addEventListener("keydown", (event) => {
     socket.emit("ui_event", {
         type: "keydown",
+        userid: USER_ID,
         key: event.key,
         timestamp: Date.now()
     });

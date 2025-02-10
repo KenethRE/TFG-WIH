@@ -63,6 +63,11 @@ def connect(msg):
     })
     emit('deviceConnected', msg, to=msg['userid'])
 
+@socketio.on('ui_event')
+def ui_event(data):
+    write_log('ui_event')
+    emit('ui_event',data, to=data['userid'])
+
 @socketio.on('disconnect')
 def disconnect():
     write_log('disconnected')
