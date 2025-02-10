@@ -22,6 +22,7 @@ function selectAccount () {
         username = currentAccounts[0].username
         homeAccountId = currentAccounts[0].homeAccountId
         register_user(homeAccountId);
+        welcomeUser(username);
     }
 }
 

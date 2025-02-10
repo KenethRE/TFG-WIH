@@ -2,13 +2,15 @@ let MY_WS_ID = null;
 let DEVICE_TYPE = null;
 let USER_ID = null;
 
-const socket = io();
+const socket = null;
+const signInButton = document.getElementById('signIn');
+const signOutButton = document.getElementById('signOut');
+const welcomeDiv = document.getElementById('welcome-div');
+
 
 socket.on('connect', () => {
     MY_WS_ID = socket.id;
     console.log('Connected to server with Socket ID ' + MY_WS_ID);
-
-
 });
 
 socket.on('disconnect', () => {
@@ -40,6 +42,14 @@ function getDeviceType() {
 }
 getDeviceType();
 
+
+// Hide the button on desktop
+if (DEVICE_TYPE === 'desktop') {
+    document.getElementById('myButton').classList.add('d-none');
+} else {
+    document.getElementById('myButton').classList.remove('d-none');
+}
+
 function registerDevice() {
     socket.emit('startDevice', {
         socketid: MY_WS_ID,
@@ -51,6 +61,8 @@ function register_user(homeAccountId) {
     USER_ID = homeAccountId;
     signInButton.classList.add('d-none');
     signOutButton.classList.remove('d-none');
+    //open socket connection until user logs in
+    socket = io();
     socket.emit('register', {
         userid: homeAccountId,
         socketid: MY_WS_ID,
@@ -58,8 +70,15 @@ function register_user(homeAccountId) {
     });
 }
 
+function welcomeUser(username) {
+    welcomeDiv.classList.remove('d-none');
+    welcomeDiv.textContent = 'Welcome ' + username;
+}
+
 function printText() {
     console.log('Print Text');
+    document.getElementById('myText').textContent = 'Hello World';
+    document.getElementById('myText').classList.remove('d-none');
 }
 
 // Capture all click events on buttons
