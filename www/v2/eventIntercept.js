@@ -7,29 +7,30 @@ const signInButton = document.getElementById('signIn');
 const signOutButton = document.getElementById('signOut');
 const welcomeDiv = document.getElementById('welcome-div');
 
+if (socket !== null) {
+    socket.on('connect', () => {
+        MY_WS_ID = socket.id;
+        console.log('Connected to server with Socket ID ' + MY_WS_ID);
+    });
+    socket.on('disconnect', () => {
+        console.log('Disconnected from server');
+    });
+    
+    socket.on('registered', (data) => {
+        console.log('Registered with User ID ' + data.userid);
+        document.getElementById('registerDevice').classList.remove('d-none');
+    });
+    
+    socket.on('deviceConnected', (data) => {
+        console.log('Device Connected: ' + data.device);
+        document.getElementById('deviceStatus').textContent = 'Device Connected: ' + data.device;
+    });
+    
+    socket.on('eventCaptured' , (data) => {
+        console.log('Event Captured: ' + data.eventType);
+    });
+}
 
-socket.on('connect', () => {
-    MY_WS_ID = socket.id;
-    console.log('Connected to server with Socket ID ' + MY_WS_ID);
-});
-
-socket.on('disconnect', () => {
-    console.log('Disconnected from server');
-});
-
-socket.on('registered', (data) => {
-    console.log('Registered with User ID ' + data.userid);
-    document.getElementById('registerDevice').classList.remove('d-none');
-});
-
-socket.on('deviceConnected', (data) => {
-    console.log('Device Connected: ' + data.device);
-    document.getElementById('deviceStatus').textContent = 'Device Connected: ' + data.device;
-});
-
-socket.on('eventCaptured' , (data) => {
-    console.log('Event Captured: ' + data.eventType);
-});
 
 function getDeviceType() {
     if (window.innerWidth < 768) {
