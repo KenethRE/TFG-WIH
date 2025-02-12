@@ -3,9 +3,6 @@ let DEVICE_TYPE = null;
 let USER_ID = null;
 
 const socket = null;
-const signInButton = document.getElementById('signIn');
-const signOutButton = document.getElementById('signOut');
-const welcomeDiv = document.getElementById('welcome-div');
 
 if (socket !== null) {
     socket.on('connect', () => {
@@ -60,8 +57,8 @@ function registerDevice() {
 
 function register_user(homeAccountId) {
     USER_ID = homeAccountId;
-    signInButton.classList.add('d-none');
-    signOutButton.classList.remove('d-none');
+    document.getElementById('signIn').classList.add('d-none');
+    document.getElementById('signOut').classList.remove('d-none');
     //open socket connection until user logs in
     socket = io();
     socket.emit('register', {
@@ -72,8 +69,8 @@ function register_user(homeAccountId) {
 }
 
 function welcomeUser(username) {
-    welcomeDiv.classList.remove('d-none');
-    welcomeDiv.textContent = 'Welcome ' + username;
+    document.getElementById('welcome-div').classList.remove('d-none');
+    document.getElementById('welcome-div').textContent = 'Welcome ' + username;
 }
 
 function printText() {
