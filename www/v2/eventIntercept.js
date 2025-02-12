@@ -2,7 +2,7 @@ let MY_WS_ID = null;
 let DEVICE_TYPE = null;
 let USER_ID = null;
 
-const socket = null;
+let socket = null;
 
 if (socket !== null) {
     socket.on('connect', () => {
