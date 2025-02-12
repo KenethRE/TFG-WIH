@@ -80,7 +80,21 @@ function printText() {
 }
 
 // Capture all click events on buttons
-document.addEventListener("click", (event) => {
+
+let buttons = document.querySelectorAll('button');
+for (let i = 0; i < buttons.length; i++) {
+    console.log(buttons[i].id);
+    buttons[i].addEventListener('click', function() {
+        socket.emit('ui_event', {
+            type: 'click',
+            element: this.innerText || this.id,
+            userid: USER_ID,
+            timestamp: Date.now()
+        });
+    });
+}
+
+/* document.addEventListener("click", (event) => {
     if (event.target.tagName === "BUTTON") {
         socket.emit("ui_event", {
             type: "click",
@@ -89,7 +103,7 @@ document.addEventListener("click", (event) => {
             timestamp: Date.now()
         });
     }
-});
+}); */
 
 // Capture all input field changes
 document.addEventListener("input", (event) => {
