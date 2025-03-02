@@ -28,8 +28,6 @@ function socketSetup() {
     socket.on('eventCaptured' , (data) => {
         console.log('Event Captured: ' + data.eventType);
     });
-
-    return socket;
 }
 
 
@@ -85,50 +83,52 @@ function printText() {
 
 // Capture all click events on buttons
 
-let buttons = document.querySelectorAll('button');
-for (let i = 0; i < buttons.length; i++) {
-    console.log(buttons[i].id);
-    buttons[i].addEventListener('click', function() {
-        socket.emit('ui_event', {
-            type: 'click',
-            element: this.innerText || this.id,
+if (socket !== null) {
+
+    let buttons = document.querySelectorAll('button');
+    for (let i = 0; i < buttons.length; i++) {
+        console.log(buttons[i].id);
+        buttons[i].addEventListener('click', function() {
+            socket.emit('ui_event', {
+                type: 'click',
+                element: this.innerText || this.id,
+                userid: USER_ID,
+                timestamp: Date.now()
+            });
+        });
+    }
+
+    /* document.addEventListener("click", (event) => {
+        if (event.target.tagName === "BUTTON") {
+            socket.emit("ui_event", {
+                type: "click",
+                element: event.target.innerText || event.target.id,
+                userid: USER_ID,
+                timestamp: Date.now()
+            });
+        }
+    }); */
+
+    // Capture all input field changes
+    document.addEventListener("input", (event) => {
+        if (event.target.tagName === "INPUT" || event.target.tagName === "TEXTAREA") {
+            socket.emit("ui_event", {
+                type: "input",
+                element: event.target.name || event.target.id,
+                userid: USER_ID,
+                value: event.target.value,
+                timestamp: Date.now()
+            });
+        }
+    });
+
+    // Capture keypresses
+    document.addEventListener("keydown", (event) => {
+        socket.emit("ui_event", {
+            type: "keydown",
             userid: USER_ID,
+            key: event.key,
             timestamp: Date.now()
         });
     });
 }
-
-/* document.addEventListener("click", (event) => {
-    if (event.target.tagName === "BUTTON") {
-        socket.emit("ui_event", {
-            type: "click",
-            element: event.target.innerText || event.target.id,
-            userid: USER_ID,
-            timestamp: Date.now()
-        });
-    }
-}); */
-
-// Capture all input field changes
-document.addEventListener("input", (event) => {
-    if (event.target.tagName === "INPUT" || event.target.tagName === "TEXTAREA") {
-        socket.emit("ui_event", {
-            type: "input",
-            element: event.target.name || event.target.id,
-            userid: USER_ID,
-            value: event.target.value,
-            timestamp: Date.now()
-        });
-    }
-});
-
-// Capture keypresses
-document.addEventListener("keydown", (event) => {
-    socket.emit("ui_event", {
-        type: "keydown",
-        userid: USER_ID,
-        key: event.key,
-        timestamp: Date.now()
-    });
-});
-
