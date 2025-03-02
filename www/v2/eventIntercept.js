@@ -2,30 +2,35 @@ let MY_WS_ID = null;
 let DEVICE_TYPE = null;
 let USER_ID = null;
 
-let socket = io();
+let socket = null;
 
-socket.on('connect', () => {
-    MY_WS_ID = socket.id;
-    console.log('Connected to server with Socket ID ' + MY_WS_ID);
-});
-socket.on('disconnect', () => {
-    console.log('Disconnected from server');
-});
+function socketSetup() {
+    socket = io();
 
-socket.on('registered', (data) => {
-    console.log('Registered with User ID ' + data.userid);
-    document.getElementById('registerDevice').classList.remove('d-none');
-});
+    socket.on('connect', () => {
+        MY_WS_ID = socket.id;
+        console.log('Connected to server with Socket ID ' + MY_WS_ID);
+    });
+    socket.on('disconnect', () => {
+        console.log('Disconnected from server');
+    });
 
-socket.on('deviceConnected', (data) => {
-    console.log('Device Connected: ' + data.device);
-    document.getElementById('deviceStatus').textContent = 'Device Connected: ' + data.device;
-});
+    socket.on('registered', (data) => {
+        console.log('Registered with User ID ' + data.userid);
+        document.getElementById('registerDevice').classList.remove('d-none');
+    });
 
-socket.on('eventCaptured' , (data) => {
-    console.log('Event Captured: ' + data.eventType);
-});
+    socket.on('deviceConnected', (data) => {
+        console.log('Device Connected: ' + data.device);
+        document.getElementById('deviceStatus').textContent = 'Device Connected: ' + data.device;
+    });
 
+    socket.on('eventCaptured' , (data) => {
+        console.log('Event Captured: ' + data.eventType);
+    });
+
+    return socket;
+}
 
 
 function getDeviceType() {
@@ -59,6 +64,7 @@ function register_user(homeAccountId) {
     document.getElementById('signIn').classList.add('d-none');
     document.getElementById('signOut').classList.remove('d-none');
     //open socket connection until user logs in
+    socketSetup();
     socket.emit('register', {
         userid: homeAccountId,
         socketid: MY_WS_ID,
