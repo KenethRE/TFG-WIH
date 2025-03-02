@@ -54,14 +54,15 @@ def connect(msg):
     write_log('connected device of type: '+msg['source'])
     #generate a random device id
     deviceid=random.randint(1000,9999)
-    msg = json.dumps({
+    userid = msg['userid']
+    msg = {
         'deviceid': deviceid,
         'device': {
             'deviceid': deviceid,
             'deviceType': msg['source']
         }
-    })
-    emit('deviceConnected', msg, to=msg['userid'])
+    }
+    emit('deviceConnected', msg, to=userid)
 
 @socketio.on('ui_event')
 def ui_event(data):

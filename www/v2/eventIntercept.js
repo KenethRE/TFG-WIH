@@ -28,6 +28,11 @@ function socketSetup() {
     socket.on('eventCaptured' , (data) => {
         console.log('Event Captured: ' + data.eventType);
     });
+
+    socket.on('ui_event', (data) => {
+        console.log('UI Event: ' + data.type);
+    }
+    );
 }
 
 
@@ -53,7 +58,8 @@ if (DEVICE_TYPE === 'desktop') {
 function registerDevice() {
     socket.emit('startDevice', {
         socketid: MY_WS_ID,
-        source: DEVICE_TYPE
+        source: DEVICE_TYPE,
+        userid: USER_ID
     });
 }
 
