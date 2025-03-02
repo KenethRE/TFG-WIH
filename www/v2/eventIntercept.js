@@ -21,8 +21,9 @@ function socketSetup() {
     });
 
     socket.on('deviceConnected', (data) => {
-        console.log('Device Connected: ' + data.device);
-        document.getElementById('deviceStatus').textContent = 'Device Connected: ' + data.device;
+        deviceInfo = JSON.stringify(data.device);
+        console.log('Device Connected: ' + deviceInfo);
+        document.getElementById('deviceStatus').textContent = 'Device Connected: ' + deviceInfo;
     });
 
     socket.on('eventCaptured' , (data) => {
@@ -31,8 +32,7 @@ function socketSetup() {
 
     socket.on('ui_event', (data) => {
         console.log('UI Event: ' + data.type);
-    }
-    );
+    });
 }
 
 
