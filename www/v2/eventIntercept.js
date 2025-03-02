@@ -99,7 +99,7 @@ function captureEvents() {
         buttons[i].addEventListener('click', function() {
             socket.emit('ui_event', {
                 type: 'click',
-                element: this.innerText || this.id,
+                element: this.id,
                 userid: USER_ID,
                 timestamp: Date.now()
             });
