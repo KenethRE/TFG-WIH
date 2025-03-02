@@ -2,7 +2,7 @@ let MY_WS_ID = null;
 let DEVICE_TYPE = null;
 let USER_ID = null;
 
-let socket = null;
+let socket;
 
 function socketSetup() {
     socket = io();
@@ -16,7 +16,7 @@ function socketSetup() {
     });
 
     socket.on('registered', (data) => {
-        console.log('Registered device ' + DEVICE_TYPE + 'with User ID ' + data.userid);
+        console.log('Registered device ' + DEVICE_TYPE + ' with User ID ' + data.userid);
         document.getElementById('registerDevice').classList.remove('d-none');
     });
 
