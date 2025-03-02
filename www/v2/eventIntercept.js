@@ -33,9 +33,11 @@ function socketSetup() {
     socket.on('ui_event', (data) => {
         console.log('UI Event: ' + JSON.stringify(data));
         if (data.type === 'click') {
-            document.getElementById(data.element).click();
+            let buttonFunc = document.getElementById(data.element).onclick;
+            if (buttonFunc) {
+                buttonFunc();
+            }
         }
-
     });
 }
 
