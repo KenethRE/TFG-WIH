@@ -16,7 +16,7 @@ function socketSetup() {
     });
 
     socket.on('registered', (data) => {
-        console.log('Registered with User ID ' + data.userid);
+        console.log('Registered device ' + DEVICE_TYPE + 'with User ID ' + data.userid);
         document.getElementById('registerDevice').classList.remove('d-none');
     });
 
@@ -63,6 +63,7 @@ function register_user(homeAccountId) {
     document.getElementById('signOut').classList.remove('d-none');
     //open socket connection until user logs in
     socketSetup();
+    captureEvents();
     socket.emit('register', {
         userid: homeAccountId,
         socketid: MY_WS_ID,
@@ -83,7 +84,7 @@ function printText() {
 
 // Capture all click events on buttons
 
-if (socket !== null) {
+function captureEvents() {
 
     let buttons = document.querySelectorAll('button');
     for (let i = 0; i < buttons.length; i++) {
@@ -97,7 +98,7 @@ if (socket !== null) {
             });
         });
     }
-
+    
     /* document.addEventListener("click", (event) => {
         if (event.target.tagName === "BUTTON") {
             socket.emit("ui_event", {
@@ -108,7 +109,7 @@ if (socket !== null) {
             });
         }
     }); */
-
+    
     // Capture all input field changes
     document.addEventListener("input", (event) => {
         if (event.target.tagName === "INPUT" || event.target.tagName === "TEXTAREA") {
@@ -121,7 +122,7 @@ if (socket !== null) {
             });
         }
     });
-
+    
     // Capture keypresses
     document.addEventListener("keydown", (event) => {
         socket.emit("ui_event", {
