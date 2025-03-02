@@ -31,7 +31,7 @@ function socketSetup() {
     });
 
     socket.on('ui_event', (data) => {
-        console.log('UI Event: ' + JSON.stringify(data.type));
+        console.log('UI Event: ' + JSON.stringify(data));
 
     });
 }
