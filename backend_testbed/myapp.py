@@ -66,7 +66,7 @@ def connect(msg):
 
 @socketio.on('ui_event')
 def ui_event(data):
-    write_log('ui_event')
+    write_log('ui_event of type: '+data['type'])
     emit('ui_event',data, to=data['userid'])
 
 @socketio.on('disconnect')

@@ -81,6 +81,8 @@ function register_user(homeAccountId) {
         socketid: MY_WS_ID,
         source: DEVICE_TYPE
     });
+    //register device after user logs in. Device gets registered automatically.
+    registerDevice();
 }
 
 function welcomeUser(username) {
