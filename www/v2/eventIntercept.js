@@ -17,7 +17,6 @@ function socketSetup() {
 
     socket.on('registered', (data) => {
         console.log('Registered device ' + DEVICE_TYPE + ' with User ID ' + data.userid);
-        document.getElementById('registerDevice').classList.remove('d-none');
     });
 
     socket.on('deviceConnected', (data) => {
