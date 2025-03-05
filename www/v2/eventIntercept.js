@@ -21,7 +21,7 @@ function socketSetup() {
     });
 
     socket.on('deviceConnected', (data) => {
-        deviceInfo = JSON.stringify(data.device);
+        deviceInfo = JSON.stringify(data.device, null, 2);
         console.log('Device Connected: ' + deviceInfo);
         document.getElementById('deviceStatus').textContent = 'Device Connected: ' + deviceInfo;
     });

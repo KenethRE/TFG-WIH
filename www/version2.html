@@ -51,10 +51,19 @@
           <h5 id="welcome-div" class="card-header text-center d-none"></h5>
       </div>
     </div>
-    <pre id="deviceStatus"></pre>
-    <button id="myButton" class="d-none" onclick="printText()"> This is a button</button>
-    <h5 id="myText" class="card-header text-center d-none"></h5>
-    <script type="text/javascript" src="/v2/eventIntercept.js"></script>
-    <script type="text/javascript" src="/v2/login.js"></script>
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col">
+                <h5 class="card-header text-center">Device Status</h5>
+                <pre id="deviceStatus"></pre>
+            </div>
+        <div class="col">
+            <button id="myButton" class="d-none" onclick="printText()"> This is a button</button>
+            <h5 id="myText" class="card-header text-center d-none"></h5>
+            <script type="text/javascript" src="/v2/eventIntercept.js"></script>
+            <script type="text/javascript" src="/v2/login.js"></script>
+        </div>
+        </div>
+    </div>
 </body>
 </html>
