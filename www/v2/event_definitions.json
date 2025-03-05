@@ -1,246 +1,246 @@
 [
     {
-      "attribute": "onafterprint",
+      "event": "onafterprint",
       "elements": ["body"],
       "description": "afterprint event handler for Window object"
     },
     {
-      "attribute": "onauxclick",
+      "event": "onauxclick",
       "elements": ["HTML elements"],
       "description": "auxclick event handler"
     },
     {
-      "attribute": "onbeforeinput",
+      "event": "onbeforeinput",
       "elements": ["HTML elements"],
       "description": "beforeinput event handler"
     },
     {
-      "attribute": "onbeforematch",
+      "event": "onbeforematch",
       "elements": ["HTML elements"],
       "description": "beforematch event handler"
     },
     {
-      "attribute": "onbeforeprint",
+      "event": "onbeforeprint",
       "elements": ["body"],
       "description": "beforeprint event handler for Window object"
     },
     {
-      "attribute": "onbeforeunload",
+      "event": "onbeforeunload",
       "elements": ["body"],
       "description": "beforeunload event handler for Window object"
     },
     {
-      "attribute": "onbeforetoggle",
+      "event": "onbeforetoggle",
       "elements": ["HTML elements"],
       "description": "beforetoggle event handler"
     },
     {
-      "attribute": "onblur",
+      "event": "onblur",
       "elements": ["HTML elements"],
       "description": "blur event handler"
     },
     {
-      "attribute": "oncancel",
+      "event": "oncancel",
       "elements": ["HTML elements"],
       "description": "cancel event handler"
     },
     {
-      "attribute": "oncanplay",
+      "event": "oncanplay",
       "elements": ["HTML elements"],
       "description": "canplay event handler"
     },
     {
-      "attribute": "oncanplaythrough",
+      "event": "oncanplaythrough",
       "elements": ["HTML elements"],
       "description": "canplaythrough event handler"
     },
     {
-      "attribute": "onchange",
+      "event": "onchange",
       "elements": ["HTML elements"],
       "description": "change event handler"
     },
     {
-      "attribute": "onclick",
+      "event": "onclick",
       "elements": ["HTML elements"],
       "description": "click event handler"
     },
     {
-      "attribute": "onclose",
+      "event": "onclose",
       "elements": ["HTML elements"],
       "description": "close event handler"
     },
     {
-      "attribute": "oncommand",
+      "event": "oncommand",
       "elements": ["HTML elements"],
       "description": "command event handler"
     },
     {
-      "attribute": "oncontextlost",
+      "event": "oncontextlost",
       "elements": ["HTML elements"],
       "description": "contextlost event handler"
     },
     {
-      "attribute": "oncontextmenu",
+      "event": "oncontextmenu",
       "elements": ["HTML elements"],
       "description": "contextmenu event handler"
     },
     {
-      "attribute": "oncontextrestored",
+      "event": "oncontextrestored",
       "elements": ["HTML elements"],
       "description": "contextrestored event handler"
     },
     {
-      "attribute": "oncopy",
+      "event": "oncopy",
       "elements": ["HTML elements"],
       "description": "copy event handler"
     },
     {
-      "attribute": "oncuechange",
+      "event": "oncuechange",
       "elements": ["HTML elements"],
       "description": "cuechange event handler"
     },
     {
-      "attribute": "oncut",
+      "event": "oncut",
       "elements": ["HTML elements"],
       "description": "cut event handler"
     },
     {
-      "attribute": "ondblclick",
+      "event": "ondblclick",
       "elements": ["HTML elements"],
       "description": "dblclick event handler"
     },
     {
-      "attribute": "ondrag",
+      "event": "ondrag",
       "elements": ["HTML elements"],
       "description": "drag event handler"
     },
     {
-      "attribute": "ondragend",
+      "event": "ondragend",
       "elements": ["HTML elements"],
       "description": "dragend event handler"
     },
     {
-      "attribute": "ondragenter",
+      "event": "ondragenter",
       "elements": ["HTML elements"],
       "description": "dragenter event handler"
     },
     {
-      "attribute": "ondragleave",
+      "event": "ondragleave",
       "elements": ["HTML elements"],
       "description": "dragleave event handler"
     },
     {
-      "attribute": "ondragover",
+      "event": "ondragover",
       "elements": ["HTML elements"],
       "description": "dragover event handler"
     },
     {
-      "attribute": "ondragstart",
+      "event": "ondragstart",
       "elements": ["HTML elements"],
       "description": "dragstart event handler"
     },
     {
-      "attribute": "ondrop",
+      "event": "ondrop",
       "elements": ["HTML elements"],
       "description": "drop event handler"
     },
     {
-      "attribute": "ondurationchange",
+      "event": "ondurationchange",
       "elements": ["HTML elements"],
       "description": "durationchange event handler"
     },
     {
-      "attribute": "onemptied",
+      "event": "onemptied",
       "elements": ["HTML elements"],
       "description": "emptied event handler"
     },
     {
-      "attribute": "onended",
+      "event": "onended",
       "elements": ["HTML elements"],
       "description": "ended event handler"
     },
     {
-      "attribute": "onerror",
+      "event": "onerror",
       "elements": ["HTML elements"],
       "description": "error event handler"
     },
     {
-      "attribute": "onfocus",
+      "event": "onfocus",
       "elements": ["HTML elements"],
       "description": "focus event handler"
     },
     {
-      "attribute": "onformdata",
+      "event": "onformdata",
       "elements": ["HTML elements"],
       "description": "formdata event handler"
     },
     {
-      "attribute": "onhashchange",
+      "event": "onhashchange",
       "elements": ["body"],
       "description": "hashchange event handler for Window object"
     },
     {
-      "attribute": "oninput",
+      "event": "oninput",
       "elements": ["HTML elements"],
       "description": "input event handler"
     },
     {
-      "attribute": "oninvalid",
+      "event": "oninvalid",
       "elements": ["HTML elements"],
       "description": "invalid event handler"
     },
     {
-      "attribute": "onkeydown",
+      "event": "onkeydown",
       "elements": ["HTML elements"],
       "description": "keydown event handler"
     },
     {
-      "attribute": "onkeypress",
+      "event": "onkeypress",
       "elements": ["HTML elements"],
       "description": "keypress event handler"
     },
     {
-      "attribute": "onkeyup",
+      "event": "onkeyup",
       "elements": ["HTML elements"],
       "description": "keyup event handler"
     },
     {
-      "attribute": "onlanguagechange",
+      "event": "onlanguagechange",
       "elements": ["body"],
       "description": "languagechange event handler for Window object"
     },
     {
-      "attribute": "onload",
+      "event": "onload",
       "elements": ["HTML elements"],
       "description": "load event handler"
     },
     {
-      "attribute": "onloadeddata",
+      "event": "onloadeddata",
       "elements": ["HTML elements"],
       "description": "loadeddata event handler"
     },
     {
-      "attribute": "onloadedmetadata",
+      "event": "onloadedmetadata",
       "elements": ["HTML elements"],
       "description": "loadedmetadata event handler"
     },
     {
-      "attribute": "onloadstart",
+      "event": "onloadstart",
       "elements": ["HTML elements"],
       "description": "loadstart event handler"
     },
     {
-      "attribute": "onmessage",
+      "event": "onmessage",
       "elements": ["body"],
       "description": "message event handler for Window object"
     },
     {
-      "attribute": "onmessageerror",
+      "event": "onmessageerror",
       "elements": ["body"],
       "description": "messageerror event handler for Window object"
     },
     {
-      "attribute": "onmousedown",
+      "event": "onmousedown",
       "elements": ["HTML elements"],
       "description": "mousedown event handler"
    
