@@ -42,7 +42,7 @@ def register(data):
     emit('registered', {"userid": userid, "event_list": event_list}, to=userid)
 
 def eventList():
-    with open('event_definition.json') as f:
+    with open('event_definitions.json') as f:
         return json.load(f)
 
 @socketio.on('unregister')
