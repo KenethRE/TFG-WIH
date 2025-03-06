@@ -98,7 +98,7 @@ function printText() {
 // Capture all click events on buttons
 
 function captureEvents(event_list) {
-
+    console.log(JSON.stringify(event_list));
     for (let i = 0; i < event_list.length; i++) {
         let event_json = event_list[i];
         console.log(event_json);
