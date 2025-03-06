@@ -101,6 +101,7 @@ function captureEvents(event_list) {
 
     for (let i = 0; i < event_list.length; i++) {
         let event_json = event_list[i];
+        console.log(event_json);
         if (event_json.eventType === 'click') {
             let buttons = document.querySelectorAll('button');
             for (let i = 0; i < buttons.length; i++) {
