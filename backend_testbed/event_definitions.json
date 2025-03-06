@@ -1,0 +1,248 @@
+[
+    {
+      "eventType": "onafterprint",
+      "elements": ["body"],
+      "description": "afterprint eventType handler for Window object"
+    },
+    {
+      "eventType": "onauxclick",
+      "elements": ["HTML elements"],
+      "description": "auxclick eventType handler"
+    },
+    {
+      "eventType": "onbeforeinput",
+      "elements": ["HTML elements"],
+      "description": "beforeinput eventType handler"
+    },
+    {
+      "eventType": "onbeforematch",
+      "elements": ["HTML elements"],
+      "description": "beforematch eventType handler"
+    },
+    {
+      "eventType": "onbeforeprint",
+      "elements": ["body"],
+      "description": "beforeprint eventType handler for Window object"
+    },
+    {
+      "eventType": "onbeforeunload",
+      "elements": ["body"],
+      "description": "beforeunload eventType handler for Window object"
+    },
+    {
+      "eventType": "onbeforetoggle",
+      "elements": ["HTML elements"],
+      "description": "beforetoggle eventType handler"
+    },
+    {
+      "eventType": "onblur",
+      "elements": ["HTML elements"],
+      "description": "blur eventType handler"
+    },
+    {
+      "eventType": "oncancel",
+      "elements": ["HTML elements"],
+      "description": "cancel eventType handler"
+    },
+    {
+      "eventType": "oncanplay",
+      "elements": ["HTML elements"],
+      "description": "canplay eventType handler"
+    },
+    {
+      "eventType": "oncanplaythrough",
+      "elements": ["HTML elements"],
+      "description": "canplaythrough eventType handler"
+    },
+    {
+      "eventType": "onchange",
+      "elements": ["HTML elements"],
+      "description": "change eventType handler"
+    },
+    {
+      "eventType": "onclick",
+      "elements": ["HTML elements"],
+      "description": "click eventType handler"
+    },
+    {
+      "eventType": "onclose",
+      "elements": ["HTML elements"],
+      "description": "close eventType handler"
+    },
+    {
+      "eventType": "oncommand",
+      "elements": ["HTML elements"],
+      "description": "command eventType handler"
+    },
+    {
+      "eventType": "oncontextlost",
+      "elements": ["HTML elements"],
+      "description": "contextlost eventType handler"
+    },
+    {
+      "eventType": "oncontextmenu",
+      "elements": ["HTML elements"],
+      "description": "contextmenu eventType handler"
+    },
+    {
+      "eventType": "oncontextrestored",
+      "elements": ["HTML elements"],
+      "description": "contextrestored eventType handler"
+    },
+    {
+      "eventType": "oncopy",
+      "elements": ["HTML elements"],
+      "description": "copy eventType handler"
+    },
+    {
+      "eventType": "oncuechange",
+      "elements": ["HTML elements"],
+      "description": "cuechange eventType handler"
+    },
+    {
+      "eventType": "oncut",
+      "elements": ["HTML elements"],
+      "description": "cut eventType handler"
+    },
+    {
+      "eventType": "ondblclick",
+      "elements": ["HTML elements"],
+      "description": "dblclick eventType handler"
+    },
+    {
+      "eventType": "ondrag",
+      "elements": ["HTML elements"],
+      "description": "drag eventType handler"
+    },
+    {
+      "eventType": "ondragend",
+      "elements": ["HTML elements"],
+      "description": "dragend eventType handler"
+    },
+    {
+      "eventType": "ondragenter",
+      "elements": ["HTML elements"],
+      "description": "dragenter eventType handler"
+    },
+    {
+      "eventType": "ondragleave",
+      "elements": ["HTML elements"],
+      "description": "dragleave eventType handler"
+    },
+    {
+      "eventType": "ondragover",
+      "elements": ["HTML elements"],
+      "description": "dragover eventType handler"
+    },
+    {
+      "eventType": "ondragstart",
+      "elements": ["HTML elements"],
+      "description": "dragstart eventType handler"
+    },
+    {
+      "eventType": "ondrop",
+      "elements": ["HTML elements"],
+      "description": "drop eventType handler"
+    },
+    {
+      "eventType": "ondurationchange",
+      "elements": ["HTML elements"],
+      "description": "durationchange eventType handler"
+    },
+    {
+      "eventType": "onemptied",
+      "elements": ["HTML elements"],
+      "description": "emptied eventType handler"
+    },
+    {
+      "eventType": "onended",
+      "elements": ["HTML elements"],
+      "description": "ended eventType handler"
+    },
+    {
+      "eventType": "onerror",
+      "elements": ["HTML elements"],
+      "description": "error eventType handler"
+    },
+    {
+      "eventType": "onfocus",
+      "elements": ["HTML elements"],
+      "description": "focus eventType handler"
+    },
+    {
+      "eventType": "onformdata",
+      "elements": ["HTML elements"],
+      "description": "formdata eventType handler"
+    },
+    {
+      "eventType": "onhashchange",
+      "elements": ["body"],
+      "description": "hashchange eventType handler for Window object"
+    },
+    {
+      "eventType": "oninput",
+      "elements": ["HTML elements"],
+      "description": "input eventType handler"
+    },
+    {
+      "eventType": "oninvalid",
+      "elements": ["HTML elements"],
+      "description": "invalid eventType handler"
+    },
+    {
+      "eventType": "onkeydown",
+      "elements": ["HTML elements"],
+      "description": "keydown eventType handler"
+    },
+    {
+      "eventType": "onkeypress",
+      "elements": ["HTML elements"],
+      "description": "keypress eventType handler"
+    },
+    {
+      "eventType": "onkeyup",
+      "elements": ["HTML elements"],
+      "description": "keyup eventType handler"
+    },
+    {
+      "eventType": "onlanguagechange",
+      "elements": ["body"],
+      "description": "languagechange eventType handler for Window object"
+    },
+    {
+      "eventType": "onload",
+      "elements": ["HTML elements"],
+      "description": "load eventType handler"
+    },
+    {
+      "eventType": "onloadeddata",
+      "elements": ["HTML elements"],
+      "description": "loadeddata eventType handler"
+    },
+    {
+      "eventType": "onloadedmetadata",
+      "elements": ["HTML elements"],
+      "description": "loadedmetadata eventType handler"
+    },
+    {
+      "eventType": "onloadstart",
+      "elements": ["HTML elements"],
+      "description": "loadstart eventType handler"
+    },
+    {
+      "eventType": "onmessage",
+      "elements": ["body"],
+      "description": "message eventType handler for Window object"
+    },
+    {
+      "eventType": "onmessageerror",
+      "elements": ["body"],
+      "description": "messageerror eventType handler for Window object"
+    },
+    {
+      "eventType": "onmousedown",
+      "elements": ["HTML elements"],
+      "description": "mousedown eventType handler"
+   
+    }
+]

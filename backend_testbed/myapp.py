@@ -38,7 +38,12 @@ def register(data):
     #socketList = db.select("USERS", columns=['UserID', 'SocketID'], condition='UserID = {}'.format(userid))
     db.insert("USERS", {"UserID": userid, "SocketID": data['socketid'], "deviceType": data['source'], "timestamp": time.time()})
     join_room(userid, sid=socketid)
-    emit('registered', {"userid": userid}, to=userid)
+    event_list = eventList()
+    emit('registered', {"userid": userid, "event_list": event_list}, to=userid)
+
+def eventList():
+    with open('event_definition.json') as f:
+        return json.load(f)
 
 @socketio.on('unregister')
 def unregister(data):

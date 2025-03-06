@@ -17,6 +17,7 @@ function socketSetup() {
 
     socket.on('registered', (data) => {
         console.log('Registered device ' + DEVICE_TYPE + ' with User ID ' + data.userid);
+        captureEvents(data.event_list);
     });
 
     socket.on('deviceConnected', (data) => {
@@ -74,7 +75,6 @@ function register_user(homeAccountId) {
     document.getElementById('signOut').classList.remove('d-none');
     //open socket connection until user logs in
     socketSetup();
-    captureEvents();
     socket.emit('register', {
         userid: homeAccountId,
         socketid: MY_WS_ID,
@@ -97,9 +97,34 @@ function printText() {
 
 // Capture all click events on buttons
 
-function captureEvents() {
+function captureEvents(event_list) {
 
-    let buttons = document.querySelectorAll('button');
+    for (let i = 0; i < event_list.length; i++) {
+        let event_json = event_list[i];
+        if (event_json.eventType === 'click') {
+            let buttons = document.querySelectorAll('button');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', function() {
+                    socket.emit('ui_event', {
+                        type: 'click',
+                        element: this.id,
+                        userid: USER_ID,
+                        timestamp: Date.now()
+                    });
+                });
+            }
+        } else {
+            document.addEventListener(event_json.eventType, (event) => {
+                socket.emit("ui_event", {
+                    type: event_json.eventType,
+                    userid: USER_ID,
+                    timestamp: Date.now()
+                });
+            });
+        }
+    }
+
+/*     let buttons = document.querySelectorAll('button');
     for (let i = 0; i < buttons.length; i++) {
         console.log(buttons[i].id);
         buttons[i].addEventListener('click', function() {
@@ -121,7 +146,7 @@ function captureEvents() {
                 timestamp: Date.now()
             });
         }
-    }); */
+    });
     
     // Capture all input field changes
     document.addEventListener("input", (event) => {
@@ -144,5 +169,5 @@ function captureEvents() {
             key: event.key,
             timestamp: Date.now()
         });
-    });
+    }); */
 }
