@@ -23,7 +23,7 @@ function socketSetup() {
     socket.on('deviceConnected', (data) => {
         deviceInfo = JSON.stringify(data.device, null, 2);
         console.log('Device Connected: ' + deviceInfo);
-        document.appendChild(document.createTextNode('Device Connected: ' + deviceInfo));
+        document.getElementById('deviceStatus').appendChild(document.createTextNode(deviceInfo));
         document.getElementById('deviceStatus').classList.remove('d-none');
     });
 
