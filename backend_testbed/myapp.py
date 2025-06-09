@@ -1,5 +1,6 @@
 from flask import Flask,render_template,request
 from flask_socketio import SocketIO, emit, join_room, leave_room
+from flask_login import LoginManager
 import subprocess
 from werkzeug.middleware.proxy_fix import ProxyFix
 from enum import Enum
@@ -8,11 +9,42 @@ from sqlite4 import SQLite4
 
 app = Flask(__name__)
 socketio = SocketIO(app,debug=True,cors_allowed_origins='*',async_mode='eventlet')
+login_manager = LoginManager()
+login_manager.init_app(app)
 app.wsgi_app = ProxyFix(app.wsgi_app,x_for=1, x_proto=1, x_host=1, x_prefix=1)
 db = SQLite4("app.db")
 # create users table
 db.connect()
-db.create_table("USERS", ["UserID", "SocketID", "deviceType","timestamp"])
+
+# Drop existing tables if they exist
+db.execute("DROP TABLE IF EXISTS USERS;")
+db.execute("DROP TABLE IF EXISTS WEBSITES;")
+db.execute("DROP TABLE IF EXISTS ELEMENTS;")
+# Create new tables
+
+tables = [
+        """ CREATE TABLE USERS (
+            UserID INTEGER PRIMARY KEY,
+            SocketID TEXT,
+            deviceType TEXT,
+            timestamp REAL
+        ); """,
+        """ CREATE TABLE WEBSITES (
+            WebsiteID INTEGER PRIMARY KEY AUTOINCREMENT,
+            Name TEXT NOT NULL,
+            URL TEXT NOT NULL
+        ); """,
+        """ CREATE TABLE ELEMENTS (
+            ElementID INTEGER PRIMARY KEY AUTOINCREMENT,
+            WebsiteID INTEGER NOT NULL,
+            Name TEXT NOT NULL,
+            Type TEXT NOT NULL,
+            FOREIGN KEY (WebsiteID) REFERENCES WEBSITES(WebsiteID)
+        ); """
+        ]
+
+for table in tables:
+    db.execute(table)
 
 def write_log(data):
     with open('log.txt','a') as f:
@@ -27,6 +59,46 @@ class Msg():
     
     def __str__(self):
         return json.dumps(self.__dict__)
+
+class Website():
+    def __init__(self, id, name, url):
+        self.id = id
+        self.name = name
+        self.url = url
+        self.elements = []
+        # This elements needs to contain the actual ID used on the website, if no ID is available on the website, use a random ID
+        # For testing purposes, we will add a dummy element
+        self.elements.append({"id": 1, "name": "Element 1", "type": "button"})
+    def __str__(self):
+        return json.dumps(self.__dict__)
+
+class User():
+    def __init__(self, id):
+        # check if id is already in the database before creating a new user
+        db = SQLite4("app.db")
+        if not db.select("USERS", columns=['UserID'], condition='UserID = {}'.format(id)):
+            write_log('Creating new user with id: {}'.format(id))
+            db.insert("USERS", {"UserID": id, "SocketID": None, "deviceType": None, "timestamp": time.time()})
+        else:
+            write_log('User with id {} already exists'.format(id))
+        self.id = id
+        self.name = "User {}".format(id)
+        self.email = "<Email>"
+        self.is_authenticated = True
+        self.is_active = True
+        self.is_anonymous = False
+    def __str__(self):
+        return json.dumps(self.__dict__)
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    write_log('login request')
+    if request.method == 'POST':
+        userid = request.form['userid']
+        user = User(userid)
+        return render_template('index.html', user=user)
+    return render_template('login.html')
 
 @socketio.on('register')
 def register(data):
