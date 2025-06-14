@@ -3,7 +3,7 @@ from flask_socketio import SocketIO, emit, join_room, leave_room
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 from werkzeug.middleware.proxy_fix import ProxyFix
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import User, Msg, Website
+from models import User, Msg, Website, UserDAO
 import random, json, time
 from logwriter import write_log
 import encryption as encryption
@@ -15,12 +15,12 @@ login_manager.init_app(app)
 app.wsgi_app = ProxyFix(app.wsgi_app,x_for=1, x_proto=1, x_host=1, x_prefix=1)
 app.config['SECRET_KEY'] = encryption.get_secrets()
 login_manager.init_app(app)
+login_manager.login_view = 'login'
 
 @login_manager.user_loader
 def load_user(username):
     write_log('load_user called with user_id: {}'.format(username))
-    user = User()
-    user.get_user_by_username(username)
+    user = User().get_user(username)
     if user.username:
         write_log('User loaded: {}'.format(user.username))
         return user
@@ -35,8 +35,7 @@ def login():
         username = request.form.get('username')
         password = request.form.get('password')
         remember = True if request.form.get('remember') else False
-        user = User()
-        user.get_user_by_username(username)
+        user = User().get_user(username)
         if user.username and check_password_hash(user.password, password):
             write_log('User {} logged in successfully'.format(username))
             login_user(user, remember=remember)
@@ -68,7 +67,7 @@ def signup():
         email = request.form.get('email')
         password = request.form.get('password')
         hashed_password = generate_password_hash(password, method='sha256')
-        user = User(username=username, email=email, password=hashed_password)
+        user = User(username=username, email=email, password=hashed_password, is_active=1)
         if user.store_user(user):
             return render_template('login.html', message="User created successfully - please login")
         else:
@@ -78,6 +77,7 @@ def signup():
     return render_template('signup.html')
 
 @socketio.on('register')
+@login_required
 def register(data):
     write_log('register event')
     # get current userlist  
@@ -94,6 +94,7 @@ def eventList():
         return json.load(f)
 
 @socketio.on('unregister')
+@login_required
 def unregister(data):
     write_log('unregister event')
     userid = data['userid']
@@ -103,6 +104,7 @@ def unregister(data):
     emit('unregistered', {"userid": userid})
 
 @socketio.on('startDevice')
+@login_required
 def connect(msg):
     write_log('connected device of type: '+msg['source'])
     #generate a random device id

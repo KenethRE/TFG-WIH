@@ -34,7 +34,7 @@ class UserDAO():
             return None
         write_log('User found: {}'.format(user[0]))
         # Return a tuple of Username, Email, Password, isActive
-        return (user[0]['Username'], user[0]['Email'], user[0]['Password'], user[0]['isActive']) if user else None
+        return User(username=user[0]['Username'], email=user[0]['Email'], password=user[0]['Password'], is_active=user[0]['isActive']) if user else None
 
     def store_user(self, user):
         write_log('store_user called with user: {}'.format(user))
@@ -47,7 +47,7 @@ class UserDAO():
             write_log('User already exists: {}'.format(user.username))
             return False
         # Insert the new user into the database
-        db.insert("USERS", {"Username": user.username, "Email": user.email, "Password": user.password, "isActive": 1})
+        db.insert("USERS", {"Username": user.username, "Email": user.email, "Password": user.password, "isActive": user.is_active})
         write_log('User stored successfully: {}'.format(user.username))
         return True
     
@@ -55,22 +55,13 @@ class UserDAO():
         return json.dumps(self.__dict__)
     
 class User(UserDAO):
-    def __init__(self, username=None, email=None, password=None):
+    def __init__(self, username=None, email=None, password=None, is_active=0):
         self.username = username
         self.email = email
         self.password = password
         self.is_authenticated = False
         self.is_anonymous = False
-    def get_user_by_username(self, username):
-        write_log('get_user_by_username called with username: {}'.format(username))
-        if username:
-            user_data = super().get_user(username)
-            if user_data:
-                self.username, self.email, self.password, self.is_active = user_data
-                write_log('User found: {}'.format(self.username))
-            else:
-                write_log('User not found: {}'.format(username))
-                self.username, self.email, self.password, self.is_active = None, None, None, 0
+        self.is_active = is_active
 
     def store_user(self):
         return super().store_user(self)
