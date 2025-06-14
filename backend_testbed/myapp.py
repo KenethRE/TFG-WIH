@@ -1,104 +1,81 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request, flash
 from flask_socketio import SocketIO, emit, join_room, leave_room
-from flask_login import LoginManager
-import subprocess
+from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 from werkzeug.middleware.proxy_fix import ProxyFix
-from enum import Enum
+from werkzeug.security import generate_password_hash, check_password_hash
+from models import User, Msg, Website
 import random, json, time
-from sqlite4 import SQLite4
+from logwriter import write_log
+import encryption as encryption
 
 app = Flask(__name__)
 socketio = SocketIO(app,debug=True,cors_allowed_origins='*',async_mode='eventlet')
 login_manager = LoginManager()
 login_manager.init_app(app)
 app.wsgi_app = ProxyFix(app.wsgi_app,x_for=1, x_proto=1, x_host=1, x_prefix=1)
-db = SQLite4("app.db")
-# create users table
-db.connect()
+app.config['SECRET_KEY'] = encryption.get_secrets()
+login_manager.init_app(app)
 
-# Drop existing tables if they exist
-db.execute("DROP TABLE IF EXISTS USERS;")
-db.execute("DROP TABLE IF EXISTS WEBSITES;")
-db.execute("DROP TABLE IF EXISTS ELEMENTS;")
-# Create new tables
-
-tables = [
-        """ CREATE TABLE USERS (
-            UserID INTEGER PRIMARY KEY,
-            SocketID TEXT,
-            deviceType TEXT,
-            timestamp REAL
-        ); """,
-        """ CREATE TABLE WEBSITES (
-            WebsiteID INTEGER PRIMARY KEY AUTOINCREMENT,
-            Name TEXT NOT NULL,
-            URL TEXT NOT NULL
-        ); """,
-        """ CREATE TABLE ELEMENTS (
-            ElementID INTEGER PRIMARY KEY AUTOINCREMENT,
-            WebsiteID INTEGER NOT NULL,
-            Name TEXT NOT NULL,
-            Type TEXT NOT NULL,
-            FOREIGN KEY (WebsiteID) REFERENCES WEBSITES(WebsiteID)
-        ); """
-        ]
-
-for table in tables:
-    db.execute(table)
-
-def write_log(data):
-    with open('log.txt','a') as f:
-        f.write(data+'\n')
-
-class Msg():
-    def __init__(self, id, source, action, data):
-        self.id=id
-        self.source=source
-        self.action=action
-        self.data=data
-    
-    def __str__(self):
-        return json.dumps(self.__dict__)
-
-class Website():
-    def __init__(self, id, name, url):
-        self.id = id
-        self.name = name
-        self.url = url
-        self.elements = []
-        # This elements needs to contain the actual ID used on the website, if no ID is available on the website, use a random ID
-        # For testing purposes, we will add a dummy element
-        self.elements.append({"id": 1, "name": "Element 1", "type": "button"})
-    def __str__(self):
-        return json.dumps(self.__dict__)
-
-class User():
-    def __init__(self, id):
-        # check if id is already in the database before creating a new user
-        db = SQLite4("app.db")
-        if not db.select("USERS", columns=['UserID'], condition='UserID = {}'.format(id)):
-            write_log('Creating new user with id: {}'.format(id))
-            db.insert("USERS", {"UserID": id, "SocketID": None, "deviceType": None, "timestamp": time.time()})
-        else:
-            write_log('User with id {} already exists'.format(id))
-        self.id = id
-        self.name = "User {}".format(id)
-        self.email = "<Email>"
-        self.is_authenticated = True
-        self.is_active = True
-        self.is_anonymous = False
-    def __str__(self):
-        return json.dumps(self.__dict__)
-
+@login_manager.user_loader
+def load_user(username):
+    write_log('load_user called with user_id: {}'.format(username))
+    user = User()
+    user.get_user_by_username(username)
+    if user.username:
+        write_log('User loaded: {}'.format(user.username))
+        return user
+    else:
+        write_log('User not found: {}'.format(username))
+        return None
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     write_log('login request')
     if request.method == 'POST':
-        userid = request.form['userid']
-        user = User(userid)
-        return render_template('index.html', user=user)
+        username = request.form.get('username')
+        password = request.form.get('password')
+        remember = True if request.form.get('remember') else False
+        user = User()
+        user.get_user_by_username(username)
+        if user.username and check_password_hash(user.password, password):
+            write_log('User {} logged in successfully'.format(username))
+            login_user(user, remember=remember)
+            emit('login_success', {'username': username, 'message': 'Login successful'})
+            return render_template('login_success.html', username=username, message="Login successful")
+        else:
+            write_log('Login failed for user {}'.format(username))
+            flash('Please check your login details and try again.')
+            return render_template('login.html')
     return render_template('login.html')
+
+@app.route('/logout', methods=['POST'])
+@login_required
+def logout():
+    write_log('logout request')
+    if current_user.is_authenticated:
+        logout_user()
+        write_log('User {} logged out successfully'.format(current_user.username))
+    else:
+        write_log('Logout request received but no user is authenticated')
+    # Here you would typically handle the logout logic, such as clearing the session
+    return render_template('login.html', message="You have been logged out successfully.")
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    write_log('signup request')
+    if request.method == 'POST':
+        username = request.form.get('username')
+        email = request.form.get('email')
+        password = request.form.get('password')
+        hashed_password = generate_password_hash(password, method='sha256')
+        user = User(username=username, email=email, password=hashed_password)
+        if user.store_user(user):
+            return render_template('login.html', message="User created successfully - please login")
+        else:
+            write_log('Signup failed for user {}'.format(username))
+            flash('User already exists. Please choose a different username.')
+            return render_template('signup.html')
+    return render_template('signup.html')
 
 @socketio.on('register')
 def register(data):
@@ -108,7 +85,6 @@ def register(data):
     socketid = data['socketid']
     # check if user and socket already exists
     #socketList = db.select("USERS", columns=['UserID', 'SocketID'], condition='UserID = {}'.format(userid))
-    db.insert("USERS", {"UserID": userid, "SocketID": data['socketid'], "deviceType": data['source'], "timestamp": time.time()})
     join_room(userid, sid=socketid)
     event_list = eventList()
     emit('registered', {"userid": userid, "event_list": event_list}, to=userid)
@@ -122,7 +98,7 @@ def unregister(data):
     write_log('unregister event')
     userid = data['userid']
     socketid = data['socketid']
-    db.delete("USERS", condition='UserID = {}'.format(userid))
+    #db.delete("USERS", condition='UserID = {}'.format(userid))
     leave_room(userid, sid=socketid)
     emit('unregistered', {"userid": userid})
 

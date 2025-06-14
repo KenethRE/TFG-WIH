@@ -7,6 +7,15 @@ let socket;
 function socketSetup() {
     socket = io();
 
+    socket.on('login_success', (data) => {
+        console.log('Login successful for User ID ' + data.userid);
+        USER_ID = data.username;
+        welcomeUser(data.username);
+        document.getElementById('signIn').classList.add('d-none');
+        document.getElementById('signOut').classList.remove('d-none');
+    }
+    );
+
     socket.on('connect', () => {
         MY_WS_ID = socket.id;
         console.log('Connected to server with Socket ID ' + MY_WS_ID);
