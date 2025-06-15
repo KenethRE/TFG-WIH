@@ -42,7 +42,7 @@ def login():
             write_log('Login failed for user {}'.format(username))
             flash('Username does not exist. Please try again or signup.')
             return render_template('login.html')
-        if current_user.username and check_password_hash(current_user.password, pwassword):
+        if current_user.username and check_password_hash(current_user.password, password):
             write_log('User {} logged in successfully'.format(username))
             login_user(current_user, remember=remember)
             socketio.emit('login_success', {'username': username})
