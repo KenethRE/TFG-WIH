@@ -43,7 +43,7 @@ def login():
         if user.username and check_password_hash(user.password, password):
             write_log('User {} logged in successfully'.format(username))
             login_user(user, remember=remember)
-            socketio.join_room(user.username)
+            join_room(user.username)
             write_log('User {} joined room {}'.format(username, user.username))
             socketio.emit('login_success', {'username': username}, to=user.username)
             return render_template('login_success.html', username=username, message="Login successful")
