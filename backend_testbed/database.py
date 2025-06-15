@@ -31,7 +31,7 @@ def database_init():
             ); """,
             """
             CREATE TABLE DEVICES (
-                DeviceID INTEGER PRIMARY KEY AUTOINCREMENT,
+                DeviceID TEXT PRIMARY KEY,
                 Username TEXT NOT NULL,
                 DeviceType TEXT NOT NULL,
                 FOREIGN KEY (Username) REFERENCES USERS(Username)

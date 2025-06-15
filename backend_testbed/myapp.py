@@ -3,7 +3,7 @@ from flask_socketio import SocketIO, emit, join_room, leave_room
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 from werkzeug.middleware.proxy_fix import ProxyFix
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import User, Msg, Website, UserDAO
+from models import User, Msg, Website, UserDAO, Device, DeviceDAO
 import random, json, time
 from logwriter import write_log
 import encryption as encryption
@@ -42,10 +42,9 @@ def login():
             write_log('Login failed for user {}'.format(username))
             flash('Username does not exist. Please try again or signup.')
             return render_template('login.html')
-        if current_user.username and check_password_hash(current_user.password, password):
+        if current_user.username and check_password_hash(current_user.password, pwassword):
             write_log('User {} logged in successfully'.format(username))
             login_user(current_user, remember=remember)
-            write_log('User {} joined room {}'.format(username, current_user.username))
             socketio.emit('login_success', {'username': username})
             return render_template('login_success.html', username=username, message="Login successful")
         else:
@@ -102,18 +101,28 @@ def connect():
         write_log('Unauthenticated user connected')
         emit('unauthenticated', {'message': 'Please login to continue'})
 
-@socketio.on('register')
+@socketio.on('registerDevice')
 @login_required
 def register(data):
-    write_log('register event')
-    # get current userlist  
-    userid = data['userid']
+    write_log('Registering device with data: {}'.format(data)) 
+    username = data['username']
     socketid = data['socketid']
-    # check if user and socket already exists
-    #socketList = db.select("USERS", columns=['UserID', 'SocketID'], condition='UserID = {}'.format(userid))
-    join_room(userid, sid=socketid)
+    deviceType = data['deviceType']
+    write_log('Registering device for user: {}, socketid: {}, deviceType: {}'.format(username, socketid, deviceType))
+    if not username or not socketid or not deviceType:
+        write_log('Invalid registration data: {}'.format(data))
+        emit('registration_error', {'message': 'Invalid registration data'}, to=username)
+        return
+    device = Device(deviceid=socketid, username=username, deviceType=deviceType)
+    if not device.store_device():
+        write_log('Device registration failed for user: {}'.format(username))
+        emit('registration_error', {'message': 'Device registration failed'}, to=username)
+        return
+    device.toggle_status()
+    write_log('Device registered successfully for user: {}'.format(username))
+    join_room(username, sid=socketid)
     event_list = eventList()
-    emit('registered', {"userid": userid, "event_list": event_list}, to=userid)
+    emit('registered', {"username": username, "event_list": event_list, "deviceType": deviceType}, to=username)
 
 def eventList():
     with open('event_definitions.json') as f:
@@ -123,11 +132,11 @@ def eventList():
 @login_required
 def unregister(data):
     write_log('unregister event')
-    userid = data['userid']
+    username = data['username']
     socketid = data['socketid']
     #db.delete("USERS", condition='UserID = {}'.format(userid))
-    leave_room(userid, sid=socketid)
-    emit('unregistered', {"userid": userid})
+    leave_room(username, sid=socketid)
+    emit('unregistered', {"username": username})
 
 @socketio.on('startDevice')
 @login_required
@@ -135,7 +144,7 @@ def connect(msg):
     write_log('connected device of type: '+msg['source'])
     #generate a random device id
     deviceid=random.randint(1000,9999)
-    userid = msg['userid']
+    username = msg['username']
     msg = {
         'deviceid': deviceid,
         'device': {
@@ -143,12 +152,12 @@ def connect(msg):
             'deviceType': msg['source']
         }
     }
-    emit('deviceConnected', msg, to=userid)
+    emit('deviceConnected', msg, to=username)
 
 @socketio.on('ui_event')
 def ui_event(data):
     write_log('ui_event of type: '+data['type'])
-    emit('ui_event',data, to=data['userid'])
+    emit('ui_event',data, to=data['username'])
 
 @socketio.on('disconnect')
 def disconnect():
@@ -167,4 +176,4 @@ def message(data):
 @socketio.on('eventCaptured')
 def eventCaptured(data):
     write_log('new event was captured')
-    emit('eventCaptured', to=data.userid)
+    emit('eventCaptured', to=data.username)

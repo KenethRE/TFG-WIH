@@ -69,3 +69,49 @@ class User(UserDAO):
     def get_id(self):
         write_log('get_id called for user: {}'.format(self.username))
         return self.username
+
+class DeviceDAO():
+    def __init__(self):
+        pass
+    
+    def get_device(self, device_id):
+        write_log('get_device called with device_id: {}'.format(device_id))
+        device = db.select("DEVICES", columns=['DeviceID', 'Username', 'DeviceType'], condition='ID = {}'.format(device_id))
+        if not device:
+            write_log('Device not found: {}'.format(device_id))
+            return None
+        write_log('Device found: {}'.format(device[0]))
+        return Device(user=device[0][1], type=device[0][2], status=device[0][3]) if device else None
+
+    def store_device(self, device):
+        write_log('store_device called with device: {}'.format(device))
+        if not device.user or not device.type:
+            write_log('Invalid device data: {}'.format(device))
+            return False
+        # Check if the device already exists
+        existing_device = db.select("DEVICES", columns=['ID'], condition='DeviceID = "{}"'.format(device.id))
+        if existing_device:
+            write_log('Device already exists: {}'.format(device.id))
+            return False
+        # Insert the new device into the database
+        db.insert("DEVICES", {"DeviceID": device.id, "Username": device.user, "DeviceType": device.type})
+        write_log('Device stored successfully: {}'.format(device.id))
+        return True
+    
+    def __str__(self):
+        return json.dumps(self.__dict__)
+
+class Device(DeviceDAO):
+    def __init__(self, id, user, type, status='offline'):
+        self.id = id # Unique identifier for the device. Right now is the Websocket ID
+        self.user = user
+        self.type = type
+        self.status = status  # 'online' or 'offline'
+    
+    def __str__(self):
+        return json.dumps(self.__dict__)
+    
+    def toggle_status(self):
+        self.status = 'online' if self.status == 'offline' else 'offline'
+        write_log('Device {} status changed to {}'.format(self.name, self.status))
+

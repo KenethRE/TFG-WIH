@@ -15,18 +15,26 @@ function socketSetup() {
         welcomeUser(data.username);
         document.getElementById('signIn').classList.add('d-none');
         document.getElementById('signOut').classList.remove('d-none');
+        socket.emit('registerDevice', {
+            userid: USER_ID,
+            socketid: MY_WS_ID,
+            deviceType: DEVICE_TYPE
+        });
+    });
+
+    socket.on('registration_error', (data) => {
+        console.error('Registration error: ' + data.message);
     });
 
     socket.on('unauthenticated', () => {
         console.log('User not authenticated');
         document.getElementById('signIn').classList.remove('d-none');
         document.getElementById('signOut').classList.add('d-none');
-    }
-    );
+    });
 
     socket.on('connect', () => {
         MY_WS_ID = socket.id;
-        console.log('Connected to server with Socket ID ' + MY_WS_ID + ' and User ID ' + USER_ID);
+        console.log('Connected to server with Socket ID ' + MY_WS_ID);
     });
 
 
@@ -35,7 +43,7 @@ function socketSetup() {
     });
 
     socket.on('registered', (data) => {
-        console.log('Registered device ' + DEVICE_TYPE + ' with User ID ' + data.userid);
+        console.log('Registered device ' + DEVICE_TYPE + ' with User ID ' + data.username);
         captureEvents(data.event_list);
     });
 
