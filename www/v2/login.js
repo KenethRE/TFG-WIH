@@ -8,7 +8,7 @@ function openLogin() {
 }
 
 function signOut() {
-    fetch('http://tfg.zenken.es/logout', {
+    fetch('https://tfg.zenken.es/logout', {
         method: 'POST',
         credentials: 'include'
     })
