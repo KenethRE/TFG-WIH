@@ -98,6 +98,12 @@ class DeviceDAO():
         write_log('Device stored successfully: {}'.format(device.deviceid))
         return True
     
+    def delete_device(self, device_id):
+        write_log('delete_device called with device_id: {}'.format(device_id))
+        db.delete("DEVICES", condition='DeviceID = "{}"'.format(device_id))
+        write_log('Device deleted successfully: {}'.format(device_id))
+        return True
+    
     def __str__(self):
         return json.dumps(self.__dict__)
 

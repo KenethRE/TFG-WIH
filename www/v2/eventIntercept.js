@@ -43,10 +43,14 @@ function socketSetup() {
     socket.on('registered', (data) => {
         console.log('Registered device ' + DEVICE_TYPE + ' with User ID ' + data.username);
         captureEvents(data.event_list);
+        deviceInfo = JSON.stringify(data.deviceinfo, null, 2);
+        console.log('Device Connected: ' + deviceInfo);
+        document.getElementById('deviceStatus').appendChild(document.createTextNode(deviceInfo));
+        document.getElementById('deviceStatus').classList.remove('d-none');
     });
 
     socket.on('deviceConnected', (data) => {
-        deviceInfo = JSON.stringify(data.device, null, 2);
+        deviceInfo = JSON.stringify(data.deviceinfo, null, 2);
         console.log('Device Connected: ' + deviceInfo);
         document.getElementById('deviceStatus').appendChild(document.createTextNode(deviceInfo));
         document.getElementById('deviceStatus').classList.remove('d-none');
@@ -98,7 +102,7 @@ function registerDevice() {
 
 function welcomeUser(username) {
     document.getElementById('welcome-div').classList.remove('d-none');
-    document.getElementById('welcome-div').textContent = 'Welcome ' + username;
+    document.getElementById('welcome-div').textContent = 'Welcome ' + username + " You can start by clicking the button below.";
 }
 
 function printText() {

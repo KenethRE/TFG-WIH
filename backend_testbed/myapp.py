@@ -101,6 +101,18 @@ def connect():
         write_log('Unauthenticated user connected')
         emit('unauthenticated', {'message': 'Please login to continue'})
 
+@socketio.on('disconnect')
+def disconnect():
+    # Grab current SID and delete it from the database
+    socketid = request.sid
+    write_log('Socket ID {} disconnected'.format(socketid))
+    device = DeviceDAO().delete_device(socketid)
+    write_log('Device with socket ID {} unregistered'.format(socketid))
+    if current_user.is_authenticated:
+        write_log('User {} disconnected'.format(current_user.username))
+    else:
+        write_log('Unauthenticated user disconnected')
+
 @socketio.on('registerDevice')
 def register(data):
     write_log('Registering device with data: {}'.format(data)) 
@@ -121,7 +133,13 @@ def register(data):
     write_log('Device registered successfully for user: {}'.format(username))
     join_room(username, sid=socketid)
     event_list = eventList()
-    emit('registered', {"username": username, "event_list": event_list, "deviceType": deviceType}, to=username)
+    deviceinfo = {
+        "deviceid": device.deviceid,
+        "username": device.username,
+        "deviceType": device.deviceType,
+        "status": device.status
+    }
+    emit('registered', {"username": username, "event_list": event_list, "deviceinfo": deviceinfo}, to=username)
 
 def eventList():
     with open('event_definitions.json') as f:
@@ -136,24 +154,9 @@ def unregister(data):
     leave_room(username, sid=socketid)
     emit('unregistered', {"username": username})
 
-@socketio.on('startDevice')
-def connect(msg):
-    write_log('connected device of type: '+msg['source'])
-    #generate a random device id
-    deviceid=random.randint(1000,9999)
-    username = msg['username']
-    msg = {
-        'deviceid': deviceid,
-        'device': {
-            'deviceid': deviceid,
-            'deviceType': msg['source']
-        }
-    }
-    emit('deviceConnected', msg, to=username)
-
 @socketio.on('ui_event')
 def ui_event(data):
-    write_log('ui_event of type: '+data['type'])
+    write_log('ui_event of type: '+data['type'] + ' for user: ' + data['username'])
     emit('ui_event',data, to=data['username'])
 
 @socketio.on('disconnect')
@@ -163,14 +166,14 @@ def disconnect():
 @socketio.on('file')
 def file(data):
     write_log('file event')
-    emit('file',data, to=data['userid'])
+    emit('file',data, to=data['username'])
 
 @socketio.on('message')
 def message(data):
     write_log(str(data))
-    emit('message',data, to=data['userid'])
+    emit('message',data, to=data['username'])
 
 @socketio.on('eventCaptured')
 def eventCaptured(data):
     write_log('new event was captured')
-    emit('eventCaptured', to=data.username)
+    emit('eventCaptured', to=data['username'])
