@@ -9,6 +9,10 @@ function socketSetup() {
     const socket = io();
 
     socket.on('login_success', (data) => {
+        socket.join(data.username, () => {
+            console.log('Joined room for User ID ' + data.username);
+        });
+        MY_WS_ID_LOGIN = socket.id;
         console.log('Login successful for User ID ' + data.username);
         USER_ID = data.username;
 
@@ -17,8 +21,8 @@ function socketSetup() {
         document.getElementById('signOut').classList.remove('d-none');
     });
 
-    socket.on('unauthenticated', () => {
-        console.log('User not authenticated');
+    socket.on('unauthenticated', (data) => {
+        console.log('User not authenticated' + data.message);
         document.getElementById('signIn').classList.remove('d-none');
         document.getElementById('signOut').classList.add('d-none');
     }
@@ -26,7 +30,7 @@ function socketSetup() {
 
     socket.on('connect', () => {
         MY_WS_ID = socket.id;
-        console.log('Connected to server with Socket ID ' + MY_WS_ID + ' and User ID ' + USER_ID);
+        console.log('Connected to server with Socket ID ' + MY_WS_ID);
     });
 
 

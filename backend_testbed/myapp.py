@@ -97,7 +97,7 @@ def connect():
     if current_user.is_authenticated:
         write_log('User {} connected'.format(current_user.username))
         join_room(current_user.username)
-        emit('login_success', {'username': current_user.username})
+        emit('login_success', {'username': current_user.username}, to=current_user.username)
     else:
         write_log('Unauthenticated user connected')
         emit('unauthenticated', {'message': 'Please login to continue'})
