@@ -6,7 +6,7 @@ let USER_ID = null;
 let socket;
 
 function socketSetup() {
-    const socket = io();
+    socket = io();
 
     socket.on('login_success', (data) => {
         console.log('Login successful for User ID ' + data.username);
