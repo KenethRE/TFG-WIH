@@ -159,10 +159,6 @@ def ui_event(data):
     write_log('ui_event of type: '+data['type'] + ' for user: ' + data['username'])
     emit('ui_event',data, to=data['username'])
 
-@socketio.on('disconnect')
-def disconnect():
-    write_log('disconnected')
-
 @socketio.on('file')
 def file(data):
     write_log('file event')
