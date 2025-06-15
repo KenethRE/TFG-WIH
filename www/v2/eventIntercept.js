@@ -22,11 +22,11 @@ function socketSetup() {
         console.log('Connected to server with Socket ID ' + MY_WS_ID);
     });
     loginsocket.on('connect', () => {
-        loginsocket.join(data.userid);
+        loginsocket.join(data.username);
         MY_WS_ID_LOGIN = loginsocket.id;
         console.log('Connected to login server with Socket ID ' + loginsocket.id);
     });
-    
+
     socket.on('disconnect', () => {
         console.log('Disconnected from server');
     });
