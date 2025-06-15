@@ -23,6 +23,7 @@ def load_user(username):
     user = User().get_user(username)
     if user.username:
         write_log('User loaded: {}'.format(user.username))
+        login_user(user)
         return user
     else:
         write_log('User not found: {}'.format(username))
@@ -50,13 +51,6 @@ def login():
             write_log('Login failed for user {}'.format(username))
             flash('Please check your login details and try again.')
             return render_template('login.html')
-    write_log('GET request for login page')
-    if current_user.is_authenticated:
-        write_log('User {} is already authenticated'.format(current_user.username))
-        socketio.emit('login_success', {'username': current_user.username})
-        return render_template('login_success.html', username=current_user.username, message="You are already logged in.")
-    else:
-        write_log('Rendering login page for unauthenticated user')
     return render_template('login.html')
 
 @app.route('/logout', methods=['POST'])
