@@ -34,7 +34,7 @@ class UserDAO():
             return None
         write_log('User found: {}'.format(user[0]))
         # Return a tuple of Username, Email, Password, isActive
-        return User(username=user[0]['Username'], email=user[0]['Email'], password=user[0]['Password'], is_active=user[0]['isActive']) if user else None
+        return User(username=user[0][0], email=user[0][1], password=user[0][2], is_active=user[0][3]) if user else None
 
     def store_user(self, user):
         write_log('store_user called with user: {}'.format(user))
