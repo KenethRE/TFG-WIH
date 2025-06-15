@@ -75,6 +75,8 @@ def signup():
             email = username + '@example.com'  # Default email if not provided
         user = User(username=username, email=email, password=hashed_password, is_active=1)
         if user.store_user():
+            write_log('User {} created successfully'.format(username))
+            flash('User created successfully - please login')
             return render_template('login.html', message="User created successfully - please login")
         else:
             write_log('Signup failed for user {}'.format(username))
