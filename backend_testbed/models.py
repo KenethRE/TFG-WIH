@@ -108,6 +108,9 @@ class Device(DeviceDAO):
         self.deviceType = deviceType
         self.status = status
 
+    def store_device(self):
+        return super().store_device(self)
+
     def __str__(self):
         return json.dumps(self.__dict__)
     

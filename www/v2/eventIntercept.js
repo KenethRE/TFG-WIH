@@ -28,8 +28,6 @@ function socketSetup() {
 
     socket.on('unauthenticated', () => {
         console.log('User not authenticated');
-        document.getElementById('signIn').classList.remove('d-none');
-        document.getElementById('signOut').classList.add('d-none');
     });
 
     socket.on('connect', () => {
