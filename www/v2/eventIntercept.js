@@ -119,7 +119,7 @@ function captureEvents(event_list) {
                     socket.emit('ui_event', {
                         type: 'click',
                         element: this.id,
-                        userid: USER_ID,
+                        username: USER_ID,
                         timestamp: Date.now()
                     });
                 });
@@ -128,7 +128,7 @@ function captureEvents(event_list) {
             document.addEventListener(event_json.eventType, (event) => {
                 socket.emit("ui_event", {
                     type: event_json.eventType,
-                    userid: USER_ID,
+                    username: USER_ID,
                     timestamp: Date.now()
                 });
             });
