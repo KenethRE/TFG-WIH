@@ -47,12 +47,12 @@ def check_database(logfile='log.txt'):
     """
     Check if the database is initialized and create it if not.
     """
-    users_table = db.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='USERS';")
-    if not users_table:
+    if db.select("sqlite_master", columns=['name'], condition="type='table'"):
+        print("Database already initialized.")
+        write_log("Database already exists")
+    else:
         write_log("Database not initialized, initializing now...")
         database_init()
-    else:
-        write_log("Database already initialized.")
     return db
 
 
