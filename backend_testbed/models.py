@@ -102,10 +102,10 @@ class DeviceDAO():
         return json.dumps(self.__dict__)
 
 class Device(DeviceDAO):
-    def __init__(self, deviceid, username, type, status='offline'):
+    def __init__(self, deviceid, username, deviceType, status='offline'):
         self.deviceid = deviceid
         self.username = username
-        self.type = type
+        self.deviceType = deviceType
         self.status = status
 
     def __str__(self):
