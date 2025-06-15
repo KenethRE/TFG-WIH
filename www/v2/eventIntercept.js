@@ -9,7 +9,7 @@ function socketSetup() {
     const socket = io();
 
     socket.on('login_success', (data) => {
-        console.log('Login successful for User ID ' + data.userid);
+        console.log('Login successful for User ID ' + data.username);
         USER_ID = data.username;
 
         welcomeUser(data.username);
