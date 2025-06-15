@@ -43,7 +43,9 @@ def login():
         if user.username and check_password_hash(user.password, password):
             write_log('User {} logged in successfully'.format(username))
             login_user(user, remember=remember)
-            socketio.emit('login_success', {'username': username}, to=user.username, namespace='/login')
+            socketio.join_room(user.username)
+            write_log('User {} joined room {}'.format(username, user.username))
+            socketio.emit('login_success', {'username': username}, to=user.username)
             return render_template('login_success.html', username=username, message="Login successful")
         else:
             write_log('Login failed for user {}'.format(username))
@@ -88,6 +90,15 @@ def signup():
             return render_template('signup.html')
     return render_template('signup.html')
 
+@socketio.on('connect')
+def connect():
+    write_log('client connected')
+    if current_user.is_authenticated:
+        write_log('User {} connected'.format(current_user.username))
+        emit('connected', {'username': current_user.username})
+    else:
+        write_log('Unauthenticated user connected')
+        emit('unauthenticated', {'message': 'Please login to continue'})
 
 @socketio.on('register')
 @login_required

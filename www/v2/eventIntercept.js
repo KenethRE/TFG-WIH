@@ -7,25 +7,28 @@ let socket;
 
 function socketSetup() {
     const socket = io();
-    const loginsocket = io('/login');
 
-    loginsocket.on('login_success', (data) => {
+    socket.on('login_success', (data) => {
         console.log('Login successful for User ID ' + data.userid);
         USER_ID = data.username;
+
         welcomeUser(data.username);
         document.getElementById('signIn').classList.add('d-none');
         document.getElementById('signOut').classList.remove('d-none');
     });
 
+    socket.on('unauthenticated', () => {
+        console.log('User not authenticated');
+        document.getElementById('signIn').classList.remove('d-none');
+        document.getElementById('signOut').classList.add('d-none');
+    }
+    );
+
     socket.on('connect', () => {
         MY_WS_ID = socket.id;
         console.log('Connected to server with Socket ID ' + MY_WS_ID);
     });
-    loginsocket.on('connect', () => {
-        loginsocket.join(data.username);
-        MY_WS_ID_LOGIN = loginsocket.id;
-        console.log('Connected to login server with Socket ID ' + loginsocket.id);
-    });
+
 
     socket.on('disconnect', () => {
         console.log('Disconnected from server');
