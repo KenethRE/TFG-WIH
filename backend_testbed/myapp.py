@@ -102,7 +102,6 @@ def connect():
         emit('unauthenticated', {'message': 'Please login to continue'})
 
 @socketio.on('registerDevice')
-@login_required
 def register(data):
     write_log('Registering device with data: {}'.format(data)) 
     username = data['username']
@@ -129,7 +128,6 @@ def eventList():
         return json.load(f)
 
 @socketio.on('unregister')
-@login_required
 def unregister(data):
     write_log('unregister event')
     username = data['username']
@@ -139,7 +137,6 @@ def unregister(data):
     emit('unregistered', {"username": username})
 
 @socketio.on('startDevice')
-@login_required
 def connect(msg):
     write_log('connected device of type: '+msg['source'])
     #generate a random device id
