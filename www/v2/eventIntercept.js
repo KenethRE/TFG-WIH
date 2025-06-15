@@ -24,9 +24,10 @@ function socketSetup() {
     }
     );
 
-    socket.on('connect', () => {
+    socket.on('connect', (data) => {
         MY_WS_ID = socket.id;
-        console.log('Connected to server with Socket ID ' + MY_WS_ID);
+        USER_ID = data.username || 'guest'; // Default to 'guest' if no user ID is provided
+        console.log('Connected to server with Socket ID ' + MY_WS_ID + ' and User ID ' + USER_ID);
     });
 
 
