@@ -67,6 +67,12 @@ def signup():
         email = request.form.get('email')
         password = request.form.get('password')
         hashed_password = generate_password_hash(password)
+        # if email is not None:
+        if not username or not password:
+            flash('Username and password is required.')
+            return render_template('signup.html')
+        if not email:
+            email = username + '@example.com'  # Default email if not provided
         user = User(username=username, email=email, password=hashed_password, is_active=1)
         if user.store_user():
             return render_template('login.html', message="User created successfully - please login")
