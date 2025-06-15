@@ -85,17 +85,17 @@ class DeviceDAO():
 
     def store_device(self, device):
         write_log('store_device called with device: {}'.format(device))
-        if not device.user or not device.type:
+        if not device.username or not device.deviceType:
             write_log('Invalid device data: {}'.format(device))
             return False
         # Check if the device already exists
-        existing_device = db.select("DEVICES", columns=['ID'], condition='DeviceID = "{}"'.format(device.id))
+        existing_device = db.select("DEVICES", columns=['ID'], condition='DeviceID = "{}"'.format(device.deviceid))
         if existing_device:
-            write_log('Device already exists: {}'.format(device.id))
+            write_log('Device already exists: {}'.format(device.deviceid))
             return False
         # Insert the new device into the database
-        db.insert("DEVICES", {"DeviceID": device.id, "Username": device.user, "DeviceType": device.type})
-        write_log('Device stored successfully: {}'.format(device.id))
+        db.insert("DEVICES", {"DeviceID": device.deviceid, "Username": device.username, "DeviceType": device.deviceType})
+        write_log('Device stored successfully: {}'.format(device.deviceid))
         return True
     
     def __str__(self):
