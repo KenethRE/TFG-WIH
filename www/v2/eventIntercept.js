@@ -16,7 +16,7 @@ function socketSetup() {
         document.getElementById('signIn').classList.add('d-none');
         document.getElementById('signOut').classList.remove('d-none');
         socket.emit('registerDevice', {
-            userid: USER_ID,
+            username: USER_ID,
             socketid: MY_WS_ID,
             deviceType: DEVICE_TYPE
         });
