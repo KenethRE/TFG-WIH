@@ -11,7 +11,7 @@ def get_secrets():
     try:
         with SECRET_FILE_PATH.open("r") as secret_file:
             # Read the secret key from the file
-            secret = secret_file.read().strip()
+            secret = secret_file.read()
             if not secret:
                 raise ValueError("Secret file is empty")
             return secret
