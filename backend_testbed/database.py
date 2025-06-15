@@ -4,17 +4,6 @@ from logwriter import write_log
 db = SQLite4("app.db")
 db.connect()
 
-def check_database(logfile='log.txt'):
-    """
-    Check if the database is initialized and create it if not.
-    """
-    if not db.select("USERS"):
-        write_log("Database not initialized, initializing now...")
-        database_init()
-    else:
-        write_log("Database already initialized.")
-    return db
-
 def database_init():
 # Drop existing tables if they exist
     db.execute("DROP TABLE IF EXISTS USERS;")
@@ -53,6 +42,19 @@ def database_init():
     for table in tables:
         write_log(f"Executing SQL: {table}")
         db.execute(table)
+
+def check_database(logfile='log.txt'):
+    """
+    Check if the database is initialized and create it if not.
+    """
+    if not db.select("USERS"):
+        write_log("Database not initialized, initializing now...")
+        database_init()
+    else:
+        write_log("Database already initialized.")
+    return db
+
+
 
 if __name__ == "__main__":
     check_database()
