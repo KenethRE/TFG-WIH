@@ -2,7 +2,7 @@ function openLogin() {
     newWindow = window.open(
         'http://tfg.zenken.es/login',
         'LoginWindow',
-        'width=600,height=400,scrollbars=yes,resizable=yes'
+        'width=600,height=600,scrollbars=yes,resizable=yes'
     );
 }
 
