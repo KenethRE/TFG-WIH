@@ -1,11 +1,10 @@
 from sqlite4 import SQLite4
 from logwriter import write_log
 
-global db
+db = SQLite4("app.db")
+db.connect()
+
 def check_database(logfile='log.txt'):
-    global db
-    db = SQLite4("app.db")
-    db.connect()
     """
     Check if the database is initialized and create it if not.
     """
@@ -17,7 +16,6 @@ def check_database(logfile='log.txt'):
     return db
 
 def database_init():
-    global db
 # Drop existing tables if they exist
     db.execute("DROP TABLE IF EXISTS USERS;")
     db.execute("DROP TABLE IF EXISTS WEBSITES;")
@@ -41,7 +39,7 @@ def database_init():
                 Name TEXT NOT NULL,
                 Type TEXT NOT NULL,
                 FOREIGN KEY (WebsiteID) REFERENCES WEBSITES(WebsiteID)
-            ); """
+            ); """,
             """
             CREATE TABLE DEVICES (
                 DeviceID INTEGER PRIMARY KEY AUTOINCREMENT,
