@@ -51,6 +51,7 @@ def database_init():
     ]
 
     for table in tables:
+        write_log(f"Executing SQL: {table}")
         db.execute(table)
 
 if __name__ == "__main__":
