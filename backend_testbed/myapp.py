@@ -36,6 +36,10 @@ def login():
         password = request.form.get('password')
         remember = True if request.form.get('remember') else False
         user = User().get_user(username)
+        if user is None:
+            write_log('Login failed for user {}'.format(username))
+            flash('Username does not exist. Please try again or signup.')
+            return render_template('login.html')
         if user.username and check_password_hash(user.password, password):
             write_log('User {} logged in successfully'.format(username))
             login_user(user, remember=remember)
