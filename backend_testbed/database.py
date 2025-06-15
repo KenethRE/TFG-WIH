@@ -15,7 +15,7 @@ def database_init():
                 Username TEXT PRIMARY KEY,
                 Email TEXT,
                 Password TEXT,
-                isActive INTEGER DEFAULT 1,
+                isActive INTEGER DEFAULT 1
             ); """,
             """ CREATE TABLE WEBSITES (
                 WebsiteID INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -47,7 +47,8 @@ def check_database(logfile='log.txt'):
     """
     Check if the database is initialized and create it if not.
     """
-    if not db.select("USERS"):
+    users_table = db.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='USERS';")
+    if not users_table:
         write_log("Database not initialized, initializing now...")
         database_init()
     else:
