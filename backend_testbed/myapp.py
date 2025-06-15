@@ -87,6 +87,7 @@ def signup():
             return render_template('signup.html')
     return render_template('signup.html')
 
+
 @socketio.on('register')
 @login_required
 def register(data):

@@ -51,6 +51,7 @@ function socketSetup() {
     });
 }
 
+socketSetup();
 
 function getDeviceType() {
     if (window.innerWidth < 768) {
@@ -77,21 +78,6 @@ function registerDevice() {
         source: DEVICE_TYPE,
         userid: USER_ID
     });
-}
-
-function register_user(homeAccountId) {
-    USER_ID = homeAccountId;
-    document.getElementById('signIn').classList.add('d-none');
-    document.getElementById('signOut').classList.remove('d-none');
-    //open socket connection until user logs in
-    socketSetup();
-    socket.emit('register', {
-        userid: homeAccountId,
-        socketid: MY_WS_ID,
-        source: DEVICE_TYPE
-    });
-    //register device after user logs in. Device gets registered automatically.
-    registerDevice();
 }
 
 function welcomeUser(username) {
