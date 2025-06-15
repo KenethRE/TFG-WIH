@@ -7,4 +7,4 @@ eventlet==0.38.0
 flask_sock==0.7.0
 sqlite4==0.1.1
 flask_login==0.6.3
-cryptography==45.0.4
+flask_bcrypt==1.0.1
