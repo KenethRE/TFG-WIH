@@ -102,16 +102,16 @@ class DeviceDAO():
         return json.dumps(self.__dict__)
 
 class Device(DeviceDAO):
-    def __init__(self, id, user, type, status='offline'):
-        self.id = id # Unique identifier for the device. Right now is the Websocket ID
+    def __init__(self, deviceid, user, type, status='offline'):
+        self.deviceid = deviceid
         self.user = user
         self.type = type
-        self.status = status  # 'online' or 'offline'
-    
+        self.status = status
+
     def __str__(self):
         return json.dumps(self.__dict__)
     
     def toggle_status(self):
         self.status = 'online' if self.status == 'offline' else 'offline'
-        write_log('Device {} status changed to {}'.format(self.name, self.status))
+        write_log('Device {} status changed to {}'.format(self.deviceid, self.status))
 
