@@ -17,14 +17,15 @@ app.config['SECRET_KEY'] = encryption.get_secrets()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
 
+current_user = User()
+
 @login_manager.user_loader
 def load_user(username):
     write_log('load_user called with user_id: {}'.format(username))
-    user = User().get_user(username)
-    if user.username:
-        write_log('User loaded: {}'.format(user.username))
-        login_user(user)
-        return user
+    current_user = User().get_user(username)
+    if current_user.username:
+        write_log('User loaded: {}'.format(current_user.username))
+        return current_user
     else:
         write_log('User not found: {}'.format(username))
         return None
@@ -96,7 +97,7 @@ def connect():
     if current_user.is_authenticated:
         write_log('User {} connected'.format(current_user.username))
         join_room(current_user.username)
-        emit('connected', {'username': current_user.username})
+        emit('login_success', {'username': current_user.username})
     else:
         write_log('Unauthenticated user connected')
         emit('unauthenticated', {'message': 'Please login to continue'})
