@@ -68,7 +68,7 @@ def signup():
         password = request.form.get('password')
         hashed_password = generate_password_hash(password)
         user = User(username=username, email=email, password=hashed_password, is_active=1)
-        if user.store_user(user):
+        if user.store_user():
             return render_template('login.html', message="User created successfully - please login")
         else:
             write_log('Signup failed for user {}'.format(username))
