@@ -14,7 +14,7 @@ function signOut() {
     })
     .then(response => {
         if (response.ok) {
-            window.location.href = 'http://tfg.zenken.es/v2/index.html';
+            window.location.href = 'https://tfg.zenken.es/version2.html';
         } else {
             console.error('Logout failed');
         }
