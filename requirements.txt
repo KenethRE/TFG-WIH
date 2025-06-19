@@ -8,3 +8,5 @@ flask_sock==0.7.0
 sqlite4==0.1.1
 flask_login==0.6.3
 flask_bcrypt==1.0.1
+requests==2.32.4
+bs4==0.0.2

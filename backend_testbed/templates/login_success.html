@@ -6,7 +6,20 @@
         <h3 class="title">Login Successful</h3>
         <div class="box">
             <p>Welcome, {{ username }}!</p>
-            <p>You have successfully logged in. Please close this window.</p>
+            <p>You have successfully logged in. This window will close automatically in <span id="countdown">3</span> seconds.</p>
+            <script>
+                // Countdown timer
+                var countdown = 3;
+                var countdownElement = document.getElementById("countdown");
+                var interval = setInterval(function() {
+                    countdown--;
+                    countdownElement.textContent = countdown;
+                    if (countdown === 0) {
+                        clearInterval(interval);
+                        window.close();
+                    }
+                }, 1000);
+            </script>
         </div>
     </div>
 {% endblock %}
