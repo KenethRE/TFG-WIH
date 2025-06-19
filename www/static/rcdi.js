@@ -40,6 +40,10 @@ function sendFile() {
 		socket.emit('file', data);
 	};
 	reader.readAsDataURL(file);
+	let confirm = document.createElement('h5');
+	confirm.textContent = 'File sent';
+	document.body.appendChild(confirm);
+
 }
 
 socket.on('file', function(data) {

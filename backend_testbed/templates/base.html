@@ -1,47 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-<meta http-equiv="Cache-control" content="no-cache" charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='jquery-2.1.4.min.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='rcdi.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='jquery-collision.js') }}"></script>
-<style>
-.navbar-brand {
-font-family: 'Merriweather';
-font-size: 30px;
-}
-.inner {
-text-align: center;
-margin: auto;
-margin-top: 10px;
-padding: 10px;
-border-style: solid;
-width: 50%;
-color: black;     
+<html>
 
-}
-</style>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flask Auth Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-   <a class="navbar-brand" href={{ url_for('main') }}>TFG WIH</a>
-  </div>
-</nav>
-<div class="container">
-<div class="inner">
-<div id="header"></div><br>
+    <section class="hero is-primary is-fullheight">
 
-<button type="button" class="btn btn-primary" id="WebMousePlugin">Start</button>
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="{{ url_for('login') }}" class="navbar-item">
+                                Login
+                            </a>
+                            <a href="{{ url_for('signup') }}" class="navbar-item">
+                                Sign Up
+                            </a>
+                            <a href="{{ url_for('logout') }}" class="navbar-item">
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
 
-<div id="demo"></div>
-</div>
-</div>
-
+        <div class="hero-body">
+            <div class="container has-text-centered">
+               {% block content %}
+               {% endblock %}
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>
