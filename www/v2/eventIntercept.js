@@ -93,8 +93,8 @@ function registerDevice() {
 }
 
 function welcomeUser(username) {
-    document.getElementById('welcome-div').classList.remove('d-none');
-    document.getElementById('welcome-div').textContent = 'Welcome ' + username + " You can start by clicking the button below.";
+    login_text = document.getElementById('floating-login')
+    login_text.textContent = 'Welcome ' + username + " You can start by clicking the button below.";
 }
 
 function printText() {
