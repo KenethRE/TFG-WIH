@@ -106,26 +106,33 @@ function printText() {
 function captureEvents(event_list) {
     for (let i = 0; i < event_list.length; i++) {
         let event_json = event_list[i];
-        if (event_json.eventType === 'click') {
-            let buttons = document.querySelectorAll('button');
-            for (let i = 0; i < buttons.length; i++) {
-                buttons[i].addEventListener('click', function() {
-                    socket.emit('ui_event', {
-                        type: 'click',
-                        element: this.id,
+        let eventType = event_json.eventType;
+        let triggeringElement = event_json.triggeringElement;
+
+        // If the event is attached to the document/body
+        if (triggeringElement === "document" || triggeringElement === "body") {
+            let target = (triggeringElement === "body") ? document.body : document;
+            target.addEventListener(eventType, (event) => {
+                socket.emit("ui_event", {
+                    type: eventType,
+                    element: triggeringElement,
+                    username: USER_ID,
+                    timestamp: Date.now()
+                });
+            });
+        } else {
+            // Attach to all elements of the specified type
+            let elements = document.querySelectorAll(triggeringElement);
+            for (let j = 0; j < elements.length; j++) {
+                elements[j].addEventListener(eventType, function(event) {
+                    socket.emit("ui_event", {
+                        type: eventType,
+                        element: this.id || this.name || this.tagName,
                         username: USER_ID,
                         timestamp: Date.now()
                     });
                 });
             }
-        } else {
-            document.addEventListener(event_json.eventType, (event) => {
-                socket.emit("ui_event", {
-                    type: event_json.eventType,
-                    username: USER_ID,
-                    timestamp: Date.now()
-                });
-            });
         }
     }
 
