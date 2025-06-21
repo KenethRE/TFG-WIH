@@ -44,8 +44,6 @@ function socketSetup() {
         captureEvents(data.event_list);
         deviceInfo = JSON.stringify(data.deviceinfo, null, 2);
         console.log('Device Connected: ' + deviceInfo);
-        document.getElementById('deviceStatus').appendChild(document.createTextNode(deviceInfo));
-        document.getElementById('deviceStatus').classList.remove('d-none');
     });
 
     socket.on('deviceConnected', (data) => {
