@@ -41,6 +41,7 @@ function socketSetup() {
 
     socket.on('registered', (data) => {
         console.log('Registered device ' + DEVICE_TYPE + ' with User ID ' + data.username);
+        console.log('Event List: ' + JSON.stringify(data.event_list, null, 2));
         captureEvents(data.event_list);
         deviceInfo = JSON.stringify(data.deviceinfo, null, 2);
         console.log('Device Connected: ' + deviceInfo);
