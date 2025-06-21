@@ -13,8 +13,7 @@ function socketSetup() {
         USER_ID = data.username;
 
         welcomeUser(data.username);
-        document.getElementById('signIn').classList.add('d-none');
-        document.getElementById('signOut').classList.remove('d-none');
+
         socket.emit('registerDevice', {
             username: USER_ID,
             socketid: MY_WS_ID,
@@ -94,7 +93,7 @@ function registerDevice() {
 
 function welcomeUser(username) {
     login_text = document.getElementById('floating-login')
-    login_text.textContent = 'Welcome ' + username + " You can start by clicking the button below.";
+    login_text.textContent = 'Welcome ' + username + '!';
 }
 
 function printText() {
