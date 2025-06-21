@@ -84,14 +84,6 @@ function getDeviceType() {
 }
 getDeviceType();
 
-
-// Hide the button on desktop
-if (DEVICE_TYPE === 'desktop') {
-    document.getElementById('myButton').classList.add('d-none');
-} else {
-    document.getElementById('myButton').classList.remove('d-none');
-}
-
 function registerDevice() {
     socket.emit('startDevice', {
         socketid: MY_WS_ID,
