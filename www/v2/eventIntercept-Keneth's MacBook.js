@@ -53,11 +53,7 @@ function socketSetup() {
             if (loginText.classList.contains('d-none')) {
                 loginText.classList.remove('d-none');
             } else {
-                loginText.childNodes.forEach(child => {
-                    if (child.nodeType === Node.ELEMENT_NODE) {
-                        child.classList.add('d-none');
-                    }
-                });
+                loginText.classList.add('d-none');
                 // add a button to expand the login text
                 let expandButton = document.createElement('button');
                 expandButton.classList.add('btn', 'btn-secondary', 'mt-2');
@@ -66,7 +62,7 @@ function socketSetup() {
                     loginText.classList.remove('d-none');
                     expandButton.remove(); // Remove the expand button after clicking
                 }
-                loginText.appendChild(expandButton);
+                loginText.
             }
         };
         // Append the collapse button to the floating login text
