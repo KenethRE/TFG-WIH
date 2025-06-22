@@ -43,7 +43,7 @@ def login():
         current_user = User().get_user(username)
         if current_user is None:
             write_log('Login failed for user {}'.format(username))
-            flash('Username does not exist. Please try again or <a href="/signup">sign up</a>.')
+            flash('Username does not exist. Please try again or sign up below.')
             return render_template('login.html')
         if current_user.username and check_password_hash(current_user.password, password):
             write_log('User {} logged in successfully'.format(username))

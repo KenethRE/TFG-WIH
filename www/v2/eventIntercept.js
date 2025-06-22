@@ -61,7 +61,7 @@ function socketSetup() {
             })
             .then(response => {
                 if (response.ok) {
-                    window.location.href = 'https://tfg.zenken.es/';
+                    window.location.href = window.location.href; // Redirect to current page or home page
                 } else {
                     console.error('Logout failed');
                 }
