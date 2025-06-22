@@ -66,6 +66,7 @@ function socketSetup() {
                     </table>
                 </div>
             </div>`;
+        login_text.appendChild(table);
         //create an floating menu element to display device info without overwriting the existing text
         login_text.appendChild(document.createElement('span')).textContent = ' Device Info: '
         login_text.appendChild(document.createElement('pre')).textContent = data.deviceid;
