@@ -40,9 +40,7 @@ function socketSetup() {
         console.log('Registered device ' + DEVICE_TYPE + ' with User ID ' + data.username);
         captureEvents(data.event_list);
         console.log('Device Connected: ' + JSON.stringify(data.deviceinfo));
-        login_text = document.getElementById('floating-login');
-        // Clear any existing content
-        login_text.innerHTML = '';
+        login_text = document.getElementById('floating-login');        
         //add collapse button to the floating login text, if not already present but still add device info table only
         if (login_text.querySelector('.btn-secondary')) {
             // add to table instead of creating a new one
@@ -54,6 +52,7 @@ function socketSetup() {
             newDeviceTypeCell.textContent = DEVICE_TYPE;
             return; // Collapse button already exists, no need to add again
         }
+        login_text.innerHTML = '';
         // Create a collapse button to hide device info
         let collapseButton = document.createElement('button');
         collapseButton.classList.add('btn', 'btn-secondary', 'mb-2');
