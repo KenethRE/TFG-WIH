@@ -44,10 +44,10 @@ def login():
             flash('Username does not exist. Please try again or sign up below.')
             return render_template('login.html')
         if current_user.username and check_password_hash(current_user.password, password):
-            write_log('User {} logged in successfully'.format(username))
-            login_user(current_user, remember=remember)
-            socketio.emit('login_success', {'username': username})
-            return render_template('login_success.html', username=username, message="Login successful")
+            if (login_user(current_user, remember=remember)):
+                write_log('User {} authenticated successfully'.format(username))
+                socketio.emit('login_success', {'username': username})
+                return render_template('login_success.html', username=username, message="Login successful")
         else:
             write_log('Login failed for user {}'.format(username))
             flash('Please check your login details and try again.')
@@ -55,7 +55,6 @@ def login():
     return render_template('login.html')
 
 @app.route('/logout', methods=['GET', 'POST'])
-@login_required
 def logout():
     write_log('logout request')
     if current_user.is_authenticated:
@@ -94,6 +93,7 @@ def signup():
 @socketio.on('connect')
 def connect():
     write_log('client connected')
+    load_user
     if current_user.is_authenticated:
         write_log('User {} connected'.format(current_user.username))
         join_room(current_user.username)
