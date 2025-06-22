@@ -42,7 +42,7 @@ function socketSetup() {
     socket.on('registered', (data) => {
         console.log('Registered device ' + DEVICE_TYPE + ' with User ID ' + data.username);
         captureEvents(data.event_list);
-        console.log('Device Connected: ' + JSON.stringify(data));
+        console.log('Device Connected: ' + JSON.stringify(data.deviceinfo));
         login_text = document.getElementById('floating-login');
         //Create a table to show device id and logout button
         let table = document.createElement('div');
@@ -55,7 +55,7 @@ function socketSetup() {
                         <tbody>
                             <tr>
                                 <td>Device ID</td>
-                                <td>${JSON.stringify(data).deviceid}</td>
+                                <td>${data.deviceinfo.deviceid}</td>
                             </tr>
                             <tr>
                                 <td>Device Type</td>
