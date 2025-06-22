@@ -45,6 +45,34 @@ function socketSetup() {
         captureEvents(data.event_list);
         deviceInfo = JSON.stringify(data.deviceinfo, null, 2);
         console.log('Device Connected: ' + deviceInfo);
+        login_text = document.getElementById('floating-login');
+        //create an floating menu element to display device info without overwriting the existing text
+        login_text.innerHTML = '';
+        login_text.appendChild(document.createElement('span')).textContent = ' Device Info: '
+        login_text.appendChild(document.createElement('pre')).textContent = deviceInfo;
+        // Add logout button (directs to logout endpoint)
+        let logoutButton = document.createElement('button');
+        logoutButton.textContent = 'Logout';
+        logoutButton.classList.add('btn', 'btn-danger', 'mt-2');
+        logoutButton.onclick = function() {
+            fetch('https://tfg.zenken.es/logout', {
+                method: 'POST',
+                credentials: 'include'
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = 'https://tfg.zenken.es/';
+                } else {
+                    console.error('Logout failed');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        };
+        // Append the logout button to the floating login text
+        login_text.appendChild(logoutButton);
+        login_text.classList.remove('d-none');
+        document.getElementById('deviceStatus').classList.remove('d-none');
+        document.getElementById('deviceStatus').appendChild(document.createTextNode(deviceInfo));
     });
 
     socket.on('deviceConnected', (data) => {
@@ -92,7 +120,9 @@ function registerDevice() {
 
 function welcomeUser(username) {
     login_text = document.getElementById('floating-login')
-    login_text.textContent = 'Welcome ' + username + '!';
+    // Clear any existing content
+    login_text.innerHTML = '';
+    login_text.appendChild(document.createElement('span')).textContent = 'Welcome ' + username + '!';
 }
 
 function printText() {
