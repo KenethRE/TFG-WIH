@@ -11,9 +11,6 @@ function socketSetup() {
     socket.on('login_success', (data) => {
         console.log('Login successful for User ID ' + data.username);
         USER_ID = data.username;
-
-        welcomeUser(data.username);
-
         socket.emit('registerDevice', {
             username: USER_ID,
             socketid: MY_WS_ID,
@@ -47,7 +44,7 @@ function socketSetup() {
         //add collapse button to the floating login text
         let collapseButton = document.createElement('button');
         collapseButton.classList.add('btn', 'btn-secondary', 'mb-2');
-        collapseButton.textContent = 'Collapse';
+        collapseButton.textContent = 'Hide Device Info';
         collapseButton.onclick = function() {
             let loginText = document.getElementById('floating-login');
             if (loginText.classList.contains('d-none')) {
@@ -61,7 +58,7 @@ function socketSetup() {
                 // add a button to expand the login text
                 let expandButton = document.createElement('button');
                 expandButton.classList.add('btn', 'btn-secondary', 'mt-2');
-                expandButton.textContent = 'Expand';
+                expandButton.textContent = 'Show Device Info';
                 expandButton.onclick = function() {
                     loginText.childNodes.forEach(child => {
                         if (child.nodeType === Node.ELEMENT_NODE) {
@@ -77,6 +74,10 @@ function socketSetup() {
         };
         // Append the collapse button to the floating login text
         login_text.appendChild(collapseButton);
+
+        // Show welcome message
+        welcomeUser(data.username);
+
         //Create a table to show device id and logout button
         let table = document.createElement('div');
         table.classList.add('container');
