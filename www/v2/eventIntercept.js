@@ -43,7 +43,7 @@ function socketSetup() {
         console.log('Registered device ' + DEVICE_TYPE + ' with User ID ' + data.username);
         console.log('Event List: ' + JSON.stringify(data.event_list, null, 2));
         captureEvents(data.event_list);
-        console.log('Device Connected: ' + deviceInfo);
+        console.log('Device Connected: ' + data);
         login_text = document.getElementById('floating-login');
         //Create a table to show device id and logout button
         let table = document.createElement('div');
