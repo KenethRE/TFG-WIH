@@ -184,18 +184,16 @@ function socketSetup() {
         document.getElementById('deviceStatus').classList.remove('d-none');
     });
 
-    socket.on('eventCaptured' , (data) => {
-        console.log('Event Captured: ' + data.eventType);
-    });
-
     socket.on('ui_event', (data) => {
         console.log('UI Event: ' + JSON.stringify(data));
-        element = document.querySelector(data.element);
-        if (element) {
-            element.classList.add('event-highlight');
-            setTimeout(() => {
-                element.classList.remove('event-highlight');
-            }, 2000); // Remove highlight after 2 seconds
+        if (data.serverEvent) {
+            element = document.querySelector(data.element);
+            if (element) {
+                element.classList.add('event-highlight');
+                setTimeout(() => {
+                    element.classList.remove('event-highlight');
+                }, 2000); // Remove highlight after 2 seconds
+            }
         }
     });
 }
@@ -260,7 +258,11 @@ function attachEvent(event, triggeringElement) {
                     username: USER_ID,
                     timestamp: Date.now()
                 });
+            // Prevent default action for the element
+            event.preventDefault();
+            event.stopPropagation();
             });
+        // Prevent default action for the element
         } else {
             // Attach to all elements of the specified type
             let elements = document.querySelectorAll(triggeringElement);
@@ -272,6 +274,9 @@ function attachEvent(event, triggeringElement) {
                         username: USER_ID,
                         timestamp: Date.now()
                     });
+                    // Prevent default action for the element
+                    event.preventDefault();
+                    event.stopPropagation();
                 });
             }
         }
