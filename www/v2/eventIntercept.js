@@ -63,9 +63,15 @@ function socketSetup() {
                 expandButton.classList.add('btn', 'btn-secondary', 'mt-2');
                 expandButton.textContent = 'Expand';
                 expandButton.onclick = function() {
+                    loginText.childNodes.forEach(child => {
+                        if (child.nodeType === Node.ELEMENT_NODE) {
+                            child.classList.remove('d-none');
+                        }
+                    });
                     loginText.classList.remove('d-none');
-                    expandButton.remove(); // Remove the expand button after clicking
-                }
+                    // Remove the expand button after clicking
+                    this.remove();
+                };
                 loginText.appendChild(expandButton);
             }
         };
