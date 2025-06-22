@@ -52,14 +52,17 @@ function socketSetup() {
         if (login_text.querySelector('.btn-secondary')) {
             //check if deviceID is already in the table
             let deviceInfoTable = document.getElementById('deviceInfoTable');
-            if (document.getElementById('deviceID').textContent === data.deviceinfo.deviceid) {
-                console.log('Device ID already exists in the table, not adding again');
-                return; // Device ID already exists, no need to add again
+            for (let i = 0; i < deviceInfoTable.rows.length; i++) {
+                if (deviceInfoTable.rows[i].cells[0].textContent === data.deviceinfo.deviceid) {
+                    console.log('Device ID already exists in the table, not adding again');
+                    return; // Device ID already exists, no need to add again
+                }
             }
             // add to table instead of creating a new one
             deviceInfoTable = document.getElementById('deviceInfoTable');
             let newDeviceRow = deviceInfoTable.insertRow(-1);
             let newDeviceIdCell = newDeviceRow.insertCell(0);
+            newDeviceIdCell.id = 'deviceID';
             let newDeviceTypeCell = newDeviceRow.insertCell(1);
             let newDeviceStatusCell = newDeviceRow.insertCell(2);
             let newCurrentDeviceCell = newDeviceRow.insertCell(3);
@@ -122,6 +125,7 @@ function socketSetup() {
                                 <th scope="col">Device ID</th>
                                 <th scope="col">Device Type</th>
                                 <th scope="col">Status</th>
+                                <th scope="col">Current Device</th>
                             </tr>
                         </thead>
                         <tbody>
