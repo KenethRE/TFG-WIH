@@ -57,6 +57,7 @@ def login():
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():
     write_log('logout request')
+    write_log('Current user: {}'.format(current_user.username))
     if current_user.is_authenticated:
         logout_user()
         write_log('User {} logged out successfully'.format(current_user.username))
