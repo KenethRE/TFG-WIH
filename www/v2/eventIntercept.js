@@ -22,8 +22,8 @@ function socketSetup() {
         console.error('Registration error: ' + data.message);
     });
 
-    socket.on('unauthenticated', () => {
-        console.log('User not authenticated');
+    socket.on('unauthenticated', (data) => {
+        console.log('User not authenticated: ' + data.message);
     });
 
     socket.on('connect', () => {
@@ -32,8 +32,15 @@ function socketSetup() {
     });
 
 
-    socket.on('disconnect', () => {
-        console.log('Disconnected from server');
+    socket.on('unregister', (data) => {
+        //remove device info from the table
+        let deviceInfoTable = document.getElementById('deviceInfoTable');
+        if (document.getElementById('deviceID').textContent === data.socketid) {
+            let deviceRow = document.getElementById('deviceID').parentNode;
+            deviceInfoTable.deleteRow(deviceRow.rowIndex);
+            console.log('Device ID ' + data.socketid + ' removed from the table');
+        }
+        console.log('Disconnected from server: ' + data.message);
     });
 
     socket.on('registered', (data) => {
@@ -173,6 +180,7 @@ function socketSetup() {
         }
     });
 }
+
 
 socketSetup();
 

@@ -109,8 +109,13 @@ def disconnect():
     # Grab current SID and delete it from the database
     socketid = request.sid
     write_log('Socket ID {} disconnected'.format(socketid))
-    device = DeviceDAO().delete_device(socketid)
+    if (DeviceDAO().delete_device(socketid)):
+        write_log('Device with socket ID {} unregistered successfully'.format(socketid))
+        emit('unregister', {'message': 'Device unregistered successfully', 'socketid': socketid}, broadcast=True)
+    else:
+        write_log('Failed to unregister device with socket ID {}'.format(socketid))
     write_log('Device with socket ID {} unregistered'.format(socketid))
+    emit('disconnected', {'message': 'You have been disconnected', 'socketid': socketid}, to=socketid)
     if current_user.is_authenticated:
         write_log('User {} disconnected'.format(current_user.username))
     else:
