@@ -35,26 +35,9 @@
       "description": "Fired when a pointing device is moved while it is over an element.",
       "triggeringElement": ["div", "span", "a"],
       "userAction": "Move the mouse pointer over an element."
-    },
-    {
-      "type": "mouseout",
-      "description": "Fired when a pointing device is moved away from an element.",
-      "triggeringElement": ["div", "span", "a"],
-      "userAction": "Move the mouse pointer away from an element."
-    },
-    {
-      "type": "mouseenter",
-      "description": "Fired when a pointing device is moved onto an element.",
-      "triggeringElement": ["div", "span", "a"],
-      "userAction": "Move the mouse pointer onto an element."
-    },
-    {
-      "type": "mouseleave",
-      "description": "Fired when a pointing device is moved away from an element.",
-      "triggeringElement": ["div", "span", "a"],
-      "userAction": "Move the mouse pointer away from an element."
     }
-  ],
+  ]
+  ,
   "KeyboardEvents": [
     {
       "type": "keydown",
