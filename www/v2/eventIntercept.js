@@ -44,6 +44,20 @@ function socketSetup() {
         captureEvents(data.event_list);
         console.log('Device Connected: ' + JSON.stringify(data.deviceinfo));
         login_text = document.getElementById('floating-login');
+        //add collapse button to the floating login text
+        let collapseButton = document.createElement('button');
+        collapseButton.classList.add('btn', 'btn-secondary', 'mb-2');
+        collapseButton.textContent = 'Collapse';
+        collapseButton.onclick = function() {
+            let loginText = document.getElementById('floating-login');
+            if (loginText.classList.contains('d-none')) {
+                loginText.classList.remove('d-none');
+            } else {
+                loginText.classList.add('d-none');
+            }
+        };
+        // Append the collapse button to the floating login text
+        login_text.appendChild(collapseButton);
         //Create a table to show device id and logout button
         let table = document.createElement('div');
         table.classList.add('container');
@@ -66,9 +80,6 @@ function socketSetup() {
                 </div>
             </div>`;
         login_text.appendChild(table);
-        //create an floating menu element to display device info without overwriting the existing text
-        login_text.appendChild(document.createElement('span')).textContent = ' Device Info: '
-        login_text.appendChild(document.createElement('pre')).textContent = data.deviceid;
         // Add logout button (directs to logout endpoint)
         let logoutButton = document.createElement('button');
         logoutButton.textContent = 'Logout';
