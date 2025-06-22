@@ -47,14 +47,10 @@ function socketSetup() {
         if (login_text.querySelector('.btn-secondary')) {
             // add to table instead of creating a new one
             deviceInfoTable = document.getElementById('deviceInfoTable');
-            deviceInfoTable.querySelector('tbody').innerHTML = `
+            deviceInfoTable.querySelector('tbody').appendChild = `
                 <tr>
-                    <td>Device ID</td>
-                    <td>${data.deviceinfo.deviceid}</td>
-                </tr>
-                <tr>
-                    <td>Device Type</td>
-                    <td>${DEVICE_TYPE}</td>
+                    <td scope="row">${data.deviceinfo.deviceid}</td>
+                    <td scope="row">${DEVICE_TYPE}</td>
                 </tr>`;
             return; // Collapse button already exists, no need to add again
         }
@@ -105,14 +101,16 @@ function socketSetup() {
                 <div class="col-12">
                     <h5>Device Information</h5>
                     <table class="table table-bordered" id="deviceInfoTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">Device ID</th>
+                                <th scope="col">Device Type</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr>
-                                <td>Device ID</td>
-                                <td>${data.deviceinfo.deviceid}</td>
-                            </tr>
-                            <tr>
-                                <td>Device Type</td>
-                                <td>${DEVICE_TYPE}</td>
+                                <td scope="row">${data.deviceinfo.deviceid}</td>
+                                <td scope="row">${DEVICE_TYPE}</td>
                             </tr>
                         </tbody>
                     </table>
