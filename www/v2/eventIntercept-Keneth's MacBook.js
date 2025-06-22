@@ -75,8 +75,7 @@ function socketSetup() {
         // Append the collapse button to the floating login text
         login_text.appendChild(collapseButton);
 
-        // Show welcome message
-        login_text.appendChild(document.createElement('span')).textContent = 'Welcome ' + data.username + '!';
+        
 
         //Create a table to show device id and logout button
         let table = document.createElement('div');
