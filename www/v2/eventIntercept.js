@@ -43,6 +43,12 @@ function socketSetup() {
         login_text = document.getElementById('floating-login');        
         //add collapse button to the floating login text, if not already present but still add device info table only
         if (login_text.querySelector('.btn-secondary')) {
+            //check if deviceID is already in the table
+            let deviceInfoTable = document.getElementById('deviceInfoTable');
+            if (deviceInfoTable.querySelector(`td:contains('${data.deviceinfo.deviceid}')`)) {
+                console.log('Device ID already exists in the table, not adding again.');
+                return; // Device ID already exists, no need to add again
+            }
             // add to table instead of creating a new one
             deviceInfoTable = document.getElementById('deviceInfoTable');
             let newDeviceRow = deviceInfoTable.insertRow(-1);
