@@ -17,8 +17,6 @@ app.config['SECRET_KEY'] = encryption.get_secrets()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
 
-current_user = User()
-
 @login_manager.user_loader
 def load_user(username):
     write_log('load_user called with user_id: {}'.format(username))
