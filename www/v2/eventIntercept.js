@@ -185,14 +185,13 @@ function socketSetup() {
     });
 
     socket.on('ui_event', (data) => {
-        console.log('UI Event: ' + JSON.stringify(data));
         if (data.serverEvent) {
-            element = document.querySelector(data.element);
+            //trigger event on element with ID data.element
+            let element = document.getElementById(data.element);
             if (element) {
-                element.classList.add('event-highlight');
-                setTimeout(() => {
-                    element.classList.remove('event-highlight');
-                }, 2000); // Remove highlight after 2 seconds
+                console.log(`Triggering server event: ${data.type} on element with ID ${data.element}`);
+                let event = new Event(data.type, { bubbles: true, cancelable: true });
+                element.dispatchEvent(event);
             }
         }
     });
@@ -233,6 +232,16 @@ function printText() {
     document.getElementById('myText').classList.remove('d-none');
 }
 
+var PseudoGuid = new (function() {
+    this.empty = "00000000-0000-0000-0000-000000000000";
+    this.GetNew = function() {
+        var fourChars = function() {
+            return (((1 + Math.random()) * 0x10000)|0).toString(16).substring(1).toUpperCase();
+        }
+        return (fourChars() + fourChars() + "-" + fourChars() + "-" + fourChars() + "-" + fourChars() + "-" + fourChars() + fourChars() + fourChars());
+    };
+})();
+
 // Capture all click events on buttons
 
 function captureEvents(event_list) {
@@ -251,10 +260,11 @@ function attachEvent(event, triggeringElement) {
     // If the event is attached to the document/body
     if (triggeringElement === "document" || triggeringElement === "body") {
         let target = (triggeringElement === "body") ? document.body : document;
+        target.id = PseudoGuid.GetNew(); // Assign a unique ID to the body or document
         target.addEventListener(event.type, (event) => {
             socket.emit("ui_event", {
                     type: event.type,
-                    element: target.className || target.id || target.tagName,
+                    element: target.id,
                     username: USER_ID,
                     timestamp: Date.now()
                 });
@@ -267,10 +277,13 @@ function attachEvent(event, triggeringElement) {
             // Attach to all elements of the specified type
             let elements = document.querySelectorAll(triggeringElement);
             for (let i = 0; i < elements.length; i++) {
+                if (!elements[i].id) {
+                    elements[i].id = PseudoGuid.GetNew(); // Assign a unique ID if not already present
+                }
                 elements[i].addEventListener(eventType, function(event) {
                     socket.emit("ui_event", {
                         type: eventType,
-                        element: this.className || this.id || this.tagName,
+                        element: this.id, // Use element's ID or generate a new one
                         username: USER_ID,
                         timestamp: Date.now()
                     });
