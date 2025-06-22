@@ -271,13 +271,13 @@ function attachEvent(event, triggeringElement) {
                 });
             // Prevent default action for the element
             event.preventDefault();
-            event.stopPropagation();
             });
         // Prevent default action for the element
         } else {
             // Attach to all elements of the specified type
             let elements = document.querySelectorAll(triggeringElement);
             for (let i = 0; i < elements.length; i++) {
+                console.log(`Attaching event: ${eventType} to element with ID ${elements[i].tag || 'none'}`);
                 if (!elements[i].id) {
                     elements[i].id = PseudoGuid.GetNew(); // Assign a unique ID if not already present
                 }
@@ -290,7 +290,6 @@ function attachEvent(event, triggeringElement) {
                     });
                     // Prevent default action for the element
                     event.preventDefault();
-                    event.stopPropagation();
                 });
             }
         }
