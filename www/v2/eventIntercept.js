@@ -41,7 +41,13 @@ function socketSetup() {
         captureEvents(data.event_list);
         console.log('Device Connected: ' + JSON.stringify(data.deviceinfo));
         login_text = document.getElementById('floating-login');
-        //add collapse button to the floating login text
+        // Clear any existing content
+        login_text.innerHTML = '';
+        //add collapse button to the floating login text, if not already present
+        if (login_text.querySelector('.btn-secondary')) {
+            return; // Collapse button already exists, no need to add again
+        }
+        // Create a collapse button to hide device info
         let collapseButton = document.createElement('button');
         collapseButton.classList.add('btn', 'btn-secondary', 'mb-2');
         collapseButton.textContent = 'Hide Device Info';
