@@ -29,12 +29,6 @@
       "description": "Fired when a pointing device is moved onto an element.",
       "triggeringElement": ["div", "span", "a"],
       "userAction": "Move the mouse pointer onto an element."
-    },
-    {
-      "type": "mousemove",
-      "description": "Fired when a pointing device is moved while it is over an element.",
-      "triggeringElement": ["div", "span", "a"],
-      "userAction": "Move the mouse pointer over an element."
     }
   ]
   ,
