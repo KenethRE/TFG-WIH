@@ -45,27 +45,17 @@ function socketSetup() {
         login_text.innerHTML = '';
         //add collapse button to the floating login text, if not already present but still add device info table only
         if (login_text.querySelector('.btn-secondary')) {
-            let table = document.createElement('div');
-            table.classList.add('container');
-            table.innerHTML = `
-                <div class="row">
-                    <div class="col-12">
-                        <h5>Device Information</h5>
-                        <table class="table table-bordered">
-                            <tbody>
-                                <tr>
-                                    <td>Device ID</td>
-                                    <td>${data.deviceinfo.deviceid}</td>
-                                </tr>
-                                <tr>
-                                    <td>Device Type</td>
-                                    <td>${DEVICE_TYPE}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>`;
-            login_text.appendChild(table);
+            // add to table instead of creating a new one
+            deviceInfoTable = document.getElementById('deviceInfoTable');
+            deviceInfoTable.querySelector('tbody').innerHTML = `
+                <tr>
+                    <td>Device ID</td>
+                    <td>${data.deviceinfo.deviceid}</td>
+                </tr>
+                <tr>
+                    <td>Device Type</td>
+                    <td>${DEVICE_TYPE}</td>
+                </tr>`;
             return; // Collapse button already exists, no need to add again
         }
         // Create a collapse button to hide device info
@@ -103,7 +93,9 @@ function socketSetup() {
         login_text.appendChild(collapseButton);
 
         // Show welcome message
+        login_text.appendChild(document.createElement('br'));
         login_text.appendChild(document.createElement('span')).textContent = 'Welcome ' + data.username + '!';
+        login_text.appendChild(document.createElement('br'));
 
         //Create a table to show device id and logout button
         let table = document.createElement('div');
@@ -112,7 +104,7 @@ function socketSetup() {
             <div class="row">
                 <div class="col-12">
                     <h5>Device Information</h5>
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id="deviceInfoTable">
                         <tbody>
                             <tr>
                                 <td>Device ID</td>
