@@ -237,17 +237,24 @@ function printText() {
 // Capture all click events on buttons
 
 function captureEvents(event_list) {
-    for (let i = 0; i < event_list.length; i++) {
-        let event_json = event_list[i];
-        let eventType = event_json.eventType;
-        let triggeringElement = event_json.triggeringElement;
-
-        // If the event is attached to the document/body
-        if (triggeringElement === "document" || triggeringElement === "body") {
-            let target = (triggeringElement === "body") ? document.body : document;
-            target.addEventListener(eventType, (event) => {
-                socket.emit("ui_event", {
-                    type: eventType,
+    Object.keys(event_list).forEach(event_listType => {
+        for (let event of event_list[event_listType]) {
+            console.log(`Capturing event: ${event.type}`);
+            for (let triggeringElement of event.triggeringElement) {
+                attachEvent(event, triggeringElement);
+            }
+        }
+    });
+}
+function attachEvent(event, triggeringElement) {
+    let eventType = event.type;
+    console.log(`Attaching event: ${eventType} to ${triggeringElement}`);
+    // If the event is attached to the document/body
+    if (triggeringElement === "document" || triggeringElement === "body") {
+        let target = (triggeringElement === "body") ? document.body : document;
+        target.addEventListener(event.type, (event) => {
+            socket.emit("ui_event", {
+                    type: event.type,
                     element: triggeringElement,
                     username: USER_ID,
                     timestamp: Date.now()
@@ -268,51 +275,3 @@ function captureEvents(event_list) {
             }
         }
     }
-
-/*     let buttons = document.querySelectorAll('button');
-    for (let i = 0; i < buttons.length; i++) {
-        console.log(buttons[i].id);
-        buttons[i].addEventListener('click', function() {
-            socket.emit('ui_event', {
-                type: 'click',
-                element: this.id,
-                userid: USER_ID,
-                timestamp: Date.now()
-            });
-        });
-    }
-    
-    /* document.addEventListener("click", (event) => {
-        if (event.target.tagName === "BUTTON") {
-            socket.emit("ui_event", {
-                type: "click",
-                element: event.target.innerText || event.target.id,
-                userid: USER_ID,
-                timestamp: Date.now()
-            });
-        }
-    });
-    
-    // Capture all input field changes
-    document.addEventListener("input", (event) => {
-        if (event.target.tagName === "INPUT" || event.target.tagName === "TEXTAREA") {
-            socket.emit("ui_event", {
-                type: "input",
-                element: event.target.name || event.target.id,
-                userid: USER_ID,
-                value: event.target.value,
-                timestamp: Date.now()
-            });
-        }
-    });
-    
-    // Capture keypresses
-    document.addEventListener("keydown", (event) => {
-        socket.emit("ui_event", {
-            type: "keydown",
-            userid: USER_ID,
-            key: event.key,
-            timestamp: Date.now()
-        });
-    }); */
-}
