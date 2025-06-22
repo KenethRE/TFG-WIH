@@ -54,6 +54,10 @@ function socketSetup() {
             let newDeviceRow = deviceInfoTable.insertRow(-1);
             let newDeviceIdCell = newDeviceRow.insertCell(0);
             let newDeviceTypeCell = newDeviceRow.insertCell(1);
+            let newDeviceStatusCell = newDeviceRow.insertCell(2);
+            let newCurrentDeviceCell = newDeviceRow.insertCell(3);
+            newDeviceStatusCell.textContent = data.deviceinfo.status;
+            newCurrentDeviceCell.textContent = 'NO';
             newDeviceIdCell.textContent = data.deviceinfo.deviceid;
             newDeviceTypeCell.textContent = data.deviceinfo.deviceType;
             return; // Collapse button already exists, no need to add again
@@ -110,12 +114,15 @@ function socketSetup() {
                             <tr>
                                 <th scope="col">Device ID</th>
                                 <th scope="col">Device Type</th>
+                                <th scope="col">Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td id="deviceID">${data.deviceinfo.deviceid}</td>
                                 <td id="deviceType">${data.deviceinfo.deviceType}</td>
+                                <td id="deviceStatus">${data.deviceinfo.status}</td>
+                                <td id="currentDevice">YES</td>
                             </tr>
                         </tbody>
                     </table>
