@@ -45,8 +45,8 @@ function socketSetup() {
         if (login_text.querySelector('.btn-secondary')) {
             //check if deviceID is already in the table
             let deviceInfoTable = document.getElementById('deviceInfoTable');
-            if (deviceInfoTable.querySelector(`td:contains('${data.deviceinfo.deviceid}')`)) {
-                console.log('Device ID already exists in the table, not adding again.');
+            if (document.getElementById('deviceID').textContent === data.deviceinfo.deviceid) {
+                console.log('Device ID already exists in the table, not adding again');
                 return; // Device ID already exists, no need to add again
             }
             // add to table instead of creating a new one
@@ -114,8 +114,8 @@ function socketSetup() {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>${data.deviceinfo.deviceid}</td>
-                                <td>${DEVICE_TYPE}</td>
+                                <td id="deviceID">${data.deviceinfo.deviceid}</td>
+                                <td id="deviceType">${DEVICE_TYPE}</td>
                             </tr>
                         </tbody>
                     </table>
