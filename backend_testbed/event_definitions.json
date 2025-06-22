@@ -23,12 +23,6 @@
       "description": "Fired when a pointing device button is released over an element.",
       "triggeringElement": ["button", "a", "div"],
       "userAction": "Release a mouse button."
-    },
-    {
-      "type": "mouseover",
-      "description": "Fired when a pointing device is moved onto an element.",
-      "triggeringElement": ["div", "span", "a"],
-      "userAction": "Move the mouse pointer onto an element."
     }
   ]
   ,
