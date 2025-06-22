@@ -5,20 +5,17 @@
     <h3 class="title">Login</h3>
     <div class="box">
         {% with messages = get_flashed_messages() %}
-        {% if messages[0] == "Please check your login details and try again." %}
-            <div class="notification is-danger">
-                {{ messages[0] }}
-            </div>
-        {% endif %}
-        {% if messages[0] == "'Username does not exist. Please try again or <a href="/signup">sign up</a>." %}
-            <div class="notification is-danger">
-                {{ messages[0] }}
-            </div>
-        {% endif %}
         {% if messages[0] == "User created successfully - please login" %}
             <div class="notification is-success">
                 {{ messages[0] }}
             </div>
+        {% endif %}
+        {% else %}
+            {% for message in messages %}
+                <div class="notification is-danger">
+                    {{ message }}
+                </div>
+            {% endfor %}
         {% endif %}
         {% endwith %}
         <form method="POST" action="/login">
