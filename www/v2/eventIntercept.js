@@ -35,10 +35,12 @@ function socketSetup() {
     socket.on('unregister', (data) => {
         //remove device info from the table
         let deviceInfoTable = document.getElementById('deviceInfoTable');
-        if (document.getElementById('deviceID').textContent === data.socketid) {
-            let deviceRow = document.getElementById('deviceID').parentNode;
-            deviceInfoTable.deleteRow(deviceRow.rowIndex);
-            console.log('Device ID ' + data.socketid + ' removed from the table');
+        for (let i = 0; i < deviceInfoTable.rows.length; i++) {
+            if (deviceInfoTable.rows[i].cells[0].textContent === data.socketid) {
+                deviceInfoTable.deleteRow(i);
+                console.log('Device ID ' + data.socketid + ' removed from the table');
+                break; // Exit loop after removing the device
+            }
         }
         console.log('Disconnected from server: ' + data.message);
     });
