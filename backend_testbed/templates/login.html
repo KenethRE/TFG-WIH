@@ -5,16 +5,10 @@
     <h3 class="title">Login</h3>
     <div class="box">
         {% with messages = get_flashed_messages() %}
-        {% if messages[0] == "User created successfully - please login" %}
-            <div class="notification is-success">
+        {% if messages %}
+            <div class="notification is-danger">
                 {{ messages[0] }}
             </div>
-        {% else %}
-            {% for message in messages %}
-                <div class="notification is-danger">
-                    {{ message }}
-                </div>
-            {% endfor %}
         {% endif %}
         {% endwith %}
         <form method="POST" action="/login">
