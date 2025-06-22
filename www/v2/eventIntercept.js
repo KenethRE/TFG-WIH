@@ -55,7 +55,7 @@ function socketSetup() {
             let newDeviceIdCell = newDeviceRow.insertCell(0);
             let newDeviceTypeCell = newDeviceRow.insertCell(1);
             newDeviceIdCell.textContent = data.deviceinfo.deviceid;
-            newDeviceTypeCell.textContent = DEVICE_TYPE;
+            newDeviceTypeCell.textContent = data.deviceinfo.deviceType;
             return; // Collapse button already exists, no need to add again
         }
         login_text.innerHTML = '';
@@ -115,7 +115,7 @@ function socketSetup() {
                         <tbody>
                             <tr>
                                 <td id="deviceID">${data.deviceinfo.deviceid}</td>
-                                <td id="deviceType">${DEVICE_TYPE}</td>
+                                <td id="deviceType">${data.deviceinfo.deviceType}</td>
                             </tr>
                         </tbody>
                     </table>
