@@ -186,7 +186,7 @@ function socketSetup() {
 
     socket.on('ui_event', (data) => {
         console.log(`UI Event received: ${data.type} on element with ID ${data.element}`);
-        if (data.serverEvent) {
+        if (data.server_event) {
             //trigger event on element with ID data.element
             let element = document.getElementById(data.element);
             if (element) {
