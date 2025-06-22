@@ -27,44 +27,40 @@ class UserDAO():
     def __init__(self):
         pass
     def get_user(self, username):
-        write_log('get_user called with username: {}'.format(username))
         user = db.select("USERS", columns=['Username', 'Email', 'Password', 'isActive'], condition='Username = "{}"'.format(username))
         if not user:
-            write_log('User not found: {}'.format(username))
-            return None
+            return None, None, None, None
         write_log('User found: {}'.format(user[0]))
         # Return a tuple of Username, Email, Password, isActive
-        return User(username=user[0][0], email=user[0][1], password=user[0][2], is_active=user[0][3]) if user else None
+        return user[0][0], user[0][1], user[0][2], user[0][3] if user else None
 
     def store_user(self, user):
         write_log('store_user called with user: {}'.format(user))
         if not user.username or not user.email or not user.password:
-            write_log('Invalid user data: {}'.format(user))
             return False
         # Check if the user already exists
         existing_user = db.select("USERS", columns=['Username'], condition='Username = "{}"'.format(user.username))
         if existing_user:
-            write_log('User already exists: {}'.format(user.username))
             return False
         # Insert the new user into the database
         db.insert("USERS", {"Username": user.username, "Email": user.email, "Password": user.password, "isActive": user.is_active})
-        write_log('User stored successfully: {}'.format(user.username))
         return True
     
     def __str__(self):
         return json.dumps(self.__dict__)
     
 class User(UserDAO):
-    def __init__(self, username=None, email=None, password=None, is_active=0):
-        self.username = username
-        self.email = email
-        self.password = password
-        self.is_authenticated = False
+    def __init__(self, username):
+        self.username, self.email, self.password, self.is_active = super().get_user(username)
+        self.is_authenticated = True
         self.is_anonymous = False
-        self.is_active = is_active
 
     def store_user(self):
         return super().store_user(self)
+    
+    def setis_authenticated(self, value):
+        self.is_authenticated = value
+        write_log('setis_authenticated called for user: {} with value: {}'.format(self.username, value))
     
     def get_id(self):
         write_log('get_id called for user: {}'.format(self.username))
@@ -78,7 +74,6 @@ class DeviceDAO():
         write_log('get_device called with device_id: {}'.format(device_id))
         device = db.select("DEVICES", columns=['DeviceID', 'Username', 'DeviceType'], condition='ID = {}'.format(device_id))
         if not device:
-            write_log('Device not found: {}'.format(device_id))
             return None
         write_log('Device found: {}'.format(device[0]))
         return Device(user=device[0][1], type=device[0][2], status=device[0][3]) if device else None

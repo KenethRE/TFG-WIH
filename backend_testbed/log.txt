@@ -1,257 +1,232 @@
-127.0.0.1
-{'Host': 'localhost', 'X-Real-Ip': '127.0.0.1', 'X-Forwarded-For': '127.0.0.1', 'X-Forwarded-Proto': 'http', 'Connection': 'close', 'Cache-Control': 'max-age=0', 'Sec-Ch-Ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'Sec-Ch-Ua-Mobile': '?0', 'Sec-Ch-Ua-Platform': '"Windows"', 'Dnt': '1', 'Upgrade-Insecure-Requests': '1', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-User': '?1', 'Sec-Fetch-Dest': 'document', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'en-US,en;q=0.9,es;q=0.8'}127.0.0.1
-127.0.0.1
-127.0.0.1
-127.0.0.1
-127.0.0.1
-127.0.0.1
-127.0.0.1
-127.0.0.1
-127.0.0.1
-127.0.0.1
-127.0.0.1
-127.0.0.1
-162.158.120.205
-162.158.120.205
-162.158.120.204
-162.158.120.204
-162.158.120.205
-162.158.120.205
-162.158.120.204
-162.158.120.205
-162.158.120.205
-162.158.120.205
-162.158.120.205
-162.158.120.205
-162.158.120.205
-162.158.120.205
-received json: None from VwQJ_FBl9E7w9wIaAAAB
-
-162.158.120.205
-received json: None from OOa05Y0s3Sel7m7iAAAD
-
-162.158.120.205
-received json: None from iI737kZYrg_ZMZHEAAAF
-
-received json: None from ADsfgBHTOsk5lFvZAAAH
-
-received json: None from FRg4LjbcySywb3SuAAAJ
-
-received json: None from K6Gy3ghvodoCCKizAAAL
-
-received json: None from 5TZyzM0fpsvP4wBrAAAN
-
-received json: None from GJ_PjiXV4JYafB57AAAP
-
-received json: None from y-9--YJUPZI8ftfVAAAR
-
-received json: None from cL-EsbPZgmy6ImTPAAAT
-
-received json: None from elMhgOxsKxHYCZHSAAAV
-
-received json: None from q7Z1mQbECsByyEv4AAAX
-
-received json: None from UkkhAoGEcekO54-QAAAZ
-
-received json: None from gj0Cfm0gCKKw33KQAAAb
-
-received json: None from tUmptW-1Vy0he-y6AAAd
-
-received json: None from Q2M0rsFmCG_mptpcAAAf
-
-received json: None from MXOtbcuOU31EQSo8AAAB
-
-received json: None from yBQpjZPbV1eGA6hNAAAD
-
-received json: None from 8542JvvxwAgWFUqdAAAF
-
-received json: None from kz-JOfiJZdo8WYHdAAAH
-
-received json: None from 0xxjrCP-YmKQnZa8AAAJ
-
-received json: None from N1-mOszBQ0VIphU3AAAL
-
-received json: None from PUZ-y69wgcdmp4rIAAAN
-
-received json: None from ojbUzi-g74up217_AAAP
-
-received json: None from 59o1TqNyxmzi4VyFAAAR
-
-received json: None from 0-9nd-c0rRGcHBLYAAAT
-
-received json: None from 7lYMiEOx5YBZWMAMAAAV
-
-received json: None from yAnH2W-mxplVLTYHAAAX
-
-received json: None from EdLKY4VFyUU-Viv-AAAB
-
-received json: None from E29UmT28FZHZJq1cAAAD
-
-received json: None from XiWoWs8oGn7QuxTMAAAF
-
-received json: None from C9dT49aBHzmr2EaNAAAH
-
-received json: None from cFP6n-fZWva6u44QAAAJ
-
-received json: None from RLDGlW1vT3lKB_jfAAAL
-
-received json: None from 137evj3flYcwt8I0AAAN
-
-received json: None from G0QDucHVxg1OfrKcAAAP
-
-received json: None from 8E0BG-WrMfKFb_1NAAAR
-
-received json: None from vM0wS4fNqUxljn1uAAAT
-
-received json: None from JuaiEEF3-kK0VTVVAAAV
-
-received json: None from RG_IlCzsBnQCAXKfAAAX
-
-received json: None from d3quUpG4ot__HQpwAAAZ
-
-received json: None from YWNeb12s3exEqWsXAAAb
-
-received json: None from tMn7G2WZHfy9wqVkAAAd
-
-received json: None from iMKJ4YyDzXmZ3_VYAAAf
-
-received json: None from HY3bo3qzOIhn8rXkAAAh
-
-received json: None from EvUvlARWo1g5GpFuAAAj
-
-received json: None from zQuX1bFW1Id-TN0gAAAl
-
-received json: None from VT6ggulLGRx4zM8AAAAn
-
-received json: None from znYChBIzPGeT80DlAAAp
-
-received json: None from g5SzvG5HNWxVgXsNAAAr
-
-received json: None from xQOAsxpxuBgB_vvPAAAt
-
-received json: None from hKsm1cqJrDVgyr-vAAAv
-
-received json: None from 3LucJ1Ij_qzXiymKAAAx
-
-received json: None from RuH8N3o079h969GtAAAz
-
-received json: None from zBPnHcxYLPYlkpGHAAA1
-
-received json: None from tz1_3LDYrSaRS8iUAAA3
-
-received json: None from f3f_pCvMHYziByyDAAA5
-
-received json: None from GcooVbAgaH-G2P83AAAB
-
-received json: None from -H0_LgD6AX8DUMzUAAAD
-
-received json: None from vJGctiIrlvlpgFGmAAAF
-
-received json: None from gChL50r569CzA_O9AAAH
-
-received json: None from LUgDnvUmDc9-OZIIAAAJ
-
-received json: None from _S1mLEyQIqbqB_AqAAAL
-
-received json: None from Hk05VeUBNMTKV0cjAAAN
-
-received json: None from 8-U_nzj46D5JOCYYAAAP
-
-received json: None from ZMoue27UPsUC3mymAAAR
-
-received json: None from T8sztNXCwIcIJoJfAAAT
-
-received json: None from BUzU6RW2_FAy2_4vAAAV
-
-received json: None from xeq3-PBHH_cSitxiAAAX
-
-received json: None from Qh9WcrDxhc31XYJwAAAZ
-
-received json: None from liInHwmP1oHbDIBPAAAb
-
-received json: None from mP95ZmyY5vuncMYwAAAd
-
-received json: None from 3CrM78NHCxJR7xMZAAAf
-
-received json: None from gehhabplVaki8EyUAAAh
-
-received json: None from VUtCOY4YVTsgAdO8AAAj
-
-received json: None from iprBlu_Mtsr9yRrEAAAl
-
-received json: None from 4rdrbslAzO-8aEFmAAAn
-
-received json: None from G7SGPlwxAJCA-BM4AAAp
-
-received json: None from 8lxiYCsjojXtkYlUAAAr
-
-received json: None from DAIEPy-WE-vLKwULAAAt
-
-received json: None from 3lyw2j2sXBP45eESAAAv
-
-received json: None from H86dAd5uO8HdriMEAAAx
-
-received json: None from WQkO7kyPbxbuITn8AAAz
-
-received json: None from Xnq4gzW2PUnD_XNVAAA1
-
-received json: None from ZuTNSSQQOhIna5XNAAA3
-
-received json: None from nLWmb29kGqG9Sh-XAAA5
-
-received json: None from pTGyzEf8k1IkUwYiAAAB
-
-received json: None from cF7vCfyfl_5om47yAAAD
-
-received json: None from YtIpTgQooSBrsIQEAAAF
-
-received json: None from 0zAyT6YWGmztEFUCAAAH
-
-received json: None from ZXXCXSQoN_-PCLY_AAAJ
-
-received json: None from mmzMrJgkScygDXK8AAAL
-
-received json: None from Y6XNAhOYciO3zQ9HAAAN
-
-received json: None from Xw4xzMryFJiSKWysAAAP
-
-received json: None from oFd8ikNkTGmTVqcLAAAR
-
-received json: None from xEKMLOGEcOFsw9KnAAAT
-
-received json: None from 9ilONc54vh76UZT5AAAV
-
-received json: None from IlTBKsCTSBXo9AWDAAAX
-
-received json: None from zLToVEyw0ndU_bFVAAAZ
-
-received json: None from 9DEp8J9mMRZhtJArAAAb
-
-received json: None from fRg8goyL64JkuKoWAAAd
-
-received json: None from lZivsOanAVQOyIusAAAf
-
-received json: None from VETHIDCF7nlA-Ps3AAAB
-
-received json: None from o--1cHzz1PyfL7YcAAAD
-
-received json: None from IDijktBXyfof21vKAAAF
-
-received json: None from Zg9RoOKDh4W7-0XPAAAH
-
-received json: None from 85jSMGVnRmPMoTABAAAJ
-
-received json: None from pLfb6IH3zkvOp8-7AAAL
-
-received json: None from g0YL41Ksvfa1iSXIAAAN
-
-received json: None from AfZpe7rj6lSMiMFlAAAP
-
-received json: None from A4X3WYgNXZOrgZ8aAAAR
-
-received json: None from d9RDixdSyRR9xNELAAAT
-
-received json: None from TYc0K2hOAOmwEzDNAAAV
-
-received json: None from tzeK5e6EzbCPGjXFAAAX
-
+2025-06-22 16:45:06 - Database already exists
+2025-06-22 16:45:43 - Log writer initialized.
+2025-06-22 16:45:43 - This is a test log entry.
+2025-06-22 16:45:43 - Another log entry for testing purposes.
+2025-06-22 16:45:59 - Database already exists
+2025-06-22 16:46:43 - Database already exists
+2025-06-22 16:48:02 - Database already exists
+2025-06-22 16:48:09 - login request
+2025-06-22 16:48:12 - login request
+2025-06-22 16:48:13 - login request
+2025-06-22 16:48:14 - login request
+2025-06-22 16:48:14 - login request
+2025-06-22 16:48:14 - login request
+2025-06-22 16:48:15 - login request
+2025-06-22 16:48:15 - login request
+2025-06-22 16:48:15 - login request
+2025-06-22 16:48:15 - login request
+2025-06-22 16:48:16 - login request
+2025-06-22 16:48:16 - login request
+2025-06-22 16:48:16 - login request
+2025-06-22 16:48:16 - login request
+2025-06-22 16:48:17 - login request
+2025-06-22 16:48:17 - login request
+2025-06-22 16:48:37 - Database already exists
+2025-06-22 16:48:39 - login request
+2025-06-22 16:49:02 - Database already exists
+2025-06-22 16:49:04 - login request
+2025-06-22 16:49:04 - Current user: <flask_login.mixins.AnonymousUserMixin object at 0x7f93b0d87c50>
+2025-06-22 16:49:40 - login request
+2025-06-22 16:49:40 - Current user: <flask_login.mixins.AnonymousUserMixin object at 0x7f93b0db7a70>
+2025-06-22 16:50:35 - Database already exists
+2025-06-22 16:50:40 - login request
+2025-06-22 16:50:40 - Current user: False
+2025-06-22 16:59:26 - Database already exists
+2025-06-22 16:59:33 - login request
+2025-06-22 16:59:33 - Current user: False
+2025-06-22 16:59:46 - logout request
+2025-06-22 16:59:46 - Logout request received but no user is authenticated
+2025-06-22 17:00:06 - login request
+2025-06-22 17:00:06 - Current user: False
+2025-06-22 17:00:36 - Database already exists
+2025-06-22 17:00:39 - login request
+2025-06-22 17:01:01 - Database already exists
+2025-06-22 17:01:04 - login request
+2025-06-22 17:01:04 - load_user called with user_id: prueba
+2025-06-22 17:01:04 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:01:04 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:03:07 - Database already exists
+2025-06-22 17:03:13 - login request
+2025-06-22 17:03:13 - load_user called with user_id: prueba
+2025-06-22 17:03:13 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:03:13 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:03:13 - get_id called for user: prueba
+2025-06-22 17:03:13 - User prueba authenticated successfully
+2025-06-22 17:03:14 - signup request
+2025-06-22 17:03:14 - load_user called with user_id: prueba
+2025-06-22 17:03:14 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:03:14 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:03:20 - logout request
+2025-06-22 17:03:20 - load_user called with user_id: prueba
+2025-06-22 17:03:20 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:03:20 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:03:20 - User <flask_login.mixins.AnonymousUserMixin object at 0x7f117a89e1e0> logged out successfully
+2025-06-22 17:03:36 - login request
+2025-06-22 17:04:17 - Database already exists
+2025-06-22 17:04:19 - login request
+2025-06-22 17:04:34 - Database already exists
+2025-06-22 17:04:36 - login request
+2025-06-22 17:04:41 - logout request
+2025-06-22 17:04:41 - Logout request received but no user is authenticated
+2025-06-22 17:04:42 - logout request
+2025-06-22 17:04:42 - Logout request received but no user is authenticated
+2025-06-22 17:04:43 - logout request
+2025-06-22 17:04:43 - Logout request received but no user is authenticated
+2025-06-22 17:04:43 - logout request
+2025-06-22 17:04:43 - Logout request received but no user is authenticated
+2025-06-22 17:04:44 - logout request
+2025-06-22 17:04:44 - Logout request received but no user is authenticated
+2025-06-22 17:04:44 - logout request
+2025-06-22 17:04:44 - Logout request received but no user is authenticated
+2025-06-22 17:04:45 - logout request
+2025-06-22 17:04:45 - Logout request received but no user is authenticated
+2025-06-22 17:04:45 - logout request
+2025-06-22 17:04:45 - Logout request received but no user is authenticated
+2025-06-22 17:04:45 - logout request
+2025-06-22 17:04:45 - Logout request received but no user is authenticated
+2025-06-22 17:04:45 - logout request
+2025-06-22 17:04:45 - Logout request received but no user is authenticated
+2025-06-22 17:04:46 - logout request
+2025-06-22 17:04:46 - Logout request received but no user is authenticated
+2025-06-22 17:04:46 - logout request
+2025-06-22 17:04:46 - Logout request received but no user is authenticated
+2025-06-22 17:04:46 - logout request
+2025-06-22 17:04:46 - Logout request received but no user is authenticated
+2025-06-22 17:04:46 - logout request
+2025-06-22 17:04:46 - Logout request received but no user is authenticated
+2025-06-22 17:04:47 - logout request
+2025-06-22 17:04:47 - Logout request received but no user is authenticated
+2025-06-22 17:04:47 - logout request
+2025-06-22 17:04:47 - Logout request received but no user is authenticated
+2025-06-22 17:04:47 - logout request
+2025-06-22 17:04:47 - Logout request received but no user is authenticated
+2025-06-22 17:04:48 - logout request
+2025-06-22 17:04:48 - Logout request received but no user is authenticated
+2025-06-22 17:04:48 - logout request
+2025-06-22 17:04:48 - Logout request received but no user is authenticated
+2025-06-22 17:04:49 - login request
+2025-06-22 17:04:53 - login request
+2025-06-22 17:09:30 - Database already exists
+2025-06-22 17:09:35 - login request
+2025-06-22 17:09:37 - logout request
+2025-06-22 17:09:37 - Logout request received but no user is authenticated
+2025-06-22 17:09:38 - logout request
+2025-06-22 17:09:38 - Logout request received but no user is authenticated
+2025-06-22 17:09:42 - login request
+2025-06-22 17:09:42 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:09:42 - get_id called for user: prueba
+2025-06-22 17:09:42 - User prueba authenticated successfully
+2025-06-22 17:09:45 - login request
+2025-06-22 17:09:45 - load_user called with user_id: prueba
+2025-06-22 17:09:45 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:09:45 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:10:46 - Database already exists
+2025-06-22 17:10:50 - login request
+2025-06-22 17:10:50 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:10:50 - get_id called for user: prueba
+2025-06-22 17:10:50 - User prueba authenticated successfully
+2025-06-22 17:10:50 - User Data: {"username": "prueba", "email": "prueba@example.com", "password": "scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-06-22 17:10:52 - login request
+2025-06-22 17:10:52 - load_user called with user_id: prueba
+2025-06-22 17:10:52 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:10:52 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:12 - logout request
+2025-06-22 17:11:12 - load_user called with user_id: prueba
+2025-06-22 17:11:12 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:12 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:12 - User <flask_login.mixins.AnonymousUserMixin object at 0x7f4cb16bc6b0> logged out successfully
+2025-06-22 17:11:24 - logout request
+2025-06-22 17:11:24 - Logout request received but no user is authenticated
+2025-06-22 17:11:24 - login request
+2025-06-22 17:11:34 - logout request
+2025-06-22 17:11:34 - Logout request received but no user is authenticated
+2025-06-22 17:11:34 - logout request
+2025-06-22 17:11:34 - Logout request received but no user is authenticated
+2025-06-22 17:11:37 - login request
+2025-06-22 17:11:37 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:37 - get_id called for user: prueba
+2025-06-22 17:11:37 - User prueba authenticated successfully
+2025-06-22 17:11:37 - User Data: {"username": "prueba", "email": "prueba@example.com", "password": "scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-06-22 17:11:39 - login request
+2025-06-22 17:11:39 - load_user called with user_id: prueba
+2025-06-22 17:11:39 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:39 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:41 - login request
+2025-06-22 17:11:41 - load_user called with user_id: prueba
+2025-06-22 17:11:41 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:41 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:42 - login request
+2025-06-22 17:11:42 - load_user called with user_id: prueba
+2025-06-22 17:11:42 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:42 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:42 - login request
+2025-06-22 17:11:42 - load_user called with user_id: prueba
+2025-06-22 17:11:42 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:42 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:43 - login request
+2025-06-22 17:11:43 - load_user called with user_id: prueba
+2025-06-22 17:11:43 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:43 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:43 - login request
+2025-06-22 17:11:43 - load_user called with user_id: prueba
+2025-06-22 17:11:43 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:43 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:43 - login request
+2025-06-22 17:11:43 - load_user called with user_id: prueba
+2025-06-22 17:11:43 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:43 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:43 - login request
+2025-06-22 17:11:43 - load_user called with user_id: prueba
+2025-06-22 17:11:43 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:43 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:44 - login request
+2025-06-22 17:11:44 - load_user called with user_id: prueba
+2025-06-22 17:11:44 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:44 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:44 - login request
+2025-06-22 17:11:44 - load_user called with user_id: prueba
+2025-06-22 17:11:44 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:44 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:44 - login request
+2025-06-22 17:11:44 - load_user called with user_id: prueba
+2025-06-22 17:11:44 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:44 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:44 - login request
+2025-06-22 17:11:44 - load_user called with user_id: prueba
+2025-06-22 17:11:44 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:44 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:45 - login request
+2025-06-22 17:11:45 - load_user called with user_id: prueba
+2025-06-22 17:11:45 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:45 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:56 - logout request
+2025-06-22 17:11:56 - load_user called with user_id: prueba
+2025-06-22 17:11:56 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:56 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:11:56 - User <flask_login.mixins.AnonymousUserMixin object at 0x7f4cb2406840> logged out successfully
+2025-06-22 17:11:59 - login request
+2025-06-22 17:11:59 - login request
+2025-06-22 17:12:00 - login request
+2025-06-22 17:12:00 - login request
+2025-06-22 17:12:44 - Database already exists
+2025-06-22 17:12:47 - login request
+2025-06-22 17:12:47 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:12:47 - get_id called for user: prueba
+2025-06-22 17:12:47 - User Data: {"username": "prueba", "email": "prueba@example.com", "password": "scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-06-22 17:12:49 - login request
+2025-06-22 17:12:49 - load_user called with user_id: prueba
+2025-06-22 17:12:49 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:12:49 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:12:58 - logout request
+2025-06-22 17:12:58 - load_user called with user_id: prueba
+2025-06-22 17:12:58 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:12:58 - User found: ('prueba', 'prueba@example.com', 'scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f', 1)
+2025-06-22 17:12:58 - User {"username": "prueba", "email": "prueba@example.com", "password": "scrypt:32768:8:1$21m650DN2Aev8VUv$9273905c917a6fe72aef66e587b891251a68cf9e5924e5c7fb41eca5277e3bb10f8fead996f74e492670968606c67285724d93e876e56de46b4f91634740a91f", "is_active": 1, "is_authenticated": true, "is_anonymous": false} logged out successfully
+2025-06-22 17:13:07 - logout request
+2025-06-22 17:13:07 - Logout request received but no user is authenticated
+2025-06-22 17:13:25 - login request
+2025-06-22 17:13:25 - login request
+2025-06-22 17:13:25 - login request
+2025-06-22 17:13:26 - login request
+2025-06-22 17:13:26 - login request
+2025-06-22 17:13:27 - login request

@@ -20,16 +20,7 @@ login_manager.login_view = 'login'
 @login_manager.user_loader
 def load_user(username):
     write_log('load_user called with user_id: {}'.format(username))
-    current_user = User().get_user(username)
-    if current_user is None:
-        write_log('User not found: {}'.format(username))
-        return None
-    if current_user.username:
-        write_log('User loaded: {}'.format(current_user.username))
-        return current_user
-    else:
-        write_log('User not found: {}'.format(username))
-        return None
+    return User(username) if UserDAO().get_user(username)[0] else None
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -38,14 +29,14 @@ def login():
         username = request.form.get('username')
         password = request.form.get('password')
         remember = True if request.form.get('remember') else False
-        current_user = User().get_user(username)
-        if current_user is None:
+        user = User(username)
+        if user.username is None:
             write_log('Login failed for user {}'.format(username))
             flash('Username does not exist. Please try again or sign up below.')
             return render_template('login.html')
-        if current_user.username and check_password_hash(current_user.password, password):
-            if (login_user(current_user, remember=remember)):
-                write_log('User {} authenticated successfully'.format(username))
+        if user.username and check_password_hash(user.password, password):
+            if (login_user(user, remember=remember)):
+                write_log('User Data: {}'.format(user.__str__()))
                 socketio.emit('login_success', {'username': username})
                 return render_template('login_success.html', username=username, message="Login successful")
         else:
@@ -57,10 +48,9 @@ def login():
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():
     write_log('logout request')
-    write_log('Current user: {}'.format(current_user.username))
     if current_user.is_authenticated:
+        write_log('User {} logged out successfully'.format(current_user))
         logout_user()
-        write_log('User {} logged out successfully'.format(current_user.username))
     else:
         write_log('Logout request received but no user is authenticated')
     # Here you would typically handle the logout logic, such as clearing the session
