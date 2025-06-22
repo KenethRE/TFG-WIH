@@ -190,11 +190,12 @@ function socketSetup() {
 
     socket.on('ui_event', (data) => {
         console.log('UI Event: ' + JSON.stringify(data));
-        if (data.type === 'click') {
-            let buttonFunc = document.getElementById(data.element).onclick;
-            if (buttonFunc) {
-                buttonFunc();
-            }
+        element = document.querySelector(data.element);
+        if (element) {
+            element.classList.add('event-highlight');
+            setTimeout(() => {
+                element.classList.remove('event-highlight');
+            }, 2000); // Remove highlight after 2 seconds
         }
     });
 }
@@ -255,7 +256,7 @@ function attachEvent(event, triggeringElement) {
         target.addEventListener(event.type, (event) => {
             socket.emit("ui_event", {
                     type: event.type,
-                    element: triggeringElement,
+                    element: target.className || target.id || target.tagName,
                     username: USER_ID,
                     timestamp: Date.now()
                 });
@@ -263,11 +264,11 @@ function attachEvent(event, triggeringElement) {
         } else {
             // Attach to all elements of the specified type
             let elements = document.querySelectorAll(triggeringElement);
-            for (let j = 0; j < elements.length; j++) {
-                elements[j].addEventListener(eventType, function(event) {
+            for (let i = 0; i < elements.length; i++) {
+                elements[i].addEventListener(eventType, function(event) {
                     socket.emit("ui_event", {
                         type: eventType,
-                        element: this.id || this.name || this.tagName,
+                        element: this.className || this.id || this.tagName,
                         username: USER_ID,
                         timestamp: Date.now()
                     });
