@@ -259,38 +259,29 @@ function attachEvent(event, triggeringElement) {
     let eventType = event.type;
     console.log(`Attaching event: ${eventType} to ${triggeringElement}`);
     // If the event is attached to the document/body
-    if (triggeringElement === "document" || triggeringElement === "body") {
-        let target = (triggeringElement === "body") ? document.body : document;
-        target.id = PseudoGuid.GetNew(); // Assign a unique ID to the body or document
-        target.addEventListener(event.type, (event) => {
-            socket.emit("ui_event", {
-                    type: event.type,
-                    element: target.id,
-                    username: USER_ID,
-                    timestamp: Date.now()
-                });
-            // Prevent default action for the element
-            event.preventDefault();
+    if (triggeringElement === 'document' || triggeringElement === 'body') {
+        document.addEventListener(eventType, function(e) {
+            console.log(`Event ${eventType} triggered on document/body`);
+            socket.emit('ui_event', {
+                type: eventType,
+                element: e.target.id,
+                server_event: event.server_event
             });
-        // Prevent default action for the element
-        } else {
-            // Attach to all elements of the specified type
-            let elements = document.querySelectorAll(triggeringElement);
-            for (let i = 0; i < elements.length; i++) {
-                console.log(`Attaching event: ${eventType} to element with ID ${elements[i].tag || 'none'}`);
-                if (!elements[i].id) {
-                    elements[i].id = PseudoGuid.GetNew(); // Assign a unique ID if not already present
-                }
-                elements[i].addEventListener(eventType, function(event) {
-                    socket.emit("ui_event", {
-                        type: eventType,
-                        element: this.id, // Use element's ID or generate a new one
-                        username: USER_ID,
-                        timestamp: Date.now()
-                    });
-                    // Prevent default action for the element
-                    event.preventDefault();
+        });
+    } else {
+        // Attach to specific element
+        let element = document.getElementById(triggeringElement);
+        if (element) {
+            element.addEventListener(eventType, function(e) {
+                console.log(`Event ${eventType} triggered on element with ID ${triggeringElement}`);
+                socket.emit('ui_event', {
+                    type: eventType,
+                    element: e.target.id,
+                    server_event: event.server_event
                 });
-            }
+            });
+        } else {
+            console.warn(`Element with ID ${triggeringElement} not found for event ${eventType}`);
         }
     }
+}
