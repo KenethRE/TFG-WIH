@@ -43,13 +43,32 @@ function socketSetup() {
         console.log('Registered device ' + DEVICE_TYPE + ' with User ID ' + data.username);
         console.log('Event List: ' + JSON.stringify(data.event_list, null, 2));
         captureEvents(data.event_list);
-        deviceInfo = JSON.stringify(data.deviceinfo, null, 2);
         console.log('Device Connected: ' + deviceInfo);
         login_text = document.getElementById('floating-login');
+        //Create a table to show device id and logout button
+        let table = document.createElement('div');
+        table.classList.add('container');
+        table.innerHTML = `
+            <div class="row">
+                <div class="col-12">
+                    <h5>Device Information</h5>
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td>Device ID</td>
+                                <td>${data.deviceid}</td>
+                            </tr>
+                            <tr>
+                                <td>Device Type</td>
+                                <td>${DEVICE_TYPE}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>`;
         //create an floating menu element to display device info without overwriting the existing text
-        login_text.innerHTML = '';
         login_text.appendChild(document.createElement('span')).textContent = ' Device Info: '
-        login_text.appendChild(document.createElement('pre')).textContent = deviceInfo;
+        login_text.appendChild(document.createElement('pre')).textContent = data.deviceid;
         // Add logout button (directs to logout endpoint)
         let logoutButton = document.createElement('button');
         logoutButton.textContent = 'Logout';
@@ -71,8 +90,6 @@ function socketSetup() {
         // Append the logout button to the floating login text
         login_text.appendChild(logoutButton);
         login_text.classList.remove('d-none');
-        document.getElementById('deviceStatus').classList.remove('d-none');
-        document.getElementById('deviceStatus').appendChild(document.createTextNode(deviceInfo));
     });
 
     socket.on('deviceConnected', (data) => {
