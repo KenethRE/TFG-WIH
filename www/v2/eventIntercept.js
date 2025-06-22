@@ -259,29 +259,57 @@ function attachEvent(event, triggeringElement) {
     let eventType = event.type;
     console.log(`Attaching event: ${eventType} to ${triggeringElement}`);
     // If the event is attached to the document/body
-    if (triggeringElement === 'document' || triggeringElement === 'body') {
-        document.addEventListener(eventType, function(e) {
-            console.log(`Event ${eventType} triggered on document/body`);
-            socket.emit('ui_event', {
-                type: eventType,
-                element: e.target.id,
-                server_event: event.server_event
-            });
-        });
-    } else {
-        // Attach to specific element
-        let element = document.getElementById(triggeringElement);
-        if (element) {
-            element.addEventListener(eventType, function(e) {
-                console.log(`Event ${eventType} triggered on element with ID ${triggeringElement}`);
-                socket.emit('ui_event', {
-                    type: eventType,
-                    element: e.target.id,
-                    server_event: event.server_event
+    if (triggeringElement === "document" || triggeringElement === "body") {
+        let target = (triggeringElement === "body") ? document.body : document;
+        target.id = PseudoGuid.GetNew();
+        console.log(`Attaching event to ${target.tagName} with ID: ${target.id}`);
+        target.addEventListener(event.type, (event) => {
+            socket.emit("ui_event", {
+                    type: event.type,
+                    element: target.id,
+                    username: USER_ID,
+                    timestamp: Date.now()
                 });
             });
         } else {
-            console.warn(`Element with ID ${triggeringElement} not found for event ${eventType}`);
+            // Attach to all elements of the specified type
+            let elements = document.querySelectorAll(triggeringElement);
+            console.log(`Attaching event to ${elements.length} elements of type: ${triggeringElement}`);
+            for (let j = 0; j < elements.length; j++) {
+                console.log(`Processing element ${elements[j].tagName} at index ${j}`);
+                // check if element[j] has children
+                if (elements[j].children && elements[j].children.length > 0) {
+                    // attach event to all children
+                    for (let child of elements[j].children) {
+                        if (!child.id) {
+                            child.id = PseudoGuid.GetNew();
+                        } else {
+                            console.warn(`Child element already has an ID: ${child.id}`);
+                        }
+                        console.log(`Attaching event to child element with ID: ${child.id}`);
+                        child.addEventListener(eventType, function(event) {
+                            socket.emit("ui_event", {
+                                type: eventType,
+                                element: this.id || this.name || this.tagName,
+                                username: USER_ID,
+                                timestamp: Date.now()
+                            });
+                        });
+                    }
+                }
+                // attach event to the element itself
+                if (!elements[j].id) {
+                    elements[j].id = PseudoGuid.GetNew();
+                }
+                console.log(`Attaching event to element with ID: ${elements[j].id}`);
+                elements[j].addEventListener(eventType, function(event) {
+                    socket.emit("ui_event", {
+                        type: eventType,
+                        element: this.id || this.name || this.tagName,
+                        username: USER_ID,
+                        timestamp: Date.now()
+                    });
+                });
+            }
         }
     }
-}
