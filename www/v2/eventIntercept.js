@@ -76,7 +76,7 @@ function socketSetup() {
         login_text.appendChild(collapseButton);
 
         // Show welcome message
-        loginText.appendChild(document.createElement('span')).textContent = 'Welcome ' + data.username + '!';
+        login_Text.appendChild(document.createElement('span')).textContent = 'Welcome ' + data.username + '!';
 
         //Create a table to show device id and logout button
         let table = document.createElement('div');
