@@ -43,8 +43,29 @@ function socketSetup() {
         login_text = document.getElementById('floating-login');
         // Clear any existing content
         login_text.innerHTML = '';
-        //add collapse button to the floating login text, if not already present
+        //add collapse button to the floating login text, if not already present but still add device info table only
         if (login_text.querySelector('.btn-secondary')) {
+            let table = document.createElement('div');
+            table.classList.add('container');
+            table.innerHTML = `
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Device Information</h5>
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td>Device ID</td>
+                                    <td>${data.deviceinfo.deviceid}</td>
+                                </tr>
+                                <tr>
+                                    <td>Device Type</td>
+                                    <td>${DEVICE_TYPE}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>`;
+            login_text.appendChild(table);
             return; // Collapse button already exists, no need to add again
         }
         // Create a collapse button to hide device info
