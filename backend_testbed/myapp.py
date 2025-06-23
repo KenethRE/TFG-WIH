@@ -3,7 +3,8 @@ from flask_socketio import SocketIO, emit, join_room, leave_room
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 from werkzeug.middleware.proxy_fix import ProxyFix
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import User, Msg, Website, UserDAO, Device, DeviceDAO
+from models import User, Msg, Website, WebsiteDAO, UserDAO, Device, DeviceDAO, Element, ElementDAO
+import webpage_parser
 import random, json, time
 from logwriter import write_log
 import encryption as encryption
@@ -84,8 +85,50 @@ def signup():
 @socketio.on('connect')
 def connect():
     write_log('client connected')
-    # print request URL
-    write_log('Client connected with request URL: {}'.format(request.url))
+    website_name = request.args.get('url').split('/')[2]
+    url = request.args.get('url').split('/')[0] + '//' + website_name
+    website = Website().get_website(website_name)
+    if not website:
+        write_log('Website {} does not exist, creating it'.format(website_name))
+        new_website = Website(name=website_name, url=url)
+        if new_website.store_website(new_website):
+            write_log('Website {} created successfully'.format(website_name))
+            new_website = Website().get_website(website_name)
+            # store all elements in the website
+            elements = webpage_parser.assign_ids_to_elements(new_website.url)
+            for element in elements:
+                element_obj = Element(
+                    name=element['element'],
+                    type=element['eventType'],
+                    assigned_id=element['assignedId'],
+                    html=element['outerHTML'],
+                    website_id=new_website.id
+                )
+                if not ElementDAO().store_element(element_obj):
+                    write_log('Failed to store element {} for website {}'.format(element['assignedId'], website_name))
+            emit('elements', {'elements': elements, 'website': new_website.id})
+        else:
+            write_log('Failed to create website {}'.format(website_name))
+    else:
+        write_log('Website {} already exists'.format(website_name))
+        # grab all elements from the website
+        elements = WebsiteDAO().get_elements_by_website(website.id)
+        if not elements:
+            write_log('No elements found for website {}'.format(website_name))
+            emit('elements', {'elements': [], 'website': website.id})
+            return
+        write_log('Found {} elements for website {}'.format(len(elements), website_name))
+        elements_with_ids = []
+        for element in elements:
+            element_obj = ElementDAO().get_element(element['ElementID'])
+            if element_obj:
+                elements_with_ids.append({
+                    'element': element_obj.name,
+                    'eventType': element_obj.type,
+                    'assignedId': element_obj.id,
+                    'outerHTML': element_obj.html
+                })
+        emit('elements', {'elements': elements_with_ids, 'website': website.__dict__})
     if current_user.is_authenticated:
         write_log('User {} connected'.format(current_user.username))
         join_room(current_user.username)
@@ -117,6 +160,7 @@ def register(data):
     username = data['username']
     socketid = data['socketid']
     deviceType = data['deviceType']
+    website_id = data['website_id']
     write_log('Registering device for user: {}, socketid: {}, deviceType: {}'.format(username, socketid, deviceType))
     if not username or not socketid or not deviceType:
         write_log('Invalid registration data: {}'.format(data))
@@ -134,7 +178,16 @@ def register(data):
     device.toggle_status()
     write_log('Device registered successfully for user: {}'.format(username))
     join_room(username, sid=socketid)
-    event_list = eventList()
+    elements = WebsiteDAO().get_website_elements(website_id)
+    event_list = []
+    for element in elements:
+        element_obj = ElementDAO().get_element(element['ElementID'])
+        if element_obj:
+            element['outerHTML'] = element_obj.html
+            element['assignedId'] = element_obj.id
+            element['eventType'] = element_obj.type
+            element['element'] = element_obj.name
+            event_list.append(element)
     deviceinfo = {
         "deviceid": device.deviceid,
         "username": device.username,
@@ -143,9 +196,6 @@ def register(data):
     }
     emit('registered', {"username": username, "event_list": event_list, "deviceinfo": deviceinfo}, to=username)
 
-def eventList():
-    with open('event_definitions.json') as f:
-        return json.load(f)
 
 @socketio.on('unregister')
 def unregister(data):

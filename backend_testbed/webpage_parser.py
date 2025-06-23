@@ -12,9 +12,11 @@ def get_html(url):
     response.raise_for_status()
     return response.text
 
-def assign_ids_to_elements(html, event_definitions):
+def assign_ids_to_elements(url):
+    html = get_html(url)
     soup = BeautifulSoup(html, 'html.parser')
     results = []
+    event_definitions = load_event_definitions('event_definitions.json')
     for category, events in event_definitions.items():
         for event in events:
             event_type = event['type']

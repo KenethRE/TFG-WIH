@@ -23,10 +23,11 @@ def database_init():
                 URL TEXT NOT NULL
             ); """,
             """ CREATE TABLE ELEMENTS (
-                ElementID INTEGER PRIMARY KEY AUTOINCREMENT,
+                ElementID TEXT PRIMARY KEY,
                 WebsiteID INTEGER NOT NULL,
                 Name TEXT NOT NULL,
                 Type TEXT NOT NULL,
+                HTML TEXT,
                 FOREIGN KEY (WebsiteID) REFERENCES WEBSITES(WebsiteID)
             ); """,
             """

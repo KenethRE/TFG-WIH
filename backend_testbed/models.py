@@ -1,23 +1,6 @@
 from logwriter import write_log
 import json, random, database
 db = database.check_database()
-class Msg():
-    def __init__(self, id, source, action, data):
-        self.id=id
-        self.source=source
-        self.action=action
-        self.data=data
-    
-    def __str__(self):
-        return json.dumps(self.__dict__)
-
-class Website():
-    def __init__(self, id,name, url):
-        self.id = id
-        self.name = name
-        self.url = url
-    def __str__(self):
-        return json.dumps(self.__dict__)
 
 class WebsiteDAO():
     def __init__(self):
@@ -43,9 +26,68 @@ class WebsiteDAO():
         db.insert("WEBSITES", {"Name": website.name, "URL": website.url})
         return True
     
+    def get_website_elements(self, website_id):
+        write_log('get_website_elements called with website_id: {}'.format(website_id))
+        elements = db.select("ELEMENTS", columns=['ElementID', 'WebsiteID', 'Name', 'Type', 'HTML'], condition='WebsiteID = {}'.format(website_id))
+        if not elements:
+            return None
+        write_log('Elements found for website_id {}: {}'.format(website_id, elements))
+        return [Element(id=elem[0], website_id=elem[1], name=elem[2], type=elem[3], html=elem[4]) for elem in elements] if elements else None
+    
+    def __str__(self):
+        return json.dumps(self.__dict__)
+    
+class Website(WebsiteDAO):
+    def __init__(self, id, name, url):
+        self.id = id
+        self.name = name
+        self.url = url
+    def __init__(self, name=None, url=None):
+        self.name = name
+        self.url = url
+    def set_elements(self, elements):
+        self.elements = elements
     def __str__(self):
         return json.dumps(self.__dict__)
 
+class Element():
+    def __init__(self, id=None, website_id=None, html=None, type=None, name=None):
+        self.id = id
+        self.name = name
+        self.website_id = website_id
+        self.html = html
+        self.type = type
+
+    def __str__(self):
+        return json.dumps(self.__dict__)
+
+class ElementDAO():
+    def __init__(self):
+        pass
+    
+    def get_element(self, element_id):
+        write_log('get_element called with element_id: {}'.format(element_id))
+        element = db.select("ELEMENTS", columns=['ElementID', 'WebsiteID', 'Name', 'Type', 'HTML'], condition='ElementID = {}'.format(element_id))
+        if not element:
+            return None
+        write_log('Element found: {}'.format(element[0]))
+        return Element(id=element[0][0], website_id=element[0][1], name=element[0][2], type=element[0][3], html=element[0][4]) if element else None
+
+    def store_element(self, element):
+        write_log('store_element called with element: {}'.format(element))
+        if not element.name or not element.type or not element.website_id:
+            return False
+        # Check if the element already exists
+        existing_element = db.select("ELEMENTS", columns=['ElementID'], condition='Name = "{}" AND Type = "{}" AND WebsiteID = {}'.format(element.name, element.type, element.website_id))
+        if existing_element:
+            return False
+        # Insert the new element into the database
+        db.insert("ELEMENTS", {"ElementID": element.id, "WebsiteID": element.website_id, "Name": element.name, "Type": element.type, "HTML": element.html})
+        return True
+    
+    def __str__(self):
+        return json.dumps(self.__dict__)
+    
 class UserDAO():
     def __init__(self):
         pass

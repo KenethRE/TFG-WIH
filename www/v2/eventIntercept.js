@@ -2,6 +2,7 @@ let MY_WS_ID = null;
 let MY_WS_ID_LOGIN = null;
 let DEVICE_TYPE = null;
 let USER_ID = null;
+let WEBSITE_ID = null;
 
 let socket;
 
@@ -14,7 +15,8 @@ function socketSetup() {
         socket.emit('registerDevice', {
             username: USER_ID,
             socketid: MY_WS_ID,
-            deviceType: DEVICE_TYPE
+            deviceType: DEVICE_TYPE,
+            website_id: WEBSITE_ID,
         });
     });
 
@@ -31,6 +33,21 @@ function socketSetup() {
         console.log('Connected to server with Socket ID ' + MY_WS_ID);
     });
 
+    socket.on('elements', (data) => {
+        console.log('Elements received from server: ' + JSON.stringify(data));
+        WEBSITE_ID = data.website;
+        for (let element of data.elements) {
+            console.log(`Processing event: ${element.eventType}`);
+            // assign element.id if it doesn't exist
+            if (!document.getElementById(element.id)) {
+                for (let tag of document.getElementsByTagName(element.name)) {
+                    if (!tag.id) {
+                        tag.id = element.id;
+                    }
+                }
+            }
+        }
+    });
 
     socket.on('unregister', (data) => {
         //remove device info from the table
