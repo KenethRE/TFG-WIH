@@ -86,9 +86,8 @@ def signup():
 def connect():
     write_log('client connected')
     # Print entire request object for debugging
-    write_log('Request headers: {}'.format(request.headers))
-    website_name = request.args.get('url').split('/')[2]
-    url = request.args.get('url').split('/')[0] + '//' + website_name
+    website_name = request.headers.get('Referer', '').split('/')[2] if request.headers.get('Referer') else None
+    url = request.headers.get('Referer', '').split('/')[0] + '//' + website_name
     website = Website().get_website(website_name)
     if not website:
         write_log('Website {} does not exist, creating it'.format(website_name))
