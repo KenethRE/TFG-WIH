@@ -85,6 +85,7 @@ def signup():
 @socketio.on('connect')
 def connect():
     write_log('client connected')
+    write_log(request.args.keys())
     website_name = request.args.get('url').split('/')[2]
     url = request.args.get('url').split('/')[0] + '//' + website_name
     website = Website().get_website(website_name)
