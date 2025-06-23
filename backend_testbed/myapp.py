@@ -86,7 +86,7 @@ def signup():
 def connect():
     write_log('client connected')
     # Print entire request object for debugging
-    write_log('Request Path: {}'.format(request.path))
+    write_log('Request Path: {}'.format(request.root_path))
     website_name = request.args.get('url').split('/')[2]
     url = request.args.get('url').split('/')[0] + '//' + website_name
     website = Website().get_website(website_name)
