@@ -84,8 +84,8 @@ def signup():
 @socketio.on('connect')
 def connect():
     write_log('client connected')
-    # print request contents
-    write_log('Request contents: {}'.format(request.__dict__))
+    # print request URL
+    write_log('Client connected with request URL: {}'.format(request.url))
     if current_user.is_authenticated:
         write_log('User {} connected'.format(current_user.username))
         join_room(current_user.username)
