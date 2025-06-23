@@ -12,14 +12,37 @@ class Msg():
         return json.dumps(self.__dict__)
 
 class Website():
-    def __init__(self, id, name, url):
+    def __init__(self, id,name, url):
         self.id = id
         self.name = name
         self.url = url
-        self.elements = []
-        # This elements needs to contain the actual ID used on the website, if no ID is available on the website, use a random ID
-        # For testing purposes, we will add a dummy element
-        self.elements.append({"id": 1, "name": "Element 1", "type": "button"})
+    def __str__(self):
+        return json.dumps(self.__dict__)
+
+class WebsiteDAO():
+    def __init__(self):
+        pass
+    
+    def get_website(self, URL):
+        write_log('get_website called with URL: {}'.format(URL))
+        website = db.select("WEBSITES", columns=['WebsiteID','Name', 'URL'], condition='URL = {}'.format(URL))
+        if not website:
+            return None
+        write_log('Website found: {}'.format(website[1]))
+        return Website(id=website[0][0], name=website[0][1], url=website[0][2]) if website else None
+
+    def store_website(self, website):
+        write_log('store_website called with website: {}'.format(website))
+        if not website.name or not website.url:
+            return False
+        # Check if the website already exists
+        existing_website = db.select("WEBSITES", columns=['WebsiteID'], condition='Name = "{}" AND URL = "{}"'.format(website.name, website.url))
+        if existing_website:
+            return False
+        # Insert the new website into the database
+        db.insert("WEBSITES", {"Name": website.name, "URL": website.url})
+        return True
+    
     def __str__(self):
         return json.dumps(self.__dict__)
 
@@ -54,6 +77,17 @@ class User(UserDAO):
         self.username, self.email, self.password, self.is_active = super().get_user(username)
         self.is_authenticated = True
         self.is_anonymous = False
+
+    def __init__(self, username=None, email=None, password=None, is_active=1):
+        self.username = username
+        self.email = email
+        self.password = password
+        self.is_active = is_active
+        self.is_authenticated = True
+        self.is_anonymous = False
+        if username and email and password:
+            if not self.store_user():
+                write_log('Failed to store user: {}'.format(username))
 
     def store_user(self):
         return super().store_user(self)
