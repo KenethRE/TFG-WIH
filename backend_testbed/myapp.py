@@ -3,7 +3,7 @@ from flask_socketio import SocketIO, emit, join_room, leave_room
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 from werkzeug.middleware.proxy_fix import ProxyFix
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import User, Msg, Website, WebsiteDAO, UserDAO, Device, DeviceDAO, Element, ElementDAO
+from models import User, Website, WebsiteDAO, UserDAO, Device, DeviceDAO, Element, ElementDAO
 import webpage_parser
 import random, json, time
 from logwriter import write_log
