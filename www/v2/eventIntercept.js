@@ -42,6 +42,19 @@ function socketSetup() {
                 for (let tag of document.getElementsByTagName(element.element)) {
                     if (!tag.id) {
                         tag.id = element.assignedId;
+                        // Add event listener to the element
+                        tag.addEventListener(element.eventType, (event) => {
+                            console.log(`Event triggered: ${element.eventType} on element with ID ${tag.id}`);
+                            // Emit the event to the server
+                            socket.emit('ui_event', {
+                                type: element.eventType,
+                                element: tag.id,
+                                server_event: true, // Indicate that this is a server event
+                                website_id: WEBSITE_ID,
+                                socketid: MY_WS_ID,
+                            });
+                        });
+                        console.log(`Assigned ID ${element.assignedId} to element <${element.element}>`);
                     }
                 }
             }
@@ -201,7 +214,7 @@ function socketSetup() {
 
     socket.on('ui_event', (data) => {
         console.log(`UI Event received: ${data.type} on element with ID ${data.element}`);
-        if (data.server_event) {
+        if (data.server_event && data.socketid !== MY_WS_ID) {
             //trigger event on element with ID data.element
             let element = document.getElementById(data.element);
             if (element) {
@@ -248,83 +261,4 @@ function printText() {
     document.getElementById('myText').classList.remove('d-none');
 }
 
-var PseudoGuid = new (function() {
-    this.empty = "00000000-0000-0000-0000-000000000000";
-    this.GetNew = function() {
-        var fourChars = function() {
-            return (((1 + Math.random()) * 0x10000)|0).toString(16).substring(1).toUpperCase();
-        }
-        return (fourChars() + fourChars() + "-" + fourChars() + "-" + fourChars() + "-" + fourChars() + "-" + fourChars() + fourChars() + fourChars());
-    };
-})();
 
-// Capture all click events on buttons
-
-function captureEvents(event_list) {
-    Object.keys(event_list).forEach(event_listType => {
-        for (let event of event_list[event_listType]) {
-            console.log(`Capturing event: ${event.type}`);
-            for (let triggeringElement of event.triggeringElement) {
-                attachEvent(event, triggeringElement);
-            }
-        }
-    });
-}
-function attachEvent(event, triggeringElement) {
-    let eventType = event.type;
-    console.log(`Attaching event: ${eventType} to ${triggeringElement}`);
-    // If the event is attached to the document/body
-    if (triggeringElement === "document" || triggeringElement === "body") {
-        let target = (triggeringElement === "body") ? document.body : document;
-        target.id = PseudoGuid.GetNew();
-        console.log(`Attaching event to ${target.tagName} with ID: ${target.id}`);
-        target.addEventListener(event.type, (event) => {
-            socket.emit("ui_event", {
-                    type: event.type,
-                    element: target.id,
-                    username: USER_ID,
-                    timestamp: Date.now()
-                });
-            });
-        } else {
-            // Attach to all elements of the specified type
-            let elements = document.querySelectorAll(triggeringElement);
-            console.log(`Attaching event to ${elements.length} elements of type: ${triggeringElement}`);
-            for (let j = 0; j < elements.length; j++) {
-                console.log(`Processing element ${elements[j].tagName} at index ${j}`);
-                // check if element[j] has children
-                if (elements[j].children && elements[j].children.length > 0) {
-                    // attach event to all children
-                    for (let child of elements[j].children) {
-                        if (!child.id) {
-                            child.id = PseudoGuid.GetNew();
-                        } else {
-                            console.warn(`Child element already has an ID: ${child.id}`);
-                        }
-                        console.log(`Attaching event to child element with ID: ${child.id}`);
-                        child.addEventListener(eventType, function(event) {
-                            socket.emit("ui_event", {
-                                type: eventType,
-                                element: this.id || this.name || this.tagName,
-                                username: USER_ID,
-                                timestamp: Date.now()
-                            });
-                        });
-                    }
-                }
-                // attach event to the element itself
-                if (!elements[j].id) {
-                    elements[j].id = PseudoGuid.GetNew();
-                }
-                console.log(`Attaching event to element with ID: ${elements[j].id}`);
-                elements[j].addEventListener(eventType, function(event) {
-                    socket.emit("ui_event", {
-                        type: eventType,
-                        element: this.id || this.name || this.tagName,
-                        username: USER_ID,
-                        timestamp: Date.now()
-                    });
-                });
-            }
-        }
-    }
