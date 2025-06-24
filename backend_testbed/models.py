@@ -43,9 +43,6 @@ class Website(WebsiteDAO):
         self.id = id
         self.name = name
         self.url = url
-    def __init__(self, name=None, url=None):
-        self.name = name
-        self.url = url
     def set_elements(self, elements):
         self.elements = elements
     def __str__(self):

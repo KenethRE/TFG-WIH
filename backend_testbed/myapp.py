@@ -91,7 +91,7 @@ def connect():
     website = Website().get_website(url)
     if not website:
         write_log('Website {} does not exist, creating it'.format(website_name))
-        new_website = Website(name=website_name, url=url)
+        new_website = Website(id=None, name=website_name, url=url)
         if new_website.store_website(new_website):
             write_log('Website {} created successfully'.format(website_name))
             new_website = Website().get_website(website_name)
