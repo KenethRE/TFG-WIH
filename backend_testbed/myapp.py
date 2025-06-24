@@ -88,7 +88,7 @@ def connect():
     # Print entire request object for debugging
     website_name = request.headers.get('Referer', '').split('/')[2] if request.headers.get('Referer') else None
     url = request.headers.get('Referer', '').split('/')[0] + '//' + website_name
-    website = Website().get_website(website_name)
+    website = Website().get_website(url)
     if not website:
         write_log('Website {} does not exist, creating it'.format(website_name))
         new_website = Website(name=website_name, url=url)
