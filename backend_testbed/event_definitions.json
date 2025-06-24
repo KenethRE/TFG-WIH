@@ -3,13 +3,13 @@
     {
       "type": "click",
       "description": "Fired when a pointing device button is pressed and released over an element.",
-      "triggeringElement": ["button", "a", "div"],
+      "triggeringElement": ["button", "a"],
       "userAction": "Press and release a mouse button."
     },
     {
       "type": "dblclick",
       "description": "Fired when a pointing device button is double-clicked over an element.",
-      "triggeringElement": ["button", "a", "div"],
+      "triggeringElement": ["button", "a"],
       "userAction": "Press and release a mouse button twice quickly."
     }
   ]
