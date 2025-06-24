@@ -52,8 +52,7 @@ function socketSetup() {
                                 server_event: true, // Indicate that this is a server event
                                 website_id: WEBSITE_ID,
                                 socketid: MY_WS_ID,
-                                username: USER_ID,
-                                timestamp: Date.now()
+                                username: USER_ID
                             });
                         });
                         console.log(`Assigned ID ${element.assignedId} to element <${element.element}>`);
@@ -69,8 +68,7 @@ function socketSetup() {
                                 server_event: true, // Indicate that this is a server event
                                 website_id: WEBSITE_ID,
                                 socketid: MY_WS_ID,
-                                username: USER_ID,
-                                timestamp: Date.now()
+                                username: USER_ID
                             });
                         });
                     }
