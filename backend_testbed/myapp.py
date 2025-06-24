@@ -115,7 +115,7 @@ def connect():
             write_log('Found {} elements in file {}'.format(len(elements), elements_file))
         except FileNotFoundError:
             write_log('No elements file found for website {}'.format(website_name))
-        emit('elements', {'elements': elements, 'website': website.__dict__})
+        emit('elements', {'elements': elements, 'website': website.id})
     if current_user.is_authenticated:
         write_log('User {} connected'.format(current_user.username))
         join_room(current_user.username)
@@ -148,7 +148,7 @@ def register(data):
     socketid = data['socketid']
     deviceType = data['deviceType']
     website_id = data['website_id']
-    write_log('Registering device for user: {}, socketid: {}, deviceType: {}'.format(username, socketid, deviceType))
+    write_log('Registering device for user: {}, socketid: {}, deviceType: {} and website_id: {}'.format(username, socketid, deviceType, website_id))
     if not username or not socketid or not deviceType:
         write_log('Invalid registration data: {}'.format(data))
         emit('registration_error', {'message': 'Invalid registration data'}, to=username)
