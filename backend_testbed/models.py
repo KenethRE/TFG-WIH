@@ -150,7 +150,7 @@ class DeviceDAO():
             write_log('Invalid device data: {}'.format(device))
             return False
         # Check if the device already exists
-        existing_device = db.select("DEVICES", columns=['ID'], condition='DeviceID = "{}"'.format(device.deviceid))
+        existing_device = db.select("DEVICES", columns=['DeviceID'], condition='DeviceID = "{}"'.format(device.deviceid))
         if existing_device:
             write_log('Device already exists: {}'.format(device.deviceid))
             return False
