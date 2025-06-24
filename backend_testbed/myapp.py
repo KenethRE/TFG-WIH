@@ -113,7 +113,7 @@ def connect():
     else:
         write_log('Website {} already exists'.format(website_name))
         # grab all elements from the website
-        elements = WebsiteDAO().get_elements_by_website(website.id)
+        elements = WebsiteDAO().get_website_elements(website.id)
         if not elements:
             write_log('No elements found for website {}'.format(website_name))
             emit('elements', {'elements': [], 'website': website.id})
