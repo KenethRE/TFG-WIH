@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-import uuid
+import uuid, sys
 
 def load_event_definitions(path='event_definitions.json'):
     with open(path, 'r') as f:
@@ -38,11 +38,14 @@ def assign_ids_to_elements(url):
     return results
 
 if __name__ == '__main__':
-    url = 'https://tfg.zenken.es/v1v2/version2.html'  # Example URL
+    # Get URL from params
+    url = sys.argv[1] if len(sys.argv) > 1 else None
+    if url is None:
+        print("Please provide a URL as a command line argument.")
+        sys.exit(1)
     event_definitions = load_event_definitions('event_definitions.json')
-    html = get_html(url)
-    elements_with_ids = assign_ids_to_elements(html, event_definitions)
-    file = '{}_elements.json'.format(url.split('/')[2])
+    elements_with_ids = assign_ids_to_elements(url)
+    file = './custom_elements/{}_elements.json'.format(url.split('/')[2])
     with open(file, 'w') as f:
        json.dump(elements_with_ids, f, indent=2, ensure_ascii=False)
     f.close()

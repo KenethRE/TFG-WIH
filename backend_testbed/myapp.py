@@ -3,9 +3,8 @@ from flask_socketio import SocketIO, emit, join_room, leave_room
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 from werkzeug.middleware.proxy_fix import ProxyFix
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import User, Website, WebsiteDAO, UserDAO, Device, DeviceDAO, Element, ElementDAO
-import webpage_parser
-import random, json, time
+from models import User, Website, WebsiteDAO, UserDAO, Device, DeviceDAO, ElementDAO
+import json
 from logwriter import write_log
 import encryption as encryption
 
@@ -95,43 +94,28 @@ def connect():
         if new_website.store_website(new_website):
             write_log('Website {} created successfully'.format(website_name))
             new_website = Website().get_website(website_name)
-            # store all elements in the website
-            elements = webpage_parser.assign_ids_to_elements(new_website.url)
-            for element in elements:
-                element_obj = Element(
-                    name=element['element'],
-                    type=element['eventType'],
-                    assigned_id=element['assignedId'],
-                    html=element['outerHTML'],
-                    website_id=new_website.id
-                )
-                write_log('Storing element {} for website {}'.format(element['assignedId'], website_name))
-                # Store each element in the database
-                if not ElementDAO().store_element(element_obj):
-                    write_log('Failed to store element {} for website {}'.format(element['assignedId'], website_name))
+            # check if website has been processed already
+            try:
+                elements_file = './custom_elements/{}_elements.json'.format(website_name)
+                with open(elements_file, 'r') as f:
+                    elements = json.load(f)
+                write_log('Found {} elements in file {}'.format(len(elements), elements_file))
+            except FileNotFoundError:
+                write_log('No elements found for website {}'.format(website_name))
             emit('elements', {'elements': elements, 'website': new_website.id})
         else:
             write_log('Failed to create website {}'.format(website_name))
     else:
         write_log('Website {} already exists'.format(website_name))
-        # grab all elements from the website
-        elements = WebsiteDAO().get_website_elements(website.id)
-        if not elements:
-            write_log('No elements found for website {}'.format(website_name))
-            emit('elements', {'elements': [], 'website': website.id})
-            return
-        write_log('Found {} elements for website {}'.format(len(elements), website_name))
-        elements_with_ids = []
-        for element in elements:
-            element_obj = ElementDAO().get_element(element['ElementID'])
-            if element_obj:
-                elements_with_ids.append({
-                    'element': element_obj.name,
-                    'eventType': element_obj.type,
-                    'assignedId': element_obj.id,
-                    'outerHTML': element_obj.html
-                })
-        emit('elements', {'elements': elements_with_ids, 'website': website.__dict__})
+        # Grab elements from file
+        try:
+            elements_file = './custom_elements/{}_elements.json'.format(website_name)
+            with open(elements_file, 'r') as f:
+                elements = json.load(f)
+            write_log('Found {} elements in file {}'.format(len(elements), elements_file))
+        except FileNotFoundError:
+            write_log('No elements file found for website {}'.format(website_name))
+        emit('elements', {'elements': elements, 'website': website.__dict__})
     if current_user.is_authenticated:
         write_log('User {} connected'.format(current_user.username))
         join_room(current_user.username)
