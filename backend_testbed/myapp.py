@@ -30,7 +30,7 @@ def login():
         password = request.form.get('password')
         remember = True if request.form.get('remember') else False
         user = User(username)
-        if user.username is None or user.password is None:
+        if user.username is None:
             write_log('Login failed for user {}'.format(username))
             flash('Username does not exist. Please try again or sign up below.')
             return render_template('login.html')
