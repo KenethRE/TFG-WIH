@@ -29,8 +29,8 @@ def login():
         username = request.form.get('username')
         password = request.form.get('password')
         remember = True if request.form.get('remember') else False
-        user = User(username)
-        if user.username is None:
+        user = UserDAO().get_user(username)
+        if user is None:
             write_log('Login failed for user {}'.format(username))
             flash('Username does not exist. Please try again or sign up below.')
             return render_template('login.html')

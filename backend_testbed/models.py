@@ -95,7 +95,7 @@ class UserDAO():
             return None, None, None, None
         write_log('User found: {}'.format(user[0]))
         # Return a tuple of Username, Email, Password, isActive
-        return user[0][0], user[0][1], user[0][2], user[0][3] if user else None
+        return User(username=user[0][0], email=user[0][1], password=user[0][2], is_active=user[0][3])
 
     def store_user(self, user):
         write_log('store_user called with user: {}'.format(user))
@@ -113,11 +113,6 @@ class UserDAO():
         return json.dumps(self.__dict__)
     
 class User(UserDAO):
-    def __init__(self, username):
-        self.username, self.email, self.password, self.is_active = super().get_user(username)
-        self.is_authenticated = True
-        self.is_anonymous = False
-
     def __init__(self, username=None, email=None, password=None, is_active=1):
         self.username = username
         self.email = email
