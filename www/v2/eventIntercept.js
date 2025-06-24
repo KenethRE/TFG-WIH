@@ -56,6 +56,20 @@ function socketSetup() {
                         });
                         console.log(`Assigned ID ${element.assignedId} to element <${element.element}>`);
                     }
+                    else {
+                        console.warn(`Element <${element.element}> already has an ID: ${tag.id}. Skipping assignment.`);
+                        tag.addEventListener(element.eventType, (event) => {
+                            console.log(`Event triggered: ${element.eventType} on element with ID ${tag.id}`);
+                            // Emit the event to the server
+                            socket.emit('ui_event', {
+                                type: element.eventType,
+                                element: tag.id,
+                                server_event: true, // Indicate that this is a server event
+                                website_id: WEBSITE_ID,
+                                socketid: MY_WS_ID,
+                            });
+                        });
+                    }
                 }
             }
         }
