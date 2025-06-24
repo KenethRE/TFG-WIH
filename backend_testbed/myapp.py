@@ -105,6 +105,8 @@ def connect():
                     html=element['outerHTML'],
                     website_id=new_website.id
                 )
+                write_log('Storing element {} for website {}'.format(element['assignedId'], website_name))
+                # Store each element in the database
                 if not ElementDAO().store_element(element_obj):
                     write_log('Failed to store element {} for website {}'.format(element['assignedId'], website_name))
             emit('elements', {'elements': elements, 'website': new_website.id})
