@@ -93,7 +93,7 @@ def connect():
         new_website = Website(id=None, name=website_name, url=url)
         if new_website.store_website(new_website):
             write_log('Website {} created successfully'.format(website_name))
-            new_website = Website().get_website(website_name)
+            new_website = Website().get_website(url)
             # check if website has been processed already
             try:
                 elements_file = './custom_elements/{}_elements.json'.format(website_name)
