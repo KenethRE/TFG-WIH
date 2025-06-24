@@ -76,7 +76,6 @@ function socketSetup() {
         script.integrity = 'sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM';
         script.crossOrigin = 'anonymous';
         head.appendChild(script);
-        captureEvents(data.event_list);
         console.log('Device Connected: ' + JSON.stringify(data.deviceinfo));
         login_text = document.getElementById('floating-login');        
         //add collapse button to the floating login text, if not already present but still add device info table only

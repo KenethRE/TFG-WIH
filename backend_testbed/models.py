@@ -93,7 +93,7 @@ class UserDAO():
         user = db.select("USERS", columns=['Username', 'Email', 'Password', 'isActive'], condition='Username = "{}"'.format(username))
         if not user:
             return None, None, None, None
-        write_log('User found: {}'.format(user[0]))
+        write_log('User found: {}'.format(user[0][0]))
         # Return a tuple of Username, Email, Password, isActive
         return User(username=user[0][0], email=user[0][1], password=user[0][2], is_active=user[0][3])
 
