@@ -1,5 +1,6 @@
 from logwriter import write_log
-import json, random, database
+import json, random
+import database
 db = database.check_database()
 
 class WebsiteDAO():
@@ -8,7 +9,7 @@ class WebsiteDAO():
     
     def get_website(self, URL):
         write_log('get_website called with URL: {}'.format(URL))
-        website = db.select("WEBSITES", columns=['WebsiteID','Name', 'URL'], condition='URL = {}'.format(URL))
+        website = db.select("WEBSITES", columns=['WebsiteID', 'Name', 'URL'], condition='URL = "{}"'.format(URL))
         if not website:
             return None
         write_log('Website found: {}'.format(website[1]))
