@@ -12,7 +12,7 @@ class WebsiteDAO():
         website = db.select("WEBSITES", columns=['WebsiteID', 'Name', 'URL'], condition='URL = "{}"'.format(URL))
         if not website:
             return None
-        write_log('Website found: {}'.format(website[1]))
+        write_log('Website found: {}'.format(website[0][1]))
         return Website(id=website[0][0], name=website[0][1], url=website[0][2]) if website else None
 
     def store_website(self, website):
