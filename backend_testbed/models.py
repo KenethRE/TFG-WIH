@@ -39,7 +39,7 @@ class WebsiteDAO():
         return json.dumps(self.__dict__)
     
 class Website(WebsiteDAO):
-    def __init__(self, id, name, url):
+    def __init__(self, id=None, name=None, url=None):
         self.id = id
         self.name = name
         self.url = url
