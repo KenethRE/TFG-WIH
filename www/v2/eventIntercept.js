@@ -36,12 +36,12 @@ function socketSetup() {
     socket.on('elements', (data) => {
         WEBSITE_ID = data.website;
         for (let element of data.elements) {
-            console.log(`Processing event: ${element.eventType} with id ${element.id} on element ${element.name}`);
+            console.log(`Processing event: ${element.eventType} with id ${element.assignedId} on element ${element.element}`);
             // assign element.id if it doesn't exist
-            if (!document.getElementById(element.id)) {
-                for (let tag of document.getElementsByTagName(element.name)) {
+            if (!document.getElementById(element.assignedId)) {
+                for (let tag of document.getElementsByTagName(element.element)) {
                     if (!tag.id) {
-                        tag.id = element.id;
+                        tag.id = element.assignedId;
                     }
                 }
             }
