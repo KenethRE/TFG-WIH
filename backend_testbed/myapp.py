@@ -9,7 +9,7 @@ from logwriter import write_log
 import encryption as encryption
 
 app = Flask(__name__)
-socketio = SocketIO(app,debug=True,cors_allowed_origins='*',async_mode='eventlet')
+socketio = SocketIO(app,debug=False,cors_allowed_origins='*',async_mode='eventlet')
 login_manager = LoginManager()
 login_manager.init_app(app)
 app.wsgi_app = ProxyFix(app.wsgi_app,x_for=1, x_proto=1, x_host=1, x_prefix=1)
