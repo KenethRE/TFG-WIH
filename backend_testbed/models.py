@@ -125,10 +125,7 @@ class User(UserDAO):
         self.is_active = is_active
         self.is_authenticated = True
         self.is_anonymous = False
-        if username and email and password:
-            if not self.store_user():
-                write_log('Failed to store user: {}'.format(username))
-
+        
     def store_user(self):
         return super().store_user(self)
     
