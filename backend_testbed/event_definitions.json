@@ -11,39 +11,15 @@
       "description": "Fired when a pointing device button is double-clicked over an element.",
       "triggeringElement": ["button", "a", "div"],
       "userAction": "Press and release a mouse button twice quickly."
-    },
-    {
-      "type": "mousedown",
-      "description": "Fired when a pointing device button is pressed over an element.",
-      "triggeringElement": ["button", "a", "div"],
-      "userAction": "Press a mouse button."
-    },
-    {
-      "type": "mouseup",
-      "description": "Fired when a pointing device button is released over an element.",
-      "triggeringElement": ["button", "a", "div"],
-      "userAction": "Release a mouse button."
     }
   ]
   ,
   "KeyboardEvents": [
     {
-      "type": "keydown",
-      "description": "Fired when a key is pressed down.",
-      "triggeringElement": ["input", "textarea", "body"],
-      "userAction": "Press a key on the keyboard."
-    },
-    {
       "type": "keypress",
       "description": "Fired when a key that produces a character value is pressed down.",
       "triggeringElement": ["input", "textarea", "body"],
       "userAction": "Press a key that results in a character value (e.g., 'a', '1')."
-    },
-    {
-      "type": "keyup",
-      "description": "Fired when a key is released.",
-      "triggeringElement": ["input", "textarea", "body"],
-      "userAction": "Release a key on the keyboard."
     }
   ],
   "TouchEvents": [
@@ -128,7 +104,7 @@
     {
       "type": "wheel",
       "description": "Fired when the mouse wheel is used to scroll the page or an element.",
-      "triggeringElement": ["document", "div", "canvas"],
+      "triggeringElement": ["document"],
       "userAction": "Use the mouse wheel to scroll up or down."
     }
   ],
@@ -136,7 +112,7 @@
     {
       "type": "scroll",
       "description": "Fired when an element or the document view is being scrolled.",
-      "triggeringElement": ["document", "div", "section", "body"],
+      "triggeringElement": ["document"],
       "userAction": "Scroll the content within an element or the page."
     }
   ]
