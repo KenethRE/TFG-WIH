@@ -165,23 +165,13 @@ def register(data):
     device.toggle_status()
     write_log('Device registered successfully for user: {}'.format(username))
     join_room(username, sid=socketid)
-    elements = WebsiteDAO().get_website_elements(website_id)
-    event_list = []
-    for element in elements:
-        element_obj = ElementDAO().get_element(element['ElementID'])
-        if element_obj:
-            element['outerHTML'] = element_obj.html
-            element['assignedId'] = element_obj.id
-            element['eventType'] = element_obj.type
-            element['element'] = element_obj.name
-            event_list.append(element)
     deviceinfo = {
         "deviceid": device.deviceid,
         "username": device.username,
         "deviceType": device.deviceType,
         "status": device.status
     }
-    emit('registered', {"username": username, "event_list": event_list, "deviceinfo": deviceinfo}, to=username)
+    emit('registered', {"username": username, "deviceinfo": deviceinfo}, to=username)
 
 
 @socketio.on('unregister')
