@@ -34,10 +34,9 @@ function socketSetup() {
     });
 
     socket.on('elements', (data) => {
-        console.log('Elements received from server: ' + JSON.stringify(data));
         WEBSITE_ID = data.website;
         for (let element of data.elements) {
-            console.log(`Processing event: ${element.eventType}`);
+            console.log(`Processing event: ${element.eventType} with id ${element.id} on element ${element.name}`);
             // assign element.id if it doesn't exist
             if (!document.getElementById(element.id)) {
                 for (let tag of document.getElementsByTagName(element.name)) {
