@@ -22,6 +22,9 @@ def load_user(username):
     write_log('load_user called with user_id: {}'.format(username))
     user = UserDAO().get_user(username)
     write_log('User loaded: {}'.format(user))
+    if user is None:
+        write_log('User not found: {}'.format(username))
+        return None
     return user
 
 @app.route('/login', methods=['GET', 'POST'])
