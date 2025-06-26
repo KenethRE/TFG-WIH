@@ -98,7 +98,7 @@ function socketSetup() {
             }
         }
     });
-}
+
 
     socket.on('unregister', (data) => {
         //remove device info from the table
@@ -250,6 +250,7 @@ function socketSetup() {
         document.getElementById('deviceStatus').appendChild(document.createTextNode(deviceInfo));
         document.getElementById('deviceStatus').classList.remove('d-none');
     });
+}
 
 socketSetup();
 
