@@ -75,7 +75,15 @@ def database_init():
             DeviceType TEXT NOT NULL,
             FOREIGN KEY (Username) REFERENCES USERS(Username)
         );
-        """
+        """,
+        """ CREATE TABLE EVENTS (
+            EventID INTEGER PRIMARY KEY AUTOINCREMENT,
+            DeviceID TEXT NOT NULL,
+            EventType TEXT NOT NULL,
+            ElementID TEXT NOT NULL,
+            Timestamp INTEGER,
+            FOREIGN KEY (DeviceID) REFERENCES DEVICES(DeviceID)
+        );"""
     ]
 
     for table in tables:

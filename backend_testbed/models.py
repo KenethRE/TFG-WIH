@@ -185,3 +185,43 @@ class Device(DeviceDAO):
         self.status = 'online' if self.status == 'offline' else 'offline'
         write_log('Device {} status changed to {}'.format(self.deviceid, self.status))
 
+class EventDAO():
+    def __init__(self):
+        pass
+    
+    def store_event(self):
+        write_log('store_event called with event: {}'.format(self))
+        if not self.deviceid or not self.event_type or not self.timestamp:
+            return False
+        # Insert the new event into the database
+        db.insert("EVENTS", {"DeviceID": self.deviceid, "EventType": self.event_type, "ElementID": self.element_id, "Timestamp": self.timestamp})
+        write_log('Event stored successfully: {}'.format(self))
+        return True
+
+    def get_events(self):   
+        write_log('get_events called')
+        events = db.select("EVENTS", columns=['DeviceID', 'EventType', 'ElementID', 'Timestamp'] , condition='"{}"'.format(self.element_id) if self.element_id else None)
+        if not events:
+            return None
+        write_log('Events found: {}'.format(events))
+        return [Event(deviceid=event[0], event_type=event[1], element_id=event[2], timestamp=event[3]) for event in events] if events else None
+
+    def delete_event(self, event_id):
+        write_log('delete_event called with event_id: {}'.format(event_id))
+        db.delete("EVENTS", condition='EventID = {}'.format(event_id))
+        write_log('Event deleted successfully: {}'.format(event_id))
+        return True
+
+class Event(EventDAO):
+    def __init__(self, deviceid, event_type, element_id, timestamp):
+        self.deviceid = deviceid
+        self.event_type = event_type
+        self.element_id = element_id
+        self.timestamp = timestamp
+
+    def store_event(self):
+        return super().store_event(self)
+
+    def __str__(self):
+        return json.dumps(self.__dict__)
+

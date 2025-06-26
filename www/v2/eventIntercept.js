@@ -3,6 +3,7 @@ let MY_WS_ID_LOGIN = null;
 let DEVICE_TYPE = null;
 let USER_ID = null;
 let WEBSITE_ID = null;
+let currentEvent = {};
 
 let socket;
 
@@ -42,40 +43,62 @@ function socketSetup() {
                 for (let tag of document.getElementsByTagName(element.element)) {
                     if (!tag.id) {
                         tag.id = element.assignedId;
-                        // Add event listener to the element
-                        tag.addEventListener(element.eventType, (event) => {
-                            console.log(`Event triggered: ${element.eventType} on element with ID ${tag.id}`);
-                            // Emit the event to the server
-                            socket.emit('ui_event', {
-                                type: element.eventType,
-                                element: tag.id,
-                                server_event: true, // Indicate that this is a server event
-                                website_id: WEBSITE_ID,
-                                socketid: MY_WS_ID,
-                                username: USER_ID
-                            });
-                        });
                         console.log(`Assigned ID ${element.assignedId} to element <${element.element}>`);
                     }
                     else {
                         console.warn(`Element <${element.element}> already has an ID: ${tag.id}. Skipping assignment.`);
-                        tag.addEventListener(element.eventType, (event) => {
-                            console.log(`Event triggered: ${element.eventType} on element with ID ${tag.id}`);
-                            // Emit the event to the server
-                            socket.emit('ui_event', {
-                                type: element.eventType,
-                                element: tag.id,
-                                server_event: true, // Indicate that this is a server event
-                                website_id: WEBSITE_ID,
-                                socketid: MY_WS_ID,
-                                username: USER_ID
-                            });
-                        });
+
                     }
                 }
             }
         }
+        socket.emit('elements_processed', {
+            socketid: MY_WS_ID,
+            website_id: WEBSITE_ID,
+            userid: USER_ID,
+            message: 'Elements processed successfully'
+        });
     });
+
+    socket.on('add_listeners', (data) => {
+        for (let element of data.elements) {
+            console.log(`Adding listener for event: ${element.eventType} on element with ID ${element.assignedId}`);
+            let targetElement = document.getElementById(element.assignedId);
+            if (targetElement) {
+                targetElement.addEventListener(element.eventType, (event) => {
+                    console.log(`Event ${element.eventType} triggered on element with ID ${element.assignedId}`);
+                    currentEvent.eventType = element.eventType;
+                    currentEvent.elementId = element.assignedId;
+                    socket.emit('send_event', {
+                        type: element.eventType,
+                        elementId: element.assignedId,
+                        deviceId: MY_WS_ID,
+                        userId: USER_ID,
+                        eventDetail: event,
+                        timestamp: Date.now()
+                    });
+                });
+            }
+        }
+    });
+
+    socket.on('receive_event', (data) => {
+        if (data.socketid !== MY_WS_ID) {
+            console.log(`UI Event received from ${data.socketid}: ${data.type} on element with ID ${data.elementId}`);
+            //trigger event on element with ID data.elementId
+            if (!data.elementId) {
+                console.warn(`Element ID not provided for event: ${data.type}`);
+                return;
+            }
+            let element = document.getElementById(data.elementId);
+            if (element) {
+                console.log(`Triggering server event: ${data.type} on element with ID ${data.element}`);
+                let event = new Event(data.type, { bubbles: false, cancelable: true });
+                element.dispatchEvent(event);
+            }
+        }
+    });
+}
 
     socket.on('unregister', (data) => {
         //remove device info from the table
@@ -227,21 +250,6 @@ function socketSetup() {
         document.getElementById('deviceStatus').appendChild(document.createTextNode(deviceInfo));
         document.getElementById('deviceStatus').classList.remove('d-none');
     });
-
-    socket.on('ui_event', (data) => {
-        if (data.server_event && data.socketid !== MY_WS_ID) {
-            console.log(`UI Event received from ${data.socketid}: ${data.type} on element with ID ${data.element}`);
-            //trigger event on element with ID data.element
-            let element = document.getElementById(data.element);
-            if (element) {
-                console.log(`Triggering server event: ${data.type} on element with ID ${data.element}`);
-                let event = new Event(data.type, { bubbles: true, cancelable: true });
-                element.dispatchEvent(event);
-            }
-        }
-    });
-}
-
 
 socketSetup();
 
