@@ -20,7 +20,9 @@ login_manager.login_view = 'login'
 @login_manager.user_loader
 def load_user(username):
     write_log('load_user called with user_id: {}'.format(username))
-    return UserDAO().get_user(username)
+    user = UserDAO().get_user(username)
+    write_log('User loaded: {}'.format(user))
+    return user
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
