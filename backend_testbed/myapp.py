@@ -213,14 +213,13 @@ def send_event(data):
         deviceid=data['deviceId'],
         event_type=data['type'],
         element_id=data['elementId'],
-        timestamp=data['timestamp'],
-        identifier='server')
+        timestamp=data['timestamp'])
     if not event.get_events():
-        write_log('No events found for deviceid: {}'.format(data['deviceid']))
+        write_log('No events found for deviceid: {}'.format(data['deviceId']))
         event.store_event()
         emit('receive_event', data, to=data['username'])
     else:
-        write_log('Event already exists for deviceid: {}'.format(data['deviceid']))
+        write_log('Event already exists for deviceid: {}'.format(data['deviceId']))
         # check if timestamp s too close to the existing event
         # if it is, do not store the event again
         # if it is not, store the event again
