@@ -219,8 +219,8 @@ class Event(EventDAO):
         self.element_id = element_id
         self.timestamp = timestamp
 
-    def store_event(self):
-        return super().store_event(self)
+    def store_event():
+        return super().store_event()
 
     def __str__(self):
         return json.dumps(self.__dict__)
