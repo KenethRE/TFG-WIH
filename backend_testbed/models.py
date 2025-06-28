@@ -189,18 +189,18 @@ class EventDAO():
     def __init__(self):
         pass
     
-    def store_event(self):
-        write_log('store_event called with event: {}'.format(self))
-        if not self.deviceid or not self.event_type or not self.timestamp:
+    def store_event(self, event):
+        write_log('store_event called with event: {}'.format(event))
+        if not event.deviceid or not event.event_type or not event.timestamp:
             return False
         # Insert the new event into the database
-        db.insert("EVENTS", {"DeviceID": self.deviceid, "EventType": self.event_type, "ElementID": self.element_id, "Timestamp": self.timestamp})
-        write_log('Event stored successfully: {}'.format(self))
+        db.insert("EVENTS", {"DeviceID": event.deviceid, "EventType": event.event_type, "ElementID": event.element_id, "Timestamp": event.timestamp})
+        write_log('Event stored successfully: {}'.format(event))
         return True
 
-    def get_events(self):   
+    def get_events(self, event):   
         write_log('get_events called')
-        events = db.select("EVENTS", columns=['DeviceID', 'EventType', 'ElementID', 'Timestamp'] , condition='"{}"'.format(self.element_id) if self.element_id else None)
+        events = db.select("EVENTS", columns=['DeviceID', 'EventType', 'ElementID', 'Timestamp'] , condition='"{}"'.format(event.element_id) if event.element_id else None)
         if not events:
             return None
         write_log('Events found: {}'.format(events))
@@ -219,8 +219,8 @@ class Event(EventDAO):
         self.element_id = element_id
         self.timestamp = timestamp
 
-    def store_event():
-        return super().store_event()
+    def store_event(self):
+        return super().store_event(self)
 
     def __str__(self):
         return json.dumps(self.__dict__)
