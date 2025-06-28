@@ -217,7 +217,7 @@ def send_event(data):
     if not EventDAO().get_events(event):
         write_log('No events found for deviceid: {}'.format(data['deviceId']))
         event.store_event()
-        emit('receive_event', data, to=data['username'])
+        emit('receive_event', data, to=data['userId'])
     else:
         write_log('Event already exists for deviceid: {}'.format(data['deviceId']))
         # check if timestamp s too close to the existing event
