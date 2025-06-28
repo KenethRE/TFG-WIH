@@ -3,7 +3,7 @@ from flask_socketio import SocketIO, emit, join_room, leave_room
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 from werkzeug.middleware.proxy_fix import ProxyFix
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import User, Website, WebsiteDAO, UserDAO, Device, DeviceDAO, ElementDAO, Event
+from models import User, Website, UserDAO, Device, DeviceDAO, EventDAO, Event
 import json
 from logwriter import write_log
 import encryption as encryption
@@ -214,7 +214,7 @@ def send_event(data):
         event_type=data['type'],
         element_id=data['elementId'],
         timestamp=data['timestamp'])
-    if not event.get_events():
+    if not EventDAO().get_events(event):
         write_log('No events found for deviceid: {}'.format(data['deviceId']))
         event.store_event()
         emit('receive_event', data, to=data['username'])
