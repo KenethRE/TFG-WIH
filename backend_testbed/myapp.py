@@ -111,6 +111,7 @@ def connect():
                 write_log('Found {} elements in file {}'.format(len(elements), elements_file))
             except FileNotFoundError:
                 write_log('No elements found for website {}'.format(website_name))
+                emit('error', {'message': 'No elements file found for website {}'.format(website_name)})
                 return
             emit('elements', {'elements': elements, 'website': new_website.id})
         else:
@@ -125,6 +126,8 @@ def connect():
             write_log('Found {} elements in file {}'.format(len(elements), elements_file))
         except FileNotFoundError:
             write_log('No elements file found for website {}'.format(website_name))
+            emit('error', {'message': 'No elements file found for website {}'.format(website_name)})
+            return
         emit('elements', {'elements': elements, 'website': website.id})
     if current_user.is_authenticated:
         write_log('User {} connected'.format(current_user.username))
