@@ -2,3 +2,4 @@
 *pyc*
 backend_testbed/__pycache__/myapp.cpython-312.pyc
 backend_testbed/log.txt
+letsencrypt/

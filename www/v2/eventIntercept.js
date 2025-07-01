@@ -3,9 +3,47 @@ let MY_WS_ID_LOGIN = null;
 let DEVICE_TYPE = null;
 let USER_ID = null;
 let WEBSITE_ID = null;
-let currentEvent = {};
 
 let socket;
+
+function add_listeners(event) {
+    let data;
+    switch (event.type) {
+        case 'click':
+        case 'input':
+        case 'change':
+        case 'submit':
+        case 'focus':
+        case 'blur':
+        case 'keydown':
+        case 'keyup':
+        case 'keypress':
+            data = {
+                type: event.type,
+                elementId: event.target.id || '',
+                deviceId: MY_WS_ID,
+                userId: USER_ID,
+                key: event.key || '',
+                code: event.code || '',
+                keyCode: event.keyCode || 0,
+                which: event.which || 0,
+                value: event.target.value || ''
+            };
+            break;
+        case 'mouseover':
+        case 'mouseout':
+        case 'mousemove':
+        case 'contextmenu':
+        case 'dblclick':
+        case 'wheel':
+        case 'touchstart':
+        case 'touchmove':
+        case 'touchend':
+            event.preventDefault();
+            break;
+    }
+    return data;
+}
 
 function socketSetup() {
     socket = io();
@@ -39,6 +77,7 @@ function socketSetup() {
         for (let element of data.elements) {
             console.log(`Processing event: ${element.eventType} with id ${element.assignedId} on element ${element.element}`);
             // assign element.id if it doesn't exist
+            element = document.getElementById(element.assignedId) || element;
             if (!document.getElementById(element.assignedId)) {
                 for (let tag of document.getElementsByTagName(element.element)) {
                     if (!tag.id) {
@@ -60,23 +99,44 @@ function socketSetup() {
         });
     });
 
+
     socket.on('add_listeners', (data) => {
         for (let element of data.elements) {
             console.log(`Adding listener for event: ${element.eventType} on element with ID ${element.assignedId}`);
             let targetElement = document.getElementById(element.assignedId);
             if (targetElement) {
                 targetElement.addEventListener(element.eventType, (event) => {
-                    console.log(`Event ${element.eventType} triggered on element with ID ${element.assignedId}`);
-                    currentEvent.eventType = element.eventType;
-                    currentEvent.elementId = element.assignedId;
-                    socket.emit('send_event', {
+                    if (event.isTrusted) {
+                        console.log(`User event: ${event.type} on element with ID ${element.assignedId}`);
+                        socket.emit('send_event', {
                         type: element.eventType,
                         elementId: element.assignedId,
                         deviceId: MY_WS_ID,
                         userId: USER_ID,
-                        eventDetail: event,
-                        timestamp: Date.now()
-                    });
+                        key: event.key || '',
+                        code: event.code || '',
+                        keyCode: event.keyCode || 0,
+                        which: event.which || 0,
+                        value: event.target.value || '',
+                        clientX: event.clientX || 0,
+                        clientY: event.clientY || 0,
+                        targetTouches: event.targetTouches || [],
+                        touches: Array.from(event.touches || []).map(touch => ({
+                            clientX: touch.clientX,
+                            clientY: touch.clientY,
+                            identifier: touch.identifier
+                        })) || [],
+                        changedTouches: Array.from(event.changedTouches || []).map(touch => ({
+                            clientX: touch.clientX,
+                            clientY: touch.clientY,
+                            identifier: touch.identifier
+                        })) || [],
+                        timestamp: event.timestamp
+                        });
+                    console.log(`Event ${element.eventType} triggered on element with ID ${element.assignedId}`);
+                    } else {
+                        console.warn(`Server event: ${event.type} on element with ID ${element.assignedId}`);
+                    }                 
                 });
             }
         }
@@ -92,12 +152,189 @@ function socketSetup() {
             }
             let element = document.getElementById(data.elementId);
             if (element) {
-                console.log(`Triggering server event: ${data.type} on element with ID ${data.element}`);
-                let event = new Event(data.type, { bubbles: false, cancelable: true });
-                element.dispatchEvent(event);
+                console.log(`Triggering server event: ${data.type} on element with ID ${data.elementId}`);
+                switch (data.type) {
+                    case 'click':
+                        element.click(); // Simulate click event
+                        break;
+                    case 'input':
+                        element.value = data.value || ''; // Set value for input events
+                        element.dispatchEvent(new Event('input', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true
+                        }));
+                        break;
+                    case 'change':
+                        element.dispatchEvent(new Event('change', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true
+                        }));
+                        break;
+                    case 'submit':
+                        element.dispatchEvent(new Event('submit', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true
+                        }));
+                        break;
+                    case 'focus':
+                        element.dispatchEvent(new Event('focus', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true
+                        }));
+                        break;
+                    case 'blur':
+                        element.dispatchEvent(new Event('blur', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true
+                        }));
+                        break;
+                    case 'keydown':
+                        element.dispatchEvent(new KeyboardEvent('keydown', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true,
+                            key: data.key || '',
+                            code: data.code || '',
+                            keyCode: data.keyCode || 0,
+                            which: data.which || 0
+                        }));
+                        break;
+                    case 'keyup':
+                        element.dispatchEvent(new KeyboardEvent('keyup', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true,
+                            key: data.key || '',
+                            code: data.code || '',
+                            keyCode: data.keyCode || 0,
+                            which: data.which || 0
+                        }));
+                        break;
+                    case 'keypress':
+                        element.dispatchEvent(new KeyboardEvent('keypress', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true,
+                            key: data.key || '',
+                            code: data.code || '',
+                            keyCode: data.keyCode || 0,
+                            which: data.which || 0
+                        }));
+                        break;
+                    case 'mouseover':
+                        element.dispatchEvent(new MouseEvent('mouseover', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true,
+                            clientX: data.clientX || 0,
+                            clientY: data.clientY || 0
+                        }));
+                        break;
+                    case 'mouseout':
+                        element.dispatchEvent(new MouseEvent('mouseout', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true,
+                            clientX: data.clientX || 0,
+                            clientY: data.clientY || 0
+                        }));
+                        break;
+                    case 'mousemove':
+                        element.dispatchEvent(new MouseEvent('mousemove', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true,
+                            clientX: data.clientX || 0,
+                            clientY: data.clientY || 0
+                        }));
+                        break;
+                    case 'touchstart':
+                        element.dispatchEvent(new TouchEvent('touchstart', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true,
+                            touches: [new Touch({
+                                clientX: data.clientX || 0,
+                                clientY: data.clientY || 0,
+                                identifier: data.identifier || 0
+                            })],
+                            changedTouches: [new Touch({
+                                clientX: data.changedTouches?.[0]?.clientX || 0,
+                                clientY: data.changedTouches?.[0]?.clientY || 0,
+                                identifier: data.changedTouches?.[0]?.identifier || 0
+                            })]
+                        }));
+                        break;
+                    case 'touchend':
+                        element.dispatchEvent(new TouchEvent('touchend', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true,
+                            touches: data.touches || [],
+                            targetTouches: data.targetTouches || [],
+                            changedTouches: data.changedTouches || []
+                        }));
+                        break;
+                    case 'touchmove':
+                        element.dispatchEvent(new TouchEvent('touchmove', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true,
+                            touches: data.touches || [],
+                            targetTouches: data.targetTouches || [],
+                            changedTouches: data.changedTouches || []
+                        }));
+                        break;
+                    case 'contextmenu':
+                        element.dispatchEvent(new MouseEvent('contextmenu', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true,
+                            clientX: data.clientX || 0,
+                            clientY: data.clientY || 0
+                        }));
+                        break;
+                    case 'dblclick':
+                        element.dispatchEvent(new MouseEvent('dblclick', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true,
+                            clientX: data.clientX || 0,
+                            clientY: data.clientY || 0
+                        }));
+                        break;
+                    case 'wheel':
+                        element.dispatchEvent(new WheelEvent('wheel', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true,
+                            deltaX: data.deltaX || 0,
+                            deltaY: data.deltaY || 0,
+                            deltaZ: data.deltaZ || 0,
+                            deltaMode: data.deltaMode || 0
+                        }));
+                        break;
+                    case 'scroll':
+                        element.dispatchEvent(new Event('scroll', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true
+                        }));
+                        break;
+                    default:
+                        // If the event type is not recognized, log a warning
+                        console.warn(`Unknown event type: ${data.type}. Dispatching generic event.`);
+                }
+                }
+                // Dispatch the event with the provided event detail
+                console.log(`Event ${data.type} dispatched on element with ID ${data.elementId}`);
             }
-        }
-    });
+        });
 
 
     socket.on('unregister', (data) => {

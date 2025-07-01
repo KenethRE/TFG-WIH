@@ -87,7 +87,7 @@ def test_script_main(tmp_path, monkeypatch):
     sys_argv_backup = sys.argv
     sys.argv = ["webpage_parser.py", test_url]
     # Patch file output location
-    monkeypatch.setattr(webpage_parser, "open", open)
+    monkeypatch.setattr(webpage_parser, "__file__", str(tmp_path / "webpage_parser.py"))
     try:
         webpage_parser.__name__ = "__main__"
         exec(open(os.path.join(os.path.dirname(webpage_parser.__file__), "webpage_parser.py")).read())

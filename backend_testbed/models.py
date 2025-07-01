@@ -200,16 +200,16 @@ class EventDAO():
 
     def get_events(self, event):   
         write_log('get_events called')
-        events = db.select("EVENTS", columns=['DeviceID', 'EventType', 'ElementID', 'Timestamp'] , condition='"{}"'.format(event.element_id) if event.element_id else None)
+        events = db.select("EVENTS", columns=['DeviceID', 'EventType', 'ElementID', 'Timestamp'] , condition='DeviceID = "{}"'.format(event.deviceid) if event.deviceid else None)
         if not events:
             return None
         write_log('Events found: {}'.format(events))
         return [Event(deviceid=event[0], event_type=event[1], element_id=event[2], timestamp=event[3]) for event in events] if events else None
 
-    def delete_event(self, event_id):
-        write_log('delete_event called with event_id: {}'.format(event_id))
-        db.delete("EVENTS", condition='EventID = {}'.format(event_id))
-        write_log('Event deleted successfully: {}'.format(event_id))
+    def delete_event(self, event):
+        write_log('delete_event called with DeviceID: {}'.format(event.deviceid))
+        db.delete("EVENTS", condition='DeviceID = "{}"'.format(event.deviceid))
+        write_log('Event deleted successfully: {}'.format(event.deviceid))
         return True
 
 class Event(EventDAO):

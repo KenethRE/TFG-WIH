@@ -31,7 +31,7 @@ def test_signup_and_login(client):
         'username': 'testuser',
         'password': 'testpass'
     }, follow_redirects=True)
-    assert b'Login successful' in response.data or b'check your login details' in response.data
+    assert b'logged in' in response.data or b'check your login details' in response.data
 
 def test_logout(client):
     response = client.get('/logout', follow_redirects=True)
@@ -69,7 +69,7 @@ def test_webpage_parser_assign_ids(monkeypatch):
             }
         ]
     })
-    url = "http://test.com"
+    url = "http://tfg.zenken.es"
     results = webpage_parser.assign_ids_to_elements(url)
     assert any(r['element'] == 'button' for r in results)
     assert any(r['element'] == 'a' for r in results)

@@ -18,7 +18,7 @@
     {
       "type": "keypress",
       "description": "Fired when a key that produces a character value is pressed down.",
-      "triggeringElement": ["input", "textarea", "body"],
+      "triggeringElement": ["input", "textarea"],
       "userAction": "Press a key that results in a character value (e.g., 'a', '1')."
     }
   ],
