@@ -42,7 +42,7 @@ jobs:
 
       # Uploads the test results to GitHub
       - name: Upload test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: python_test-results
           path: test-results/
