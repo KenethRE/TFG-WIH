@@ -71,7 +71,15 @@ function socketSetup() {
         MY_WS_ID = socket.id;
         console.log('Connected to server with Socket ID ' + MY_WS_ID);
     });
-
+    socket.on('error', (data) => {
+        console.error('Error from server: ' + data.message);
+        if (data.message.includes('No elements file found')) {
+            // Handle the case where no elements file is found for the website
+            console.warn('No elements file found for the website. Please ensure the elements file is correctly configured.');
+            alert('No elements file found for the website. Please ask admin to register the website or check the configuration.');
+            // Optionally, you can display a message to the user or take other actions
+        }
+    });
     socket.on('elements', (data) => {
         WEBSITE_ID = data.website;
         for (let element of data.elements) {
