@@ -3,7 +3,6 @@ import sys
 import tempfile
 import pytest
 import json
-from .. import database
 
 # Add backend_testbed to sys.path for imports
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))

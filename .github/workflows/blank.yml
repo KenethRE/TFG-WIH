@@ -32,7 +32,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-
+      # Initializes the database for testing
+      - name: Initialize database for tests
+        run: |
+          python -c "import backend_testbed.database; backend_testbed.check_database()"
       # Runs the tests using pytest
       - name: Run tests with pytest and save results
         run: |
