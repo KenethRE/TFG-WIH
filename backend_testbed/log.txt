@@ -5759,3 +5759,63 @@
 2025-07-01 16:01:57 - Device with socket ID s1FiAQcv04rJ4JW6AAAA unregistered successfully
 2025-07-01 16:01:57 - Device with socket ID s1FiAQcv04rJ4JW6AAAA unregistered
 2025-07-01 16:01:57 - Unauthenticated user disconnected
+2025-07-01 16:28:07 - Database already exists
+2025-07-01 16:28:07 - signup request
+2025-07-01 16:28:07 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$KEpZ2TLlyF51ohcX$8c24762b387831125cd3c800b0d138f10ae74d6a816f7af8b3648f6d81c89bb525dc070bf9ca83a74f24048bfe9ede1f0322320a68d5bdf9f8723f988c7a8b90", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-01 16:28:07 - Signup failed for user testuser
+2025-07-01 16:28:07 - login request
+2025-07-01 16:28:07 - User found: testuser
+2025-07-01 16:28:07 - get_id called for user: testuser
+2025-07-01 16:28:07 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$9FTaRiwazq5n8shu$a1f6c27e2a44b646bff19136ceed94758a026a0484108e346744b989ef1f83d8cbae8c49ad1c64ac7e9582f9eb7e095d7f2211617b2eea3fc5cfec32edc3536e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-01 16:28:07 - logout request
+2025-07-01 16:28:07 - Logout request received but no user is authenticated
+2025-07-01 16:28:07 - login request
+2025-07-01 16:28:07 - signup request
+2025-07-01 16:28:07 - client connected
+2025-07-01 16:28:07 - No Referer header found in request
+2025-07-01 16:28:07 - Socket ID C9XzdNsKGtxsjf2QAAAA disconnected
+2025-07-01 16:28:07 - delete_device called with device_id: C9XzdNsKGtxsjf2QAAAA
+2025-07-01 16:28:07 - Device deleted successfully: C9XzdNsKGtxsjf2QAAAA
+2025-07-01 16:28:07 - Device with socket ID C9XzdNsKGtxsjf2QAAAA unregistered successfully
+2025-07-01 16:28:07 - Device with socket ID C9XzdNsKGtxsjf2QAAAA unregistered
+2025-07-01 16:28:07 - Unauthenticated user disconnected
+2025-07-01 16:29:40 - Database already exists
+2025-07-01 16:29:40 - signup request
+2025-07-01 16:29:41 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$aW1oqDOIzCZDc6wz$30519e690bbf1a8d8962aff862a676f39b9113ef96f4a88a79b1aed41008fdbe311844bb8177b988558e5908a941be977a018d2a12c116e8f3104fbd400192df", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-01 16:29:41 - Signup failed for user testuser
+2025-07-01 16:29:41 - login request
+2025-07-01 16:29:41 - User found: testuser
+2025-07-01 16:29:41 - get_id called for user: testuser
+2025-07-01 16:29:41 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$9FTaRiwazq5n8shu$a1f6c27e2a44b646bff19136ceed94758a026a0484108e346744b989ef1f83d8cbae8c49ad1c64ac7e9582f9eb7e095d7f2211617b2eea3fc5cfec32edc3536e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-01 16:29:41 - logout request
+2025-07-01 16:29:41 - Logout request received but no user is authenticated
+2025-07-01 16:29:41 - login request
+2025-07-01 16:29:41 - signup request
+2025-07-01 16:29:41 - client connected
+2025-07-01 16:29:41 - No Referer header found in request
+2025-07-01 16:29:41 - Socket ID wIcQXvFf8U-T_7haAAAA disconnected
+2025-07-01 16:29:41 - delete_device called with device_id: wIcQXvFf8U-T_7haAAAA
+2025-07-01 16:29:41 - Device deleted successfully: wIcQXvFf8U-T_7haAAAA
+2025-07-01 16:29:41 - Device with socket ID wIcQXvFf8U-T_7haAAAA unregistered successfully
+2025-07-01 16:29:41 - Device with socket ID wIcQXvFf8U-T_7haAAAA unregistered
+2025-07-01 16:29:41 - Unauthenticated user disconnected
+2025-07-01 16:30:09 - Database already exists
+2025-07-01 16:30:10 - signup request
+2025-07-01 16:30:10 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$HCCoSSd3q2ZsL61C$b38b492dc4baaff9a85aaaab646e68ceafc518ff0f5bc77f9e20ef06ead3d6fba7998e5d2f4edb528c7762d160cde24bd51fc287ba9311ab218ff2ba1175e86c", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-01 16:30:10 - Signup failed for user testuser
+2025-07-01 16:30:10 - login request
+2025-07-01 16:30:10 - User found: testuser
+2025-07-01 16:30:10 - get_id called for user: testuser
+2025-07-01 16:30:10 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$9FTaRiwazq5n8shu$a1f6c27e2a44b646bff19136ceed94758a026a0484108e346744b989ef1f83d8cbae8c49ad1c64ac7e9582f9eb7e095d7f2211617b2eea3fc5cfec32edc3536e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-01 16:30:10 - logout request
+2025-07-01 16:30:10 - Logout request received but no user is authenticated
+2025-07-01 16:30:10 - login request
+2025-07-01 16:30:10 - signup request
+2025-07-01 16:30:10 - client connected
+2025-07-01 16:30:10 - No Referer header found in request
+2025-07-01 16:30:10 - Socket ID JTuB0kHxASIfQwFNAAAA disconnected
+2025-07-01 16:30:10 - delete_device called with device_id: JTuB0kHxASIfQwFNAAAA
+2025-07-01 16:30:10 - Device deleted successfully: JTuB0kHxASIfQwFNAAAA
+2025-07-01 16:30:10 - Device with socket ID JTuB0kHxASIfQwFNAAAA unregistered successfully
+2025-07-01 16:30:10 - Device with socket ID JTuB0kHxASIfQwFNAAAA unregistered
+2025-07-01 16:30:10 - Unauthenticated user disconnected

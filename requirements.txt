@@ -11,3 +11,4 @@ flask_bcrypt==1.0.1
 requests==2.32.4
 bs4==0.0.2
 pytest==8.3.3
+pytest-html==4.1.1

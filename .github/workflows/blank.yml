@@ -37,7 +37,7 @@ jobs:
       - name: Run tests with pytest and save results
         run: |
           mkdir -p test-results
-          pytest --junitxml=test-results/results.xml --html=test-results/report.html --self-contained-html
+          pytest --html=test-results/report.html --self-contained-html backend_testbed/tests/
         continue-on-error: true
 
       # Uploads the test results to GitHub
