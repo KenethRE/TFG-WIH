@@ -40,7 +40,7 @@ jobs:
       - name: Run tests with pytest and save results
         run: |
           mkdir -p test-results
-          pytest --html=test-results/report.html --self-contained-html backend_testbed/tests/
+          cd backend_testbed && pytest --html=test-results/report.html --self-contained-html tests/
         continue-on-error: true
 
       # Uploads the test results to GitHub
