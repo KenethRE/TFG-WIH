@@ -8,12 +8,13 @@ def load_event_definitions(path='event_definitions.json'):
         return json.load(f)
 
 def get_html(url):
+    response = None
     if url == 'https://localhost':
         # For local testing, use a predefined HTML file
         with open('../www/version2.html', 'r') as f:
             return f.read()
     # Fetch the HTML content from the provided URL
-    response = requests.get(url, verify=False)
+    response = requests.get(url)
     response.raise_for_status()
     return response.text
 

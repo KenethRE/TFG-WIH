@@ -9,20 +9,6 @@ let socket;
 function add_listeners(elements) {
     console.log('Adding listeners to elements');
     // Get all elements that match the event definitions
-    for (let element of elements) {
-        // assign element.id if it doesn't exist
-        let domElement = document.getElementById(element.assignedId) || document.querySelector(element.element);
-        if (!domElement) {
-            for (let tag of document.getElementsByTagName(element.element)) {
-                if (!tag.id) {
-                    tag.id = element.assignedId;
-                }
-                else {
-                    console.warn(`Element <${element.element}> already has an ID: ${tag.id}. Skipping assignment.`);
-                }
-            }
-        }
-    }
     // Add event listeners to the elements
     for (let element of elements) {
         let targetElement = document.getElementById(element.assignedId) || document.querySelector(element.element);
@@ -30,7 +16,7 @@ function add_listeners(elements) {
             console.warn(`Element with ID ${element.assignedId} or selector ${element.element} not found.`);
             continue; // Skip this element if not found
         }
-        console.log(`Adding event listener for ${element.eventType} on element with ID ${element.assignedId}`);
+        console.log(`Adding event listener for ${element.eventType} on element with tag ${targetElement.tagName} and ID ${element.assignedId}`);
         targetElement.addEventListener(element.eventType, (event) => {
             console.log(`Event ${element.eventType} triggered on element with ID ${element.assignedId}`);
             // Emit the event to the server only if the event is trusted
@@ -194,13 +180,12 @@ async function socketSetup() {
 
     socket.on('receive_event', (data) => {
         if (data.socketid !== MY_WS_ID) {
-            console.log(`UI Event received from ${data.socketid}: ${data.type} on element with ID ${data.elementId}`);
             //trigger event on element with ID data.elementId
             if (!data.elementId) {
                 console.warn(`Element ID not provided for event: ${data.type}`);
                 return;
             }
-            let element = document.getElementById(data.elementId);
+            let element = document.getElementById(data.elementId) || document;
             if (element) {
                 let touches = [];
                 let targetTouches = [];
@@ -254,7 +239,19 @@ async function socketSetup() {
                 console.log(`Triggering server event: ${data.type} on element with ID ${data.elementId}`);
                 switch (data.type) {
                     case 'click':
-                        document.elementFromPoint(data.clientX || 0, data.clientY || 0).click();
+                        // check if the element is clickable, based on coordinates
+                        if (data.clientX && data.clientY) {
+                            let clickableElement = document.elementFromPoint(data.clientX, data.clientY);
+                            if (clickableElement) {
+                                console.log(`Clicking on element with ID ${data.elementId} at (${data.clientX}, ${data.clientY})`);
+                                clickableElement.click(); // Simulate click on the clickable element
+                            } else {
+                                console.log(`Click on element with ID ${data.elementId} at (${data.clientX}, ${data.clientY}) is not clickable.`);
+                            }
+                        } else {
+                            console.log(`Clicking on element with ID ${data.elementId} without coordinates.`);
+                            element.click(); // Simulate click on the element
+                        }
                         break;
                     case 'input':
                         element.value = data.value || ''; // Set value for input events
@@ -272,6 +269,7 @@ async function socketSetup() {
                         }));
                         break;
                     case 'submit':
+                        console.log(`Submitting form with ID ${data.elementId}`);
                         element.dispatchEvent(new Event('submit', {
                             bubbles: true,
                             cancelable: true,
@@ -293,6 +291,7 @@ async function socketSetup() {
                         }));
                         break;
                     case 'keydown':
+                        element.value = data.value || ''; // Set value for keydown events
                         element.dispatchEvent(new KeyboardEvent('keydown', {
                             bubbles: true,
                             cancelable: true,
@@ -316,9 +315,7 @@ async function socketSetup() {
                         break;
                     case 'keypress':
                         //replace value of element with data.value if it exists
-                        if (data.value) {
-                            element.value = data.value;
-                        }
+                        element.value = data.value || ''; // Set value for keypress events
                         // Dispatch keypress event
                         element.dispatchEvent(new KeyboardEvent('keypress', {
                             bubbles: true,
@@ -369,6 +366,17 @@ async function socketSetup() {
                         }));
                         break;
                     case 'touchend':
+                        // see if element is clickable, based on coordinates
+                        if (data.changedTouches && data.changedTouches.length > 0) {
+                            let touch = data.changedTouches[0];
+                            let clickableElement = document.elementFromPoint(touch.clientX, touch.clientY);
+                            if (clickableElement) {
+                                console.log(`Touchend on element with ID ${data.elementId} at (${touch.clientX}, ${touch.clientY}) is clickable.`);
+                                clickableElement.click(); // Simulate click on the clickable element
+                            } else {
+                                console.log(`Touchend on element with ID ${data.elementId} at (${touch.clientX}, ${touch.clientY}) is not clickable.`);
+                            }
+                        }
                         element.dispatchEvent(new TouchEvent('touchend', {
                             bubbles: true,
                             cancelable: true,
@@ -379,6 +387,11 @@ async function socketSetup() {
                         }));
                         break;
                     case 'touchmove':
+                        // We need to move the screen position to the touch coordinates
+                        // This is a workaround to simulate touch move events
+                        if (data.changedTouches[0].clientX && data.changedTouches[0].clientY) {
+                            window.scrollTo(data.changedTouches[0].clientX, data.changedTouches[0].clientY);
+                        }
                         element.dispatchEvent(new TouchEvent('touchmove', {
                             bubbles: true,
                             cancelable: true,
@@ -407,15 +420,10 @@ async function socketSetup() {
                         }));
                         break;
                     case 'wheel':
-                        element.dispatchEvent(new WheelEvent('wheel', {
-                            bubbles: true,
-                            cancelable: true,
-                            composed: true,
-                            deltaX: data.deltaX || 0,
-                            deltaY: data.deltaY || 0,
-                            deltaZ: data.deltaZ || 0,
-                            deltaMode: data.deltaMode || 0
-                        }));
+                        // scroll the page to the position of the wheel event
+                        if (data.deltaY !== undefined && data.deltaY !== 0) {
+                            window.scrollBy(0, data.deltaY);
+                        }
                         break;
                     case 'scroll':
                         element.dispatchEvent(new Event('scroll', {
@@ -428,9 +436,10 @@ async function socketSetup() {
                         // If the event type is not recognized, log a warning
                         console.warn(`Unknown event type: ${data.type}. Dispatching generic event.`);
                 }
+                } else {
+                    // If the event type is not recognized, log a warning
+                    console.warn(`No element found with ID ${data.elementId} for event type ${data.type}.`);
                 }
-                // Dispatch the event with the provided event detail
-                console.log(`Event ${data.type} dispatched on element with ID ${data.elementId}`);
             }
         });
 

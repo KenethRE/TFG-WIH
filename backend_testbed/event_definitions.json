@@ -20,6 +20,18 @@
       "description": "Fired when a key that produces a character value is pressed down.",
       "triggeringElement": ["input", "textarea"],
       "userAction": "Press a key that results in a character value (e.g., 'a', '1')."
+    },
+    {
+      "type": "keydown",
+      "description": "Fired when a key is pressed down.",
+      "triggeringElement": ["input", "textarea"],
+      "userAction": "Press any key on the keyboard."
+    },
+    {
+      "type": "keyup",
+      "description": "Fired when a key is released.",
+      "triggeringElement": ["input", "textarea"],
+      "userAction": "Release a key on the keyboard."
     }
   ],
   "TouchEvents": [
