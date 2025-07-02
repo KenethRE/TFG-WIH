@@ -3,13 +3,14 @@ from flask_socketio import SocketIO, emit, join_room, leave_room
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 from werkzeug.middleware.proxy_fix import ProxyFix
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import User, Msg, Website, UserDAO, Device, DeviceDAO
-import random, json, time
+from models import User, Website, UserDAO, Device, DeviceDAO, EventDAO, Event
+from webpage_parser import assign_ids_to_elements
+import json
 from logwriter import write_log
 import encryption as encryption
 
 app = Flask(__name__)
-socketio = SocketIO(app,debug=True,cors_allowed_origins='*',async_mode='eventlet')
+socketio = SocketIO(app,debug=False,cors_allowed_origins='*',async_mode='eventlet')
 login_manager = LoginManager()
 login_manager.init_app(app)
 app.wsgi_app = ProxyFix(app.wsgi_app,x_for=1, x_proto=1, x_host=1, x_prefix=1)
@@ -17,18 +18,15 @@ app.config['SECRET_KEY'] = encryption.get_secrets()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
 
-current_user = User()
-
 @login_manager.user_loader
 def load_user(username):
     write_log('load_user called with user_id: {}'.format(username))
-    current_user = User().get_user(username)
-    if current_user.username:
-        write_log('User loaded: {}'.format(current_user.username))
-        return current_user
-    else:
+    user = UserDAO().get_user(username)
+    write_log('User loaded: {}'.format(user))
+    if user is None:
         write_log('User not found: {}'.format(username))
         return None
+    return user
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -37,29 +35,28 @@ def login():
         username = request.form.get('username')
         password = request.form.get('password')
         remember = True if request.form.get('remember') else False
-        current_user = User().get_user(username)
-        if current_user is None:
+        user = UserDAO().get_user(username)
+        if user is None:
             write_log('Login failed for user {}'.format(username))
-            flash('Username does not exist. Please try again or signup.')
+            flash('Username does not exist. Please try again or sign up below.')
             return render_template('login.html')
-        if current_user.username and check_password_hash(current_user.password, password):
-            write_log('User {} logged in successfully'.format(username))
-            login_user(current_user, remember=remember)
-            socketio.emit('login_success', {'username': username})
-            return render_template('login_success.html', username=username, message="Login successful")
+        if user.username and check_password_hash(user.password, password):
+            if (login_user(user, remember=remember)):
+                write_log('User Data: {}'.format(user.__str__()))
+                socketio.emit('login_success', {'username': username})
+                return render_template('login_success.html', username=username, message="Login successful")
         else:
             write_log('Login failed for user {}'.format(username))
             flash('Please check your login details and try again.')
             return render_template('login.html')
     return render_template('login.html')
 
-@app.route('/logout', methods=['POST'])
-@login_required
+@app.route('/logout', methods=['GET', 'POST'])
 def logout():
     write_log('logout request')
     if current_user.is_authenticated:
+        write_log('User {} logged out successfully'.format(current_user))
         logout_user()
-        write_log('User {} logged out successfully'.format(current_user.username))
     else:
         write_log('Logout request received but no user is authenticated')
     # Here you would typically handle the logout logic, such as clearing the session
@@ -93,21 +90,68 @@ def signup():
 @socketio.on('connect')
 def connect():
     write_log('client connected')
-    if current_user.is_authenticated:
-        write_log('User {} connected'.format(current_user.username))
-        join_room(current_user.username)
-        emit('login_success', {'username': current_user.username}, to=current_user.username)
+    # Print entire request object for debugging
+    website_name = request.headers.get('Referer', '').split('/')[2] if request.headers.get('Referer') else None
+    url = request.headers.get('Referer', '').split('/')[0] + '//' + website_name if website_name else None
+    if not url:
+        write_log('No Referer header found in request')
+        emit('error', {'message': 'No Referer header found in request'})
+        return
+    website = Website().get_website(url)
+    if not website:
+        write_log('Website {} does not exist, creating it'.format(website_name))
+        new_website = Website(id=None, name=website_name, url=url)
+        if new_website.store_website(new_website):
+            # create new website representation
+            elements = assign_ids_to_elements(url)
+            elements_file = './custom_elements/{}_elements.json'.format(website_name)
+            with open(elements_file, 'w') as f:
+                json.dump(elements, f, indent=2, ensure_ascii=False)
+            f.close()
+            write_log('Elements assigned and saved to {}'.format(elements_file))
+            write_log('Website {} created successfully'.format(website_name))
+            emit('add_listeners', {'elements': elements, 'website': new_website.id}, to=request.sid)
+        else:
+            write_log('Failed to create website {}'.format(website_name))
     else:
-        write_log('Unauthenticated user connected')
-        emit('unauthenticated', {'message': 'Please login to continue'})
+        write_log('Website {} already exists'.format(website_name))
+        # check if elements file exists and if there are differences
+        elements_file = './custom_elements/{}_elements.json'.format(website_name)
+        try:
+            with open(elements_file, 'r') as f:
+                elements = json.load(f)
+            write_log('Found {} elements in file {}'.format(len(elements), elements_file))
+            # check if current elements in page match the ones in the file
+            elements_in_page = assign_ids_to_elements(url)
+            if elements_in_page != elements:
+                write_log('Elements in page do not match the ones in the file, updating file')
+                with open(elements_file, 'w') as f:
+                    json.dump(elements_in_page, f, indent=2, ensure_ascii=False)
+                f.close()
+                write_log('Elements file updated with new elements')
+                emit('add_listeners', {'website': website.id, 'elements': elements}, to=request.sid)
+            else:
+                write_log('Elements in page match the ones in the file, no update needed')
+                emit('add_listeners', {'website': website.id, 'elements': elements}, to=request.sid)
+        except FileNotFoundError:
+            write_log('No elements file found for website {}'.format(website_name))
+            socketio.emit('error', {'message': 'No elements file found for website {}'.format(website_name)}, to=request.sid)
+    # Check if the user is authenticated
+    if current_user.is_authenticated:
+        socketio.emit('login_success', {'username': current_user.username}, to=request.sid)
 
 @socketio.on('disconnect')
 def disconnect():
     # Grab current SID and delete it from the database
     socketid = request.sid
     write_log('Socket ID {} disconnected'.format(socketid))
-    device = DeviceDAO().delete_device(socketid)
+    if (DeviceDAO().delete_device(socketid)):
+        write_log('Device with socket ID {} unregistered successfully'.format(socketid))
+        emit('unregister', {'message': 'Device unregistered successfully', 'socketid': socketid}, broadcast=True)
+    else:
+        write_log('Failed to unregister device with socket ID {}'.format(socketid))
     write_log('Device with socket ID {} unregistered'.format(socketid))
+    emit('disconnected', {'message': 'You have been disconnected', 'socketid': socketid}, to=socketid)
     if current_user.is_authenticated:
         write_log('User {} disconnected'.format(current_user.username))
     else:
@@ -115,14 +159,23 @@ def disconnect():
 
 @socketio.on('registerDevice')
 def register(data):
-    write_log('Registering device with data: {}'.format(data)) 
+    write_log('Registering device with data: {}'.format(data))
+    if not data or 'username' not in data or 'socketid' not in data or 'deviceType' not in data or 'website_id' not in data:
+        write_log('Invalid registration data: {}'.format(data))
+        emit('registration_error', {'message': 'Invalid registration data'}, to=request.sid)
+        return
     username = data['username']
     socketid = data['socketid']
     deviceType = data['deviceType']
-    write_log('Registering device for user: {}, socketid: {}, deviceType: {}'.format(username, socketid, deviceType))
+    website_id = data['website_id']
+    write_log('Registering device for user: {}, socketid: {}, deviceType: {} and website_id: {}'.format(username, socketid, deviceType, website_id))
     if not username or not socketid or not deviceType:
         write_log('Invalid registration data: {}'.format(data))
         emit('registration_error', {'message': 'Invalid registration data'}, to=username)
+        return
+    if deviceType not in ['desktop', 'mobile', 'tablet']:
+        write_log('Invalid device type: {}'.format(deviceType))
+        emit('registration_error', {'message': 'Invalid device type'}, to=username)
         return
     device = Device(deviceid=socketid, username=username, deviceType=deviceType)
     if not device.store_device():
@@ -132,18 +185,14 @@ def register(data):
     device.toggle_status()
     write_log('Device registered successfully for user: {}'.format(username))
     join_room(username, sid=socketid)
-    event_list = eventList()
     deviceinfo = {
         "deviceid": device.deviceid,
         "username": device.username,
         "deviceType": device.deviceType,
         "status": device.status
     }
-    emit('registered', {"username": username, "event_list": event_list, "deviceinfo": deviceinfo}, to=username)
+    emit('registered', {"username": username, "deviceinfo": deviceinfo}, to=username)
 
-def eventList():
-    with open('event_definitions.json') as f:
-        return json.load(f)
 
 @socketio.on('unregister')
 def unregister(data):
@@ -154,22 +203,12 @@ def unregister(data):
     leave_room(username, sid=socketid)
     emit('unregistered', {"username": username})
 
-@socketio.on('ui_event')
-def ui_event(data):
-    write_log('ui_event of type: '+data['type'] + ' for user: ' + data['username'])
-    emit('ui_event',data, to=data['username'])
+@socketio.on('elements_processed')
+def elements_processed(data):
+    write_log('Website reports: ' + data['message'])
 
-@socketio.on('file')
-def file(data):
-    write_log('file event')
-    emit('file',data, to=data['username'])
-
-@socketio.on('message')
-def message(data):
-    write_log(str(data))
-    emit('message',data, to=data['username'])
-
-@socketio.on('eventCaptured')
-def eventCaptured(data):
-    write_log('new event was captured')
-    emit('eventCaptured', to=data['username'])
+@socketio.on('send_event')
+def send_event(data):
+    # check if the target device is a mobile device
+    print(data)
+    emit('receive_event', data, to=data['userId'])

@@ -24,3 +24,7 @@ def get_secrets():
             secret_file.flush()
             secret_file.close()
             return secret
+    
+    except PermissionError:
+        # return secret directly if permission is denied
+        return secrets.token_hex(32)
