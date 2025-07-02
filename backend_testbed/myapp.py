@@ -159,7 +159,11 @@ def disconnect():
 
 @socketio.on('registerDevice')
 def register(data):
-    write_log('Registering device with data: {}'.format(data)) 
+    write_log('Registering device with data: {}'.format(data))
+    if not data or 'username' not in data or 'socketid' not in data or 'deviceType' not in data or 'website_id' not in data:
+        write_log('Invalid registration data: {}'.format(data))
+        emit('registration_error', {'message': 'Invalid registration data'}, to=request.sid)
+        return
     username = data['username']
     socketid = data['socketid']
     deviceType = data['deviceType']
@@ -208,9 +212,3 @@ def send_event(data):
     # check if the target device is a mobile device
     print(data)
     emit('receive_event', data, to=data['userId'])
-
-
-@socketio.on('file')
-def file(data):
-    write_log('file event')
-    emit('file',data, to=data['userId'])

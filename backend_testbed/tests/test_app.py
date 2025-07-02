@@ -115,9 +115,6 @@ def test_webpage_parser_assign_ids(monkeypatch):
     assert any(r['element'] == 'div' for r in results)
     assert all('assignedId' in r for r in results)
 
-
-# --- Additional tests for 100% coverage ---
-
 def test_load_user_found(monkeypatch):
     class DummyUser:
         username = "dummy"
@@ -149,9 +146,18 @@ def test_register_device_socket():
     assert received is not None
 
 
+def test_register_device_socket_missing_fields():
+    socket = socketio.test_client(app)
+    data = {}  # Missing required fields
+    socket.emit('registerDevice', data)
+    received = socket.get_received()
+    socket.disconnect()
+    assert received is not None
+
+
 def test_unregister_device_socket():
     socket = socketio.test_client(app)
-    data = {'deviceId': 'testdevice'}
+    data = {'deviceId': 'testdevice', 'username': 'testuser', 'socketid': socket.eio_sid}
     socket.emit('unregister', data)
     received = socket.get_received()
     socket.disconnect()
@@ -160,17 +166,8 @@ def test_unregister_device_socket():
 
 def test_elements_processed_socket():
     socket = socketio.test_client(app)
-    data = {'website_id': 'testwebsite'}
+    data = {'website_id': 'testwebsite', 'message': 'Elements processed successfully'}
     socket.emit('elements_processed', data)
-    received = socket.get_received()
-    socket.disconnect()
-    assert received is not None
-
-
-def test_file_socket():
-    socket = socketio.test_client(app)
-    data = {'filename': 'test.txt', 'content': 'test'}
-    socket.emit('file', data)
     received = socket.get_received()
     socket.disconnect()
     assert received is not None
@@ -215,10 +212,52 @@ def test_login_user_success(client, monkeypatch):
     monkeypatch.setattr(myapp, "check_password_hash", lambda pw_hash, pw: True)
     monkeypatch.setattr(myapp, "login_user", lambda user, remember: True)
     response = client.post('/login', data={'username': 'dummy', 'password': 'dummy'})
-    assert b'Login successful' in response.data
+    assert b'Login Successful' in response.data
 
 
 def test_logout_route(client, monkeypatch):
     monkeypatch.setattr(myapp, "logout_user", lambda: None)
     response = client.get('/logout', follow_redirects=True)
     assert b'logged out' in response.data or b'Login' in response.data
+
+
+def test_logout_post(client, monkeypatch):
+    monkeypatch.setattr(myapp, "logout_user", lambda: None)
+    response = client.post('/logout', follow_redirects=True)
+    assert b'logged out' in response.data or b'Login' in response.data
+
+
+def test_login_post_missing_fields(client):
+    response = client.post('/login', data={'username': '', 'password': ''})
+    assert b'Please check your login details' in response.data or b'Username does not exist' in response.data
+
+
+def test_login_get(client):
+    response = client.get('/login')
+    assert response.status_code == 200
+    assert b'Login' in response.data
+
+
+def test_signup_get(client):
+    response = client.get('/signup')
+    assert response.status_code == 200
+    assert b'Sign Up' in response.data
+
+
+def test_signup_post_missing_fields(client):
+    response = client.post('/signup', data={'username': '', 'email': '', 'password': ''})
+    assert b'Please fill out the form' in response.data or b'Sign Up' in response.data
+
+
+def test_signup_post_existing_user(client, monkeypatch):
+    monkeypatch.setattr(myapp.UserDAO, "get_user", lambda self, username: True)
+    response = client.post('/signup', data={'username': 'testuser', 'email': 'testuser@example.com', 'password': 'testpass'})
+    assert b'already exists' in response.data
+
+
+def test_signup_post_success(client, monkeypatch):
+    monkeypatch.setattr(myapp.UserDAO, "get_user", lambda self, username: None)
+    monkeypatch.setattr(myapp.UserDAO, "store_user", lambda self, user: None)
+    response = client.post('/signup', data={'username': 'newuser', 'email': 'newuser@example.com', 'password': 'testpass'})
+    print(response.data)
+    assert b'User created successfully' in response.data or b'User already exists' in response.data

@@ -5819,3 +5819,1554 @@
 2025-07-01 16:30:10 - Device with socket ID JTuB0kHxASIfQwFNAAAA unregistered successfully
 2025-07-01 16:30:10 - Device with socket ID JTuB0kHxASIfQwFNAAAA unregistered
 2025-07-01 16:30:10 - Unauthenticated user disconnected
+2025-07-02 21:17:57 - Database already exists
+2025-07-02 21:17:58 - signup request
+2025-07-02 21:17:58 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$2329Do4eNUpzF4PF$246ee69ab9339a98fac4ab0e4675f2fe0c7f0ce55205d3513b9eabdd0e386eede5757a31b64a3cb3d688d0c51e5b6b58daabb1a049abc7b2801766150d262003", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:17:58 - Signup failed for user testuser
+2025-07-02 21:17:58 - login request
+2025-07-02 21:17:58 - User found: testuser
+2025-07-02 21:17:58 - get_id called for user: testuser
+2025-07-02 21:17:58 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$68YYJKtr1fkvvdnK$e094e451f74b81b6981b9d80354f609e9008110cab16726a045cd02f2f25f6fce7e676ce62dab6c1fc760b224e3df9bef73699f8f20d9d79a1f5fa53765a081e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:17:58 - logout request
+2025-07-02 21:17:58 - Logout request received but no user is authenticated
+2025-07-02 21:17:58 - login request
+2025-07-02 21:17:58 - signup request
+2025-07-02 21:17:58 - client connected
+2025-07-02 21:17:58 - No Referer header found in request
+2025-07-02 21:17:58 - Socket ID GGLUOdsowgV-WYaQAAAA disconnected
+2025-07-02 21:17:58 - delete_device called with device_id: GGLUOdsowgV-WYaQAAAA
+2025-07-02 21:17:58 - Device deleted successfully: GGLUOdsowgV-WYaQAAAA
+2025-07-02 21:17:58 - Device with socket ID GGLUOdsowgV-WYaQAAAA unregistered successfully
+2025-07-02 21:17:58 - Device with socket ID GGLUOdsowgV-WYaQAAAA unregistered
+2025-07-02 21:17:58 - Unauthenticated user disconnected
+2025-07-02 21:17:58 - client connected
+2025-07-02 21:17:58 - get_website called with URL: http://test.com
+2025-07-02 21:17:58 - Website found: test.com
+2025-07-02 21:17:58 - Website test.com already exists
+2025-07-02 21:17:58 - No elements file found for website test.com
+2025-07-02 21:17:58 - Socket ID mht4b0j0RESFbpUeAAAB disconnected
+2025-07-02 21:17:58 - delete_device called with device_id: mht4b0j0RESFbpUeAAAB
+2025-07-02 21:17:58 - Device deleted successfully: mht4b0j0RESFbpUeAAAB
+2025-07-02 21:17:58 - Device with socket ID mht4b0j0RESFbpUeAAAB unregistered successfully
+2025-07-02 21:17:58 - Device with socket ID mht4b0j0RESFbpUeAAAB unregistered
+2025-07-02 21:17:58 - Unauthenticated user disconnected
+2025-07-02 21:17:58 - client connected
+2025-07-02 21:17:58 - get_website called with URL: https://tfg.zenken.es
+2025-07-02 21:17:58 - Website found: tfg.zenken.es
+2025-07-02 21:17:58 - Website tfg.zenken.es already exists
+2025-07-02 21:17:58 - Found 2361 elements in file ./custom_elements/tfg.zenken.es_elements.json
+2025-07-02 21:17:59 - Elements in page do not match the ones in the file, updating file
+2025-07-02 21:17:59 - Elements file updated with new elements
+2025-07-02 21:17:59 - Socket ID IsbPuY5JeeJ_HDhiAAAC disconnected
+2025-07-02 21:17:59 - delete_device called with device_id: IsbPuY5JeeJ_HDhiAAAC
+2025-07-02 21:17:59 - Device deleted successfully: IsbPuY5JeeJ_HDhiAAAC
+2025-07-02 21:17:59 - Device with socket ID IsbPuY5JeeJ_HDhiAAAC unregistered successfully
+2025-07-02 21:17:59 - Device with socket ID IsbPuY5JeeJ_HDhiAAAC unregistered
+2025-07-02 21:17:59 - Unauthenticated user disconnected
+2025-07-02 21:18:00 - load_user called with user_id: dummy
+2025-07-02 21:18:00 - User loaded: dummy
+2025-07-02 21:18:00 - load_user called with user_id: notfound
+2025-07-02 21:18:00 - User loaded: None
+2025-07-02 21:18:00 - User not found: notfound
+2025-07-02 21:18:00 - client connected
+2025-07-02 21:18:00 - No Referer header found in request
+2025-07-02 21:18:00 - Registering device with data: {'username': 'testuser', 'socketid': 'testsocketid', 'deviceType': 'desktop', 'website_id': 'testwebsite'}
+2025-07-02 21:18:00 - Registering device for user: testuser, socketid: testsocketid, deviceType: desktop and website_id: testwebsite
+2025-07-02 21:18:00 - store_device called with device: {"deviceid": "testsocketid", "username": "testuser", "deviceType": "desktop", "status": "offline"}
+2025-07-02 21:18:00 - Device stored successfully: testsocketid
+2025-07-02 21:18:00 - Device testsocketid status changed to online
+2025-07-02 21:18:00 - Device registered successfully for user: testuser
+2025-07-02 21:18:00 - client connected
+2025-07-02 21:18:00 - No Referer header found in request
+2025-07-02 21:18:00 - unregister event
+2025-07-02 21:18:00 - client connected
+2025-07-02 21:18:00 - No Referer header found in request
+2025-07-02 21:18:00 - client connected
+2025-07-02 21:18:00 - No Referer header found in request
+2025-07-02 21:18:00 - file event
+2025-07-02 21:18:00 - client connected
+2025-07-02 21:18:00 - No Referer header found in request
+2025-07-02 21:18:00 - Socket ID ZrbVA0ESRTTVKMOpAAAH disconnected
+2025-07-02 21:18:00 - delete_device called with device_id: ZrbVA0ESRTTVKMOpAAAH
+2025-07-02 21:18:00 - Device deleted successfully: ZrbVA0ESRTTVKMOpAAAH
+2025-07-02 21:18:00 - Device with socket ID ZrbVA0ESRTTVKMOpAAAH unregistered successfully
+2025-07-02 21:18:00 - Device with socket ID ZrbVA0ESRTTVKMOpAAAH unregistered
+2025-07-02 21:18:00 - Unauthenticated user disconnected
+2025-07-02 21:18:00 - client connected
+2025-07-02 21:18:00 - No Referer header found in request
+2025-07-02 21:18:00 - Socket ID dB-bMvevy87_ViD7AAAI disconnected
+2025-07-02 21:18:00 - delete_device called with device_id: dB-bMvevy87_ViD7AAAI
+2025-07-02 21:18:00 - Device deleted successfully: dB-bMvevy87_ViD7AAAI
+2025-07-02 21:18:00 - Device with socket ID dB-bMvevy87_ViD7AAAI unregistered successfully
+2025-07-02 21:18:00 - Device with socket ID dB-bMvevy87_ViD7AAAI unregistered
+2025-07-02 21:18:00 - Unauthenticated user disconnected
+2025-07-02 21:18:00 - login request
+2025-07-02 21:18:00 - Login failed for user nouser
+2025-07-02 21:18:00 - login request
+2025-07-02 21:18:00 - Login failed for user dummy
+2025-07-02 21:18:00 - login request
+2025-07-02 21:18:00 - User Data: dummy
+2025-07-02 21:18:00 - logout request
+2025-07-02 21:18:00 - Logout request received but no user is authenticated
+2025-07-02 21:19:05 - Database already exists
+2025-07-02 21:19:06 - signup request
+2025-07-02 21:19:06 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$9lnWK9XZAHXoVXwr$825e545eb6ebb8720aec0f449a71e356c6e8e5520c06c973603a4448bf6cdf3e23b261f522355d4ca498a0cbe295dbfa3ecaff003ea74b5e10d7c826672f09db", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:19:06 - Signup failed for user testuser
+2025-07-02 21:19:06 - login request
+2025-07-02 21:19:06 - User found: testuser
+2025-07-02 21:19:06 - get_id called for user: testuser
+2025-07-02 21:19:06 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$68YYJKtr1fkvvdnK$e094e451f74b81b6981b9d80354f609e9008110cab16726a045cd02f2f25f6fce7e676ce62dab6c1fc760b224e3df9bef73699f8f20d9d79a1f5fa53765a081e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:19:06 - logout request
+2025-07-02 21:19:06 - Logout request received but no user is authenticated
+2025-07-02 21:19:06 - login request
+2025-07-02 21:19:06 - signup request
+2025-07-02 21:19:06 - client connected
+2025-07-02 21:19:06 - No Referer header found in request
+2025-07-02 21:19:06 - Socket ID -YwMdejbY-OPGzmYAAAA disconnected
+2025-07-02 21:19:06 - delete_device called with device_id: -YwMdejbY-OPGzmYAAAA
+2025-07-02 21:19:06 - Device deleted successfully: -YwMdejbY-OPGzmYAAAA
+2025-07-02 21:19:06 - Device with socket ID -YwMdejbY-OPGzmYAAAA unregistered successfully
+2025-07-02 21:19:06 - Device with socket ID -YwMdejbY-OPGzmYAAAA unregistered
+2025-07-02 21:19:06 - Unauthenticated user disconnected
+2025-07-02 21:19:06 - client connected
+2025-07-02 21:19:06 - get_website called with URL: http://test.com
+2025-07-02 21:19:06 - Website found: test.com
+2025-07-02 21:19:06 - Website test.com already exists
+2025-07-02 21:19:06 - No elements file found for website test.com
+2025-07-02 21:19:06 - Socket ID tIErWgZbTv8tB_q2AAAB disconnected
+2025-07-02 21:19:06 - delete_device called with device_id: tIErWgZbTv8tB_q2AAAB
+2025-07-02 21:19:06 - Device deleted successfully: tIErWgZbTv8tB_q2AAAB
+2025-07-02 21:19:06 - Device with socket ID tIErWgZbTv8tB_q2AAAB unregistered successfully
+2025-07-02 21:19:06 - Device with socket ID tIErWgZbTv8tB_q2AAAB unregistered
+2025-07-02 21:19:06 - Unauthenticated user disconnected
+2025-07-02 21:19:06 - client connected
+2025-07-02 21:19:06 - get_website called with URL: https://tfg.zenken.es
+2025-07-02 21:19:06 - Website found: tfg.zenken.es
+2025-07-02 21:19:06 - Website tfg.zenken.es already exists
+2025-07-02 21:19:06 - Found 2361 elements in file ./custom_elements/tfg.zenken.es_elements.json
+2025-07-02 21:19:07 - Elements in page do not match the ones in the file, updating file
+2025-07-02 21:19:07 - Elements file updated with new elements
+2025-07-02 21:19:07 - Socket ID 3--4ZnqP8XO5OE3bAAAC disconnected
+2025-07-02 21:19:07 - delete_device called with device_id: 3--4ZnqP8XO5OE3bAAAC
+2025-07-02 21:19:07 - Device deleted successfully: 3--4ZnqP8XO5OE3bAAAC
+2025-07-02 21:19:07 - Device with socket ID 3--4ZnqP8XO5OE3bAAAC unregistered successfully
+2025-07-02 21:19:07 - Device with socket ID 3--4ZnqP8XO5OE3bAAAC unregistered
+2025-07-02 21:19:07 - Unauthenticated user disconnected
+2025-07-02 21:19:07 - load_user called with user_id: dummy
+2025-07-02 21:19:07 - User loaded: dummy
+2025-07-02 21:19:07 - load_user called with user_id: notfound
+2025-07-02 21:19:07 - User loaded: None
+2025-07-02 21:19:07 - User not found: notfound
+2025-07-02 21:19:07 - client connected
+2025-07-02 21:19:07 - No Referer header found in request
+2025-07-02 21:19:07 - Registering device with data: {'username': 'testuser', 'socketid': 'testsocketid', 'deviceType': 'desktop', 'website_id': 'testwebsite'}
+2025-07-02 21:19:07 - Registering device for user: testuser, socketid: testsocketid, deviceType: desktop and website_id: testwebsite
+2025-07-02 21:19:07 - store_device called with device: {"deviceid": "testsocketid", "username": "testuser", "deviceType": "desktop", "status": "offline"}
+2025-07-02 21:19:07 - Device already exists: testsocketid
+2025-07-02 21:19:07 - Device registration failed for user: testuser
+2025-07-02 21:19:07 - Socket ID HHRP6srm2ZYBLNAXAAAD disconnected
+2025-07-02 21:19:07 - delete_device called with device_id: HHRP6srm2ZYBLNAXAAAD
+2025-07-02 21:19:07 - Device deleted successfully: HHRP6srm2ZYBLNAXAAAD
+2025-07-02 21:19:07 - Device with socket ID HHRP6srm2ZYBLNAXAAAD unregistered successfully
+2025-07-02 21:19:07 - Device with socket ID HHRP6srm2ZYBLNAXAAAD unregistered
+2025-07-02 21:19:07 - Unauthenticated user disconnected
+2025-07-02 21:19:07 - client connected
+2025-07-02 21:19:07 - No Referer header found in request
+2025-07-02 21:19:07 - unregister event
+2025-07-02 21:19:08 - client connected
+2025-07-02 21:19:08 - No Referer header found in request
+2025-07-02 21:19:08 - client connected
+2025-07-02 21:19:08 - No Referer header found in request
+2025-07-02 21:19:08 - Socket ID ksB9Ih1gL4FPdCI_AAAG disconnected
+2025-07-02 21:19:08 - delete_device called with device_id: ksB9Ih1gL4FPdCI_AAAG
+2025-07-02 21:19:08 - Device deleted successfully: ksB9Ih1gL4FPdCI_AAAG
+2025-07-02 21:19:08 - Device with socket ID ksB9Ih1gL4FPdCI_AAAG unregistered successfully
+2025-07-02 21:19:08 - Device with socket ID ksB9Ih1gL4FPdCI_AAAG unregistered
+2025-07-02 21:19:08 - Unauthenticated user disconnected
+2025-07-02 21:19:08 - client connected
+2025-07-02 21:19:08 - No Referer header found in request
+2025-07-02 21:19:08 - Socket ID 278X-clJ5SrIh18sAAAH disconnected
+2025-07-02 21:19:08 - delete_device called with device_id: 278X-clJ5SrIh18sAAAH
+2025-07-02 21:19:08 - Device deleted successfully: 278X-clJ5SrIh18sAAAH
+2025-07-02 21:19:08 - Device with socket ID 278X-clJ5SrIh18sAAAH unregistered successfully
+2025-07-02 21:19:08 - Device with socket ID 278X-clJ5SrIh18sAAAH unregistered
+2025-07-02 21:19:08 - Unauthenticated user disconnected
+2025-07-02 21:19:08 - login request
+2025-07-02 21:19:08 - Login failed for user nouser
+2025-07-02 21:19:08 - login request
+2025-07-02 21:19:08 - Login failed for user dummy
+2025-07-02 21:19:08 - login request
+2025-07-02 21:19:08 - User Data: dummy
+2025-07-02 21:19:08 - logout request
+2025-07-02 21:19:08 - Logout request received but no user is authenticated
+2025-07-02 21:20:07 - Database already exists
+2025-07-02 21:20:07 - signup request
+2025-07-02 21:20:08 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$r4KeoNYcv5PKGsjD$7cf86ed2bc6b3e33952ad67464bc7462d2ef9eba86e58835d6a1d77865be047114bf1dd20322af29b53b989edd72663036366b1f1e6c61bb0b3719d3911a7682", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:20:08 - Signup failed for user testuser
+2025-07-02 21:20:08 - login request
+2025-07-02 21:20:08 - User found: testuser
+2025-07-02 21:20:08 - get_id called for user: testuser
+2025-07-02 21:20:08 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$68YYJKtr1fkvvdnK$e094e451f74b81b6981b9d80354f609e9008110cab16726a045cd02f2f25f6fce7e676ce62dab6c1fc760b224e3df9bef73699f8f20d9d79a1f5fa53765a081e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:20:08 - logout request
+2025-07-02 21:20:08 - Logout request received but no user is authenticated
+2025-07-02 21:20:08 - login request
+2025-07-02 21:20:08 - signup request
+2025-07-02 21:20:08 - client connected
+2025-07-02 21:20:08 - No Referer header found in request
+2025-07-02 21:20:08 - Socket ID QWKqUTPSoSi7DlhVAAAA disconnected
+2025-07-02 21:20:08 - delete_device called with device_id: QWKqUTPSoSi7DlhVAAAA
+2025-07-02 21:20:08 - Device deleted successfully: QWKqUTPSoSi7DlhVAAAA
+2025-07-02 21:20:08 - Device with socket ID QWKqUTPSoSi7DlhVAAAA unregistered successfully
+2025-07-02 21:20:08 - Device with socket ID QWKqUTPSoSi7DlhVAAAA unregistered
+2025-07-02 21:20:08 - Unauthenticated user disconnected
+2025-07-02 21:20:08 - client connected
+2025-07-02 21:20:08 - get_website called with URL: http://test.com
+2025-07-02 21:20:08 - Website found: test.com
+2025-07-02 21:20:08 - Website test.com already exists
+2025-07-02 21:20:08 - No elements file found for website test.com
+2025-07-02 21:20:08 - Socket ID lMvfhOg_wO4Ez-dHAAAB disconnected
+2025-07-02 21:20:08 - delete_device called with device_id: lMvfhOg_wO4Ez-dHAAAB
+2025-07-02 21:20:08 - Device deleted successfully: lMvfhOg_wO4Ez-dHAAAB
+2025-07-02 21:20:08 - Device with socket ID lMvfhOg_wO4Ez-dHAAAB unregistered successfully
+2025-07-02 21:20:08 - Device with socket ID lMvfhOg_wO4Ez-dHAAAB unregistered
+2025-07-02 21:20:08 - Unauthenticated user disconnected
+2025-07-02 21:20:08 - client connected
+2025-07-02 21:20:08 - get_website called with URL: https://tfg.zenken.es
+2025-07-02 21:20:08 - Website found: tfg.zenken.es
+2025-07-02 21:20:08 - Website tfg.zenken.es already exists
+2025-07-02 21:20:08 - Found 2361 elements in file ./custom_elements/tfg.zenken.es_elements.json
+2025-07-02 21:20:09 - Elements in page do not match the ones in the file, updating file
+2025-07-02 21:20:09 - Elements file updated with new elements
+2025-07-02 21:20:09 - Socket ID gu6qx9j41UxABFkeAAAC disconnected
+2025-07-02 21:20:09 - delete_device called with device_id: gu6qx9j41UxABFkeAAAC
+2025-07-02 21:20:09 - Device deleted successfully: gu6qx9j41UxABFkeAAAC
+2025-07-02 21:20:09 - Device with socket ID gu6qx9j41UxABFkeAAAC unregistered successfully
+2025-07-02 21:20:09 - Device with socket ID gu6qx9j41UxABFkeAAAC unregistered
+2025-07-02 21:20:09 - Unauthenticated user disconnected
+2025-07-02 21:20:09 - load_user called with user_id: dummy
+2025-07-02 21:20:09 - User loaded: dummy
+2025-07-02 21:20:09 - load_user called with user_id: notfound
+2025-07-02 21:20:09 - User loaded: None
+2025-07-02 21:20:09 - User not found: notfound
+2025-07-02 21:20:09 - client connected
+2025-07-02 21:20:09 - No Referer header found in request
+2025-07-02 21:20:09 - Registering device with data: {'username': 'testuser', 'socketid': 'testsocketid', 'deviceType': 'desktop', 'website_id': 'testwebsite'}
+2025-07-02 21:20:09 - Registering device for user: testuser, socketid: testsocketid, deviceType: desktop and website_id: testwebsite
+2025-07-02 21:20:09 - store_device called with device: {"deviceid": "testsocketid", "username": "testuser", "deviceType": "desktop", "status": "offline"}
+2025-07-02 21:20:09 - Device already exists: testsocketid
+2025-07-02 21:20:09 - Device registration failed for user: testuser
+2025-07-02 21:20:09 - Socket ID ijj01lGKRXxqAspoAAAD disconnected
+2025-07-02 21:20:09 - delete_device called with device_id: ijj01lGKRXxqAspoAAAD
+2025-07-02 21:20:09 - Device deleted successfully: ijj01lGKRXxqAspoAAAD
+2025-07-02 21:20:09 - Device with socket ID ijj01lGKRXxqAspoAAAD unregistered successfully
+2025-07-02 21:20:09 - Device with socket ID ijj01lGKRXxqAspoAAAD unregistered
+2025-07-02 21:20:09 - Unauthenticated user disconnected
+2025-07-02 21:20:09 - client connected
+2025-07-02 21:20:09 - No Referer header found in request
+2025-07-02 21:20:09 - unregister event
+2025-07-02 21:20:09 - client connected
+2025-07-02 21:20:09 - No Referer header found in request
+2025-07-02 21:20:09 - client connected
+2025-07-02 21:20:09 - No Referer header found in request
+2025-07-02 21:20:09 - Socket ID _kOXh_E4Ei8ZR1ZvAAAG disconnected
+2025-07-02 21:20:09 - delete_device called with device_id: _kOXh_E4Ei8ZR1ZvAAAG
+2025-07-02 21:20:09 - Device deleted successfully: _kOXh_E4Ei8ZR1ZvAAAG
+2025-07-02 21:20:09 - Device with socket ID _kOXh_E4Ei8ZR1ZvAAAG unregistered successfully
+2025-07-02 21:20:09 - Device with socket ID _kOXh_E4Ei8ZR1ZvAAAG unregistered
+2025-07-02 21:20:09 - Unauthenticated user disconnected
+2025-07-02 21:20:09 - client connected
+2025-07-02 21:20:09 - No Referer header found in request
+2025-07-02 21:20:09 - Socket ID 2CyM0En3h0jVfj2ZAAAH disconnected
+2025-07-02 21:20:09 - delete_device called with device_id: 2CyM0En3h0jVfj2ZAAAH
+2025-07-02 21:20:09 - Device deleted successfully: 2CyM0En3h0jVfj2ZAAAH
+2025-07-02 21:20:09 - Device with socket ID 2CyM0En3h0jVfj2ZAAAH unregistered successfully
+2025-07-02 21:20:09 - Device with socket ID 2CyM0En3h0jVfj2ZAAAH unregistered
+2025-07-02 21:20:09 - Unauthenticated user disconnected
+2025-07-02 21:20:09 - login request
+2025-07-02 21:20:09 - Login failed for user nouser
+2025-07-02 21:20:09 - login request
+2025-07-02 21:20:09 - Login failed for user dummy
+2025-07-02 21:20:09 - login request
+2025-07-02 21:20:09 - User Data: dummy
+2025-07-02 21:20:09 - logout request
+2025-07-02 21:20:09 - Logout request received but no user is authenticated
+2025-07-02 21:20:33 - Database already exists
+2025-07-02 21:20:33 - signup request
+2025-07-02 21:20:33 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$qbhHzUNSZAybAUia$8045e28cc876d5433829e60eb9e6c9048b3be0c8eaf34a8b0222b20986728d1404804706c23122ba759ac1d83f5ee457215180cd58aa204efbf88b72731ddd65", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:20:33 - Signup failed for user testuser
+2025-07-02 21:20:33 - login request
+2025-07-02 21:20:33 - User found: testuser
+2025-07-02 21:20:33 - get_id called for user: testuser
+2025-07-02 21:20:33 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$68YYJKtr1fkvvdnK$e094e451f74b81b6981b9d80354f609e9008110cab16726a045cd02f2f25f6fce7e676ce62dab6c1fc760b224e3df9bef73699f8f20d9d79a1f5fa53765a081e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:20:33 - logout request
+2025-07-02 21:20:33 - Logout request received but no user is authenticated
+2025-07-02 21:20:33 - login request
+2025-07-02 21:20:33 - signup request
+2025-07-02 21:20:33 - client connected
+2025-07-02 21:20:33 - No Referer header found in request
+2025-07-02 21:20:33 - Socket ID i681A59Vay7fJlHFAAAA disconnected
+2025-07-02 21:20:33 - delete_device called with device_id: i681A59Vay7fJlHFAAAA
+2025-07-02 21:20:33 - Device deleted successfully: i681A59Vay7fJlHFAAAA
+2025-07-02 21:20:33 - Device with socket ID i681A59Vay7fJlHFAAAA unregistered successfully
+2025-07-02 21:20:33 - Device with socket ID i681A59Vay7fJlHFAAAA unregistered
+2025-07-02 21:20:33 - Unauthenticated user disconnected
+2025-07-02 21:20:33 - client connected
+2025-07-02 21:20:33 - get_website called with URL: http://test.com
+2025-07-02 21:20:33 - Website found: test.com
+2025-07-02 21:20:33 - Website test.com already exists
+2025-07-02 21:20:33 - No elements file found for website test.com
+2025-07-02 21:20:33 - Socket ID dvmKNH75PE5K_sMHAAAB disconnected
+2025-07-02 21:20:33 - delete_device called with device_id: dvmKNH75PE5K_sMHAAAB
+2025-07-02 21:20:33 - Device deleted successfully: dvmKNH75PE5K_sMHAAAB
+2025-07-02 21:20:33 - Device with socket ID dvmKNH75PE5K_sMHAAAB unregistered successfully
+2025-07-02 21:20:33 - Device with socket ID dvmKNH75PE5K_sMHAAAB unregistered
+2025-07-02 21:20:33 - Unauthenticated user disconnected
+2025-07-02 21:20:33 - client connected
+2025-07-02 21:20:33 - get_website called with URL: https://tfg.zenken.es
+2025-07-02 21:20:33 - Website found: tfg.zenken.es
+2025-07-02 21:20:33 - Website tfg.zenken.es already exists
+2025-07-02 21:20:33 - Found 2361 elements in file ./custom_elements/tfg.zenken.es_elements.json
+2025-07-02 21:20:34 - Elements in page do not match the ones in the file, updating file
+2025-07-02 21:20:34 - Elements file updated with new elements
+2025-07-02 21:20:34 - Socket ID B9OEES8YJXmraEOFAAAC disconnected
+2025-07-02 21:20:34 - delete_device called with device_id: B9OEES8YJXmraEOFAAAC
+2025-07-02 21:20:34 - Device deleted successfully: B9OEES8YJXmraEOFAAAC
+2025-07-02 21:20:34 - Device with socket ID B9OEES8YJXmraEOFAAAC unregistered successfully
+2025-07-02 21:20:34 - Device with socket ID B9OEES8YJXmraEOFAAAC unregistered
+2025-07-02 21:20:34 - Unauthenticated user disconnected
+2025-07-02 21:20:34 - load_user called with user_id: dummy
+2025-07-02 21:20:34 - User loaded: dummy
+2025-07-02 21:20:34 - load_user called with user_id: notfound
+2025-07-02 21:20:34 - User loaded: None
+2025-07-02 21:20:34 - User not found: notfound
+2025-07-02 21:20:34 - client connected
+2025-07-02 21:20:34 - No Referer header found in request
+2025-07-02 21:20:34 - Registering device with data: {'username': 'testuser', 'socketid': 'testsocketid', 'deviceType': 'desktop', 'website_id': 'testwebsite'}
+2025-07-02 21:20:34 - Registering device for user: testuser, socketid: testsocketid, deviceType: desktop and website_id: testwebsite
+2025-07-02 21:20:34 - store_device called with device: {"deviceid": "testsocketid", "username": "testuser", "deviceType": "desktop", "status": "offline"}
+2025-07-02 21:20:34 - Device already exists: testsocketid
+2025-07-02 21:20:34 - Device registration failed for user: testuser
+2025-07-02 21:20:34 - Socket ID T3__6R8lGM8lt6wtAAAD disconnected
+2025-07-02 21:20:34 - delete_device called with device_id: T3__6R8lGM8lt6wtAAAD
+2025-07-02 21:20:34 - Device deleted successfully: T3__6R8lGM8lt6wtAAAD
+2025-07-02 21:20:34 - Device with socket ID T3__6R8lGM8lt6wtAAAD unregistered successfully
+2025-07-02 21:20:34 - Device with socket ID T3__6R8lGM8lt6wtAAAD unregistered
+2025-07-02 21:20:34 - Unauthenticated user disconnected
+2025-07-02 21:20:34 - client connected
+2025-07-02 21:20:34 - No Referer header found in request
+2025-07-02 21:20:34 - client connected
+2025-07-02 21:20:34 - No Referer header found in request
+2025-07-02 21:20:34 - client connected
+2025-07-02 21:20:34 - No Referer header found in request
+2025-07-02 21:20:34 - Socket ID 7JwI9Ur60bwwdjmWAAAG disconnected
+2025-07-02 21:20:34 - delete_device called with device_id: 7JwI9Ur60bwwdjmWAAAG
+2025-07-02 21:20:34 - Device deleted successfully: 7JwI9Ur60bwwdjmWAAAG
+2025-07-02 21:20:34 - Device with socket ID 7JwI9Ur60bwwdjmWAAAG unregistered successfully
+2025-07-02 21:20:34 - Device with socket ID 7JwI9Ur60bwwdjmWAAAG unregistered
+2025-07-02 21:20:34 - Unauthenticated user disconnected
+2025-07-02 21:20:34 - client connected
+2025-07-02 21:20:34 - No Referer header found in request
+2025-07-02 21:20:34 - Socket ID G18gUIZZ7iifdxpzAAAH disconnected
+2025-07-02 21:20:34 - delete_device called with device_id: G18gUIZZ7iifdxpzAAAH
+2025-07-02 21:20:34 - Device deleted successfully: G18gUIZZ7iifdxpzAAAH
+2025-07-02 21:20:34 - Device with socket ID G18gUIZZ7iifdxpzAAAH unregistered successfully
+2025-07-02 21:20:34 - Device with socket ID G18gUIZZ7iifdxpzAAAH unregistered
+2025-07-02 21:20:34 - Unauthenticated user disconnected
+2025-07-02 21:20:34 - login request
+2025-07-02 21:20:34 - Login failed for user nouser
+2025-07-02 21:20:35 - login request
+2025-07-02 21:20:35 - Login failed for user dummy
+2025-07-02 21:20:35 - login request
+2025-07-02 21:20:35 - User Data: dummy
+2025-07-02 21:20:35 - logout request
+2025-07-02 21:20:35 - Logout request received but no user is authenticated
+2025-07-02 21:20:51 - Database already exists
+2025-07-02 21:20:51 - signup request
+2025-07-02 21:20:51 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$HT6fKWgFPjcCOjgQ$6242ef6d56710a1130668c88d1c80fa11bf43b644239e6692f3c4f177fdae201d5223296b6b235408c29a8eb97b7840900d29d8dc8d989038c0b6914f413c7a2", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:20:51 - Signup failed for user testuser
+2025-07-02 21:20:51 - login request
+2025-07-02 21:20:52 - User found: testuser
+2025-07-02 21:20:52 - get_id called for user: testuser
+2025-07-02 21:20:52 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$68YYJKtr1fkvvdnK$e094e451f74b81b6981b9d80354f609e9008110cab16726a045cd02f2f25f6fce7e676ce62dab6c1fc760b224e3df9bef73699f8f20d9d79a1f5fa53765a081e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:20:52 - logout request
+2025-07-02 21:20:52 - Logout request received but no user is authenticated
+2025-07-02 21:20:52 - login request
+2025-07-02 21:20:52 - signup request
+2025-07-02 21:20:52 - client connected
+2025-07-02 21:20:52 - No Referer header found in request
+2025-07-02 21:20:52 - Socket ID 49hTaZsxv-XoFFd6AAAA disconnected
+2025-07-02 21:20:52 - delete_device called with device_id: 49hTaZsxv-XoFFd6AAAA
+2025-07-02 21:20:52 - Device deleted successfully: 49hTaZsxv-XoFFd6AAAA
+2025-07-02 21:20:52 - Device with socket ID 49hTaZsxv-XoFFd6AAAA unregistered successfully
+2025-07-02 21:20:52 - Device with socket ID 49hTaZsxv-XoFFd6AAAA unregistered
+2025-07-02 21:20:52 - Unauthenticated user disconnected
+2025-07-02 21:20:52 - client connected
+2025-07-02 21:20:52 - get_website called with URL: http://test.com
+2025-07-02 21:20:52 - Website found: test.com
+2025-07-02 21:20:52 - Website test.com already exists
+2025-07-02 21:20:52 - No elements file found for website test.com
+2025-07-02 21:20:52 - Socket ID ZSyTG7At5dK9dlT1AAAB disconnected
+2025-07-02 21:20:52 - delete_device called with device_id: ZSyTG7At5dK9dlT1AAAB
+2025-07-02 21:20:52 - Device deleted successfully: ZSyTG7At5dK9dlT1AAAB
+2025-07-02 21:20:52 - Device with socket ID ZSyTG7At5dK9dlT1AAAB unregistered successfully
+2025-07-02 21:20:52 - Device with socket ID ZSyTG7At5dK9dlT1AAAB unregistered
+2025-07-02 21:20:52 - Unauthenticated user disconnected
+2025-07-02 21:20:52 - client connected
+2025-07-02 21:20:52 - get_website called with URL: https://tfg.zenken.es
+2025-07-02 21:20:52 - Website found: tfg.zenken.es
+2025-07-02 21:20:52 - Website tfg.zenken.es already exists
+2025-07-02 21:20:52 - Found 2361 elements in file ./custom_elements/tfg.zenken.es_elements.json
+2025-07-02 21:20:53 - Elements in page do not match the ones in the file, updating file
+2025-07-02 21:20:53 - Elements file updated with new elements
+2025-07-02 21:20:53 - Socket ID 9PEHOXQK6pl6XcHeAAAC disconnected
+2025-07-02 21:20:53 - delete_device called with device_id: 9PEHOXQK6pl6XcHeAAAC
+2025-07-02 21:20:53 - Device deleted successfully: 9PEHOXQK6pl6XcHeAAAC
+2025-07-02 21:20:53 - Device with socket ID 9PEHOXQK6pl6XcHeAAAC unregistered successfully
+2025-07-02 21:20:53 - Device with socket ID 9PEHOXQK6pl6XcHeAAAC unregistered
+2025-07-02 21:20:53 - Unauthenticated user disconnected
+2025-07-02 21:20:53 - load_user called with user_id: dummy
+2025-07-02 21:20:53 - User loaded: dummy
+2025-07-02 21:20:53 - load_user called with user_id: notfound
+2025-07-02 21:20:53 - User loaded: None
+2025-07-02 21:20:53 - User not found: notfound
+2025-07-02 21:20:53 - client connected
+2025-07-02 21:20:53 - No Referer header found in request
+2025-07-02 21:20:53 - Registering device with data: {'username': 'testuser', 'socketid': 'testsocketid', 'deviceType': 'desktop', 'website_id': 'testwebsite'}
+2025-07-02 21:20:53 - Registering device for user: testuser, socketid: testsocketid, deviceType: desktop and website_id: testwebsite
+2025-07-02 21:20:53 - store_device called with device: {"deviceid": "testsocketid", "username": "testuser", "deviceType": "desktop", "status": "offline"}
+2025-07-02 21:20:53 - Device already exists: testsocketid
+2025-07-02 21:20:53 - Device registration failed for user: testuser
+2025-07-02 21:20:53 - Socket ID nblgvrqP6TM7hEQBAAAD disconnected
+2025-07-02 21:20:53 - delete_device called with device_id: nblgvrqP6TM7hEQBAAAD
+2025-07-02 21:20:53 - Device deleted successfully: nblgvrqP6TM7hEQBAAAD
+2025-07-02 21:20:53 - Device with socket ID nblgvrqP6TM7hEQBAAAD unregistered successfully
+2025-07-02 21:20:53 - Device with socket ID nblgvrqP6TM7hEQBAAAD unregistered
+2025-07-02 21:20:53 - Unauthenticated user disconnected
+2025-07-02 21:20:53 - client connected
+2025-07-02 21:20:53 - No Referer header found in request
+2025-07-02 21:20:53 - client connected
+2025-07-02 21:20:53 - No Referer header found in request
+2025-07-02 21:20:53 - client connected
+2025-07-02 21:20:53 - No Referer header found in request
+2025-07-02 21:20:53 - Socket ID m2XegMoweRwbojkzAAAG disconnected
+2025-07-02 21:20:53 - delete_device called with device_id: m2XegMoweRwbojkzAAAG
+2025-07-02 21:20:53 - Device deleted successfully: m2XegMoweRwbojkzAAAG
+2025-07-02 21:20:53 - Device with socket ID m2XegMoweRwbojkzAAAG unregistered successfully
+2025-07-02 21:20:53 - Device with socket ID m2XegMoweRwbojkzAAAG unregistered
+2025-07-02 21:20:53 - Unauthenticated user disconnected
+2025-07-02 21:20:53 - client connected
+2025-07-02 21:20:53 - No Referer header found in request
+2025-07-02 21:20:53 - Socket ID 2Czt5mMJZNaZd4t6AAAH disconnected
+2025-07-02 21:20:53 - delete_device called with device_id: 2Czt5mMJZNaZd4t6AAAH
+2025-07-02 21:20:53 - Device deleted successfully: 2Czt5mMJZNaZd4t6AAAH
+2025-07-02 21:20:53 - Device with socket ID 2Czt5mMJZNaZd4t6AAAH unregistered successfully
+2025-07-02 21:20:53 - Device with socket ID 2Czt5mMJZNaZd4t6AAAH unregistered
+2025-07-02 21:20:53 - Unauthenticated user disconnected
+2025-07-02 21:20:53 - login request
+2025-07-02 21:20:53 - Login failed for user nouser
+2025-07-02 21:20:53 - login request
+2025-07-02 21:20:53 - Login failed for user dummy
+2025-07-02 21:20:53 - login request
+2025-07-02 21:20:53 - User Data: dummy
+2025-07-02 21:20:53 - logout request
+2025-07-02 21:20:53 - Logout request received but no user is authenticated
+2025-07-02 21:21:00 - Database already exists
+2025-07-02 21:21:00 - signup request
+2025-07-02 21:21:00 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$lWfvheitpork8rtq$92277886c4c80ab85a5c29e41d0b1c553f2568817970c4de4e221771b5e4258bf3b4094a2a4b31ed89bed1afa544a0718b1c2634bbfeb6d151984780afd1a9e4", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:21:00 - Signup failed for user testuser
+2025-07-02 21:21:00 - login request
+2025-07-02 21:21:00 - User found: testuser
+2025-07-02 21:21:00 - get_id called for user: testuser
+2025-07-02 21:21:00 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$68YYJKtr1fkvvdnK$e094e451f74b81b6981b9d80354f609e9008110cab16726a045cd02f2f25f6fce7e676ce62dab6c1fc760b224e3df9bef73699f8f20d9d79a1f5fa53765a081e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:21:00 - logout request
+2025-07-02 21:21:00 - Logout request received but no user is authenticated
+2025-07-02 21:21:00 - login request
+2025-07-02 21:21:00 - signup request
+2025-07-02 21:21:00 - client connected
+2025-07-02 21:21:00 - No Referer header found in request
+2025-07-02 21:21:00 - Socket ID qymD7HKUNe9neaVVAAAA disconnected
+2025-07-02 21:21:00 - delete_device called with device_id: qymD7HKUNe9neaVVAAAA
+2025-07-02 21:21:00 - Device deleted successfully: qymD7HKUNe9neaVVAAAA
+2025-07-02 21:21:00 - Device with socket ID qymD7HKUNe9neaVVAAAA unregistered successfully
+2025-07-02 21:21:00 - Device with socket ID qymD7HKUNe9neaVVAAAA unregistered
+2025-07-02 21:21:00 - Unauthenticated user disconnected
+2025-07-02 21:21:00 - client connected
+2025-07-02 21:21:00 - get_website called with URL: http://test.com
+2025-07-02 21:21:00 - Website found: test.com
+2025-07-02 21:21:00 - Website test.com already exists
+2025-07-02 21:21:01 - No elements file found for website test.com
+2025-07-02 21:21:01 - Socket ID egDHz5Vg0CcvMYInAAAB disconnected
+2025-07-02 21:21:01 - delete_device called with device_id: egDHz5Vg0CcvMYInAAAB
+2025-07-02 21:21:01 - Device deleted successfully: egDHz5Vg0CcvMYInAAAB
+2025-07-02 21:21:01 - Device with socket ID egDHz5Vg0CcvMYInAAAB unregistered successfully
+2025-07-02 21:21:01 - Device with socket ID egDHz5Vg0CcvMYInAAAB unregistered
+2025-07-02 21:21:01 - Unauthenticated user disconnected
+2025-07-02 21:21:01 - client connected
+2025-07-02 21:21:01 - get_website called with URL: https://tfg.zenken.es
+2025-07-02 21:21:01 - Website found: tfg.zenken.es
+2025-07-02 21:21:01 - Website tfg.zenken.es already exists
+2025-07-02 21:21:01 - Found 2361 elements in file ./custom_elements/tfg.zenken.es_elements.json
+2025-07-02 21:21:02 - Elements in page do not match the ones in the file, updating file
+2025-07-02 21:21:02 - Elements file updated with new elements
+2025-07-02 21:21:02 - Socket ID l5RMas05KmvslWdLAAAC disconnected
+2025-07-02 21:21:02 - delete_device called with device_id: l5RMas05KmvslWdLAAAC
+2025-07-02 21:21:02 - Device deleted successfully: l5RMas05KmvslWdLAAAC
+2025-07-02 21:21:02 - Device with socket ID l5RMas05KmvslWdLAAAC unregistered successfully
+2025-07-02 21:21:02 - Device with socket ID l5RMas05KmvslWdLAAAC unregistered
+2025-07-02 21:21:02 - Unauthenticated user disconnected
+2025-07-02 21:21:02 - load_user called with user_id: dummy
+2025-07-02 21:21:02 - User loaded: dummy
+2025-07-02 21:21:02 - load_user called with user_id: notfound
+2025-07-02 21:21:02 - User loaded: None
+2025-07-02 21:21:02 - User not found: notfound
+2025-07-02 21:21:02 - client connected
+2025-07-02 21:21:02 - No Referer header found in request
+2025-07-02 21:21:02 - Registering device with data: {'username': 'testuser', 'socketid': 'testsocketid', 'deviceType': 'desktop', 'website_id': 'testwebsite'}
+2025-07-02 21:21:02 - Registering device for user: testuser, socketid: testsocketid, deviceType: desktop and website_id: testwebsite
+2025-07-02 21:21:02 - store_device called with device: {"deviceid": "testsocketid", "username": "testuser", "deviceType": "desktop", "status": "offline"}
+2025-07-02 21:21:02 - Device already exists: testsocketid
+2025-07-02 21:21:02 - Device registration failed for user: testuser
+2025-07-02 21:21:02 - Socket ID NuoztZ9bkadOOfIiAAAD disconnected
+2025-07-02 21:21:02 - delete_device called with device_id: NuoztZ9bkadOOfIiAAAD
+2025-07-02 21:21:02 - Device deleted successfully: NuoztZ9bkadOOfIiAAAD
+2025-07-02 21:21:02 - Device with socket ID NuoztZ9bkadOOfIiAAAD unregistered successfully
+2025-07-02 21:21:02 - Device with socket ID NuoztZ9bkadOOfIiAAAD unregistered
+2025-07-02 21:21:02 - Unauthenticated user disconnected
+2025-07-02 21:21:02 - client connected
+2025-07-02 21:21:02 - No Referer header found in request
+2025-07-02 21:21:02 - client connected
+2025-07-02 21:21:02 - No Referer header found in request
+2025-07-02 21:21:02 - client connected
+2025-07-02 21:21:02 - No Referer header found in request
+2025-07-02 21:21:02 - Socket ID u8Ns2FtO7ptqLRyaAAAG disconnected
+2025-07-02 21:21:02 - delete_device called with device_id: u8Ns2FtO7ptqLRyaAAAG
+2025-07-02 21:21:02 - Device deleted successfully: u8Ns2FtO7ptqLRyaAAAG
+2025-07-02 21:21:02 - Device with socket ID u8Ns2FtO7ptqLRyaAAAG unregistered successfully
+2025-07-02 21:21:02 - Device with socket ID u8Ns2FtO7ptqLRyaAAAG unregistered
+2025-07-02 21:21:02 - Unauthenticated user disconnected
+2025-07-02 21:21:02 - client connected
+2025-07-02 21:21:02 - No Referer header found in request
+2025-07-02 21:21:02 - Socket ID q5oLlnAg8AbV3ZKqAAAH disconnected
+2025-07-02 21:21:02 - delete_device called with device_id: q5oLlnAg8AbV3ZKqAAAH
+2025-07-02 21:21:02 - Device deleted successfully: q5oLlnAg8AbV3ZKqAAAH
+2025-07-02 21:21:02 - Device with socket ID q5oLlnAg8AbV3ZKqAAAH unregistered successfully
+2025-07-02 21:21:02 - Device with socket ID q5oLlnAg8AbV3ZKqAAAH unregistered
+2025-07-02 21:21:02 - Unauthenticated user disconnected
+2025-07-02 21:21:02 - login request
+2025-07-02 21:21:02 - Login failed for user nouser
+2025-07-02 21:21:02 - login request
+2025-07-02 21:21:02 - Login failed for user dummy
+2025-07-02 21:21:02 - login request
+2025-07-02 21:21:02 - User Data: dummy
+2025-07-02 21:21:02 - logout request
+2025-07-02 21:21:02 - Logout request received but no user is authenticated
+2025-07-02 21:21:53 - Database already exists
+2025-07-02 21:21:53 - signup request
+2025-07-02 21:21:53 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$FL8ZjZZwFvPxQ7bn$085a714f7ccae420af977db124addccd6450f1349fccc8343ac8c5c55e5edbef4bb7b5c302c74da5fda2c6490425989ede95326fb1629bd7d4c85f05f8b49b73", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:21:53 - Signup failed for user testuser
+2025-07-02 21:21:53 - login request
+2025-07-02 21:21:53 - User found: testuser
+2025-07-02 21:21:53 - get_id called for user: testuser
+2025-07-02 21:21:53 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$68YYJKtr1fkvvdnK$e094e451f74b81b6981b9d80354f609e9008110cab16726a045cd02f2f25f6fce7e676ce62dab6c1fc760b224e3df9bef73699f8f20d9d79a1f5fa53765a081e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:21:54 - logout request
+2025-07-02 21:21:54 - Logout request received but no user is authenticated
+2025-07-02 21:21:54 - login request
+2025-07-02 21:21:54 - signup request
+2025-07-02 21:21:54 - client connected
+2025-07-02 21:21:54 - No Referer header found in request
+2025-07-02 21:21:54 - Socket ID LDbB_PQsmNjrnjZXAAAA disconnected
+2025-07-02 21:21:54 - delete_device called with device_id: LDbB_PQsmNjrnjZXAAAA
+2025-07-02 21:21:54 - Device deleted successfully: LDbB_PQsmNjrnjZXAAAA
+2025-07-02 21:21:54 - Device with socket ID LDbB_PQsmNjrnjZXAAAA unregistered successfully
+2025-07-02 21:21:54 - Device with socket ID LDbB_PQsmNjrnjZXAAAA unregistered
+2025-07-02 21:21:54 - Unauthenticated user disconnected
+2025-07-02 21:21:54 - client connected
+2025-07-02 21:21:54 - get_website called with URL: http://test.com
+2025-07-02 21:21:54 - Website found: test.com
+2025-07-02 21:21:54 - Website test.com already exists
+2025-07-02 21:21:54 - No elements file found for website test.com
+2025-07-02 21:21:54 - Socket ID qjZ_SHCKcObVALKIAAAB disconnected
+2025-07-02 21:21:54 - delete_device called with device_id: qjZ_SHCKcObVALKIAAAB
+2025-07-02 21:21:54 - Device deleted successfully: qjZ_SHCKcObVALKIAAAB
+2025-07-02 21:21:54 - Device with socket ID qjZ_SHCKcObVALKIAAAB unregistered successfully
+2025-07-02 21:21:54 - Device with socket ID qjZ_SHCKcObVALKIAAAB unregistered
+2025-07-02 21:21:54 - Unauthenticated user disconnected
+2025-07-02 21:21:54 - client connected
+2025-07-02 21:21:54 - get_website called with URL: https://tfg.zenken.es
+2025-07-02 21:21:54 - Website found: tfg.zenken.es
+2025-07-02 21:21:54 - Website tfg.zenken.es already exists
+2025-07-02 21:21:54 - Found 2361 elements in file ./custom_elements/tfg.zenken.es_elements.json
+2025-07-02 21:21:55 - Elements in page do not match the ones in the file, updating file
+2025-07-02 21:21:55 - Elements file updated with new elements
+2025-07-02 21:21:55 - Socket ID 6SD4XuxFtixTr4jnAAAC disconnected
+2025-07-02 21:21:55 - delete_device called with device_id: 6SD4XuxFtixTr4jnAAAC
+2025-07-02 21:21:55 - Device deleted successfully: 6SD4XuxFtixTr4jnAAAC
+2025-07-02 21:21:55 - Device with socket ID 6SD4XuxFtixTr4jnAAAC unregistered successfully
+2025-07-02 21:21:55 - Device with socket ID 6SD4XuxFtixTr4jnAAAC unregistered
+2025-07-02 21:21:55 - Unauthenticated user disconnected
+2025-07-02 21:21:55 - load_user called with user_id: dummy
+2025-07-02 21:21:55 - User loaded: dummy
+2025-07-02 21:21:55 - load_user called with user_id: notfound
+2025-07-02 21:21:55 - User loaded: None
+2025-07-02 21:21:55 - User not found: notfound
+2025-07-02 21:21:55 - client connected
+2025-07-02 21:21:55 - No Referer header found in request
+2025-07-02 21:21:55 - Registering device with data: {'username': 'testuser', 'socketid': 'testsocketid', 'deviceType': 'desktop', 'website_id': 'testwebsite'}
+2025-07-02 21:21:55 - Registering device for user: testuser, socketid: testsocketid, deviceType: desktop and website_id: testwebsite
+2025-07-02 21:21:55 - store_device called with device: {"deviceid": "testsocketid", "username": "testuser", "deviceType": "desktop", "status": "offline"}
+2025-07-02 21:21:55 - Device already exists: testsocketid
+2025-07-02 21:21:55 - Device registration failed for user: testuser
+2025-07-02 21:21:55 - Socket ID Bo-v0sAqVlFDQi86AAAD disconnected
+2025-07-02 21:21:55 - delete_device called with device_id: Bo-v0sAqVlFDQi86AAAD
+2025-07-02 21:21:55 - Device deleted successfully: Bo-v0sAqVlFDQi86AAAD
+2025-07-02 21:21:55 - Device with socket ID Bo-v0sAqVlFDQi86AAAD unregistered successfully
+2025-07-02 21:21:55 - Device with socket ID Bo-v0sAqVlFDQi86AAAD unregistered
+2025-07-02 21:21:55 - Unauthenticated user disconnected
+2025-07-02 21:21:55 - client connected
+2025-07-02 21:21:55 - No Referer header found in request
+2025-07-02 21:21:55 - unregister event
+2025-07-02 21:21:55 - Socket ID 0MJsGzbhTGGHF6hJAAAE disconnected
+2025-07-02 21:21:55 - delete_device called with device_id: 0MJsGzbhTGGHF6hJAAAE
+2025-07-02 21:21:55 - Device deleted successfully: 0MJsGzbhTGGHF6hJAAAE
+2025-07-02 21:21:55 - Device with socket ID 0MJsGzbhTGGHF6hJAAAE unregistered successfully
+2025-07-02 21:21:55 - Device with socket ID 0MJsGzbhTGGHF6hJAAAE unregistered
+2025-07-02 21:21:55 - Unauthenticated user disconnected
+2025-07-02 21:21:55 - client connected
+2025-07-02 21:21:55 - No Referer header found in request
+2025-07-02 21:21:55 - client connected
+2025-07-02 21:21:55 - No Referer header found in request
+2025-07-02 21:21:55 - Socket ID T0lZH9ZuWB-n-NN6AAAG disconnected
+2025-07-02 21:21:55 - delete_device called with device_id: T0lZH9ZuWB-n-NN6AAAG
+2025-07-02 21:21:55 - Device deleted successfully: T0lZH9ZuWB-n-NN6AAAG
+2025-07-02 21:21:55 - Device with socket ID T0lZH9ZuWB-n-NN6AAAG unregistered successfully
+2025-07-02 21:21:55 - Device with socket ID T0lZH9ZuWB-n-NN6AAAG unregistered
+2025-07-02 21:21:55 - Unauthenticated user disconnected
+2025-07-02 21:21:55 - client connected
+2025-07-02 21:21:55 - No Referer header found in request
+2025-07-02 21:21:55 - Socket ID z5JTA8IRs5kgx3meAAAH disconnected
+2025-07-02 21:21:55 - delete_device called with device_id: z5JTA8IRs5kgx3meAAAH
+2025-07-02 21:21:55 - Device deleted successfully: z5JTA8IRs5kgx3meAAAH
+2025-07-02 21:21:55 - Device with socket ID z5JTA8IRs5kgx3meAAAH unregistered successfully
+2025-07-02 21:21:55 - Device with socket ID z5JTA8IRs5kgx3meAAAH unregistered
+2025-07-02 21:21:55 - Unauthenticated user disconnected
+2025-07-02 21:21:55 - login request
+2025-07-02 21:21:55 - Login failed for user nouser
+2025-07-02 21:21:55 - login request
+2025-07-02 21:21:55 - Login failed for user dummy
+2025-07-02 21:21:55 - login request
+2025-07-02 21:21:55 - User Data: dummy
+2025-07-02 21:21:55 - logout request
+2025-07-02 21:21:55 - Logout request received but no user is authenticated
+2025-07-02 21:23:04 - Database already exists
+2025-07-02 21:23:04 - signup request
+2025-07-02 21:23:04 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$s4MmiRbGki0y79j9$94e21452e772fd91cba94ac86457f6357174c48c98fdcb45780f05ca9ca7cbce7d9d7de3426a00e8b0722374ef9faef6891ad648a1f4607839984f71f4a1d81d", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:23:04 - Signup failed for user testuser
+2025-07-02 21:23:05 - login request
+2025-07-02 21:23:05 - User found: testuser
+2025-07-02 21:23:05 - get_id called for user: testuser
+2025-07-02 21:23:05 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$68YYJKtr1fkvvdnK$e094e451f74b81b6981b9d80354f609e9008110cab16726a045cd02f2f25f6fce7e676ce62dab6c1fc760b224e3df9bef73699f8f20d9d79a1f5fa53765a081e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:23:05 - logout request
+2025-07-02 21:23:05 - Logout request received but no user is authenticated
+2025-07-02 21:23:05 - login request
+2025-07-02 21:23:05 - signup request
+2025-07-02 21:23:05 - client connected
+2025-07-02 21:23:05 - No Referer header found in request
+2025-07-02 21:23:05 - Socket ID ZZziyRDAF8Y7RtlcAAAA disconnected
+2025-07-02 21:23:05 - delete_device called with device_id: ZZziyRDAF8Y7RtlcAAAA
+2025-07-02 21:23:05 - Device deleted successfully: ZZziyRDAF8Y7RtlcAAAA
+2025-07-02 21:23:05 - Device with socket ID ZZziyRDAF8Y7RtlcAAAA unregistered successfully
+2025-07-02 21:23:05 - Device with socket ID ZZziyRDAF8Y7RtlcAAAA unregistered
+2025-07-02 21:23:05 - Unauthenticated user disconnected
+2025-07-02 21:23:05 - client connected
+2025-07-02 21:23:05 - get_website called with URL: http://test.com
+2025-07-02 21:23:05 - Website found: test.com
+2025-07-02 21:23:05 - Website test.com already exists
+2025-07-02 21:23:05 - No elements file found for website test.com
+2025-07-02 21:23:05 - Socket ID QzyYeDbAtBntuLWhAAAB disconnected
+2025-07-02 21:23:05 - delete_device called with device_id: QzyYeDbAtBntuLWhAAAB
+2025-07-02 21:23:05 - Device deleted successfully: QzyYeDbAtBntuLWhAAAB
+2025-07-02 21:23:05 - Device with socket ID QzyYeDbAtBntuLWhAAAB unregistered successfully
+2025-07-02 21:23:05 - Device with socket ID QzyYeDbAtBntuLWhAAAB unregistered
+2025-07-02 21:23:05 - Unauthenticated user disconnected
+2025-07-02 21:23:05 - client connected
+2025-07-02 21:23:05 - get_website called with URL: https://tfg.zenken.es
+2025-07-02 21:23:05 - Website found: tfg.zenken.es
+2025-07-02 21:23:05 - Website tfg.zenken.es already exists
+2025-07-02 21:23:05 - Found 2361 elements in file ./custom_elements/tfg.zenken.es_elements.json
+2025-07-02 21:23:06 - Elements in page do not match the ones in the file, updating file
+2025-07-02 21:23:06 - Elements file updated with new elements
+2025-07-02 21:23:06 - Socket ID XbutJK7yvoxySAAIAAAC disconnected
+2025-07-02 21:23:06 - delete_device called with device_id: XbutJK7yvoxySAAIAAAC
+2025-07-02 21:23:06 - Device deleted successfully: XbutJK7yvoxySAAIAAAC
+2025-07-02 21:23:06 - Device with socket ID XbutJK7yvoxySAAIAAAC unregistered successfully
+2025-07-02 21:23:06 - Device with socket ID XbutJK7yvoxySAAIAAAC unregistered
+2025-07-02 21:23:06 - Unauthenticated user disconnected
+2025-07-02 21:23:06 - load_user called with user_id: dummy
+2025-07-02 21:23:06 - User loaded: dummy
+2025-07-02 21:23:06 - load_user called with user_id: notfound
+2025-07-02 21:23:06 - User loaded: None
+2025-07-02 21:23:06 - User not found: notfound
+2025-07-02 21:23:06 - client connected
+2025-07-02 21:23:06 - No Referer header found in request
+2025-07-02 21:23:06 - Registering device with data: {'username': 'testuser', 'socketid': 'testsocketid', 'deviceType': 'desktop', 'website_id': 'testwebsite'}
+2025-07-02 21:23:06 - Registering device for user: testuser, socketid: testsocketid, deviceType: desktop and website_id: testwebsite
+2025-07-02 21:23:06 - store_device called with device: {"deviceid": "testsocketid", "username": "testuser", "deviceType": "desktop", "status": "offline"}
+2025-07-02 21:23:06 - Device already exists: testsocketid
+2025-07-02 21:23:06 - Device registration failed for user: testuser
+2025-07-02 21:23:06 - Socket ID m-nZxa5RcOfu70n5AAAD disconnected
+2025-07-02 21:23:06 - delete_device called with device_id: m-nZxa5RcOfu70n5AAAD
+2025-07-02 21:23:06 - Device deleted successfully: m-nZxa5RcOfu70n5AAAD
+2025-07-02 21:23:06 - Device with socket ID m-nZxa5RcOfu70n5AAAD unregistered successfully
+2025-07-02 21:23:06 - Device with socket ID m-nZxa5RcOfu70n5AAAD unregistered
+2025-07-02 21:23:06 - Unauthenticated user disconnected
+2025-07-02 21:23:06 - client connected
+2025-07-02 21:23:06 - No Referer header found in request
+2025-07-02 21:23:06 - unregister event
+2025-07-02 21:23:06 - Socket ID 6-EUmtRRvZ0hRWSTAAAE disconnected
+2025-07-02 21:23:06 - delete_device called with device_id: 6-EUmtRRvZ0hRWSTAAAE
+2025-07-02 21:23:06 - Device deleted successfully: 6-EUmtRRvZ0hRWSTAAAE
+2025-07-02 21:23:06 - Device with socket ID 6-EUmtRRvZ0hRWSTAAAE unregistered successfully
+2025-07-02 21:23:06 - Device with socket ID 6-EUmtRRvZ0hRWSTAAAE unregistered
+2025-07-02 21:23:06 - Unauthenticated user disconnected
+2025-07-02 21:23:06 - client connected
+2025-07-02 21:23:06 - No Referer header found in request
+2025-07-02 21:23:06 - Website reports: Elements processed successfully
+2025-07-02 21:23:06 - Socket ID isVv5WH9wEyBh73aAAAF disconnected
+2025-07-02 21:23:06 - delete_device called with device_id: isVv5WH9wEyBh73aAAAF
+2025-07-02 21:23:06 - Device deleted successfully: isVv5WH9wEyBh73aAAAF
+2025-07-02 21:23:06 - Device with socket ID isVv5WH9wEyBh73aAAAF unregistered successfully
+2025-07-02 21:23:06 - Device with socket ID isVv5WH9wEyBh73aAAAF unregistered
+2025-07-02 21:23:06 - Unauthenticated user disconnected
+2025-07-02 21:23:06 - client connected
+2025-07-02 21:23:06 - No Referer header found in request
+2025-07-02 21:23:06 - Socket ID Js1u7MxcKZHwlduEAAAG disconnected
+2025-07-02 21:23:06 - delete_device called with device_id: Js1u7MxcKZHwlduEAAAG
+2025-07-02 21:23:06 - Device deleted successfully: Js1u7MxcKZHwlduEAAAG
+2025-07-02 21:23:06 - Device with socket ID Js1u7MxcKZHwlduEAAAG unregistered successfully
+2025-07-02 21:23:06 - Device with socket ID Js1u7MxcKZHwlduEAAAG unregistered
+2025-07-02 21:23:06 - Unauthenticated user disconnected
+2025-07-02 21:23:06 - client connected
+2025-07-02 21:23:06 - No Referer header found in request
+2025-07-02 21:23:06 - Socket ID NiuFbx0NkDdLfuCxAAAH disconnected
+2025-07-02 21:23:06 - delete_device called with device_id: NiuFbx0NkDdLfuCxAAAH
+2025-07-02 21:23:06 - Device deleted successfully: NiuFbx0NkDdLfuCxAAAH
+2025-07-02 21:23:06 - Device with socket ID NiuFbx0NkDdLfuCxAAAH unregistered successfully
+2025-07-02 21:23:06 - Device with socket ID NiuFbx0NkDdLfuCxAAAH unregistered
+2025-07-02 21:23:06 - Unauthenticated user disconnected
+2025-07-02 21:23:06 - login request
+2025-07-02 21:23:06 - Login failed for user nouser
+2025-07-02 21:23:06 - login request
+2025-07-02 21:23:06 - Login failed for user dummy
+2025-07-02 21:23:06 - login request
+2025-07-02 21:23:06 - User Data: dummy
+2025-07-02 21:23:06 - logout request
+2025-07-02 21:23:06 - Logout request received but no user is authenticated
+2025-07-02 21:24:33 - Database already exists
+2025-07-02 21:24:33 - signup request
+2025-07-02 21:24:33 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$HklnN8BqMlU9xYeW$e82da0bbd1aeb78b9e660099475b433a82cef820b2b0c6611723fcf72ba1b929376dfe6c791cb4698dd878e33f0ab4a4a31c8555f5cb6d77d9f5a6b75a5aa399", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:24:33 - Signup failed for user testuser
+2025-07-02 21:24:33 - login request
+2025-07-02 21:24:33 - User found: testuser
+2025-07-02 21:24:33 - get_id called for user: testuser
+2025-07-02 21:24:33 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$68YYJKtr1fkvvdnK$e094e451f74b81b6981b9d80354f609e9008110cab16726a045cd02f2f25f6fce7e676ce62dab6c1fc760b224e3df9bef73699f8f20d9d79a1f5fa53765a081e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:24:33 - logout request
+2025-07-02 21:24:33 - Logout request received but no user is authenticated
+2025-07-02 21:24:33 - login request
+2025-07-02 21:24:33 - signup request
+2025-07-02 21:24:33 - client connected
+2025-07-02 21:24:33 - No Referer header found in request
+2025-07-02 21:24:33 - Socket ID pFUEHDFsga77Y7LnAAAA disconnected
+2025-07-02 21:24:33 - delete_device called with device_id: pFUEHDFsga77Y7LnAAAA
+2025-07-02 21:24:33 - Device deleted successfully: pFUEHDFsga77Y7LnAAAA
+2025-07-02 21:24:33 - Device with socket ID pFUEHDFsga77Y7LnAAAA unregistered successfully
+2025-07-02 21:24:33 - Device with socket ID pFUEHDFsga77Y7LnAAAA unregistered
+2025-07-02 21:24:33 - Unauthenticated user disconnected
+2025-07-02 21:24:33 - client connected
+2025-07-02 21:24:33 - get_website called with URL: http://test.com
+2025-07-02 21:24:33 - Website found: test.com
+2025-07-02 21:24:33 - Website test.com already exists
+2025-07-02 21:24:33 - No elements file found for website test.com
+2025-07-02 21:24:33 - Socket ID 33xFAAPEKD8kny9XAAAB disconnected
+2025-07-02 21:24:33 - delete_device called with device_id: 33xFAAPEKD8kny9XAAAB
+2025-07-02 21:24:33 - Device deleted successfully: 33xFAAPEKD8kny9XAAAB
+2025-07-02 21:24:33 - Device with socket ID 33xFAAPEKD8kny9XAAAB unregistered successfully
+2025-07-02 21:24:33 - Device with socket ID 33xFAAPEKD8kny9XAAAB unregistered
+2025-07-02 21:24:33 - Unauthenticated user disconnected
+2025-07-02 21:24:33 - client connected
+2025-07-02 21:24:33 - get_website called with URL: https://tfg.zenken.es
+2025-07-02 21:24:33 - Website found: tfg.zenken.es
+2025-07-02 21:24:33 - Website tfg.zenken.es already exists
+2025-07-02 21:24:33 - Found 2361 elements in file ./custom_elements/tfg.zenken.es_elements.json
+2025-07-02 21:24:34 - Elements in page do not match the ones in the file, updating file
+2025-07-02 21:24:34 - Elements file updated with new elements
+2025-07-02 21:24:34 - Socket ID iPLsa06HDGOfs6feAAAC disconnected
+2025-07-02 21:24:34 - delete_device called with device_id: iPLsa06HDGOfs6feAAAC
+2025-07-02 21:24:34 - Device deleted successfully: iPLsa06HDGOfs6feAAAC
+2025-07-02 21:24:34 - Device with socket ID iPLsa06HDGOfs6feAAAC unregistered successfully
+2025-07-02 21:24:34 - Device with socket ID iPLsa06HDGOfs6feAAAC unregistered
+2025-07-02 21:24:34 - Unauthenticated user disconnected
+2025-07-02 21:24:34 - load_user called with user_id: dummy
+2025-07-02 21:24:34 - User loaded: dummy
+2025-07-02 21:24:35 - load_user called with user_id: notfound
+2025-07-02 21:24:35 - User loaded: None
+2025-07-02 21:24:35 - User not found: notfound
+2025-07-02 21:24:35 - client connected
+2025-07-02 21:24:35 - No Referer header found in request
+2025-07-02 21:24:35 - Registering device with data: {'username': 'testuser', 'socketid': 'testsocketid', 'deviceType': 'desktop', 'website_id': 'testwebsite'}
+2025-07-02 21:24:35 - Registering device for user: testuser, socketid: testsocketid, deviceType: desktop and website_id: testwebsite
+2025-07-02 21:24:35 - store_device called with device: {"deviceid": "testsocketid", "username": "testuser", "deviceType": "desktop", "status": "offline"}
+2025-07-02 21:24:35 - Device already exists: testsocketid
+2025-07-02 21:24:35 - Device registration failed for user: testuser
+2025-07-02 21:24:35 - Socket ID zdK6TtT5oYtDC47UAAAD disconnected
+2025-07-02 21:24:35 - delete_device called with device_id: zdK6TtT5oYtDC47UAAAD
+2025-07-02 21:24:35 - Device deleted successfully: zdK6TtT5oYtDC47UAAAD
+2025-07-02 21:24:35 - Device with socket ID zdK6TtT5oYtDC47UAAAD unregistered successfully
+2025-07-02 21:24:35 - Device with socket ID zdK6TtT5oYtDC47UAAAD unregistered
+2025-07-02 21:24:35 - Unauthenticated user disconnected
+2025-07-02 21:24:35 - client connected
+2025-07-02 21:24:35 - No Referer header found in request
+2025-07-02 21:24:35 - unregister event
+2025-07-02 21:24:35 - Socket ID FLY30Hy6JovW04FKAAAE disconnected
+2025-07-02 21:24:35 - delete_device called with device_id: FLY30Hy6JovW04FKAAAE
+2025-07-02 21:24:35 - Device deleted successfully: FLY30Hy6JovW04FKAAAE
+2025-07-02 21:24:35 - Device with socket ID FLY30Hy6JovW04FKAAAE unregistered successfully
+2025-07-02 21:24:35 - Device with socket ID FLY30Hy6JovW04FKAAAE unregistered
+2025-07-02 21:24:35 - Unauthenticated user disconnected
+2025-07-02 21:24:35 - client connected
+2025-07-02 21:24:35 - No Referer header found in request
+2025-07-02 21:24:35 - Website reports: Elements processed successfully
+2025-07-02 21:24:35 - Socket ID pREZo8bTnbMZk7B0AAAF disconnected
+2025-07-02 21:24:35 - delete_device called with device_id: pREZo8bTnbMZk7B0AAAF
+2025-07-02 21:24:35 - Device deleted successfully: pREZo8bTnbMZk7B0AAAF
+2025-07-02 21:24:35 - Device with socket ID pREZo8bTnbMZk7B0AAAF unregistered successfully
+2025-07-02 21:24:35 - Device with socket ID pREZo8bTnbMZk7B0AAAF unregistered
+2025-07-02 21:24:35 - Unauthenticated user disconnected
+2025-07-02 21:24:35 - client connected
+2025-07-02 21:24:35 - No Referer header found in request
+2025-07-02 21:24:35 - Socket ID J1OEtgZeuRmBIhpUAAAG disconnected
+2025-07-02 21:24:35 - delete_device called with device_id: J1OEtgZeuRmBIhpUAAAG
+2025-07-02 21:24:35 - Device deleted successfully: J1OEtgZeuRmBIhpUAAAG
+2025-07-02 21:24:35 - Device with socket ID J1OEtgZeuRmBIhpUAAAG unregistered successfully
+2025-07-02 21:24:35 - Device with socket ID J1OEtgZeuRmBIhpUAAAG unregistered
+2025-07-02 21:24:35 - Unauthenticated user disconnected
+2025-07-02 21:24:35 - client connected
+2025-07-02 21:24:35 - No Referer header found in request
+2025-07-02 21:24:35 - Socket ID vPUN4dkfIk7RDMItAAAH disconnected
+2025-07-02 21:24:35 - delete_device called with device_id: vPUN4dkfIk7RDMItAAAH
+2025-07-02 21:24:35 - Device deleted successfully: vPUN4dkfIk7RDMItAAAH
+2025-07-02 21:24:35 - Device with socket ID vPUN4dkfIk7RDMItAAAH unregistered successfully
+2025-07-02 21:24:35 - Device with socket ID vPUN4dkfIk7RDMItAAAH unregistered
+2025-07-02 21:24:35 - Unauthenticated user disconnected
+2025-07-02 21:24:35 - login request
+2025-07-02 21:24:35 - Login failed for user nouser
+2025-07-02 21:24:35 - login request
+2025-07-02 21:24:35 - Login failed for user dummy
+2025-07-02 21:24:35 - login request
+2025-07-02 21:24:35 - User Data: dummy
+2025-07-02 21:24:35 - logout request
+2025-07-02 21:24:35 - Logout request received but no user is authenticated
+2025-07-02 21:24:45 - Database already exists
+2025-07-02 21:24:46 - signup request
+2025-07-02 21:24:46 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$dmLyhDyJwelwkcs7$7b4250bd2d96f46c95891c74ad9feadc3b4d8c0a574c9a8a77488d21c7220efd672732f901e46c4eaf2d76eba88fe91a14045fd18b56183b79a6350861e02ad7", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:24:46 - Signup failed for user testuser
+2025-07-02 21:24:46 - login request
+2025-07-02 21:24:46 - User found: testuser
+2025-07-02 21:24:46 - get_id called for user: testuser
+2025-07-02 21:24:46 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$68YYJKtr1fkvvdnK$e094e451f74b81b6981b9d80354f609e9008110cab16726a045cd02f2f25f6fce7e676ce62dab6c1fc760b224e3df9bef73699f8f20d9d79a1f5fa53765a081e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:24:46 - logout request
+2025-07-02 21:24:46 - Logout request received but no user is authenticated
+2025-07-02 21:24:46 - login request
+2025-07-02 21:24:46 - signup request
+2025-07-02 21:24:46 - client connected
+2025-07-02 21:24:46 - No Referer header found in request
+2025-07-02 21:24:46 - Socket ID TqNFoW9YJP5h02sdAAAA disconnected
+2025-07-02 21:24:46 - delete_device called with device_id: TqNFoW9YJP5h02sdAAAA
+2025-07-02 21:24:46 - Device deleted successfully: TqNFoW9YJP5h02sdAAAA
+2025-07-02 21:24:46 - Device with socket ID TqNFoW9YJP5h02sdAAAA unregistered successfully
+2025-07-02 21:24:46 - Device with socket ID TqNFoW9YJP5h02sdAAAA unregistered
+2025-07-02 21:24:46 - Unauthenticated user disconnected
+2025-07-02 21:24:46 - client connected
+2025-07-02 21:24:46 - get_website called with URL: http://test.com
+2025-07-02 21:24:46 - Website found: test.com
+2025-07-02 21:24:46 - Website test.com already exists
+2025-07-02 21:24:46 - No elements file found for website test.com
+2025-07-02 21:24:46 - Socket ID O1JR3gEegc4nRb9QAAAB disconnected
+2025-07-02 21:24:46 - delete_device called with device_id: O1JR3gEegc4nRb9QAAAB
+2025-07-02 21:24:46 - Device deleted successfully: O1JR3gEegc4nRb9QAAAB
+2025-07-02 21:24:46 - Device with socket ID O1JR3gEegc4nRb9QAAAB unregistered successfully
+2025-07-02 21:24:46 - Device with socket ID O1JR3gEegc4nRb9QAAAB unregistered
+2025-07-02 21:24:46 - Unauthenticated user disconnected
+2025-07-02 21:24:46 - client connected
+2025-07-02 21:24:46 - get_website called with URL: https://tfg.zenken.es
+2025-07-02 21:24:46 - Website found: tfg.zenken.es
+2025-07-02 21:24:46 - Website tfg.zenken.es already exists
+2025-07-02 21:24:46 - Found 2361 elements in file ./custom_elements/tfg.zenken.es_elements.json
+2025-07-02 21:24:47 - Elements in page do not match the ones in the file, updating file
+2025-07-02 21:24:47 - Elements file updated with new elements
+2025-07-02 21:24:47 - Socket ID tTHwTD0ONXwEBPsDAAAC disconnected
+2025-07-02 21:24:47 - delete_device called with device_id: tTHwTD0ONXwEBPsDAAAC
+2025-07-02 21:24:47 - Device deleted successfully: tTHwTD0ONXwEBPsDAAAC
+2025-07-02 21:24:47 - Device with socket ID tTHwTD0ONXwEBPsDAAAC unregistered successfully
+2025-07-02 21:24:47 - Device with socket ID tTHwTD0ONXwEBPsDAAAC unregistered
+2025-07-02 21:24:47 - Unauthenticated user disconnected
+2025-07-02 21:24:47 - load_user called with user_id: dummy
+2025-07-02 21:24:47 - User loaded: dummy
+2025-07-02 21:24:47 - load_user called with user_id: notfound
+2025-07-02 21:24:47 - User loaded: None
+2025-07-02 21:24:47 - User not found: notfound
+2025-07-02 21:24:47 - client connected
+2025-07-02 21:24:47 - No Referer header found in request
+2025-07-02 21:24:47 - Registering device with data: {'username': 'testuser', 'socketid': 'testsocketid', 'deviceType': 'desktop', 'website_id': 'testwebsite'}
+2025-07-02 21:24:47 - Registering device for user: testuser, socketid: testsocketid, deviceType: desktop and website_id: testwebsite
+2025-07-02 21:24:47 - store_device called with device: {"deviceid": "testsocketid", "username": "testuser", "deviceType": "desktop", "status": "offline"}
+2025-07-02 21:24:47 - Device already exists: testsocketid
+2025-07-02 21:24:47 - Device registration failed for user: testuser
+2025-07-02 21:24:47 - Socket ID 9hx24BCrPCqkhTTQAAAD disconnected
+2025-07-02 21:24:47 - delete_device called with device_id: 9hx24BCrPCqkhTTQAAAD
+2025-07-02 21:24:47 - Device deleted successfully: 9hx24BCrPCqkhTTQAAAD
+2025-07-02 21:24:47 - Device with socket ID 9hx24BCrPCqkhTTQAAAD unregistered successfully
+2025-07-02 21:24:47 - Device with socket ID 9hx24BCrPCqkhTTQAAAD unregistered
+2025-07-02 21:24:47 - Unauthenticated user disconnected
+2025-07-02 21:24:47 - client connected
+2025-07-02 21:24:47 - No Referer header found in request
+2025-07-02 21:24:47 - unregister event
+2025-07-02 21:24:47 - Socket ID N-xlz9hqm5vxNLxgAAAE disconnected
+2025-07-02 21:24:47 - delete_device called with device_id: N-xlz9hqm5vxNLxgAAAE
+2025-07-02 21:24:47 - Device deleted successfully: N-xlz9hqm5vxNLxgAAAE
+2025-07-02 21:24:47 - Device with socket ID N-xlz9hqm5vxNLxgAAAE unregistered successfully
+2025-07-02 21:24:47 - Device with socket ID N-xlz9hqm5vxNLxgAAAE unregistered
+2025-07-02 21:24:47 - Unauthenticated user disconnected
+2025-07-02 21:24:47 - client connected
+2025-07-02 21:24:47 - No Referer header found in request
+2025-07-02 21:24:47 - Website reports: Elements processed successfully
+2025-07-02 21:24:47 - Socket ID 1lE6BKmCh8Z_gM3CAAAF disconnected
+2025-07-02 21:24:47 - delete_device called with device_id: 1lE6BKmCh8Z_gM3CAAAF
+2025-07-02 21:24:47 - Device deleted successfully: 1lE6BKmCh8Z_gM3CAAAF
+2025-07-02 21:24:47 - Device with socket ID 1lE6BKmCh8Z_gM3CAAAF unregistered successfully
+2025-07-02 21:24:47 - Device with socket ID 1lE6BKmCh8Z_gM3CAAAF unregistered
+2025-07-02 21:24:47 - Unauthenticated user disconnected
+2025-07-02 21:24:47 - client connected
+2025-07-02 21:24:47 - No Referer header found in request
+2025-07-02 21:24:47 - Socket ID -rpfIzAo0F1wbgW6AAAG disconnected
+2025-07-02 21:24:47 - delete_device called with device_id: -rpfIzAo0F1wbgW6AAAG
+2025-07-02 21:24:47 - Device deleted successfully: -rpfIzAo0F1wbgW6AAAG
+2025-07-02 21:24:47 - Device with socket ID -rpfIzAo0F1wbgW6AAAG unregistered successfully
+2025-07-02 21:24:47 - Device with socket ID -rpfIzAo0F1wbgW6AAAG unregistered
+2025-07-02 21:24:47 - Unauthenticated user disconnected
+2025-07-02 21:24:47 - client connected
+2025-07-02 21:24:47 - No Referer header found in request
+2025-07-02 21:24:47 - Socket ID 5kMDdCF29qfEjkQHAAAH disconnected
+2025-07-02 21:24:47 - delete_device called with device_id: 5kMDdCF29qfEjkQHAAAH
+2025-07-02 21:24:47 - Device deleted successfully: 5kMDdCF29qfEjkQHAAAH
+2025-07-02 21:24:47 - Device with socket ID 5kMDdCF29qfEjkQHAAAH unregistered successfully
+2025-07-02 21:24:47 - Device with socket ID 5kMDdCF29qfEjkQHAAAH unregistered
+2025-07-02 21:24:47 - Unauthenticated user disconnected
+2025-07-02 21:24:47 - login request
+2025-07-02 21:24:47 - Login failed for user nouser
+2025-07-02 21:24:47 - login request
+2025-07-02 21:24:47 - Login failed for user dummy
+2025-07-02 21:24:47 - login request
+2025-07-02 21:24:47 - User Data: dummy
+2025-07-02 21:24:47 - logout request
+2025-07-02 21:24:47 - Logout request received but no user is authenticated
+2025-07-02 21:25:08 - Database already exists
+2025-07-02 21:25:08 - signup request
+2025-07-02 21:25:08 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$qZFBemj1LHqBBG7A$8b0c040e1c8d79047f2ed2bfd45f467b354c2e42949922cfb2fe27e4a7d86bc75b07e480b78f53710feb32c04189620206f570460e3e7b7923daf0f6c9e23dee", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:25:08 - Signup failed for user testuser
+2025-07-02 21:25:08 - login request
+2025-07-02 21:25:08 - User found: testuser
+2025-07-02 21:25:08 - get_id called for user: testuser
+2025-07-02 21:25:08 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$68YYJKtr1fkvvdnK$e094e451f74b81b6981b9d80354f609e9008110cab16726a045cd02f2f25f6fce7e676ce62dab6c1fc760b224e3df9bef73699f8f20d9d79a1f5fa53765a081e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:25:08 - logout request
+2025-07-02 21:25:08 - Logout request received but no user is authenticated
+2025-07-02 21:25:08 - login request
+2025-07-02 21:25:08 - signup request
+2025-07-02 21:25:08 - client connected
+2025-07-02 21:25:08 - No Referer header found in request
+2025-07-02 21:25:08 - Socket ID A_CAX0EB0eICBb1XAAAA disconnected
+2025-07-02 21:25:08 - delete_device called with device_id: A_CAX0EB0eICBb1XAAAA
+2025-07-02 21:25:08 - Device deleted successfully: A_CAX0EB0eICBb1XAAAA
+2025-07-02 21:25:08 - Device with socket ID A_CAX0EB0eICBb1XAAAA unregistered successfully
+2025-07-02 21:25:08 - Device with socket ID A_CAX0EB0eICBb1XAAAA unregistered
+2025-07-02 21:25:08 - Unauthenticated user disconnected
+2025-07-02 21:25:08 - client connected
+2025-07-02 21:25:08 - get_website called with URL: http://test.com
+2025-07-02 21:25:08 - Website found: test.com
+2025-07-02 21:25:08 - Website test.com already exists
+2025-07-02 21:25:08 - No elements file found for website test.com
+2025-07-02 21:25:08 - Socket ID aZFuRT9id3ycW0fTAAAB disconnected
+2025-07-02 21:25:08 - delete_device called with device_id: aZFuRT9id3ycW0fTAAAB
+2025-07-02 21:25:08 - Device deleted successfully: aZFuRT9id3ycW0fTAAAB
+2025-07-02 21:25:08 - Device with socket ID aZFuRT9id3ycW0fTAAAB unregistered successfully
+2025-07-02 21:25:08 - Device with socket ID aZFuRT9id3ycW0fTAAAB unregistered
+2025-07-02 21:25:08 - Unauthenticated user disconnected
+2025-07-02 21:25:08 - client connected
+2025-07-02 21:25:08 - get_website called with URL: https://tfg.zenken.es
+2025-07-02 21:25:08 - Website found: tfg.zenken.es
+2025-07-02 21:25:08 - Website tfg.zenken.es already exists
+2025-07-02 21:25:09 - Found 2361 elements in file ./custom_elements/tfg.zenken.es_elements.json
+2025-07-02 21:25:10 - Elements in page do not match the ones in the file, updating file
+2025-07-02 21:25:10 - Elements file updated with new elements
+2025-07-02 21:25:10 - Socket ID yoWnUkX3TJpgLCBIAAAC disconnected
+2025-07-02 21:25:10 - delete_device called with device_id: yoWnUkX3TJpgLCBIAAAC
+2025-07-02 21:25:10 - Device deleted successfully: yoWnUkX3TJpgLCBIAAAC
+2025-07-02 21:25:10 - Device with socket ID yoWnUkX3TJpgLCBIAAAC unregistered successfully
+2025-07-02 21:25:10 - Device with socket ID yoWnUkX3TJpgLCBIAAAC unregistered
+2025-07-02 21:25:10 - Unauthenticated user disconnected
+2025-07-02 21:25:10 - load_user called with user_id: dummy
+2025-07-02 21:25:10 - User loaded: dummy
+2025-07-02 21:25:10 - load_user called with user_id: notfound
+2025-07-02 21:25:10 - User loaded: None
+2025-07-02 21:25:10 - User not found: notfound
+2025-07-02 21:25:10 - client connected
+2025-07-02 21:25:10 - No Referer header found in request
+2025-07-02 21:25:10 - Registering device with data: {'username': 'testuser', 'socketid': 'testsocketid', 'deviceType': 'desktop', 'website_id': 'testwebsite'}
+2025-07-02 21:25:10 - Registering device for user: testuser, socketid: testsocketid, deviceType: desktop and website_id: testwebsite
+2025-07-02 21:25:10 - store_device called with device: {"deviceid": "testsocketid", "username": "testuser", "deviceType": "desktop", "status": "offline"}
+2025-07-02 21:25:10 - Device already exists: testsocketid
+2025-07-02 21:25:10 - Device registration failed for user: testuser
+2025-07-02 21:25:10 - Socket ID XWQH-mGZJ4iwd0OFAAAD disconnected
+2025-07-02 21:25:10 - delete_device called with device_id: XWQH-mGZJ4iwd0OFAAAD
+2025-07-02 21:25:10 - Device deleted successfully: XWQH-mGZJ4iwd0OFAAAD
+2025-07-02 21:25:10 - Device with socket ID XWQH-mGZJ4iwd0OFAAAD unregistered successfully
+2025-07-02 21:25:10 - Device with socket ID XWQH-mGZJ4iwd0OFAAAD unregistered
+2025-07-02 21:25:10 - Unauthenticated user disconnected
+2025-07-02 21:25:10 - client connected
+2025-07-02 21:25:10 - No Referer header found in request
+2025-07-02 21:25:10 - unregister event
+2025-07-02 21:25:10 - Socket ID uJSGDd3l6J1YjDB2AAAE disconnected
+2025-07-02 21:25:10 - delete_device called with device_id: uJSGDd3l6J1YjDB2AAAE
+2025-07-02 21:25:10 - Device deleted successfully: uJSGDd3l6J1YjDB2AAAE
+2025-07-02 21:25:10 - Device with socket ID uJSGDd3l6J1YjDB2AAAE unregistered successfully
+2025-07-02 21:25:10 - Device with socket ID uJSGDd3l6J1YjDB2AAAE unregistered
+2025-07-02 21:25:10 - Unauthenticated user disconnected
+2025-07-02 21:25:10 - client connected
+2025-07-02 21:25:10 - No Referer header found in request
+2025-07-02 21:25:10 - Website reports: Elements processed successfully
+2025-07-02 21:25:10 - Socket ID CQIO1B1baNmYT7N3AAAF disconnected
+2025-07-02 21:25:10 - delete_device called with device_id: CQIO1B1baNmYT7N3AAAF
+2025-07-02 21:25:10 - Device deleted successfully: CQIO1B1baNmYT7N3AAAF
+2025-07-02 21:25:10 - Device with socket ID CQIO1B1baNmYT7N3AAAF unregistered successfully
+2025-07-02 21:25:10 - Device with socket ID CQIO1B1baNmYT7N3AAAF unregistered
+2025-07-02 21:25:10 - Unauthenticated user disconnected
+2025-07-02 21:25:10 - client connected
+2025-07-02 21:25:10 - No Referer header found in request
+2025-07-02 21:25:10 - Socket ID khOfXZDYpBmu78nSAAAG disconnected
+2025-07-02 21:25:10 - delete_device called with device_id: khOfXZDYpBmu78nSAAAG
+2025-07-02 21:25:10 - Device deleted successfully: khOfXZDYpBmu78nSAAAG
+2025-07-02 21:25:10 - Device with socket ID khOfXZDYpBmu78nSAAAG unregistered successfully
+2025-07-02 21:25:10 - Device with socket ID khOfXZDYpBmu78nSAAAG unregistered
+2025-07-02 21:25:10 - Unauthenticated user disconnected
+2025-07-02 21:25:10 - client connected
+2025-07-02 21:25:10 - No Referer header found in request
+2025-07-02 21:25:10 - Socket ID -wsLQi6QMPT0iYilAAAH disconnected
+2025-07-02 21:25:10 - delete_device called with device_id: -wsLQi6QMPT0iYilAAAH
+2025-07-02 21:25:10 - Device deleted successfully: -wsLQi6QMPT0iYilAAAH
+2025-07-02 21:25:10 - Device with socket ID -wsLQi6QMPT0iYilAAAH unregistered successfully
+2025-07-02 21:25:10 - Device with socket ID -wsLQi6QMPT0iYilAAAH unregistered
+2025-07-02 21:25:10 - Unauthenticated user disconnected
+2025-07-02 21:25:10 - login request
+2025-07-02 21:25:10 - Login failed for user nouser
+2025-07-02 21:25:10 - login request
+2025-07-02 21:25:10 - Login failed for user dummy
+2025-07-02 21:25:10 - login request
+2025-07-02 21:25:10 - User Data: dummy
+2025-07-02 21:25:10 - logout request
+2025-07-02 21:25:10 - Logout request received but no user is authenticated
+2025-07-02 21:27:01 - Database already exists
+2025-07-02 21:27:02 - signup request
+2025-07-02 21:27:02 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$gBddTSBNBbPPagJu$5de8b577ed750659ddef06764beb4687bc044ceba5f06a4755d678fff088685853efc79c461c19bfae617a8cb63b437d7d61925f97eff4b874e6e757986e6fb1", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:27:02 - Signup failed for user testuser
+2025-07-02 21:27:02 - login request
+2025-07-02 21:27:02 - User found: testuser
+2025-07-02 21:27:02 - get_id called for user: testuser
+2025-07-02 21:27:02 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$68YYJKtr1fkvvdnK$e094e451f74b81b6981b9d80354f609e9008110cab16726a045cd02f2f25f6fce7e676ce62dab6c1fc760b224e3df9bef73699f8f20d9d79a1f5fa53765a081e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:27:02 - logout request
+2025-07-02 21:27:02 - Logout request received but no user is authenticated
+2025-07-02 21:27:02 - login request
+2025-07-02 21:27:02 - signup request
+2025-07-02 21:27:02 - client connected
+2025-07-02 21:27:02 - No Referer header found in request
+2025-07-02 21:27:02 - Socket ID MOQp1-A-chb9Va1DAAAA disconnected
+2025-07-02 21:27:02 - delete_device called with device_id: MOQp1-A-chb9Va1DAAAA
+2025-07-02 21:27:02 - Device deleted successfully: MOQp1-A-chb9Va1DAAAA
+2025-07-02 21:27:02 - Device with socket ID MOQp1-A-chb9Va1DAAAA unregistered successfully
+2025-07-02 21:27:02 - Device with socket ID MOQp1-A-chb9Va1DAAAA unregistered
+2025-07-02 21:27:02 - Unauthenticated user disconnected
+2025-07-02 21:27:02 - client connected
+2025-07-02 21:27:02 - get_website called with URL: http://test.com
+2025-07-02 21:27:02 - Website found: test.com
+2025-07-02 21:27:02 - Website test.com already exists
+2025-07-02 21:27:02 - No elements file found for website test.com
+2025-07-02 21:27:02 - Socket ID _fh6L5ExHqal9lV2AAAB disconnected
+2025-07-02 21:27:02 - delete_device called with device_id: _fh6L5ExHqal9lV2AAAB
+2025-07-02 21:27:02 - Device deleted successfully: _fh6L5ExHqal9lV2AAAB
+2025-07-02 21:27:02 - Device with socket ID _fh6L5ExHqal9lV2AAAB unregistered successfully
+2025-07-02 21:27:02 - Device with socket ID _fh6L5ExHqal9lV2AAAB unregistered
+2025-07-02 21:27:02 - Unauthenticated user disconnected
+2025-07-02 21:27:02 - client connected
+2025-07-02 21:27:02 - get_website called with URL: https://tfg.zenken.es
+2025-07-02 21:27:02 - Website found: tfg.zenken.es
+2025-07-02 21:27:02 - Website tfg.zenken.es already exists
+2025-07-02 21:27:02 - Found 2361 elements in file ./custom_elements/tfg.zenken.es_elements.json
+2025-07-02 21:27:03 - Elements in page do not match the ones in the file, updating file
+2025-07-02 21:27:03 - Elements file updated with new elements
+2025-07-02 21:27:03 - Socket ID EiSaIr6Q12TUcPH5AAAC disconnected
+2025-07-02 21:27:03 - delete_device called with device_id: EiSaIr6Q12TUcPH5AAAC
+2025-07-02 21:27:03 - Device deleted successfully: EiSaIr6Q12TUcPH5AAAC
+2025-07-02 21:27:03 - Device with socket ID EiSaIr6Q12TUcPH5AAAC unregistered successfully
+2025-07-02 21:27:03 - Device with socket ID EiSaIr6Q12TUcPH5AAAC unregistered
+2025-07-02 21:27:03 - Unauthenticated user disconnected
+2025-07-02 21:27:03 - load_user called with user_id: dummy
+2025-07-02 21:27:03 - User loaded: dummy
+2025-07-02 21:27:03 - load_user called with user_id: notfound
+2025-07-02 21:27:03 - User loaded: None
+2025-07-02 21:27:03 - User not found: notfound
+2025-07-02 21:27:03 - client connected
+2025-07-02 21:27:03 - No Referer header found in request
+2025-07-02 21:27:03 - Registering device with data: {'username': 'testuser', 'socketid': 'testsocketid', 'deviceType': 'desktop', 'website_id': 'testwebsite'}
+2025-07-02 21:27:03 - Registering device for user: testuser, socketid: testsocketid, deviceType: desktop and website_id: testwebsite
+2025-07-02 21:27:03 - store_device called with device: {"deviceid": "testsocketid", "username": "testuser", "deviceType": "desktop", "status": "offline"}
+2025-07-02 21:27:03 - Device already exists: testsocketid
+2025-07-02 21:27:03 - Device registration failed for user: testuser
+2025-07-02 21:27:03 - Socket ID 9pZGmcuIBqCRXFhRAAAD disconnected
+2025-07-02 21:27:03 - delete_device called with device_id: 9pZGmcuIBqCRXFhRAAAD
+2025-07-02 21:27:03 - Device deleted successfully: 9pZGmcuIBqCRXFhRAAAD
+2025-07-02 21:27:03 - Device with socket ID 9pZGmcuIBqCRXFhRAAAD unregistered successfully
+2025-07-02 21:27:03 - Device with socket ID 9pZGmcuIBqCRXFhRAAAD unregistered
+2025-07-02 21:27:03 - Unauthenticated user disconnected
+2025-07-02 21:27:03 - client connected
+2025-07-02 21:27:03 - No Referer header found in request
+2025-07-02 21:27:03 - Registering device with data: {}
+2025-07-02 21:27:03 - client connected
+2025-07-02 21:27:03 - No Referer header found in request
+2025-07-02 21:27:03 - unregister event
+2025-07-02 21:27:03 - Socket ID jIDvaxj91qR3HHEsAAAF disconnected
+2025-07-02 21:27:03 - delete_device called with device_id: jIDvaxj91qR3HHEsAAAF
+2025-07-02 21:27:03 - Device deleted successfully: jIDvaxj91qR3HHEsAAAF
+2025-07-02 21:27:03 - Device with socket ID jIDvaxj91qR3HHEsAAAF unregistered successfully
+2025-07-02 21:27:03 - Device with socket ID jIDvaxj91qR3HHEsAAAF unregistered
+2025-07-02 21:27:03 - Unauthenticated user disconnected
+2025-07-02 21:27:03 - client connected
+2025-07-02 21:27:03 - No Referer header found in request
+2025-07-02 21:27:03 - Website reports: Elements processed successfully
+2025-07-02 21:27:03 - Socket ID Ruk1Yxuqxv0zGqPCAAAG disconnected
+2025-07-02 21:27:03 - delete_device called with device_id: Ruk1Yxuqxv0zGqPCAAAG
+2025-07-02 21:27:03 - Device deleted successfully: Ruk1Yxuqxv0zGqPCAAAG
+2025-07-02 21:27:03 - Device with socket ID Ruk1Yxuqxv0zGqPCAAAG unregistered successfully
+2025-07-02 21:27:03 - Device with socket ID Ruk1Yxuqxv0zGqPCAAAG unregistered
+2025-07-02 21:27:03 - Unauthenticated user disconnected
+2025-07-02 21:27:03 - client connected
+2025-07-02 21:27:03 - No Referer header found in request
+2025-07-02 21:27:03 - Socket ID 9n6rovdh6Hbd3pZkAAAH disconnected
+2025-07-02 21:27:03 - delete_device called with device_id: 9n6rovdh6Hbd3pZkAAAH
+2025-07-02 21:27:03 - Device deleted successfully: 9n6rovdh6Hbd3pZkAAAH
+2025-07-02 21:27:03 - Device with socket ID 9n6rovdh6Hbd3pZkAAAH unregistered successfully
+2025-07-02 21:27:03 - Device with socket ID 9n6rovdh6Hbd3pZkAAAH unregistered
+2025-07-02 21:27:03 - Unauthenticated user disconnected
+2025-07-02 21:27:03 - client connected
+2025-07-02 21:27:03 - No Referer header found in request
+2025-07-02 21:27:03 - Socket ID iA-gQOn709tDA2KyAAAI disconnected
+2025-07-02 21:27:03 - delete_device called with device_id: iA-gQOn709tDA2KyAAAI
+2025-07-02 21:27:03 - Device deleted successfully: iA-gQOn709tDA2KyAAAI
+2025-07-02 21:27:03 - Device with socket ID iA-gQOn709tDA2KyAAAI unregistered successfully
+2025-07-02 21:27:03 - Device with socket ID iA-gQOn709tDA2KyAAAI unregistered
+2025-07-02 21:27:03 - Unauthenticated user disconnected
+2025-07-02 21:27:03 - login request
+2025-07-02 21:27:03 - Login failed for user nouser
+2025-07-02 21:27:03 - login request
+2025-07-02 21:27:03 - Login failed for user dummy
+2025-07-02 21:27:03 - login request
+2025-07-02 21:27:03 - User Data: dummy
+2025-07-02 21:27:03 - logout request
+2025-07-02 21:27:03 - Logout request received but no user is authenticated
+2025-07-02 21:27:03 - logout request
+2025-07-02 21:27:03 - Logout request received but no user is authenticated
+2025-07-02 21:27:04 - login request
+2025-07-02 21:27:04 - Login failed for user 
+2025-07-02 21:27:04 - login request
+2025-07-02 21:27:04 - signup request
+2025-07-02 21:27:04 - signup request
+2025-07-02 21:27:04 - signup request
+2025-07-02 21:27:04 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$YROm9MtWTYchwpRk$771fbc82abc0905556651d55c30dfbea771d4b948410a400957e6e0a909511fd13eb891c124e905ecde6016fe2fde1615f60f17117de237b03f150bf34c5823c", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:27:04 - Signup failed for user testuser
+2025-07-02 21:27:04 - signup request
+2025-07-02 21:27:04 - Signup failed for user newuser
+2025-07-02 21:27:53 - Database already exists
+2025-07-02 21:27:53 - signup request
+2025-07-02 21:27:53 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$PvziVFIpL47NAP17$10ec1313ddd69b1c976495da828ae29c39b133820f3917d3be2ddbfbd431943fbd9955a20c2fea367bcf53559b270422c41ec93fc81b6bf0c3c7a84d7bfe04e7", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:27:53 - Signup failed for user testuser
+2025-07-02 21:27:53 - login request
+2025-07-02 21:27:53 - User found: testuser
+2025-07-02 21:27:53 - get_id called for user: testuser
+2025-07-02 21:27:53 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$68YYJKtr1fkvvdnK$e094e451f74b81b6981b9d80354f609e9008110cab16726a045cd02f2f25f6fce7e676ce62dab6c1fc760b224e3df9bef73699f8f20d9d79a1f5fa53765a081e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:27:53 - logout request
+2025-07-02 21:27:53 - Logout request received but no user is authenticated
+2025-07-02 21:27:53 - login request
+2025-07-02 21:27:53 - signup request
+2025-07-02 21:27:53 - client connected
+2025-07-02 21:27:53 - No Referer header found in request
+2025-07-02 21:27:53 - Socket ID Ig0yULzGBc--m9I4AAAA disconnected
+2025-07-02 21:27:53 - delete_device called with device_id: Ig0yULzGBc--m9I4AAAA
+2025-07-02 21:27:53 - Device deleted successfully: Ig0yULzGBc--m9I4AAAA
+2025-07-02 21:27:53 - Device with socket ID Ig0yULzGBc--m9I4AAAA unregistered successfully
+2025-07-02 21:27:53 - Device with socket ID Ig0yULzGBc--m9I4AAAA unregistered
+2025-07-02 21:27:53 - Unauthenticated user disconnected
+2025-07-02 21:27:53 - client connected
+2025-07-02 21:27:53 - get_website called with URL: http://test.com
+2025-07-02 21:27:53 - Website found: test.com
+2025-07-02 21:27:53 - Website test.com already exists
+2025-07-02 21:27:53 - No elements file found for website test.com
+2025-07-02 21:27:53 - Socket ID wixDKDQ_gXfSdmniAAAB disconnected
+2025-07-02 21:27:53 - delete_device called with device_id: wixDKDQ_gXfSdmniAAAB
+2025-07-02 21:27:53 - Device deleted successfully: wixDKDQ_gXfSdmniAAAB
+2025-07-02 21:27:53 - Device with socket ID wixDKDQ_gXfSdmniAAAB unregistered successfully
+2025-07-02 21:27:53 - Device with socket ID wixDKDQ_gXfSdmniAAAB unregistered
+2025-07-02 21:27:53 - Unauthenticated user disconnected
+2025-07-02 21:27:53 - client connected
+2025-07-02 21:27:53 - get_website called with URL: https://tfg.zenken.es
+2025-07-02 21:27:53 - Website found: tfg.zenken.es
+2025-07-02 21:27:53 - Website tfg.zenken.es already exists
+2025-07-02 21:27:54 - Found 2361 elements in file ./custom_elements/tfg.zenken.es_elements.json
+2025-07-02 21:27:54 - Elements in page do not match the ones in the file, updating file
+2025-07-02 21:27:55 - Elements file updated with new elements
+2025-07-02 21:27:55 - Socket ID hfTw_X84Gq_p0Gj-AAAC disconnected
+2025-07-02 21:27:55 - delete_device called with device_id: hfTw_X84Gq_p0Gj-AAAC
+2025-07-02 21:27:55 - Device deleted successfully: hfTw_X84Gq_p0Gj-AAAC
+2025-07-02 21:27:55 - Device with socket ID hfTw_X84Gq_p0Gj-AAAC unregistered successfully
+2025-07-02 21:27:55 - Device with socket ID hfTw_X84Gq_p0Gj-AAAC unregistered
+2025-07-02 21:27:55 - Unauthenticated user disconnected
+2025-07-02 21:27:55 - load_user called with user_id: dummy
+2025-07-02 21:27:55 - User loaded: dummy
+2025-07-02 21:27:55 - load_user called with user_id: notfound
+2025-07-02 21:27:55 - User loaded: None
+2025-07-02 21:27:55 - User not found: notfound
+2025-07-02 21:27:55 - client connected
+2025-07-02 21:27:55 - No Referer header found in request
+2025-07-02 21:27:55 - Registering device with data: {'username': 'testuser', 'socketid': 'testsocketid', 'deviceType': 'desktop', 'website_id': 'testwebsite'}
+2025-07-02 21:27:55 - Registering device for user: testuser, socketid: testsocketid, deviceType: desktop and website_id: testwebsite
+2025-07-02 21:27:55 - store_device called with device: {"deviceid": "testsocketid", "username": "testuser", "deviceType": "desktop", "status": "offline"}
+2025-07-02 21:27:55 - Device already exists: testsocketid
+2025-07-02 21:27:55 - Device registration failed for user: testuser
+2025-07-02 21:27:55 - Socket ID Xkv10Fo29iJ0SWJYAAAD disconnected
+2025-07-02 21:27:55 - delete_device called with device_id: Xkv10Fo29iJ0SWJYAAAD
+2025-07-02 21:27:55 - Device deleted successfully: Xkv10Fo29iJ0SWJYAAAD
+2025-07-02 21:27:55 - Device with socket ID Xkv10Fo29iJ0SWJYAAAD unregistered successfully
+2025-07-02 21:27:55 - Device with socket ID Xkv10Fo29iJ0SWJYAAAD unregistered
+2025-07-02 21:27:55 - Unauthenticated user disconnected
+2025-07-02 21:27:55 - client connected
+2025-07-02 21:27:55 - No Referer header found in request
+2025-07-02 21:27:55 - Registering device with data: {}
+2025-07-02 21:27:55 - Invalid registration data: {}
+2025-07-02 21:27:55 - Socket ID Li9Gqj7ID5oX3MBnAAAE disconnected
+2025-07-02 21:27:55 - delete_device called with device_id: Li9Gqj7ID5oX3MBnAAAE
+2025-07-02 21:27:55 - Device deleted successfully: Li9Gqj7ID5oX3MBnAAAE
+2025-07-02 21:27:55 - Device with socket ID Li9Gqj7ID5oX3MBnAAAE unregistered successfully
+2025-07-02 21:27:55 - Device with socket ID Li9Gqj7ID5oX3MBnAAAE unregistered
+2025-07-02 21:27:55 - Unauthenticated user disconnected
+2025-07-02 21:27:55 - client connected
+2025-07-02 21:27:55 - No Referer header found in request
+2025-07-02 21:27:55 - unregister event
+2025-07-02 21:27:55 - Socket ID 197E60UxkN84ijGBAAAF disconnected
+2025-07-02 21:27:55 - delete_device called with device_id: 197E60UxkN84ijGBAAAF
+2025-07-02 21:27:55 - Device deleted successfully: 197E60UxkN84ijGBAAAF
+2025-07-02 21:27:55 - Device with socket ID 197E60UxkN84ijGBAAAF unregistered successfully
+2025-07-02 21:27:55 - Device with socket ID 197E60UxkN84ijGBAAAF unregistered
+2025-07-02 21:27:55 - Unauthenticated user disconnected
+2025-07-02 21:27:55 - client connected
+2025-07-02 21:27:55 - No Referer header found in request
+2025-07-02 21:27:55 - Website reports: Elements processed successfully
+2025-07-02 21:27:55 - Socket ID AVJM52DTzD5F8_yOAAAG disconnected
+2025-07-02 21:27:55 - delete_device called with device_id: AVJM52DTzD5F8_yOAAAG
+2025-07-02 21:27:55 - Device deleted successfully: AVJM52DTzD5F8_yOAAAG
+2025-07-02 21:27:55 - Device with socket ID AVJM52DTzD5F8_yOAAAG unregistered successfully
+2025-07-02 21:27:55 - Device with socket ID AVJM52DTzD5F8_yOAAAG unregistered
+2025-07-02 21:27:55 - Unauthenticated user disconnected
+2025-07-02 21:27:55 - client connected
+2025-07-02 21:27:55 - No Referer header found in request
+2025-07-02 21:27:55 - Socket ID zDUKsgxU4Cwzcn1mAAAH disconnected
+2025-07-02 21:27:55 - delete_device called with device_id: zDUKsgxU4Cwzcn1mAAAH
+2025-07-02 21:27:55 - Device deleted successfully: zDUKsgxU4Cwzcn1mAAAH
+2025-07-02 21:27:55 - Device with socket ID zDUKsgxU4Cwzcn1mAAAH unregistered successfully
+2025-07-02 21:27:55 - Device with socket ID zDUKsgxU4Cwzcn1mAAAH unregistered
+2025-07-02 21:27:55 - Unauthenticated user disconnected
+2025-07-02 21:27:55 - client connected
+2025-07-02 21:27:55 - No Referer header found in request
+2025-07-02 21:27:55 - Socket ID TF5W_FzHO8aQdae8AAAI disconnected
+2025-07-02 21:27:55 - delete_device called with device_id: TF5W_FzHO8aQdae8AAAI
+2025-07-02 21:27:55 - Device deleted successfully: TF5W_FzHO8aQdae8AAAI
+2025-07-02 21:27:55 - Device with socket ID TF5W_FzHO8aQdae8AAAI unregistered successfully
+2025-07-02 21:27:55 - Device with socket ID TF5W_FzHO8aQdae8AAAI unregistered
+2025-07-02 21:27:55 - Unauthenticated user disconnected
+2025-07-02 21:27:55 - login request
+2025-07-02 21:27:55 - Login failed for user nouser
+2025-07-02 21:27:55 - login request
+2025-07-02 21:27:55 - Login failed for user dummy
+2025-07-02 21:27:55 - login request
+2025-07-02 21:27:55 - User Data: dummy
+2025-07-02 21:27:55 - logout request
+2025-07-02 21:27:55 - Logout request received but no user is authenticated
+2025-07-02 21:27:55 - logout request
+2025-07-02 21:27:55 - Logout request received but no user is authenticated
+2025-07-02 21:27:55 - login request
+2025-07-02 21:27:55 - Login failed for user 
+2025-07-02 21:27:55 - login request
+2025-07-02 21:27:55 - signup request
+2025-07-02 21:27:55 - signup request
+2025-07-02 21:27:55 - signup request
+2025-07-02 21:27:55 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$6Uxo26PMLXTNdSTy$abeefe471d1d9d92cfa816c94888232ae4677c656ad0e32af9466ad1daf18c168c29271cac9e4fd2b56879cf56e38b72504f62c5d1220f7bf6b89584fc5e4c56", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:27:55 - Signup failed for user testuser
+2025-07-02 21:27:55 - signup request
+2025-07-02 21:27:55 - Signup failed for user newuser
+2025-07-02 21:28:54 - Database already exists
+2025-07-02 21:28:54 - signup request
+2025-07-02 21:28:54 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$gMaeKiDO3jvkrJcs$ed79cfc18512c94becd8abb14fd7c9b10e8e2087459ad01588ba5618dc9356e287e305770ddbed70c55805de04f843a7bcb2f9aec6db240a151e520f0185e4ad", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:28:54 - Signup failed for user testuser
+2025-07-02 21:28:54 - login request
+2025-07-02 21:28:54 - User found: testuser
+2025-07-02 21:28:54 - get_id called for user: testuser
+2025-07-02 21:28:54 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$68YYJKtr1fkvvdnK$e094e451f74b81b6981b9d80354f609e9008110cab16726a045cd02f2f25f6fce7e676ce62dab6c1fc760b224e3df9bef73699f8f20d9d79a1f5fa53765a081e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:28:54 - logout request
+2025-07-02 21:28:54 - Logout request received but no user is authenticated
+2025-07-02 21:28:54 - login request
+2025-07-02 21:28:54 - signup request
+2025-07-02 21:28:54 - client connected
+2025-07-02 21:28:54 - No Referer header found in request
+2025-07-02 21:28:54 - Socket ID JfcN7E9IccTb2fDsAAAA disconnected
+2025-07-02 21:28:54 - delete_device called with device_id: JfcN7E9IccTb2fDsAAAA
+2025-07-02 21:28:54 - Device deleted successfully: JfcN7E9IccTb2fDsAAAA
+2025-07-02 21:28:54 - Device with socket ID JfcN7E9IccTb2fDsAAAA unregistered successfully
+2025-07-02 21:28:54 - Device with socket ID JfcN7E9IccTb2fDsAAAA unregistered
+2025-07-02 21:28:54 - Unauthenticated user disconnected
+2025-07-02 21:28:54 - client connected
+2025-07-02 21:28:54 - get_website called with URL: http://test.com
+2025-07-02 21:28:54 - Website found: test.com
+2025-07-02 21:28:54 - Website test.com already exists
+2025-07-02 21:28:54 - No elements file found for website test.com
+2025-07-02 21:28:54 - Socket ID 7nkyB8Vr37yeOC01AAAB disconnected
+2025-07-02 21:28:54 - delete_device called with device_id: 7nkyB8Vr37yeOC01AAAB
+2025-07-02 21:28:54 - Device deleted successfully: 7nkyB8Vr37yeOC01AAAB
+2025-07-02 21:28:54 - Device with socket ID 7nkyB8Vr37yeOC01AAAB unregistered successfully
+2025-07-02 21:28:54 - Device with socket ID 7nkyB8Vr37yeOC01AAAB unregistered
+2025-07-02 21:28:54 - Unauthenticated user disconnected
+2025-07-02 21:28:54 - client connected
+2025-07-02 21:28:54 - get_website called with URL: https://tfg.zenken.es
+2025-07-02 21:28:54 - Website found: tfg.zenken.es
+2025-07-02 21:28:54 - Website tfg.zenken.es already exists
+2025-07-02 21:28:54 - Found 2361 elements in file ./custom_elements/tfg.zenken.es_elements.json
+2025-07-02 21:28:55 - Elements in page do not match the ones in the file, updating file
+2025-07-02 21:28:55 - Elements file updated with new elements
+2025-07-02 21:28:56 - Socket ID Yxf4QmRFejSGlh7TAAAC disconnected
+2025-07-02 21:28:56 - delete_device called with device_id: Yxf4QmRFejSGlh7TAAAC
+2025-07-02 21:28:56 - Device deleted successfully: Yxf4QmRFejSGlh7TAAAC
+2025-07-02 21:28:56 - Device with socket ID Yxf4QmRFejSGlh7TAAAC unregistered successfully
+2025-07-02 21:28:56 - Device with socket ID Yxf4QmRFejSGlh7TAAAC unregistered
+2025-07-02 21:28:56 - Unauthenticated user disconnected
+2025-07-02 21:28:56 - load_user called with user_id: dummy
+2025-07-02 21:28:56 - User loaded: dummy
+2025-07-02 21:28:56 - load_user called with user_id: notfound
+2025-07-02 21:28:56 - User loaded: None
+2025-07-02 21:28:56 - User not found: notfound
+2025-07-02 21:28:56 - client connected
+2025-07-02 21:28:56 - No Referer header found in request
+2025-07-02 21:28:56 - Registering device with data: {'username': 'testuser', 'socketid': 'testsocketid', 'deviceType': 'desktop', 'website_id': 'testwebsite'}
+2025-07-02 21:28:56 - Registering device for user: testuser, socketid: testsocketid, deviceType: desktop and website_id: testwebsite
+2025-07-02 21:28:56 - store_device called with device: {"deviceid": "testsocketid", "username": "testuser", "deviceType": "desktop", "status": "offline"}
+2025-07-02 21:28:56 - Device already exists: testsocketid
+2025-07-02 21:28:56 - Device registration failed for user: testuser
+2025-07-02 21:28:56 - Socket ID RFSPVf4whTrBr531AAAD disconnected
+2025-07-02 21:28:56 - delete_device called with device_id: RFSPVf4whTrBr531AAAD
+2025-07-02 21:28:56 - Device deleted successfully: RFSPVf4whTrBr531AAAD
+2025-07-02 21:28:56 - Device with socket ID RFSPVf4whTrBr531AAAD unregistered successfully
+2025-07-02 21:28:56 - Device with socket ID RFSPVf4whTrBr531AAAD unregistered
+2025-07-02 21:28:56 - Unauthenticated user disconnected
+2025-07-02 21:28:56 - client connected
+2025-07-02 21:28:56 - No Referer header found in request
+2025-07-02 21:28:56 - Registering device with data: {}
+2025-07-02 21:28:56 - Invalid registration data: {}
+2025-07-02 21:28:56 - Socket ID YCwCCJMooighAum_AAAE disconnected
+2025-07-02 21:28:56 - delete_device called with device_id: YCwCCJMooighAum_AAAE
+2025-07-02 21:28:56 - Device deleted successfully: YCwCCJMooighAum_AAAE
+2025-07-02 21:28:56 - Device with socket ID YCwCCJMooighAum_AAAE unregistered successfully
+2025-07-02 21:28:56 - Device with socket ID YCwCCJMooighAum_AAAE unregistered
+2025-07-02 21:28:56 - Unauthenticated user disconnected
+2025-07-02 21:28:56 - client connected
+2025-07-02 21:28:56 - No Referer header found in request
+2025-07-02 21:28:56 - unregister event
+2025-07-02 21:28:56 - Socket ID _QuSKnJn21uXFEnAAAAF disconnected
+2025-07-02 21:28:56 - delete_device called with device_id: _QuSKnJn21uXFEnAAAAF
+2025-07-02 21:28:56 - Device deleted successfully: _QuSKnJn21uXFEnAAAAF
+2025-07-02 21:28:56 - Device with socket ID _QuSKnJn21uXFEnAAAAF unregistered successfully
+2025-07-02 21:28:56 - Device with socket ID _QuSKnJn21uXFEnAAAAF unregistered
+2025-07-02 21:28:56 - Unauthenticated user disconnected
+2025-07-02 21:28:56 - client connected
+2025-07-02 21:28:56 - No Referer header found in request
+2025-07-02 21:28:56 - Website reports: Elements processed successfully
+2025-07-02 21:28:56 - Socket ID Q6LF339rADCtiq2jAAAG disconnected
+2025-07-02 21:28:56 - delete_device called with device_id: Q6LF339rADCtiq2jAAAG
+2025-07-02 21:28:56 - Device deleted successfully: Q6LF339rADCtiq2jAAAG
+2025-07-02 21:28:56 - Device with socket ID Q6LF339rADCtiq2jAAAG unregistered successfully
+2025-07-02 21:28:56 - Device with socket ID Q6LF339rADCtiq2jAAAG unregistered
+2025-07-02 21:28:56 - Unauthenticated user disconnected
+2025-07-02 21:28:56 - client connected
+2025-07-02 21:28:56 - No Referer header found in request
+2025-07-02 21:28:56 - Socket ID BfPQHcQg9xQki8C_AAAH disconnected
+2025-07-02 21:28:56 - delete_device called with device_id: BfPQHcQg9xQki8C_AAAH
+2025-07-02 21:28:56 - Device deleted successfully: BfPQHcQg9xQki8C_AAAH
+2025-07-02 21:28:56 - Device with socket ID BfPQHcQg9xQki8C_AAAH unregistered successfully
+2025-07-02 21:28:56 - Device with socket ID BfPQHcQg9xQki8C_AAAH unregistered
+2025-07-02 21:28:56 - Unauthenticated user disconnected
+2025-07-02 21:28:56 - client connected
+2025-07-02 21:28:56 - No Referer header found in request
+2025-07-02 21:28:56 - Socket ID 5CjdzBGyBWnxAhjkAAAI disconnected
+2025-07-02 21:28:56 - delete_device called with device_id: 5CjdzBGyBWnxAhjkAAAI
+2025-07-02 21:28:56 - Device deleted successfully: 5CjdzBGyBWnxAhjkAAAI
+2025-07-02 21:28:56 - Device with socket ID 5CjdzBGyBWnxAhjkAAAI unregistered successfully
+2025-07-02 21:28:56 - Device with socket ID 5CjdzBGyBWnxAhjkAAAI unregistered
+2025-07-02 21:28:56 - Unauthenticated user disconnected
+2025-07-02 21:28:56 - login request
+2025-07-02 21:28:56 - Login failed for user nouser
+2025-07-02 21:28:56 - login request
+2025-07-02 21:28:56 - Login failed for user dummy
+2025-07-02 21:28:56 - login request
+2025-07-02 21:28:56 - User Data: dummy
+2025-07-02 21:28:56 - logout request
+2025-07-02 21:28:56 - Logout request received but no user is authenticated
+2025-07-02 21:28:56 - logout request
+2025-07-02 21:28:56 - Logout request received but no user is authenticated
+2025-07-02 21:28:56 - login request
+2025-07-02 21:28:56 - Login failed for user 
+2025-07-02 21:28:56 - login request
+2025-07-02 21:28:56 - signup request
+2025-07-02 21:28:56 - signup request
+2025-07-02 21:28:56 - signup request
+2025-07-02 21:28:56 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$g2EdMfTrfKXYYseN$16d02594b84a59aa6e4c39d50e54ca6427201e2e08a3ec6904df7516f38eb5f5eb2fc2869dcd2b69f70f076bce1f0102fef6ef96ca15a07470ab5d0e6eb9a323", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:28:56 - Signup failed for user testuser
+2025-07-02 21:28:56 - signup request
+2025-07-02 21:28:56 - Signup failed for user newuser
+2025-07-02 21:29:58 - Database already exists
+2025-07-02 21:29:58 - signup request
+2025-07-02 21:29:58 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$WY688J408XoqJdx3$fb31c174b7b3967520eb77a9c80aa86a81b5d477236bc5ffc0c51f67f98e8cf70086768f98654fe3ffecfdd5e447da186233a981c0db43400d40b5a90411e74d", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:29:58 - Signup failed for user testuser
+2025-07-02 21:29:58 - login request
+2025-07-02 21:29:58 - User found: testuser
+2025-07-02 21:29:59 - get_id called for user: testuser
+2025-07-02 21:29:59 - User Data: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$68YYJKtr1fkvvdnK$e094e451f74b81b6981b9d80354f609e9008110cab16726a045cd02f2f25f6fce7e676ce62dab6c1fc760b224e3df9bef73699f8f20d9d79a1f5fa53765a081e", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:29:59 - logout request
+2025-07-02 21:29:59 - Logout request received but no user is authenticated
+2025-07-02 21:29:59 - login request
+2025-07-02 21:29:59 - signup request
+2025-07-02 21:29:59 - client connected
+2025-07-02 21:29:59 - No Referer header found in request
+2025-07-02 21:29:59 - Socket ID a9jRPJNHpBVPONO6AAAA disconnected
+2025-07-02 21:29:59 - delete_device called with device_id: a9jRPJNHpBVPONO6AAAA
+2025-07-02 21:29:59 - Device deleted successfully: a9jRPJNHpBVPONO6AAAA
+2025-07-02 21:29:59 - Device with socket ID a9jRPJNHpBVPONO6AAAA unregistered successfully
+2025-07-02 21:29:59 - Device with socket ID a9jRPJNHpBVPONO6AAAA unregistered
+2025-07-02 21:29:59 - Unauthenticated user disconnected
+2025-07-02 21:29:59 - client connected
+2025-07-02 21:29:59 - get_website called with URL: http://test.com
+2025-07-02 21:29:59 - Website found: test.com
+2025-07-02 21:29:59 - Website test.com already exists
+2025-07-02 21:29:59 - No elements file found for website test.com
+2025-07-02 21:29:59 - Socket ID E7AP0ZYnq9M_juYJAAAB disconnected
+2025-07-02 21:29:59 - delete_device called with device_id: E7AP0ZYnq9M_juYJAAAB
+2025-07-02 21:29:59 - Device deleted successfully: E7AP0ZYnq9M_juYJAAAB
+2025-07-02 21:29:59 - Device with socket ID E7AP0ZYnq9M_juYJAAAB unregistered successfully
+2025-07-02 21:29:59 - Device with socket ID E7AP0ZYnq9M_juYJAAAB unregistered
+2025-07-02 21:29:59 - Unauthenticated user disconnected
+2025-07-02 21:29:59 - client connected
+2025-07-02 21:29:59 - get_website called with URL: https://tfg.zenken.es
+2025-07-02 21:29:59 - Website found: tfg.zenken.es
+2025-07-02 21:29:59 - Website tfg.zenken.es already exists
+2025-07-02 21:29:59 - Found 2361 elements in file ./custom_elements/tfg.zenken.es_elements.json
+2025-07-02 21:30:00 - Elements in page do not match the ones in the file, updating file
+2025-07-02 21:30:00 - Elements file updated with new elements
+2025-07-02 21:30:00 - Socket ID E-6loPsWdLC8Xs85AAAC disconnected
+2025-07-02 21:30:00 - delete_device called with device_id: E-6loPsWdLC8Xs85AAAC
+2025-07-02 21:30:00 - Device deleted successfully: E-6loPsWdLC8Xs85AAAC
+2025-07-02 21:30:00 - Device with socket ID E-6loPsWdLC8Xs85AAAC unregistered successfully
+2025-07-02 21:30:00 - Device with socket ID E-6loPsWdLC8Xs85AAAC unregistered
+2025-07-02 21:30:00 - Unauthenticated user disconnected
+2025-07-02 21:30:00 - load_user called with user_id: dummy
+2025-07-02 21:30:00 - User loaded: dummy
+2025-07-02 21:30:00 - load_user called with user_id: notfound
+2025-07-02 21:30:00 - User loaded: None
+2025-07-02 21:30:00 - User not found: notfound
+2025-07-02 21:30:00 - client connected
+2025-07-02 21:30:00 - No Referer header found in request
+2025-07-02 21:30:00 - Registering device with data: {'username': 'testuser', 'socketid': 'testsocketid', 'deviceType': 'desktop', 'website_id': 'testwebsite'}
+2025-07-02 21:30:00 - Registering device for user: testuser, socketid: testsocketid, deviceType: desktop and website_id: testwebsite
+2025-07-02 21:30:00 - store_device called with device: {"deviceid": "testsocketid", "username": "testuser", "deviceType": "desktop", "status": "offline"}
+2025-07-02 21:30:00 - Device already exists: testsocketid
+2025-07-02 21:30:00 - Device registration failed for user: testuser
+2025-07-02 21:30:00 - Socket ID -prmO4B5wQayB7lmAAAD disconnected
+2025-07-02 21:30:00 - delete_device called with device_id: -prmO4B5wQayB7lmAAAD
+2025-07-02 21:30:00 - Device deleted successfully: -prmO4B5wQayB7lmAAAD
+2025-07-02 21:30:00 - Device with socket ID -prmO4B5wQayB7lmAAAD unregistered successfully
+2025-07-02 21:30:00 - Device with socket ID -prmO4B5wQayB7lmAAAD unregistered
+2025-07-02 21:30:00 - Unauthenticated user disconnected
+2025-07-02 21:30:00 - client connected
+2025-07-02 21:30:00 - No Referer header found in request
+2025-07-02 21:30:00 - Registering device with data: {}
+2025-07-02 21:30:00 - Invalid registration data: {}
+2025-07-02 21:30:00 - Socket ID zys5cCwyU3YCp7RBAAAE disconnected
+2025-07-02 21:30:00 - delete_device called with device_id: zys5cCwyU3YCp7RBAAAE
+2025-07-02 21:30:00 - Device deleted successfully: zys5cCwyU3YCp7RBAAAE
+2025-07-02 21:30:00 - Device with socket ID zys5cCwyU3YCp7RBAAAE unregistered successfully
+2025-07-02 21:30:00 - Device with socket ID zys5cCwyU3YCp7RBAAAE unregistered
+2025-07-02 21:30:00 - Unauthenticated user disconnected
+2025-07-02 21:30:00 - client connected
+2025-07-02 21:30:00 - No Referer header found in request
+2025-07-02 21:30:00 - unregister event
+2025-07-02 21:30:00 - Socket ID WVRpiItDnqxmD4CpAAAF disconnected
+2025-07-02 21:30:00 - delete_device called with device_id: WVRpiItDnqxmD4CpAAAF
+2025-07-02 21:30:00 - Device deleted successfully: WVRpiItDnqxmD4CpAAAF
+2025-07-02 21:30:00 - Device with socket ID WVRpiItDnqxmD4CpAAAF unregistered successfully
+2025-07-02 21:30:00 - Device with socket ID WVRpiItDnqxmD4CpAAAF unregistered
+2025-07-02 21:30:00 - Unauthenticated user disconnected
+2025-07-02 21:30:00 - client connected
+2025-07-02 21:30:00 - No Referer header found in request
+2025-07-02 21:30:00 - Website reports: Elements processed successfully
+2025-07-02 21:30:00 - Socket ID 1oW4Q7Qdo6uojAcPAAAG disconnected
+2025-07-02 21:30:00 - delete_device called with device_id: 1oW4Q7Qdo6uojAcPAAAG
+2025-07-02 21:30:00 - Device deleted successfully: 1oW4Q7Qdo6uojAcPAAAG
+2025-07-02 21:30:00 - Device with socket ID 1oW4Q7Qdo6uojAcPAAAG unregistered successfully
+2025-07-02 21:30:00 - Device with socket ID 1oW4Q7Qdo6uojAcPAAAG unregistered
+2025-07-02 21:30:00 - Unauthenticated user disconnected
+2025-07-02 21:30:00 - client connected
+2025-07-02 21:30:00 - No Referer header found in request
+2025-07-02 21:30:00 - Socket ID Rfj0W7Lpy1Uhw9lKAAAH disconnected
+2025-07-02 21:30:00 - delete_device called with device_id: Rfj0W7Lpy1Uhw9lKAAAH
+2025-07-02 21:30:00 - Device deleted successfully: Rfj0W7Lpy1Uhw9lKAAAH
+2025-07-02 21:30:00 - Device with socket ID Rfj0W7Lpy1Uhw9lKAAAH unregistered successfully
+2025-07-02 21:30:00 - Device with socket ID Rfj0W7Lpy1Uhw9lKAAAH unregistered
+2025-07-02 21:30:00 - Unauthenticated user disconnected
+2025-07-02 21:30:00 - client connected
+2025-07-02 21:30:00 - No Referer header found in request
+2025-07-02 21:30:00 - Socket ID NboVPLv00JePZmYtAAAI disconnected
+2025-07-02 21:30:00 - delete_device called with device_id: NboVPLv00JePZmYtAAAI
+2025-07-02 21:30:00 - Device deleted successfully: NboVPLv00JePZmYtAAAI
+2025-07-02 21:30:00 - Device with socket ID NboVPLv00JePZmYtAAAI unregistered successfully
+2025-07-02 21:30:00 - Device with socket ID NboVPLv00JePZmYtAAAI unregistered
+2025-07-02 21:30:00 - Unauthenticated user disconnected
+2025-07-02 21:30:00 - login request
+2025-07-02 21:30:00 - Login failed for user nouser
+2025-07-02 21:30:00 - login request
+2025-07-02 21:30:00 - Login failed for user dummy
+2025-07-02 21:30:00 - login request
+2025-07-02 21:30:00 - User Data: dummy
+2025-07-02 21:30:00 - logout request
+2025-07-02 21:30:00 - Logout request received but no user is authenticated
+2025-07-02 21:30:00 - logout request
+2025-07-02 21:30:00 - Logout request received but no user is authenticated
+2025-07-02 21:30:00 - login request
+2025-07-02 21:30:00 - Login failed for user 
+2025-07-02 21:30:00 - login request
+2025-07-02 21:30:00 - signup request
+2025-07-02 21:30:00 - signup request
+2025-07-02 21:30:00 - signup request
+2025-07-02 21:30:00 - store_user called with user: {"username": "testuser", "email": "testuser@example.com", "password": "scrypt:32768:8:1$HMCpxVlWTp3zhxds$1e610650995b95f607538aa3dbfb98a26f465d294743863a4f6b5d3ae1abbf0fe4113b975c15dbc1276c30e61577c3d4ce7bc2441f0d98420a071a092637a19d", "is_active": 1, "is_authenticated": true, "is_anonymous": false}
+2025-07-02 21:30:00 - Signup failed for user testuser
+2025-07-02 21:30:00 - signup request
+2025-07-02 21:30:00 - Signup failed for user newuser
