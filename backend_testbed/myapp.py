@@ -4,6 +4,7 @@ from flask_login import LoginManager, login_user, logout_user, current_user, log
 from werkzeug.middleware.proxy_fix import ProxyFix
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import User, Website, UserDAO, Device, DeviceDAO, EventDAO, Event
+from webpage_parser import assign_ids_to_elements
 import json
 from logwriter import write_log
 import encryption as encryption
@@ -101,41 +102,43 @@ def connect():
         write_log('Website {} does not exist, creating it'.format(website_name))
         new_website = Website(id=None, name=website_name, url=url)
         if new_website.store_website(new_website):
+            # create new website representation
+            elements = assign_ids_to_elements(url)
+            elements_file = './custom_elements/{}_elements.json'.format(website_name)
+            with open(elements_file, 'w') as f:
+                json.dump(elements, f, indent=2, ensure_ascii=False)
+            f.close()
+            write_log('Elements assigned and saved to {}'.format(elements_file))
             write_log('Website {} created successfully'.format(website_name))
-            new_website = Website().get_website(url)
-            # check if website has been processed already
-            try:
-                elements_file = './custom_elements/{}_elements.json'.format(website_name)
-                with open(elements_file, 'r') as f:
-                    elements = json.load(f)
-                write_log('Found {} elements in file {}'.format(len(elements), elements_file))
-            except FileNotFoundError:
-                write_log('No elements found for website {}'.format(website_name))
-                emit('error', {'message': 'No elements file found for website {}'.format(website_name)})
-                return
-            emit('elements', {'elements': elements, 'website': new_website.id})
+            emit('add_listeners', {'elements': elements, 'website': new_website.id}, to=request.sid)
         else:
             write_log('Failed to create website {}'.format(website_name))
     else:
         write_log('Website {} already exists'.format(website_name))
-        # Grab elements from file
+        # check if elements file exists and if there are differences
+        elements_file = './custom_elements/{}_elements.json'.format(website_name)
         try:
-            elements_file = './custom_elements/{}_elements.json'.format(website_name)
             with open(elements_file, 'r') as f:
                 elements = json.load(f)
             write_log('Found {} elements in file {}'.format(len(elements), elements_file))
+            # check if current elements in page match the ones in the file
+            elements_in_page = assign_ids_to_elements(url)
+            if elements_in_page != elements:
+                write_log('Elements in page do not match the ones in the file, updating file')
+                with open(elements_file, 'w') as f:
+                    json.dump(elements_in_page, f, indent=2, ensure_ascii=False)
+                f.close()
+                write_log('Elements file updated with new elements')
+                emit('add_listeners', {'website': website.id, 'elements': elements}, to=request.sid)
+            else:
+                write_log('Elements in page match the ones in the file, no update needed')
+                emit('add_listeners', {'website': website.id, 'elements': elements}, to=request.sid)
         except FileNotFoundError:
             write_log('No elements file found for website {}'.format(website_name))
-            emit('error', {'message': 'No elements file found for website {}'.format(website_name)})
-            return
-        emit('elements', {'elements': elements, 'website': website.id})
+            socketio.emit('error', {'message': 'No elements file found for website {}'.format(website_name)}, to=request.sid)
+    # Check if the user is authenticated
     if current_user.is_authenticated:
-        write_log('User {} connected'.format(current_user.username))
-        join_room(current_user.username)
-        emit('login_success', {'username': current_user.username}, to=current_user.username)
-    else:
-        write_log('Unauthenticated user connected')
-        emit('unauthenticated', {'message': 'Please login to continue'})
+        socketio.emit('login_success', {'username': current_user.username}, to=request.sid)
 
 @socketio.on('disconnect')
 def disconnect():
@@ -198,24 +201,12 @@ def unregister(data):
 
 @socketio.on('elements_processed')
 def elements_processed(data):
-    website_name = request.headers.get('Referer', '').split('/')[2] if request.headers.get('Referer') else None
-    #Grab ID of the website
-    url = request.headers.get('Referer', '').split('/')[0] + '//' + website_name
-    website = Website().get_website(url)
-    # Grab elements from file
-    try:
-        elements_file = './custom_elements/{}_elements.json'.format(website_name)
-        with open(elements_file, 'r') as f:
-            elements = json.load(f)
-        write_log('Found {} elements in file {}'.format(len(elements), elements_file))
-    except FileNotFoundError:
-        write_log('No elements file found for website {}'.format(website_name))
     write_log('Website reports: ' + data['message'])
-    emit('add_listeners', {'elements': elements, 'website': website.id})
 
 @socketio.on('send_event')
 def send_event(data):
-    print('event received: {}'.format(data))
+    # check if the target device is a mobile device
+    print(data)
     emit('receive_event', data, to=data['userId'])
 
 

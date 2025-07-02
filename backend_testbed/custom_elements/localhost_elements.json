@@ -20,20 +20,20 @@
   {
     "eventType": "click",
     "element": "button",
-    "assignedId": "auto-782c1543-1d93-41d5-96a1-ddd5f53379f2",
-    "outerHTML": "<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>"
+    "assignedId": "auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc",
+    "outerHTML": "<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>"
   },
   {
     "eventType": "click",
     "element": "a",
-    "assignedId": "auto-0f2197f4-ec87-45e0-8662-e4c213802e7f",
-    "outerHTML": "<a class=\"navbar-brand\" href=\"#\" id=\"auto-0f2197f4-ec87-45e0-8662-e4c213802e7f\">TFG WIH Front Version 2</a>"
+    "assignedId": "auto-72ea8ba6-ce73-405f-aea0-c531bf250cb4",
+    "outerHTML": "<a class=\"navbar-brand\" href=\"#\" id=\"auto-72ea8ba6-ce73-405f-aea0-c531bf250cb4\">TFG WIH Front Version 2</a>"
   },
   {
     "eventType": "click",
     "element": "a",
-    "assignedId": "auto-50c5afc2-df33-48be-8568-2e5fe098b915",
-    "outerHTML": "<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-50c5afc2-df33-48be-8568-2e5fe098b915\">Go to Version 1</a>"
+    "assignedId": "auto-f95a6b3d-16c0-4edc-9d62-69ad35571b55",
+    "outerHTML": "<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-f95a6b3d-16c0-4edc-9d62-69ad35571b55\">Go to Version 1</a>"
   },
   {
     "eventType": "dblclick",
@@ -56,20 +56,20 @@
   {
     "eventType": "dblclick",
     "element": "button",
-    "assignedId": "auto-782c1543-1d93-41d5-96a1-ddd5f53379f2",
-    "outerHTML": "<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>"
+    "assignedId": "auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc",
+    "outerHTML": "<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>"
   },
   {
     "eventType": "dblclick",
     "element": "a",
-    "assignedId": "auto-0f2197f4-ec87-45e0-8662-e4c213802e7f",
-    "outerHTML": "<a class=\"navbar-brand\" href=\"#\" id=\"auto-0f2197f4-ec87-45e0-8662-e4c213802e7f\">TFG WIH Front Version 2</a>"
+    "assignedId": "auto-72ea8ba6-ce73-405f-aea0-c531bf250cb4",
+    "outerHTML": "<a class=\"navbar-brand\" href=\"#\" id=\"auto-72ea8ba6-ce73-405f-aea0-c531bf250cb4\">TFG WIH Front Version 2</a>"
   },
   {
     "eventType": "dblclick",
     "element": "a",
-    "assignedId": "auto-50c5afc2-df33-48be-8568-2e5fe098b915",
-    "outerHTML": "<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-50c5afc2-df33-48be-8568-2e5fe098b915\">Go to Version 1</a>"
+    "assignedId": "auto-f95a6b3d-16c0-4edc-9d62-69ad35571b55",
+    "outerHTML": "<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-f95a6b3d-16c0-4edc-9d62-69ad35571b55\">Go to Version 1</a>"
   },
   {
     "eventType": "keypress",
@@ -80,62 +80,62 @@
   {
     "eventType": "touchstart",
     "element": "div",
-    "assignedId": "auto-ae4e7046-b4b3-49d7-a200-777be7ab9540",
-    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-ae4e7046-b4b3-49d7-a200-777be7ab9540\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-50c5afc2-df33-48be-8568-2e5fe098b915\">Go to Version 1</a>\n</div>"
+    "assignedId": "auto-e7c85e7d-8011-462f-a977-94dcc6ca7786",
+    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-e7c85e7d-8011-462f-a977-94dcc6ca7786\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-f95a6b3d-16c0-4edc-9d62-69ad35571b55\">Go to Version 1</a>\n</div>"
   },
   {
     "eventType": "touchstart",
     "element": "div",
-    "assignedId": "auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0",
-    "outerHTML": "<div class=\"container\" id=\"auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0\">\n<div class=\"row\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161",
+    "outerHTML": "<div class=\"container\" id=\"auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161\">\n<div class=\"row\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "touchstart",
     "element": "div",
-    "assignedId": "auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b",
-    "outerHTML": "<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
+    "assignedId": "auto-69efec34-635a-4eb2-84bc-7643374d4ef0",
+    "outerHTML": "<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
   },
   {
     "eventType": "touchstart",
     "element": "div",
-    "assignedId": "auto-a563f84e-2e45-48eb-b749-271897377b43",
-    "outerHTML": "<div class=\"container\" id=\"auto-a563f84e-2e45-48eb-b749-271897377b43\">\n<div class=\"row align-items-start\">\n<div class=\"col\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\">\n<div class=\"col\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
+    "assignedId": "auto-2459c09d-11eb-48b0-ad47-91b934ee502f",
+    "outerHTML": "<div class=\"container\" id=\"auto-2459c09d-11eb-48b0-ad47-91b934ee502f\">\n<div class=\"row align-items-start\">\n<div class=\"col\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\">\n<div class=\"col\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
   },
   {
     "eventType": "touchstart",
     "element": "div",
-    "assignedId": "auto-386b9764-0b61-4568-bf95-61147e9df463",
-    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-44f52c8e-2675-4f3a-8693-5d57b96286b7",
+    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "touchstart",
     "element": "div",
-    "assignedId": "auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0",
-    "outerHTML": "<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
+    "assignedId": "auto-6069b80b-c183-4d4f-b66e-f3acb9746a75",
+    "outerHTML": "<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
   },
   {
     "eventType": "touchstart",
     "element": "div",
-    "assignedId": "auto-000ac5dd-e95c-4717-84ee-482a7e433726",
-    "outerHTML": "<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
+    "assignedId": "auto-7d27644d-30b9-46f8-9192-b46d8a079d0d",
+    "outerHTML": "<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
   },
   {
     "eventType": "touchstart",
     "element": "div",
-    "assignedId": "auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4",
-    "outerHTML": "<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
+    "assignedId": "auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef",
+    "outerHTML": "<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
   },
   {
     "eventType": "touchstart",
     "element": "div",
-    "assignedId": "auto-574681c6-7ee9-4a18-a35f-097be93fbb9a",
-    "outerHTML": "<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
+    "assignedId": "auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad",
+    "outerHTML": "<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
   },
   {
     "eventType": "touchstart",
     "element": "div",
-    "assignedId": "auto-a1bb24da-2f69-484a-8edf-dda48b7cab13",
-    "outerHTML": "<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
+    "assignedId": "auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707",
+    "outerHTML": "<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
   },
   {
     "eventType": "touchstart",
@@ -146,62 +146,62 @@
   {
     "eventType": "touchmove",
     "element": "div",
-    "assignedId": "auto-ae4e7046-b4b3-49d7-a200-777be7ab9540",
-    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-ae4e7046-b4b3-49d7-a200-777be7ab9540\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-50c5afc2-df33-48be-8568-2e5fe098b915\">Go to Version 1</a>\n</div>"
+    "assignedId": "auto-e7c85e7d-8011-462f-a977-94dcc6ca7786",
+    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-e7c85e7d-8011-462f-a977-94dcc6ca7786\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-f95a6b3d-16c0-4edc-9d62-69ad35571b55\">Go to Version 1</a>\n</div>"
   },
   {
     "eventType": "touchmove",
     "element": "div",
-    "assignedId": "auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0",
-    "outerHTML": "<div class=\"container\" id=\"auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0\">\n<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161",
+    "outerHTML": "<div class=\"container\" id=\"auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161\">\n<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "touchmove",
     "element": "div",
-    "assignedId": "auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b",
-    "outerHTML": "<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
+    "assignedId": "auto-69efec34-635a-4eb2-84bc-7643374d4ef0",
+    "outerHTML": "<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
   },
   {
     "eventType": "touchmove",
     "element": "div",
-    "assignedId": "auto-a563f84e-2e45-48eb-b749-271897377b43",
-    "outerHTML": "<div class=\"container\" id=\"auto-a563f84e-2e45-48eb-b749-271897377b43\">\n<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
+    "assignedId": "auto-2459c09d-11eb-48b0-ad47-91b934ee502f",
+    "outerHTML": "<div class=\"container\" id=\"auto-2459c09d-11eb-48b0-ad47-91b934ee502f\">\n<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
   },
   {
     "eventType": "touchmove",
     "element": "div",
-    "assignedId": "auto-386b9764-0b61-4568-bf95-61147e9df463",
-    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-44f52c8e-2675-4f3a-8693-5d57b96286b7",
+    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "touchmove",
     "element": "div",
-    "assignedId": "auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0",
-    "outerHTML": "<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
+    "assignedId": "auto-6069b80b-c183-4d4f-b66e-f3acb9746a75",
+    "outerHTML": "<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
   },
   {
     "eventType": "touchmove",
     "element": "div",
-    "assignedId": "auto-000ac5dd-e95c-4717-84ee-482a7e433726",
-    "outerHTML": "<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
+    "assignedId": "auto-7d27644d-30b9-46f8-9192-b46d8a079d0d",
+    "outerHTML": "<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
   },
   {
     "eventType": "touchmove",
     "element": "div",
-    "assignedId": "auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4",
-    "outerHTML": "<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
+    "assignedId": "auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef",
+    "outerHTML": "<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
   },
   {
     "eventType": "touchmove",
     "element": "div",
-    "assignedId": "auto-574681c6-7ee9-4a18-a35f-097be93fbb9a",
-    "outerHTML": "<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
+    "assignedId": "auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad",
+    "outerHTML": "<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
   },
   {
     "eventType": "touchmove",
     "element": "div",
-    "assignedId": "auto-a1bb24da-2f69-484a-8edf-dda48b7cab13",
-    "outerHTML": "<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
+    "assignedId": "auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707",
+    "outerHTML": "<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
   },
   {
     "eventType": "touchmove",
@@ -212,62 +212,62 @@
   {
     "eventType": "touchend",
     "element": "div",
-    "assignedId": "auto-ae4e7046-b4b3-49d7-a200-777be7ab9540",
-    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-ae4e7046-b4b3-49d7-a200-777be7ab9540\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-50c5afc2-df33-48be-8568-2e5fe098b915\">Go to Version 1</a>\n</div>"
+    "assignedId": "auto-e7c85e7d-8011-462f-a977-94dcc6ca7786",
+    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-e7c85e7d-8011-462f-a977-94dcc6ca7786\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-f95a6b3d-16c0-4edc-9d62-69ad35571b55\">Go to Version 1</a>\n</div>"
   },
   {
     "eventType": "touchend",
     "element": "div",
-    "assignedId": "auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0",
-    "outerHTML": "<div class=\"container\" id=\"auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0\">\n<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161",
+    "outerHTML": "<div class=\"container\" id=\"auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161\">\n<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "touchend",
     "element": "div",
-    "assignedId": "auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b",
-    "outerHTML": "<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
+    "assignedId": "auto-69efec34-635a-4eb2-84bc-7643374d4ef0",
+    "outerHTML": "<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
   },
   {
     "eventType": "touchend",
     "element": "div",
-    "assignedId": "auto-a563f84e-2e45-48eb-b749-271897377b43",
-    "outerHTML": "<div class=\"container\" id=\"auto-a563f84e-2e45-48eb-b749-271897377b43\">\n<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
+    "assignedId": "auto-2459c09d-11eb-48b0-ad47-91b934ee502f",
+    "outerHTML": "<div class=\"container\" id=\"auto-2459c09d-11eb-48b0-ad47-91b934ee502f\">\n<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
   },
   {
     "eventType": "touchend",
     "element": "div",
-    "assignedId": "auto-386b9764-0b61-4568-bf95-61147e9df463",
-    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-44f52c8e-2675-4f3a-8693-5d57b96286b7",
+    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "touchend",
     "element": "div",
-    "assignedId": "auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0",
-    "outerHTML": "<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
+    "assignedId": "auto-6069b80b-c183-4d4f-b66e-f3acb9746a75",
+    "outerHTML": "<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
   },
   {
     "eventType": "touchend",
     "element": "div",
-    "assignedId": "auto-000ac5dd-e95c-4717-84ee-482a7e433726",
-    "outerHTML": "<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
+    "assignedId": "auto-7d27644d-30b9-46f8-9192-b46d8a079d0d",
+    "outerHTML": "<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
   },
   {
     "eventType": "touchend",
     "element": "div",
-    "assignedId": "auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4",
-    "outerHTML": "<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
+    "assignedId": "auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef",
+    "outerHTML": "<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
   },
   {
     "eventType": "touchend",
     "element": "div",
-    "assignedId": "auto-574681c6-7ee9-4a18-a35f-097be93fbb9a",
-    "outerHTML": "<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
+    "assignedId": "auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad",
+    "outerHTML": "<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
   },
   {
     "eventType": "touchend",
     "element": "div",
-    "assignedId": "auto-a1bb24da-2f69-484a-8edf-dda48b7cab13",
-    "outerHTML": "<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
+    "assignedId": "auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707",
+    "outerHTML": "<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
   },
   {
     "eventType": "touchend",
@@ -278,62 +278,62 @@
   {
     "eventType": "touchcancel",
     "element": "div",
-    "assignedId": "auto-ae4e7046-b4b3-49d7-a200-777be7ab9540",
-    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-ae4e7046-b4b3-49d7-a200-777be7ab9540\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-50c5afc2-df33-48be-8568-2e5fe098b915\">Go to Version 1</a>\n</div>"
+    "assignedId": "auto-e7c85e7d-8011-462f-a977-94dcc6ca7786",
+    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-e7c85e7d-8011-462f-a977-94dcc6ca7786\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-f95a6b3d-16c0-4edc-9d62-69ad35571b55\">Go to Version 1</a>\n</div>"
   },
   {
     "eventType": "touchcancel",
     "element": "div",
-    "assignedId": "auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0",
-    "outerHTML": "<div class=\"container\" id=\"auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0\">\n<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161",
+    "outerHTML": "<div class=\"container\" id=\"auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161\">\n<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "touchcancel",
     "element": "div",
-    "assignedId": "auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b",
-    "outerHTML": "<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
+    "assignedId": "auto-69efec34-635a-4eb2-84bc-7643374d4ef0",
+    "outerHTML": "<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
   },
   {
     "eventType": "touchcancel",
     "element": "div",
-    "assignedId": "auto-a563f84e-2e45-48eb-b749-271897377b43",
-    "outerHTML": "<div class=\"container\" id=\"auto-a563f84e-2e45-48eb-b749-271897377b43\">\n<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
+    "assignedId": "auto-2459c09d-11eb-48b0-ad47-91b934ee502f",
+    "outerHTML": "<div class=\"container\" id=\"auto-2459c09d-11eb-48b0-ad47-91b934ee502f\">\n<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
   },
   {
     "eventType": "touchcancel",
     "element": "div",
-    "assignedId": "auto-386b9764-0b61-4568-bf95-61147e9df463",
-    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-44f52c8e-2675-4f3a-8693-5d57b96286b7",
+    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "touchcancel",
     "element": "div",
-    "assignedId": "auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0",
-    "outerHTML": "<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
+    "assignedId": "auto-6069b80b-c183-4d4f-b66e-f3acb9746a75",
+    "outerHTML": "<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
   },
   {
     "eventType": "touchcancel",
     "element": "div",
-    "assignedId": "auto-000ac5dd-e95c-4717-84ee-482a7e433726",
-    "outerHTML": "<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
+    "assignedId": "auto-7d27644d-30b9-46f8-9192-b46d8a079d0d",
+    "outerHTML": "<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
   },
   {
     "eventType": "touchcancel",
     "element": "div",
-    "assignedId": "auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4",
-    "outerHTML": "<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
+    "assignedId": "auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef",
+    "outerHTML": "<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
   },
   {
     "eventType": "touchcancel",
     "element": "div",
-    "assignedId": "auto-574681c6-7ee9-4a18-a35f-097be93fbb9a",
-    "outerHTML": "<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
+    "assignedId": "auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad",
+    "outerHTML": "<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
   },
   {
     "eventType": "touchcancel",
     "element": "div",
-    "assignedId": "auto-a1bb24da-2f69-484a-8edf-dda48b7cab13",
-    "outerHTML": "<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
+    "assignedId": "auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707",
+    "outerHTML": "<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
   },
   {
     "eventType": "touchcancel",
@@ -344,427 +344,463 @@
   {
     "eventType": "dragstart",
     "element": "div",
-    "assignedId": "auto-ae4e7046-b4b3-49d7-a200-777be7ab9540",
-    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-ae4e7046-b4b3-49d7-a200-777be7ab9540\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-50c5afc2-df33-48be-8568-2e5fe098b915\">Go to Version 1</a>\n</div>"
+    "assignedId": "auto-e7c85e7d-8011-462f-a977-94dcc6ca7786",
+    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-e7c85e7d-8011-462f-a977-94dcc6ca7786\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-f95a6b3d-16c0-4edc-9d62-69ad35571b55\">Go to Version 1</a>\n</div>"
   },
   {
     "eventType": "dragstart",
     "element": "div",
-    "assignedId": "auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0",
-    "outerHTML": "<div class=\"container\" id=\"auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0\">\n<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161",
+    "outerHTML": "<div class=\"container\" id=\"auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161\">\n<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "dragstart",
     "element": "div",
-    "assignedId": "auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b",
-    "outerHTML": "<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
+    "assignedId": "auto-69efec34-635a-4eb2-84bc-7643374d4ef0",
+    "outerHTML": "<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
   },
   {
     "eventType": "dragstart",
     "element": "div",
-    "assignedId": "auto-a563f84e-2e45-48eb-b749-271897377b43",
-    "outerHTML": "<div class=\"container\" id=\"auto-a563f84e-2e45-48eb-b749-271897377b43\">\n<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
+    "assignedId": "auto-2459c09d-11eb-48b0-ad47-91b934ee502f",
+    "outerHTML": "<div class=\"container\" id=\"auto-2459c09d-11eb-48b0-ad47-91b934ee502f\">\n<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
   },
   {
     "eventType": "dragstart",
     "element": "div",
-    "assignedId": "auto-386b9764-0b61-4568-bf95-61147e9df463",
-    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-44f52c8e-2675-4f3a-8693-5d57b96286b7",
+    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "dragstart",
     "element": "div",
-    "assignedId": "auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0",
-    "outerHTML": "<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
+    "assignedId": "auto-6069b80b-c183-4d4f-b66e-f3acb9746a75",
+    "outerHTML": "<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
   },
   {
     "eventType": "dragstart",
     "element": "div",
-    "assignedId": "auto-000ac5dd-e95c-4717-84ee-482a7e433726",
-    "outerHTML": "<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
+    "assignedId": "auto-7d27644d-30b9-46f8-9192-b46d8a079d0d",
+    "outerHTML": "<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
   },
   {
     "eventType": "dragstart",
     "element": "div",
-    "assignedId": "auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4",
-    "outerHTML": "<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
+    "assignedId": "auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef",
+    "outerHTML": "<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
   },
   {
     "eventType": "dragstart",
     "element": "div",
-    "assignedId": "auto-574681c6-7ee9-4a18-a35f-097be93fbb9a",
-    "outerHTML": "<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
+    "assignedId": "auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad",
+    "outerHTML": "<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
   },
   {
     "eventType": "dragstart",
     "element": "div",
-    "assignedId": "auto-a1bb24da-2f69-484a-8edf-dda48b7cab13",
-    "outerHTML": "<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
+    "assignedId": "auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707",
+    "outerHTML": "<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
   },
   {
     "eventType": "drag",
     "element": "div",
-    "assignedId": "auto-ae4e7046-b4b3-49d7-a200-777be7ab9540",
-    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-ae4e7046-b4b3-49d7-a200-777be7ab9540\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-50c5afc2-df33-48be-8568-2e5fe098b915\">Go to Version 1</a>\n</div>"
+    "assignedId": "auto-e7c85e7d-8011-462f-a977-94dcc6ca7786",
+    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-e7c85e7d-8011-462f-a977-94dcc6ca7786\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-f95a6b3d-16c0-4edc-9d62-69ad35571b55\">Go to Version 1</a>\n</div>"
   },
   {
     "eventType": "drag",
     "element": "div",
-    "assignedId": "auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0",
-    "outerHTML": "<div class=\"container\" id=\"auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0\">\n<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161",
+    "outerHTML": "<div class=\"container\" id=\"auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161\">\n<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "drag",
     "element": "div",
-    "assignedId": "auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b",
-    "outerHTML": "<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
+    "assignedId": "auto-69efec34-635a-4eb2-84bc-7643374d4ef0",
+    "outerHTML": "<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
   },
   {
     "eventType": "drag",
     "element": "div",
-    "assignedId": "auto-a563f84e-2e45-48eb-b749-271897377b43",
-    "outerHTML": "<div class=\"container\" id=\"auto-a563f84e-2e45-48eb-b749-271897377b43\">\n<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
+    "assignedId": "auto-2459c09d-11eb-48b0-ad47-91b934ee502f",
+    "outerHTML": "<div class=\"container\" id=\"auto-2459c09d-11eb-48b0-ad47-91b934ee502f\">\n<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
   },
   {
     "eventType": "drag",
     "element": "div",
-    "assignedId": "auto-386b9764-0b61-4568-bf95-61147e9df463",
-    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-44f52c8e-2675-4f3a-8693-5d57b96286b7",
+    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "drag",
     "element": "div",
-    "assignedId": "auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0",
-    "outerHTML": "<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
+    "assignedId": "auto-6069b80b-c183-4d4f-b66e-f3acb9746a75",
+    "outerHTML": "<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
   },
   {
     "eventType": "drag",
     "element": "div",
-    "assignedId": "auto-000ac5dd-e95c-4717-84ee-482a7e433726",
-    "outerHTML": "<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
+    "assignedId": "auto-7d27644d-30b9-46f8-9192-b46d8a079d0d",
+    "outerHTML": "<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
   },
   {
     "eventType": "drag",
     "element": "div",
-    "assignedId": "auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4",
-    "outerHTML": "<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
+    "assignedId": "auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef",
+    "outerHTML": "<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
   },
   {
     "eventType": "drag",
     "element": "div",
-    "assignedId": "auto-574681c6-7ee9-4a18-a35f-097be93fbb9a",
-    "outerHTML": "<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
+    "assignedId": "auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad",
+    "outerHTML": "<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
   },
   {
     "eventType": "drag",
     "element": "div",
-    "assignedId": "auto-a1bb24da-2f69-484a-8edf-dda48b7cab13",
-    "outerHTML": "<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
+    "assignedId": "auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707",
+    "outerHTML": "<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
   },
   {
     "eventType": "dragenter",
     "element": "div",
-    "assignedId": "auto-ae4e7046-b4b3-49d7-a200-777be7ab9540",
-    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-ae4e7046-b4b3-49d7-a200-777be7ab9540\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-50c5afc2-df33-48be-8568-2e5fe098b915\">Go to Version 1</a>\n</div>"
+    "assignedId": "auto-e7c85e7d-8011-462f-a977-94dcc6ca7786",
+    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-e7c85e7d-8011-462f-a977-94dcc6ca7786\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-f95a6b3d-16c0-4edc-9d62-69ad35571b55\">Go to Version 1</a>\n</div>"
   },
   {
     "eventType": "dragenter",
     "element": "div",
-    "assignedId": "auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0",
-    "outerHTML": "<div class=\"container\" id=\"auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0\">\n<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161",
+    "outerHTML": "<div class=\"container\" id=\"auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161\">\n<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "dragenter",
     "element": "div",
-    "assignedId": "auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b",
-    "outerHTML": "<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
+    "assignedId": "auto-69efec34-635a-4eb2-84bc-7643374d4ef0",
+    "outerHTML": "<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
   },
   {
     "eventType": "dragenter",
     "element": "div",
-    "assignedId": "auto-a563f84e-2e45-48eb-b749-271897377b43",
-    "outerHTML": "<div class=\"container\" id=\"auto-a563f84e-2e45-48eb-b749-271897377b43\">\n<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
+    "assignedId": "auto-2459c09d-11eb-48b0-ad47-91b934ee502f",
+    "outerHTML": "<div class=\"container\" id=\"auto-2459c09d-11eb-48b0-ad47-91b934ee502f\">\n<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
   },
   {
     "eventType": "dragenter",
     "element": "div",
-    "assignedId": "auto-386b9764-0b61-4568-bf95-61147e9df463",
-    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-44f52c8e-2675-4f3a-8693-5d57b96286b7",
+    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "dragenter",
     "element": "div",
-    "assignedId": "auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0",
-    "outerHTML": "<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
+    "assignedId": "auto-6069b80b-c183-4d4f-b66e-f3acb9746a75",
+    "outerHTML": "<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
   },
   {
     "eventType": "dragenter",
     "element": "div",
-    "assignedId": "auto-000ac5dd-e95c-4717-84ee-482a7e433726",
-    "outerHTML": "<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
+    "assignedId": "auto-7d27644d-30b9-46f8-9192-b46d8a079d0d",
+    "outerHTML": "<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
   },
   {
     "eventType": "dragenter",
     "element": "div",
-    "assignedId": "auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4",
-    "outerHTML": "<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
+    "assignedId": "auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef",
+    "outerHTML": "<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
   },
   {
     "eventType": "dragenter",
     "element": "div",
-    "assignedId": "auto-574681c6-7ee9-4a18-a35f-097be93fbb9a",
-    "outerHTML": "<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
+    "assignedId": "auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad",
+    "outerHTML": "<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
   },
   {
     "eventType": "dragenter",
     "element": "div",
-    "assignedId": "auto-a1bb24da-2f69-484a-8edf-dda48b7cab13",
-    "outerHTML": "<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
+    "assignedId": "auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707",
+    "outerHTML": "<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
   },
   {
     "eventType": "dragover",
     "element": "div",
-    "assignedId": "auto-ae4e7046-b4b3-49d7-a200-777be7ab9540",
-    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-ae4e7046-b4b3-49d7-a200-777be7ab9540\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-50c5afc2-df33-48be-8568-2e5fe098b915\">Go to Version 1</a>\n</div>"
+    "assignedId": "auto-e7c85e7d-8011-462f-a977-94dcc6ca7786",
+    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-e7c85e7d-8011-462f-a977-94dcc6ca7786\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-f95a6b3d-16c0-4edc-9d62-69ad35571b55\">Go to Version 1</a>\n</div>"
   },
   {
     "eventType": "dragover",
     "element": "div",
-    "assignedId": "auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0",
-    "outerHTML": "<div class=\"container\" id=\"auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0\">\n<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161",
+    "outerHTML": "<div class=\"container\" id=\"auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161\">\n<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "dragover",
     "element": "div",
-    "assignedId": "auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b",
-    "outerHTML": "<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
+    "assignedId": "auto-69efec34-635a-4eb2-84bc-7643374d4ef0",
+    "outerHTML": "<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
   },
   {
     "eventType": "dragover",
     "element": "div",
-    "assignedId": "auto-a563f84e-2e45-48eb-b749-271897377b43",
-    "outerHTML": "<div class=\"container\" id=\"auto-a563f84e-2e45-48eb-b749-271897377b43\">\n<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
+    "assignedId": "auto-2459c09d-11eb-48b0-ad47-91b934ee502f",
+    "outerHTML": "<div class=\"container\" id=\"auto-2459c09d-11eb-48b0-ad47-91b934ee502f\">\n<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
   },
   {
     "eventType": "dragover",
     "element": "div",
-    "assignedId": "auto-386b9764-0b61-4568-bf95-61147e9df463",
-    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-44f52c8e-2675-4f3a-8693-5d57b96286b7",
+    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "dragover",
     "element": "div",
-    "assignedId": "auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0",
-    "outerHTML": "<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
+    "assignedId": "auto-6069b80b-c183-4d4f-b66e-f3acb9746a75",
+    "outerHTML": "<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
   },
   {
     "eventType": "dragover",
     "element": "div",
-    "assignedId": "auto-000ac5dd-e95c-4717-84ee-482a7e433726",
-    "outerHTML": "<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
+    "assignedId": "auto-7d27644d-30b9-46f8-9192-b46d8a079d0d",
+    "outerHTML": "<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
   },
   {
     "eventType": "dragover",
     "element": "div",
-    "assignedId": "auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4",
-    "outerHTML": "<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
+    "assignedId": "auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef",
+    "outerHTML": "<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
   },
   {
     "eventType": "dragover",
     "element": "div",
-    "assignedId": "auto-574681c6-7ee9-4a18-a35f-097be93fbb9a",
-    "outerHTML": "<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
+    "assignedId": "auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad",
+    "outerHTML": "<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
   },
   {
     "eventType": "dragover",
     "element": "div",
-    "assignedId": "auto-a1bb24da-2f69-484a-8edf-dda48b7cab13",
-    "outerHTML": "<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
+    "assignedId": "auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707",
+    "outerHTML": "<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
   },
   {
     "eventType": "dragleave",
     "element": "div",
-    "assignedId": "auto-ae4e7046-b4b3-49d7-a200-777be7ab9540",
-    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-ae4e7046-b4b3-49d7-a200-777be7ab9540\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-50c5afc2-df33-48be-8568-2e5fe098b915\">Go to Version 1</a>\n</div>"
+    "assignedId": "auto-e7c85e7d-8011-462f-a977-94dcc6ca7786",
+    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-e7c85e7d-8011-462f-a977-94dcc6ca7786\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-f95a6b3d-16c0-4edc-9d62-69ad35571b55\">Go to Version 1</a>\n</div>"
   },
   {
     "eventType": "dragleave",
     "element": "div",
-    "assignedId": "auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0",
-    "outerHTML": "<div class=\"container\" id=\"auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0\">\n<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161",
+    "outerHTML": "<div class=\"container\" id=\"auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161\">\n<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "dragleave",
     "element": "div",
-    "assignedId": "auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b",
-    "outerHTML": "<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
+    "assignedId": "auto-69efec34-635a-4eb2-84bc-7643374d4ef0",
+    "outerHTML": "<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
   },
   {
     "eventType": "dragleave",
     "element": "div",
-    "assignedId": "auto-a563f84e-2e45-48eb-b749-271897377b43",
-    "outerHTML": "<div class=\"container\" id=\"auto-a563f84e-2e45-48eb-b749-271897377b43\">\n<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
+    "assignedId": "auto-2459c09d-11eb-48b0-ad47-91b934ee502f",
+    "outerHTML": "<div class=\"container\" id=\"auto-2459c09d-11eb-48b0-ad47-91b934ee502f\">\n<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
   },
   {
     "eventType": "dragleave",
     "element": "div",
-    "assignedId": "auto-386b9764-0b61-4568-bf95-61147e9df463",
-    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-44f52c8e-2675-4f3a-8693-5d57b96286b7",
+    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "dragleave",
     "element": "div",
-    "assignedId": "auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0",
-    "outerHTML": "<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
+    "assignedId": "auto-6069b80b-c183-4d4f-b66e-f3acb9746a75",
+    "outerHTML": "<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
   },
   {
     "eventType": "dragleave",
     "element": "div",
-    "assignedId": "auto-000ac5dd-e95c-4717-84ee-482a7e433726",
-    "outerHTML": "<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
+    "assignedId": "auto-7d27644d-30b9-46f8-9192-b46d8a079d0d",
+    "outerHTML": "<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
   },
   {
     "eventType": "dragleave",
     "element": "div",
-    "assignedId": "auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4",
-    "outerHTML": "<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
+    "assignedId": "auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef",
+    "outerHTML": "<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
   },
   {
     "eventType": "dragleave",
     "element": "div",
-    "assignedId": "auto-574681c6-7ee9-4a18-a35f-097be93fbb9a",
-    "outerHTML": "<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
+    "assignedId": "auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad",
+    "outerHTML": "<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
   },
   {
     "eventType": "dragleave",
     "element": "div",
-    "assignedId": "auto-a1bb24da-2f69-484a-8edf-dda48b7cab13",
-    "outerHTML": "<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
+    "assignedId": "auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707",
+    "outerHTML": "<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
   },
   {
     "eventType": "drop",
     "element": "div",
-    "assignedId": "auto-ae4e7046-b4b3-49d7-a200-777be7ab9540",
-    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-ae4e7046-b4b3-49d7-a200-777be7ab9540\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-50c5afc2-df33-48be-8568-2e5fe098b915\">Go to Version 1</a>\n</div>"
+    "assignedId": "auto-e7c85e7d-8011-462f-a977-94dcc6ca7786",
+    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-e7c85e7d-8011-462f-a977-94dcc6ca7786\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-f95a6b3d-16c0-4edc-9d62-69ad35571b55\">Go to Version 1</a>\n</div>"
   },
   {
     "eventType": "drop",
     "element": "div",
-    "assignedId": "auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0",
-    "outerHTML": "<div class=\"container\" id=\"auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0\">\n<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161",
+    "outerHTML": "<div class=\"container\" id=\"auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161\">\n<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "drop",
     "element": "div",
-    "assignedId": "auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b",
-    "outerHTML": "<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
+    "assignedId": "auto-69efec34-635a-4eb2-84bc-7643374d4ef0",
+    "outerHTML": "<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
   },
   {
     "eventType": "drop",
     "element": "div",
-    "assignedId": "auto-a563f84e-2e45-48eb-b749-271897377b43",
-    "outerHTML": "<div class=\"container\" id=\"auto-a563f84e-2e45-48eb-b749-271897377b43\">\n<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
+    "assignedId": "auto-2459c09d-11eb-48b0-ad47-91b934ee502f",
+    "outerHTML": "<div class=\"container\" id=\"auto-2459c09d-11eb-48b0-ad47-91b934ee502f\">\n<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
   },
   {
     "eventType": "drop",
     "element": "div",
-    "assignedId": "auto-386b9764-0b61-4568-bf95-61147e9df463",
-    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-44f52c8e-2675-4f3a-8693-5d57b96286b7",
+    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "drop",
     "element": "div",
-    "assignedId": "auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0",
-    "outerHTML": "<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
+    "assignedId": "auto-6069b80b-c183-4d4f-b66e-f3acb9746a75",
+    "outerHTML": "<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
   },
   {
     "eventType": "drop",
     "element": "div",
-    "assignedId": "auto-000ac5dd-e95c-4717-84ee-482a7e433726",
-    "outerHTML": "<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
+    "assignedId": "auto-7d27644d-30b9-46f8-9192-b46d8a079d0d",
+    "outerHTML": "<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
   },
   {
     "eventType": "drop",
     "element": "div",
-    "assignedId": "auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4",
-    "outerHTML": "<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
+    "assignedId": "auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef",
+    "outerHTML": "<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
   },
   {
     "eventType": "drop",
     "element": "div",
-    "assignedId": "auto-574681c6-7ee9-4a18-a35f-097be93fbb9a",
-    "outerHTML": "<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
+    "assignedId": "auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad",
+    "outerHTML": "<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
   },
   {
     "eventType": "drop",
     "element": "div",
-    "assignedId": "auto-a1bb24da-2f69-484a-8edf-dda48b7cab13",
-    "outerHTML": "<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
+    "assignedId": "auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707",
+    "outerHTML": "<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
   },
   {
     "eventType": "dragend",
     "element": "div",
-    "assignedId": "auto-ae4e7046-b4b3-49d7-a200-777be7ab9540",
-    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-ae4e7046-b4b3-49d7-a200-777be7ab9540\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-50c5afc2-df33-48be-8568-2e5fe098b915\">Go to Version 1</a>\n</div>"
+    "assignedId": "auto-e7c85e7d-8011-462f-a977-94dcc6ca7786",
+    "outerHTML": "<div class=\"navbar-collapse justify-content-end\" id=\"auto-e7c85e7d-8011-462f-a977-94dcc6ca7786\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-f95a6b3d-16c0-4edc-9d62-69ad35571b55\">Go to Version 1</a>\n</div>"
   },
   {
     "eventType": "dragend",
     "element": "div",
-    "assignedId": "auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0",
-    "outerHTML": "<div class=\"container\" id=\"auto-99b50b75-31f4-4390-bb4a-3dcbeee88da0\">\n<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161",
+    "outerHTML": "<div class=\"container\" id=\"auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161\">\n<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "dragend",
     "element": "div",
-    "assignedId": "auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b",
-    "outerHTML": "<div class=\"row\" id=\"auto-9b7537f5-9ce5-448f-88e5-e9043174fb7b\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
+    "assignedId": "auto-69efec34-635a-4eb2-84bc-7643374d4ef0",
+    "outerHTML": "<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>"
   },
   {
     "eventType": "dragend",
     "element": "div",
-    "assignedId": "auto-a563f84e-2e45-48eb-b749-271897377b43",
-    "outerHTML": "<div class=\"container\" id=\"auto-a563f84e-2e45-48eb-b749-271897377b43\">\n<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
+    "assignedId": "auto-2459c09d-11eb-48b0-ad47-91b934ee502f",
+    "outerHTML": "<div class=\"container\" id=\"auto-2459c09d-11eb-48b0-ad47-91b934ee502f\">\n<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div>"
   },
   {
     "eventType": "dragend",
     "element": "div",
-    "assignedId": "auto-386b9764-0b61-4568-bf95-61147e9df463",
-    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-386b9764-0b61-4568-bf95-61147e9df463\">\n<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
+    "assignedId": "auto-44f52c8e-2675-4f3a-8693-5d57b96286b7",
+    "outerHTML": "<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>"
   },
   {
     "eventType": "dragend",
     "element": "div",
-    "assignedId": "auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0",
-    "outerHTML": "<div class=\"col\" id=\"auto-b8756d83-2399-4a34-b8c3-85a227a8e4f0\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
+    "assignedId": "auto-6069b80b-c183-4d4f-b66e-f3acb9746a75",
+    "outerHTML": "<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>"
   },
   {
     "eventType": "dragend",
     "element": "div",
-    "assignedId": "auto-000ac5dd-e95c-4717-84ee-482a7e433726",
-    "outerHTML": "<div class=\"col\" id=\"auto-000ac5dd-e95c-4717-84ee-482a7e433726\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
+    "assignedId": "auto-7d27644d-30b9-46f8-9192-b46d8a079d0d",
+    "outerHTML": "<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>"
   },
   {
     "eventType": "dragend",
     "element": "div",
-    "assignedId": "auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4",
-    "outerHTML": "<div class=\"row\" id=\"auto-dcba0fd0-0fec-4d9c-89f0-5fafc272d1d4\">\n<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
+    "assignedId": "auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef",
+    "outerHTML": "<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>"
   },
   {
     "eventType": "dragend",
     "element": "div",
-    "assignedId": "auto-574681c6-7ee9-4a18-a35f-097be93fbb9a",
-    "outerHTML": "<div class=\"col\" id=\"auto-574681c6-7ee9-4a18-a35f-097be93fbb9a\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-782c1543-1d93-41d5-96a1-ddd5f53379f2\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
+    "assignedId": "auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad",
+    "outerHTML": "<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>"
   },
   {
     "eventType": "dragend",
     "element": "div",
-    "assignedId": "auto-a1bb24da-2f69-484a-8edf-dda48b7cab13",
-    "outerHTML": "<div class=\"mb-3\" id=\"auto-a1bb24da-2f69-484a-8edf-dda48b7cab13\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
+    "assignedId": "auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707",
+    "outerHTML": "<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>"
   },
   {
     "eventType": "change",
     "element": "input",
     "assignedId": "inputText",
     "outerHTML": "<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>"
+  },
+  {
+    "eventType": "wheel",
+    "element": "body",
+    "assignedId": "auto-7be2f841-c943-45ab-a526-a7663865bc6f",
+    "outerHTML": "<body id=\"auto-7be2f841-c943-45ab-a526-a7663865bc6f\">\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-success\">\n<a class=\"navbar-brand\" href=\"#\" id=\"auto-72ea8ba6-ce73-405f-aea0-c531bf250cb4\">TFG WIH Front Version 2</a>\n<div class=\"navbar-collapse justify-content-end\" id=\"auto-e7c85e7d-8011-462f-a977-94dcc6ca7786\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-f95a6b3d-16c0-4edc-9d62-69ad35571b55\">Go to Version 1</a>\n</div>\n</nav>\n<div class=\"container\" id=\"auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161\">\n<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>\n<div class=\"container\" id=\"auto-2459c09d-11eb-48b0-ad47-91b934ee502f\">\n<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div></body>"
+  },
+  {
+    "eventType": "scroll",
+    "element": "body",
+    "assignedId": "auto-7be2f841-c943-45ab-a526-a7663865bc6f",
+    "outerHTML": "<body id=\"auto-7be2f841-c943-45ab-a526-a7663865bc6f\">\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-success\">\n<a class=\"navbar-brand\" href=\"#\" id=\"auto-72ea8ba6-ce73-405f-aea0-c531bf250cb4\">TFG WIH Front Version 2</a>\n<div class=\"navbar-collapse justify-content-end\" id=\"auto-e7c85e7d-8011-462f-a977-94dcc6ca7786\">\n<button class=\"btn btn-secondary\" id=\"signIn\" onclick=\"openLogin()\" type=\"button\">Sign-in</button>\n<button class=\"btn btn-secondary d-none\" id=\"signOut\" onclick=\"signOut()\" type=\"button\">Sign-out</button>\n<a class=\"btn btn-primary active\" href=\"/\" id=\"auto-f95a6b3d-16c0-4edc-9d62-69ad35571b55\">Go to Version 1</a>\n</div>\n</nav>\n<div class=\"container\" id=\"auto-24b7bab7-3a90-4545-9d19-1b0bca7c1161\">\n<div class=\"row\" id=\"auto-69efec34-635a-4eb2-84bc-7643374d4ef0\">\n<br/>\n<h5 class=\"card-header text-center\" id=\"floating-login\">\n              Please sign in using the button above.\n          </h5>\n<br/>\n<h5 class=\"card-header text-center d-none\" id=\"welcome-div\"></h5>\n</div>\n</div>\n<div class=\"container\" id=\"auto-2459c09d-11eb-48b0-ad47-91b934ee502f\">\n<div class=\"row align-items-start\" id=\"auto-44f52c8e-2675-4f3a-8693-5d57b96286b7\">\n<div class=\"col\" id=\"auto-6069b80b-c183-4d4f-b66e-f3acb9746a75\">\n<h5 class=\"card-header text-center\">Device Status</h5>\n<pre id=\"deviceStatus\"></pre>\n</div>\n<div class=\"col\" id=\"auto-7d27644d-30b9-46f8-9192-b46d8a079d0d\">\n<button class=\"d-none\" id=\"myButton\" onclick=\"printText()\"> This is a button</button>\n<h5 class=\"card-header text-center d-none\" id=\"myText\"></h5>\n</div>\n</div>\n<div class=\"row\" id=\"auto-8b1687e5-5408-49ee-bc9e-d6c02f3340ef\">\n<div class=\"col\" id=\"auto-e1172c73-ad94-4ba6-8f65-9207ea4cb2ad\">\n<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form></div>\n</div>\n<script src=\"/v1v2/v2/eventIntercept.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/login.js\" type=\"text/javascript\"></script>\n<script src=\"/v1v2/v2/sketchpad.js\" type=\"text/javascript\"></script>\n<style src=\"/v1v2/v2/sketchpad.css\" type=\"text/css\"></style>\n</div></body>"
+  },
+  {
+    "eventType": "focus",
+    "element": "input",
+    "assignedId": "inputText",
+    "outerHTML": "<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>"
+  },
+  {
+    "eventType": "blur",
+    "element": "input",
+    "assignedId": "inputText",
+    "outerHTML": "<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>"
+  },
+  {
+    "eventType": "submit",
+    "element": "form",
+    "assignedId": "myForm",
+    "outerHTML": "<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form>"
+  },
+  {
+    "eventType": "reset",
+    "element": "form",
+    "assignedId": "myForm",
+    "outerHTML": "<form id=\"myForm\">\n<h5 class=\"card-header text-center\">Form</h5>\n<div class=\"mb-3\" id=\"auto-a5882bce-ef0a-40c3-9b5c-9cf25ed7c707\">\n<label class=\"form-label\" for=\"inputText\">Input Text</label>\n<input class=\"form-control\" id=\"inputText\" placeholder=\"Enter text\" type=\"text\"/>\n</div>\n<button class=\"btn btn-primary\" id=\"auto-25ec5646-1a2d-4cb8-b062-81b8369cc6dc\" type=\"submit\">Submit</button>\n<canvas height=\"300\" id=\"sketchpad\" width=\"400\"></canvas>\n</form>"
   }
 ]

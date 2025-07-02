@@ -6,46 +6,141 @@ let WEBSITE_ID = null;
 
 let socket;
 
-function add_listeners(event) {
-    let data;
-    switch (event.type) {
-        case 'click':
-        case 'input':
-        case 'change':
-        case 'submit':
-        case 'focus':
-        case 'blur':
-        case 'keydown':
-        case 'keyup':
-        case 'keypress':
-            data = {
-                type: event.type,
-                elementId: event.target.id || '',
-                deviceId: MY_WS_ID,
+function add_listeners(elements) {
+    console.log('Adding listeners to elements');
+    // Get all elements that match the event definitions
+    for (let element of elements) {
+        // assign element.id if it doesn't exist
+        let domElement = document.getElementById(element.assignedId) || document.querySelector(element.element);
+        if (!domElement) {
+            for (let tag of document.getElementsByTagName(element.element)) {
+                if (!tag.id) {
+                    tag.id = element.assignedId;
+                }
+                else {
+                    console.warn(`Element <${element.element}> already has an ID: ${tag.id}. Skipping assignment.`);
+                }
+            }
+        }
+    }
+    // Add event listeners to the elements
+    for (let element of elements) {
+        let targetElement = document.getElementById(element.assignedId) || document.querySelector(element.element);
+        if (!targetElement) {
+            console.warn(`Element with ID ${element.assignedId} or selector ${element.element} not found.`);
+            continue; // Skip this element if not found
+        }
+        console.log(`Adding event listener for ${element.eventType} on element with ID ${element.assignedId}`);
+        targetElement.addEventListener(element.eventType, (event) => {
+            console.log(`Event ${element.eventType} triggered on element with ID ${element.assignedId}`);
+            // Emit the event to the server only if the event is trusted
+            if (!event.isTrusted) {
+                console.warn(`Event ${element.eventType} on element with ID ${element.assignedId} is not trusted. Skipping emission.`);
+                return; // Skip untrusted events
+            }
+            let eventTouches = [];
+            let eventTargetTouches = [];
+            let eventChangedTouches = [];
+            let deltaX = 0;
+            let deltaY = 0;
+            let deltaZ = 0;
+            let deltaMode = 0;
+            let scrollTop = 0;
+            let scrollLeft = 0;
+            
+            if (event.type === 'touchstart' || event.type === 'touchmove' || event.type === 'touchend') {
+                // For touch events, we need to handle the touches array
+                for (let touch of event.touches) {
+                    eventTouches.push({
+                        identifier: touch.identifier,
+                        clientX: touch.clientX,
+                        clientY: touch.clientY,
+                        pageX: touch.pageX,
+                        pageY: touch.pageY,
+                        radiusX: touch.radiusX,
+                        radiusY: touch.radiusY,
+                        screenX: touch.screenX,
+                        screenY: touch.screenY,
+                        force: touch.force
+                    });
+                }
+                for (let touch of event.targetTouches) {
+                    eventTargetTouches.push({
+                        identifier: touch.identifier,
+                        clientX: touch.clientX,
+                        clientY: touch.clientY,
+                        pageX: touch.pageX,
+                        pageY: touch.pageY,
+                        radiusX: touch.radiusX,
+                        radiusY: touch.radiusY,
+                        screenX: touch.screenX,
+                        screenY: touch.screenY,
+                        force: touch.force
+                    });
+                }
+                for (let touch of event.changedTouches) {
+                    eventChangedTouches.push({
+                        identifier: touch.identifier,
+                        clientX: touch.clientX,
+                        clientY: touch.clientY,
+                        pageX: touch.pageX,
+                        pageY: touch.pageY,
+                        radiusX: touch.radiusX,
+                        radiusY: touch.radiusY,
+                        screenX: touch.screenX,
+                        screenY: touch.screenY,
+                        force: touch.force 
+                    });
+                }
+            } else if (event.type === 'wheel') {
+                // For wheel events, we need to handle the delta values
+                deltaX = event.deltaX;
+                deltaY = event.deltaY;
+                deltaZ = event.deltaZ; // deltaZ is optional, default to 0
+                deltaMode = event.deltaMode; // deltaMode is optional, default to 0
+            } else if (event.type === 'scroll') {
+                // For scroll events, we can just use the event as is
+                scrollTop = targetElement.scrollTop;
+                scrollLeft = targetElement.scrollLeft;
+            }
+            // Emit the event to the server
+            console.log(`Emitting event ${element.eventType} for element with ID ${element.assignedId}`);
+            // Ensure MY_WS_ID, WEBSITE_ID, and USER_ID are defined before emitting
+            if (!MY_WS_ID || !WEBSITE_ID || !USER_ID) {
+                console.error('Socket ID, Website ID, or User ID is not defined. Cannot emit event.');
+                return; // Exit if any of these IDs are not defined
+            }
+            // Emit the event with all necessary details                
+            socket.emit('send_event', {
+                timestamp: event.timeStamp,
+                type: element.eventType,
+                elementId: element.assignedId,
+                value: event.target.value || '',
+                socketid: MY_WS_ID,
+                website_id: WEBSITE_ID,
                 userId: USER_ID,
                 key: event.key || '',
                 code: event.code || '',
                 keyCode: event.keyCode || 0,
                 which: event.which || 0,
-                value: event.target.value || ''
-            };
-            break;
-        case 'mouseover':
-        case 'mouseout':
-        case 'mousemove':
-        case 'contextmenu':
-        case 'dblclick':
-        case 'wheel':
-        case 'touchstart':
-        case 'touchmove':
-        case 'touchend':
-            event.preventDefault();
-            break;
+                clientX: event.clientX || 0,
+                clientY: event.clientY || 0,
+                touches: eventTouches || [],
+                targetTouches: eventTargetTouches || [],
+                changedTouches: eventChangedTouches || [],
+                deltaX: deltaX,
+                deltaY: deltaY,
+                deltaZ: deltaZ,
+                deltaMode: deltaMode,
+                scrollTop: scrollTop,
+                scrollLeft: scrollLeft,
+                identifier: event.identifier || 0
+            });
+        });
     }
-    return data;
 }
 
-function socketSetup() {
+async function socketSetup() {
     socket = io();
 
     socket.on('login_success', (data) => {
@@ -73,82 +168,29 @@ function socketSetup() {
     });
     socket.on('error', (data) => {
         console.error('Error from server: ' + data.message);
-        if (data.message.includes('No elements file found')) {
-            // Handle the case where no elements file is found for the website
-            console.warn('No elements file found for the website. Please ensure the elements file is correctly configured.');
-            alert('No elements file found for the website. Please ask admin to register the website or check the configuration.');
-            // Optionally, you can display a message to the user or take other actions
-        }
     });
-    socket.on('elements', (data) => {
-        WEBSITE_ID = data.website;
-        for (let element of data.elements) {
-            console.log(`Processing event: ${element.eventType} with id ${element.assignedId} on element ${element.element}`);
-            // assign element.id if it doesn't exist
-            element = document.getElementById(element.assignedId) || element;
-            if (!document.getElementById(element.assignedId)) {
-                for (let tag of document.getElementsByTagName(element.element)) {
-                    if (!tag.id) {
-                        tag.id = element.assignedId;
-                        console.log(`Assigned ID ${element.assignedId} to element <${element.element}>`);
-                    }
-                    else {
-                        console.warn(`Element <${element.element}> already has an ID: ${tag.id}. Skipping assignment.`);
-
-                    }
-                }
-            }
-        }
+    socket.on('add_listeners', async (data) => {
+    WEBSITE_ID = data.website;
+    console.log(`Received elements to process: ${data.elements.length} elements for website ID ${WEBSITE_ID}`);
+    if (!data.elements || data.elements.length === 0) {
+        console.warn('No elements to process. Skipping listener addition.');
         socket.emit('elements_processed', {
             socketid: MY_WS_ID,
             website_id: WEBSITE_ID,
             userid: USER_ID,
-            message: 'Elements processed successfully'
+            message: 'No elements to process'
         });
+        return;
+    }
+    await add_listeners(data.elements);
+    socket.emit('elements_processed', {
+        socketid: MY_WS_ID,
+        website_id: WEBSITE_ID,
+        userid: USER_ID,
+        message: 'Elements processed successfully'
     });
+});
 
-
-    socket.on('add_listeners', (data) => {
-        for (let element of data.elements) {
-            console.log(`Adding listener for event: ${element.eventType} on element with ID ${element.assignedId}`);
-            let targetElement = document.getElementById(element.assignedId);
-            if (targetElement) {
-                targetElement.addEventListener(element.eventType, (event) => {
-                    if (event.isTrusted) {
-                        console.log(`User event: ${event.type} on element with ID ${element.assignedId}`);
-                        socket.emit('send_event', {
-                        type: element.eventType,
-                        elementId: element.assignedId,
-                        deviceId: MY_WS_ID,
-                        userId: USER_ID,
-                        key: event.key || '',
-                        code: event.code || '',
-                        keyCode: event.keyCode || 0,
-                        which: event.which || 0,
-                        value: event.target.value || '',
-                        clientX: event.clientX || 0,
-                        clientY: event.clientY || 0,
-                        targetTouches: event.targetTouches || [],
-                        touches: Array.from(event.touches || []).map(touch => ({
-                            clientX: touch.clientX,
-                            clientY: touch.clientY,
-                            identifier: touch.identifier
-                        })) || [],
-                        changedTouches: Array.from(event.changedTouches || []).map(touch => ({
-                            clientX: touch.clientX,
-                            clientY: touch.clientY,
-                            identifier: touch.identifier
-                        })) || [],
-                        timestamp: event.timestamp
-                        });
-                    console.log(`Event ${element.eventType} triggered on element with ID ${element.assignedId}`);
-                    } else {
-                        console.warn(`Server event: ${event.type} on element with ID ${element.assignedId}`);
-                    }                 
-                });
-            }
-        }
-    });
 
     socket.on('receive_event', (data) => {
         if (data.socketid !== MY_WS_ID) {
@@ -160,10 +202,59 @@ function socketSetup() {
             }
             let element = document.getElementById(data.elementId);
             if (element) {
+                let touches = [];
+                let targetTouches = [];
+                let changedTouches = [];
+                // If touches are provided, create Touch objects
+                if (data.touches && data.touches.length > 0) {
+                    touches = data.touches.map(touch => new Touch({
+                        identifier: touch.identifier || 0,
+                        clientX: touch.clientX || 0,
+                        clientY: touch.clientY || 0,
+                        pageX: touch.pageX || 0,
+                        pageY: touch.pageY || 0,
+                        radiusX: touch.radiusX || 0,
+                        radiusY: touch.radiusY || 0,
+                        screenX: touch.screenX || 0,
+                        screenY: touch.screenY || 0,
+                        force: touch.force || 0,
+                        target: document.getElementById(data.elementId) || element // Use the element's selector and ID
+                    }));
+                }
+                if (data.targetTouches && data.targetTouches.length > 0) {
+                    targetTouches = data.targetTouches.map(touch => new Touch({
+                        identifier: touch.identifier || 0,
+                        clientX: touch.clientX || 0,
+                        clientY: touch.clientY || 0,
+                        pageX: touch.pageX || 0,
+                        pageY: touch.pageY || 0,
+                        radiusX: touch.radiusX || 0,
+                        radiusY: touch.radiusY || 0,
+                        screenX: touch.screenX || 0,
+                        screenY: touch.screenY || 0,
+                        force: touch.force || 0,
+                        target: document.getElementById(data.elementId) || element // Use the element's selector and ID
+                    }));
+                }
+                if (data.changedTouches && data.changedTouches.length > 0) {
+                    changedTouches = data.changedTouches.map(touch => new Touch({
+                        identifier: touch.identifier || 0,
+                        clientX: touch.clientX || 0,
+                        clientY: touch.clientY || 0,
+                        pageX: touch.pageX || 0,
+                        pageY: touch.pageY || 0,
+                        radiusX: touch.radiusX || 0,
+                        radiusY: touch.radiusY || 0,
+                        screenX: touch.screenX || 0,
+                        screenY: touch.screenY || 0,
+                        force: touch.force || 0,
+                        target: document.getElementById(data.elementId) || element // Use the element's selector and ID
+                    }));
+                } 
                 console.log(`Triggering server event: ${data.type} on element with ID ${data.elementId}`);
                 switch (data.type) {
                     case 'click':
-                        element.click(); // Simulate click event
+                        document.elementFromPoint(data.clientX || 0, data.clientY || 0).click();
                         break;
                     case 'input':
                         element.value = data.value || ''; // Set value for input events
@@ -224,6 +315,11 @@ function socketSetup() {
                         }));
                         break;
                     case 'keypress':
+                        //replace value of element with data.value if it exists
+                        if (data.value) {
+                            element.value = data.value;
+                        }
+                        // Dispatch keypress event
                         element.dispatchEvent(new KeyboardEvent('keypress', {
                             bubbles: true,
                             cancelable: true,
@@ -261,21 +357,15 @@ function socketSetup() {
                             clientY: data.clientY || 0
                         }));
                         break;
-                    case 'touchstart':
+                    case 'touchstart':   
+                        // Create a TouchEvent and dispatch it with the provided touches
                         element.dispatchEvent(new TouchEvent('touchstart', {
                             bubbles: true,
                             cancelable: true,
                             composed: true,
-                            touches: [new Touch({
-                                clientX: data.clientX || 0,
-                                clientY: data.clientY || 0,
-                                identifier: data.identifier || 0
-                            })],
-                            changedTouches: [new Touch({
-                                clientX: data.changedTouches?.[0]?.clientX || 0,
-                                clientY: data.changedTouches?.[0]?.clientY || 0,
-                                identifier: data.changedTouches?.[0]?.identifier || 0
-                            })]
+                            touches: touches,
+                            targetTouches: targetTouches,
+                            changedTouches: changedTouches
                         }));
                         break;
                     case 'touchend':
@@ -283,9 +373,9 @@ function socketSetup() {
                             bubbles: true,
                             cancelable: true,
                             composed: true,
-                            touches: data.touches || [],
-                            targetTouches: data.targetTouches || [],
-                            changedTouches: data.changedTouches || []
+                            touches: touches || [],
+                            targetTouches: targetTouches || [],
+                            changedTouches: changedTouches || []
                         }));
                         break;
                     case 'touchmove':
@@ -293,9 +383,9 @@ function socketSetup() {
                             bubbles: true,
                             cancelable: true,
                             composed: true,
-                            touches: data.touches || [],
-                            targetTouches: data.targetTouches || [],
-                            changedTouches: data.changedTouches || []
+                            touches: touches || [],
+                            targetTouches: targetTouches || [],
+                            changedTouches: changedTouches || []
                         }));
                         break;
                     case 'contextmenu':

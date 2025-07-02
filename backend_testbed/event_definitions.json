@@ -104,7 +104,7 @@
     {
       "type": "wheel",
       "description": "Fired when the mouse wheel is used to scroll the page or an element.",
-      "triggeringElement": ["document"],
+      "triggeringElement": ["document", "body"],
       "userAction": "Use the mouse wheel to scroll up or down."
     }
   ],
@@ -112,8 +112,37 @@
     {
       "type": "scroll",
       "description": "Fired when an element or the document view is being scrolled.",
-      "triggeringElement": ["document"],
+      "triggeringElement": ["document", "body"],
       "userAction": "Scroll the content within an element or the page."
     }
   ]
+,
+  "FocusEvents": [
+    {
+      "type": "focus",
+      "description": "Fired when an element receives focus.",
+      "triggeringElement": ["input", "textarea", "select"],
+      "userAction": "Click on or tab to an input element."
+    },
+    {
+      "type": "blur",
+      "description": "Fired when an element loses focus.",
+      "triggeringElement": ["input", "textarea", "select"],
+      "userAction": "Click away from or tab out of an input element."
+    }
+  ]
+  ,
+  "FormEvents": [
+    {
+      "type": "submit",
+      "description": "Fired when a form is submitted.",
+      "triggeringElement": ["form"],
+      "userAction": "Click the submit button or press Enter in a form field."
+    },
+    {
+      "type": "reset",
+      "description": "Fired when a form is reset.",
+      "triggeringElement": ["form"],
+      "userAction": "Click the reset button in a form."
+  }]
 }

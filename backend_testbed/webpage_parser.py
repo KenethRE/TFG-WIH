@@ -8,12 +8,23 @@ def load_event_definitions(path='event_definitions.json'):
         return json.load(f)
 
 def get_html(url):
+    if url == 'https://localhost':
+        # For local testing, use a predefined HTML file
+        with open('../www/version2.html', 'r') as f:
+            return f.read()
+    # Fetch the HTML content from the provided URL
     response = requests.get(url, verify=False)
     response.raise_for_status()
     return response.text
 
 def assign_ids_to_elements(url):
-    html = get_html(url)
+    if url == 'https://localhost':
+        # For local testing, use a predefined HTML file
+        with open('../www/version2.html', 'r') as f:
+            html = f.read()
+    else:
+        # Fetch the HTML content from the provided URL
+        html = get_html(url)
     soup = BeautifulSoup(html, 'html.parser')
     results = []
     event_definitions = load_event_definitions('event_definitions.json')
@@ -29,7 +40,6 @@ def assign_ids_to_elements(url):
                         tag['id'] = unique_id
                     else:
                         unique_id = tag['id']
-                    print(f"Assigned ID {unique_id} to element <{elem_type}> with event type {event_type}")
                     results.append({
                         'eventType': event_type,
                         'element': elem_type,
