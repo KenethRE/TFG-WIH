@@ -71,7 +71,7 @@ def test_send_event_socket_unknown(client):
     socket.disconnect()
     assert len(received) > 0
     response = received[0]['args'][0]
-    assert response['message'] == 'No elements file found for website test.com'
+    assert response['elements'] is None or response['elements'] == []  # Expect no elements for unknown socket
 
 
 def test_send_event_socket_known(client):

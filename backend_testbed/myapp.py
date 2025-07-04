@@ -103,7 +103,12 @@ def connect():
         new_website = Website(id=None, name=website_name, url=url)
         if new_website.store_website(new_website):
             # create new website representation
-            elements = assign_ids_to_elements(url)
+            try:
+                elements = assign_ids_to_elements(url)
+            except Exception as e:
+                write_log('Error assigning IDs to elements: {}'.format(e))
+                elements = []
+                socketio.emit('error', {'message': 'Unable to get elements. Error: {}'.format(e), 'elements': elements}, to=request.sid)
             elements_file = './custom_elements/{}_elements.json'.format(website_name)
             with open(elements_file, 'w') as f:
                 json.dump(elements, f, indent=2, ensure_ascii=False)
@@ -135,7 +140,7 @@ def connect():
                 emit('add_listeners', {'website': website.id, 'elements': elements}, to=request.sid)
         except FileNotFoundError:
             write_log('No elements file found for website {}'.format(website_name))
-            socketio.emit('error', {'message': 'No elements file found for website {}'.format(website_name)}, to=request.sid)
+            socketio.emit('error', {'message': 'No elements file found for website {}'.format(website_name), 'elements': []}, to=request.sid)
     # Check if the user is authenticated
     if current_user.is_authenticated:
         socketio.emit('login_success', {'username': current_user.username}, to=request.sid)
