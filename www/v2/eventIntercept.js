@@ -467,7 +467,12 @@ async function socketSetup() {
                     case 'wheel':
                         // scroll the page to the position of the wheel event
                         if (data.deltaY !== undefined && data.deltaY !== 0) {
-                            window.scrollBy(0, data.deltaY);
+                            if (element.tagName.toLowerCase() === 'textarea' || element.tagName.toLowerCase() === 'input') {
+                                // For textarea or input elements, we can scroll the element
+                                element.scrollTop += data.deltaY; // Scroll the element vertically
+                            } else {
+                                window.scrollBy(0, data.deltaY);
+                            }
                         }
                         break;
                     case 'scroll':
