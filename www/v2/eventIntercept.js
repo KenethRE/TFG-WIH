@@ -349,8 +349,32 @@ async function socketSetup() {
                         }));
                         break;
                     case 'mousemove':
-                        console.log(`Moving mouse over element with ID ${data.elementId} at (${data.clientX}, ${data.clientY})`);
                         element.dispatchEvent(new MouseEvent('mousemove', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true,
+                            clientX: data.clientX || 0,
+                            clientY: data.clientY || 0
+                        }));
+                        break;
+                    case 'mousedown':
+                        // in the case of canvas, make sure to transpose the coordinates to the canvas
+                        if (element.tagName.toLowerCase() === 'canvas') {
+                            const rect = element.getBoundingClientRect();
+                            const canvasX = data.clientX - rect.left;
+                            const canvasY = data.clientY - rect.top;
+                            // Create a MouseEvent and dispatch it with the provided coordinates
+                            element.dispatchEvent(new MouseEvent('mousedown', {
+                                bubbles: true,
+                                cancelable: true,
+                                composed: true,
+                                clientX: canvasX,
+                                clientY: canvasY
+                            }));
+                        }
+                        break;
+                    case 'mouseup':
+                        element.dispatchEvent(new MouseEvent('mouseup', {
                             bubbles: true,
                             cancelable: true,
                             composed: true,

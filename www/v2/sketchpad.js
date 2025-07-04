@@ -9,6 +9,17 @@ ctx.lineWidth = 5; // Line width
 ctx.lineCap = 'round'; // Round the corners of the lines
 ctx.strokeStyle = 'black'; // Set the color of the strokes
 
+// Adjust the mouse event coordinates relative to the canvas
+function getCanvasCoordinates(e) {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX || e.touches[0].clientX;  // Handle mouse or touch
+        const y = e.clientY || e.touches[0].clientY;  // Handle mouse or touch
+        return {
+            x: x - rect.left,
+            y: y - rect.top
+        };
+    }
+
 // Create color picker
 const colorLabel = document.getElementById('colorLabel') || document.createElement('label');
 colorLabel.textContent = 'Color: ';
@@ -77,13 +88,15 @@ sliderValue.addEventListener('change', () => {
 canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
     ctx.beginPath();  // Start a new path
-    ctx.moveTo(e.offsetX, e.offsetY);  // Move to mouse position, make sure we are inside the canvas
+    const { x, y } = getCanvasCoordinates(e);
+    ctx.moveTo(x, y);  // Move to mouse position, make sure we are inside the canvas
 });
 
 // Draw when mouse is moved while pressed
 canvas.addEventListener('mousemove', (e) => {
     if (!isDrawing) return;
-    ctx.lineTo(e.offsetX, e.offsetY);  // Draw a line to mouse position
+    const { x, y } = getCanvasCoordinates(e);
+    ctx.lineTo(x, y);  // Draw a line to the current mouse position
     ctx.stroke();  // Apply the stroke
 });
 
@@ -102,13 +115,15 @@ canvas.addEventListener('touchstart', (e) => {
     isDrawing = true;
     const touch = e.touches[0];
     ctx.beginPath();
-    ctx.moveTo(touch.clientX - canvas.offsetLeft, touch.clientY - canvas.offsetTop);
+    const { x, y } = getCanvasCoordinates(touch);
+    ctx.moveTo(x, y);  // Move to touch position, make sure we are inside the canvas
 });
 canvas.addEventListener('touchmove', (e) => {
     e.preventDefault();  // Prevent default touch behavior
     if (!isDrawing) return;
     const touch = e.touches[0];
-    ctx.lineTo(touch.clientX - canvas.offsetLeft, touch.clientY - canvas.offsetTop);
+    const { x, y } = getCanvasCoordinates(touch);
+    ctx.lineTo(x, y);  // Draw a line to the current touch position
     ctx.stroke();
 });
 canvas.addEventListener('touchend', () => {
