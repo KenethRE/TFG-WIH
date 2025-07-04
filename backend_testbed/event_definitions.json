@@ -140,7 +140,7 @@
     {
       "type": "wheel",
       "description": "Fired when the mouse wheel is used to scroll the page or an element.",
-      "triggeringElement": ["document", "body"],
+      "triggeringElement": ["document", "body", "textarea"],
       "userAction": "Use the mouse wheel to scroll up or down."
     }
   ],
@@ -148,7 +148,7 @@
     {
       "type": "scroll",
       "description": "Fired when an element or the document view is being scrolled.",
-      "triggeringElement": ["document", "body"],
+      "triggeringElement": ["document", "body", "textarea"],
       "userAction": "Scroll the content within an element or the page."
     }
   ]
