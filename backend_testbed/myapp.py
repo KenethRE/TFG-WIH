@@ -209,6 +209,4 @@ def elements_processed(data):
 
 @socketio.on('send_event')
 def send_event(data):
-    # check if the target device is a mobile device
-    print(data)
     emit('receive_event', data, to=data['userId'])
