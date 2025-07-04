@@ -35,6 +35,9 @@ def assign_ids_to_elements(url):
             triggering_elements = event['triggeringElement']
             for elem_type in triggering_elements:
                 for tag in soup.find_all(elem_type):
+                    # if tag id is 'floating-login', skip it
+                    if tag.get('id') == 'floating-login':
+                        continue
                     # Assign a unique ID if not present
                     if not tag.has_attr('id'):
                         unique_id = f"auto-{uuid.uuid4()}"
