@@ -471,7 +471,11 @@ async function socketSetup() {
                                 // For textarea or input elements, we can scroll the element
                                 element.scrollTop += data.deltaY; // Scroll the element vertically
                             } else {
-                                window.scrollBy(0, data.deltaY);
+                                window.scrollBy({
+                                    top: data.deltaY, // Scroll the window vertically
+                                    left: data.deltaX || 0, // Scroll the window horizontally
+                                    behavior: 'smooth' // Smooth scrolling
+                                });
                             }
                         }
                         break;
