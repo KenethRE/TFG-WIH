@@ -77,7 +77,7 @@ sliderValue.addEventListener('change', () => {
 canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
     ctx.beginPath();  // Start a new path
-    ctx.moveTo(e.offsetX, e.offsetY);  // Move to mouse position
+    ctx.moveTo(e.offsetX, e.offsetY);  // Move to mouse position, make sure we are inside the canvas
 });
 
 // Draw when mouse is moved while pressed

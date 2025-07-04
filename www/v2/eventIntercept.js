@@ -121,6 +121,7 @@ function add_listeners(elements) {
                 deltaMode: deltaMode,
                 scrollTop: scrollTop,
                 scrollLeft: scrollLeft,
+                checked: event.target.checked || false, // For checkbox/radio inputs
                 identifier: event.identifier || 0
             });
         });
@@ -243,12 +244,24 @@ async function socketSetup() {
                         element.click(); // Simulate click on the element
                         break;
                     case 'input':
+                        if (element.type === 'checkbox' || element.type === 'radio') {
+                            // For checkbox or radio inputs, set checked state
+                            element.checked = data.checked; // Set checked state for checkbox/radio inputs
+                            element.dispatchEvent(new Event('change', {
+                                bubbles: true,
+                                cancelable: true,
+                                composed: true
+                            }));
+                        } else {
+                        // For other input types, set value and dispatch input event
+                        console.log(`Setting value for input element with ID ${data.elementId}: ${data.value}`);
                         element.value = data.value || ''; // Set value for input events
                         element.dispatchEvent(new Event('input', {
                             bubbles: true,
                             cancelable: true,
                             composed: true
                         }));
+                    }
                         break;
                     case 'change':
                         element.value = data.value || ''; // Set value for change events
