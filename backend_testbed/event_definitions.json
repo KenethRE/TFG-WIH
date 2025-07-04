@@ -3,7 +3,7 @@
     {
       "type": "click",
       "description": "Fired when a pointing device button is pressed and released over an element.",
-      "triggeringElement": ["button", "a"],
+      "triggeringElement": ["button", "a", "canvas"],
       "userAction": "Press and release a mouse button."
     },
     {
@@ -11,6 +11,24 @@
       "description": "Fired when a pointing device button is double-clicked over an element.",
       "triggeringElement": ["button", "a"],
       "userAction": "Press and release a mouse button twice quickly."
+    },
+    {
+      "type": "mousedown",
+      "description": "Fired when a pointing device button is pressed down over an element.",
+      "triggeringElement": ["canvas"],
+      "userAction": "Press a mouse button down."
+    },
+    {
+      "type": "mouseup",
+      "description": "Fired when a pointing device button is released over an element.",
+      "triggeringElement": ["canvas"],
+      "userAction": "Release a mouse button."
+    },
+    {
+      "type": "mousemove",
+      "description": "Fired when a pointing device is moved while it is over an element.",
+      "triggeringElement": ["canvas"],
+      "userAction": "Move the mouse while it is over an element."
     }
   ]
   ,
@@ -108,8 +126,14 @@
     {
       "type": "change",
       "description": "Fired when the value of a file input element changes.",
-      "triggeringElement": ["input"],
+      "triggeringElement": ["input", "span"],
       "userAction": "Select or change a file in the file input."
+    },
+    {
+      "type": "input",
+      "description": "Fired when the value of an input element changes.",
+      "triggeringElement": ["input", "textarea"],
+      "userAction": "Type in or modify the content of an input or textarea."
     }
   ],
   "WheelEvents": [

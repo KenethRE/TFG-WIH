@@ -17,7 +17,7 @@ function add_listeners(elements) {
             continue; // Skip this element if not found
         }
         console.log(`Adding event listener for ${element.eventType} on element with tag ${targetElement.tagName} and ID ${element.assignedId}`);
-        targetElement.addEventListener(element.eventType, (event) => {
+        targetElement.addEventListener(element.eventType, (event) => { // Prevent default action for the event
             console.log(`Event ${element.eventType} triggered on element with ID ${element.assignedId}`);
             // Emit the event to the server only if the event is trusted
             if (!event.isTrusted) {
@@ -36,6 +36,7 @@ function add_listeners(elements) {
             
             if (event.type === 'touchstart' || event.type === 'touchmove' || event.type === 'touchend') {
                 // For touch events, we need to handle the touches array
+                event.preventDefault(); // Prevent default touch behavior
                 for (let touch of event.touches) {
                     eventTouches.push({
                         identifier: touch.identifier,
@@ -239,19 +240,7 @@ async function socketSetup() {
                 console.log(`Triggering server event: ${data.type} on element with ID ${data.elementId}`);
                 switch (data.type) {
                     case 'click':
-                        // check if the element is clickable, based on coordinates
-                        if (data.clientX && data.clientY) {
-                            let clickableElement = document.elementFromPoint(data.clientX, data.clientY);
-                            if (clickableElement) {
-                                console.log(`Clicking on element with ID ${data.elementId} at (${data.clientX}, ${data.clientY})`);
-                                clickableElement.click(); // Simulate click on the clickable element
-                            } else {
-                                console.log(`Click on element with ID ${data.elementId} at (${data.clientX}, ${data.clientY}) is not clickable.`);
-                            }
-                        } else {
-                            console.log(`Clicking on element with ID ${data.elementId} without coordinates.`);
-                            element.click(); // Simulate click on the element
-                        }
+                        element.click(); // Simulate click on the element
                         break;
                     case 'input':
                         element.value = data.value || ''; // Set value for input events
@@ -262,6 +251,7 @@ async function socketSetup() {
                         }));
                         break;
                     case 'change':
+                        element.value = data.value || ''; // Set value for change events
                         element.dispatchEvent(new Event('change', {
                             bubbles: true,
                             cancelable: true,
@@ -346,6 +336,7 @@ async function socketSetup() {
                         }));
                         break;
                     case 'mousemove':
+                        console.log(`Moving mouse over element with ID ${data.elementId} at (${data.clientX}, ${data.clientY})`);
                         element.dispatchEvent(new MouseEvent('mousemove', {
                             bubbles: true,
                             cancelable: true,
@@ -387,11 +378,9 @@ async function socketSetup() {
                         }));
                         break;
                     case 'touchmove':
-                        // We need to move the screen position to the touch coordinates
-                        // This is a workaround to simulate touch move events
-                        if (data.changedTouches[0].clientX && data.changedTouches[0].clientY) {
-                            window.scrollTo(data.changedTouches[0].clientX, data.changedTouches[0].clientY);
-                        }
+                        // check if element is canvas, if so, we can simulate a touchmove event
+                        if (element.tagName.toLowerCase() === 'canvas') {
+                        // Create a TouchEvent and dispatch it with the provided touches
                         element.dispatchEvent(new TouchEvent('touchmove', {
                             bubbles: true,
                             cancelable: true,
@@ -400,7 +389,26 @@ async function socketSetup() {
                             targetTouches: targetTouches || [],
                             changedTouches: changedTouches || []
                         }));
+
+                        if (element.tagName.toLowerCase() === 'input' && element.type === 'range') {
+                            // For range inputs, we can simulate a change event
+                            element.value = data.value || ''; // Set value for range input
+                            element.dispatchEvent(new Event('input', {
+                                bubbles: true,
+                                cancelable: true,
+                                composed: true
+                            }));
+                        } else if (element.tagName.toLowerCase() === 'select') {
+                            // For select elements, we can simulate a change event
+                            element.value = data.value || ''; // Set value for select element
+                            element.dispatchEvent(new Event('change', {
+                                bubbles: true,
+                                cancelable: true,
+                                composed: true
+                            }));
+                        }
                         break;
+                    }
                     case 'contextmenu':
                         element.dispatchEvent(new MouseEvent('contextmenu', {
                             bubbles: true,

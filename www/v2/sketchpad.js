@@ -1,81 +1,119 @@
-    // Variables for referencing the canvas and 2dcanvas context
-    var canvas,ctx;
+const canvas = document.getElementById('drawingCanvas');
+const ctx = canvas.getContext('2d');
 
-    // Variables to keep track of the mouse position and left-button status 
-    var mouseX,mouseY,mouseDown=0;
+let isDrawing = false;
+let isErasing = false;
 
-    // Draws a dot at a specific position on the supplied canvas name
-    // Parameters are: A canvas context, the x position, the y position, the size of the dot
-    function drawDot(ctx,x,y,size) {
-        // Let's use black by setting RGB values to 0, and 255 alpha (completely opaque)
-        r=0; g=0; b=0; a=255;
+// Set initial drawing properties
+ctx.lineWidth = 5; // Line width
+ctx.lineCap = 'round'; // Round the corners of the lines
+ctx.strokeStyle = 'black'; // Set the color of the strokes
 
-        // Select a fill style
-        ctx.fillStyle = "rgba("+r+","+g+","+b+","+(a/255)+")";
+// Create color picker
+const colorLabel = document.getElementById('colorLabel') || document.createElement('label');
+colorLabel.textContent = 'Color: ';
+colorLabel.style.margin = '10px';
 
-        // Draw a filled circle
-        ctx.beginPath();
-        ctx.arc(x, y, size, 0, Math.PI*2, true); 
-        ctx.closePath();
-        ctx.fill();
-    } 
+const colorPicker = document.getElementById('colorPicker') || document.createElement('input');
+colorPicker.type = 'color';
+colorPicker.value = '#000000';
+colorPicker.style.verticalAlign = 'middle';
+colorPicker.style.marginRight = '10px';
 
-    // Clear the canvas context using the canvas width and height
-    function clearCanvas(canvas,ctx) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+colorPicker.addEventListener('input', () => {
+    if (!isErasing) {
+        ctx.strokeStyle = colorPicker.value;
     }
+});
 
-    // Keep track of the mouse button being pressed and draw a dot at current location
-    function sketchpad_mouseDown() {
-        mouseDown=1;
-        drawDot(ctx,mouseX,mouseY,12);
+// Create toggle erase button
+const eraseBtn = document.getElementById('eraseBtn') || document.createElement('button');
+eraseBtn.textContent = 'Toggle Erase';
+eraseBtn.style.margin = '10px';
+
+eraseBtn.addEventListener('click', () => {
+    isErasing = !isErasing;
+    if (isErasing) {
+        ctx.strokeStyle = 'white';
+        eraseBtn.textContent = 'Erase Mode';
+    } else {
+        ctx.strokeStyle = colorPicker.value;
+        eraseBtn.textContent = 'Drawing Mode';
     }
+});
 
-    // Keep track of the mouse button being released
-    function sketchpad_mouseUp() {
-        mouseDown=0;
-    }
+// Create clear canvas button
+const clearButton = document.getElementById('clearButton') || document.createElement('button');
+clearButton.textContent = 'Clear Canvas';
+clearButton.style.margin = '10px';
 
-    // Keep track of the mouse position and draw a dot if mouse button is currently pressed
-    function sketchpad_mouseMove(e) { 
-        // Update the mouse co-ordinates when moved
-        getMousePos(e);
+// Add event listener to clear the canvas
+clearButton.addEventListener('click', () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
 
-        // Draw a dot if the mouse button is currently being pressed
-        if (mouseDown==1) {
-            drawDot(ctx,mouseX,mouseY,12);
-        }
-    }
+// Create stroke size slider
+const strokeSlider = document.getElementById('sizeRange') || document.createElement('input');
+strokeSlider.type = 'range';
+strokeSlider.min = 1;
+strokeSlider.max = 50;
+strokeSlider.value = ctx.lineWidth;
+strokeSlider.style.verticalAlign = 'middle';
+strokeSlider.style.marginRight = '10px';
 
-    // Get the current mouse position relative to the top-left of the canvas
-    function getMousePos(e) {
-        if (!e)
-            var e = event;
+const sliderValue = document.getElementById('sizeValue') || document.createElement('span');
+sliderValue.textContent = ctx.lineWidth;
 
-        if (e.offsetX) {
-            mouseX = e.offsetX;
-            mouseY = e.offsetY;
-        }
-        else if (e.layerX) {
-            mouseX = e.layerX;
-            mouseY = e.layerY;
-        }
-     }
+strokeSlider.addEventListener('input', () => {
+    ctx.lineWidth = strokeSlider.value;
+    sliderValue.textContent = strokeSlider.value;
+});
 
+sliderValue.addEventListener('change', () => {
+    sliderValue.textContent = strokeSlider.value;
+});
 
-    // Set-up the canvas and add our event handlers after the page has loaded
-    function init() {
-        // Get the specific canvas element from the HTML document
-        canvas = document.getElementById('sketchpad');
+// Start drawing when mouse is pressed
+canvas.addEventListener('mousedown', (e) => {
+    isDrawing = true;
+    ctx.beginPath();  // Start a new path
+    ctx.moveTo(e.offsetX, e.offsetY);  // Move to mouse position
+});
 
-        // If the browser supports the canvas tag, get the 2d drawing context for this canvas
-        if (canvas.getContext)
-            ctx = canvas.getContext('2d');
+// Draw when mouse is moved while pressed
+canvas.addEventListener('mousemove', (e) => {
+    if (!isDrawing) return;
+    ctx.lineTo(e.offsetX, e.offsetY);  // Draw a line to mouse position
+    ctx.stroke();  // Apply the stroke
+});
 
-        // Check that we have a valid context to draw on/with before adding event handlers
-        if (ctx) {
-            canvas.addEventListener('mousedown', sketchpad_mouseDown, false);
-            canvas.addEventListener('mousemove', sketchpad_mouseMove, false);
-            window.addEventListener('mouseup', sketchpad_mouseUp, false);
-        }
-    }
+// Stop drawing when mouse is released
+canvas.addEventListener('mouseup', () => {
+    isDrawing = false;
+});
+
+// Optionally, stop drawing when mouse leaves the canvas
+canvas.addEventListener('mouseout', () => {
+    isDrawing = false;
+});
+
+canvas.addEventListener('touchstart', (e) => {
+    e.preventDefault();  // Prevent default touch behavior
+    isDrawing = true;
+    const touch = e.touches[0];
+    ctx.beginPath();
+    ctx.moveTo(touch.clientX - canvas.offsetLeft, touch.clientY - canvas.offsetTop);
+});
+canvas.addEventListener('touchmove', (e) => {
+    e.preventDefault();  // Prevent default touch behavior
+    if (!isDrawing) return;
+    const touch = e.touches[0];
+    ctx.lineTo(touch.clientX - canvas.offsetLeft, touch.clientY - canvas.offsetTop);
+    ctx.stroke();
+});
+canvas.addEventListener('touchend', () => {
+    isDrawing = false;
+});
+canvas.addEventListener('touchcancel', () => {
+    isDrawing = false;
+});
