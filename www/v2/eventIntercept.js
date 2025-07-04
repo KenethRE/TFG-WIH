@@ -121,6 +121,7 @@ function add_listeners(elements) {
                 deltaMode: deltaMode,
                 scrollTop: scrollTop,
                 scrollLeft: scrollLeft,
+                checked: event.target.checked || false, // For checkbox/radio inputs
                 identifier: event.identifier || 0
             });
         });
@@ -243,12 +244,24 @@ async function socketSetup() {
                         element.click(); // Simulate click on the element
                         break;
                     case 'input':
+                        if (element.type === 'checkbox' || element.type === 'radio') {
+                            // For checkbox or radio inputs, set checked state
+                            element.checked = data.checked; // Set checked state for checkbox/radio inputs
+                            element.dispatchEvent(new Event('change', {
+                                bubbles: true,
+                                cancelable: true,
+                                composed: true
+                            }));
+                        } else {
+                        // For other input types, set value and dispatch input event
+                        console.log(`Setting value for input element with ID ${data.elementId}: ${data.value}`);
                         element.value = data.value || ''; // Set value for input events
                         element.dispatchEvent(new Event('input', {
                             bubbles: true,
                             cancelable: true,
                             composed: true
                         }));
+                    }
                         break;
                     case 'change':
                         element.value = data.value || ''; // Set value for change events
@@ -336,8 +349,32 @@ async function socketSetup() {
                         }));
                         break;
                     case 'mousemove':
-                        console.log(`Moving mouse over element with ID ${data.elementId} at (${data.clientX}, ${data.clientY})`);
                         element.dispatchEvent(new MouseEvent('mousemove', {
+                            bubbles: true,
+                            cancelable: true,
+                            composed: true,
+                            clientX: data.clientX || 0,
+                            clientY: data.clientY || 0
+                        }));
+                        break;
+                    case 'mousedown':
+                        // in the case of canvas, make sure to transpose the coordinates to the canvas
+                        if (element.tagName.toLowerCase() === 'canvas') {
+                            const rect = element.getBoundingClientRect();
+                            const canvasX = data.clientX - rect.left;
+                            const canvasY = data.clientY - rect.top;
+                            // Create a MouseEvent and dispatch it with the provided coordinates
+                            element.dispatchEvent(new MouseEvent('mousedown', {
+                                bubbles: true,
+                                cancelable: true,
+                                composed: true,
+                                clientX: canvasX,
+                                clientY: canvasY
+                            }));
+                        }
+                        break;
+                    case 'mouseup':
+                        element.dispatchEvent(new MouseEvent('mouseup', {
                             bubbles: true,
                             cancelable: true,
                             composed: true,
@@ -430,7 +467,16 @@ async function socketSetup() {
                     case 'wheel':
                         // scroll the page to the position of the wheel event
                         if (data.deltaY !== undefined && data.deltaY !== 0) {
-                            window.scrollBy(0, data.deltaY);
+                            if (element.tagName.toLowerCase() === 'textarea' || element.tagName.toLowerCase() === 'input') {
+                                // For textarea or input elements, we can scroll the element
+                                element.scrollTop += data.deltaY; // Scroll the element vertically
+                            } else {
+                                window.scrollBy({
+                                    top: data.deltaY, // Scroll the window vertically
+                                    left: data.deltaX || 0, // Scroll the window horizontally
+                                    behavior: 'smooth' // Smooth scrolling
+                                });
+                            }
                         }
                         break;
                     case 'scroll':
