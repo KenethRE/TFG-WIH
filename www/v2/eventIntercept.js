@@ -361,8 +361,8 @@ async function socketSetup() {
                         // in the case of canvas, make sure to transpose the coordinates to the canvas
                         if (element.tagName.toLowerCase() === 'canvas') {
                             const rect = element.getBoundingClientRect();
-                            const canvasX = data.clientX - rect.left;
-                            const canvasY = data.clientY - rect.top;
+                            const canvasX = data.clientX + rect.left;
+                            const canvasY = data.clientY + rect.top;
                             // Create a MouseEvent and dispatch it with the provided coordinates
                             element.dispatchEvent(new MouseEvent('mousedown', {
                                 bubbles: true,
@@ -417,6 +417,36 @@ async function socketSetup() {
                     case 'touchmove':
                         // check if element is canvas, if so, we can simulate a touchmove event
                         if (element.tagName.toLowerCase() === 'canvas') {
+                            targetTouches = touches.map(touch => {
+                                return {
+                                    identifier: touch.identifier || 0,
+                                    clientX: touch.clientX + canvas.offsetLeft || 0,
+                                    clientY: touch.clientY + canvas.offsetTop || 0,
+                                    pageX: touch.pageX + canvas.offsetLeft || 0,
+                                    pageY: touch.pageY + canvas.offsetTop || 0,
+                                    radiusX: touch.radiusX || 0,
+                                    radiusY: touch.radiusY || 0,
+                                    screenX: touch.screenX + canvas.offsetLeft || 0,
+                                    screenY: touch.screenY + canvas.offsetTop || 0,
+                                    force: touch.force || 0,
+                                    target: element // Use the canvas element as the target
+                                };
+                            });
+                            changedTouches = touches.map(touch => {
+                                return {
+                                    identifier: touch.identifier || 0,
+                                    clientX: touch.clientX + canvas.offsetLeft || 0,
+                                    clientY: touch.clientY + canvas.offsetTop || 0,
+                                    pageX: touch.pageX + canvas.offsetLeft || 0,
+                                    pageY: touch.pageY + canvas.offsetTop || 0,
+                                    radiusX: touch.radiusX || 0,
+                                    radiusY: touch.radiusY || 0,
+                                    screenX: touch.screenX + canvas.offsetLeft || 0,
+                                    screenY: touch.screenY + canvas.offsetTop || 0,
+                                    force: touch.force || 0,
+                                    target: element // Use the canvas element as the target
+                                };
+                            });
                         // Create a TouchEvent and dispatch it with the provided touches
                         element.dispatchEvent(new TouchEvent('touchmove', {
                             bubbles: true,
